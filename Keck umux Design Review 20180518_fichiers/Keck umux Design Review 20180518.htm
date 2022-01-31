@@ -1,0 +1,723 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<!-- Put page title and links to css here -->
+		<title>
+			Keck umux Design Review 20180518
+		</title>
+		<link rel="stylesheet" type="text/css" href="Keck%20umux%20Design%20Review%2020180518_fichiers/style.css">
+		<link rel="stylesheet" type="text/css" href="Keck%20umux%20Design%20Review%2020180518_fichiers/pager.css">
+		<script type="text/javascript" src="Keck%20umux%20Design%20Review%2020180518_fichiers/pager.js"></script>
+	</head>
+	<body>
+		<div id="title">
+			<h1> Keck umux Demonstrator Design Review </h1>
+			<h3> May 18, 2018 - Cyndia Yu </h3>
+		</div>
+
+		<section>
+			<h2> Summary </h2>
+			<p>
+				This posting presents an overview of the Keck umux demonstrator design
+				as of May 1, 2018. The RF chain, DC routing, and receiver modifications
+				progress will be covered here. Where possible, efforts have been made to
+				minimize major changes to the current Keck setup. The focal plane
+				module modifications and SMuRF electronics are not included in this review. 
+				All designs are documented in the SVN under BICEP_Array/dev/20180508_BK_umux/.
+				</p>
+
+		</section>
+
+		<section>
+			<h2> RF Chain </h2>
+
+			<p> The RF chain consists of a single pair of coaxial cables that will carry signals
+			to and from the SMuRF electronics crate. These will replace the MCE and SSA modules
+			in the current Keck design. A schematic of the RF chain is shown in Figure 2.1. We 
+			use stainless steel coaxes at warmer stages, CuNi to reduce thermal loading from 
+			4K into the FPU, and NbTi from the module box to the HEMT amplifier. A bias tee
+			at the input of the HEMT serves as both a DC block and heatsink. Modern HEMTs are
+			in theory able to properly heatsink the center pins without the addition of the
+			bias tee; however, we include it here for completeness. The RF design is
+			modular to allow for insertion and removal of passive components as deemed
+			appropriate. A 50K follow-on amplifier has been included in this design. Its 
+			performance is pending verification. 
+			</p>
+
+			<p> 
+			</p>
+
+
+
+			
+			<figure> <!-- Numbered Automatically -->
+			<table class="pager container" id="rfchain_options"><tbody><tr><td class="pager label">View</td><td class="pager options"><a href="javascript:void(0);" class="pager" namespace="pager" paramkey="view" paramval="BKumux_RF_legend2">RF Chain Schematic</a> <a href="javascript:void(0);" class="pager" namespace="pager" paramkey="view" paramval="rf_chain_parts-1">RF Chain Parts</a> </td></tr></tbody></table><img id="rfchain" src="Keck%20umux%20Design%20Review%2020180518_fichiers/part_before.htm" class="pager" width="80%">
+			<script type="text/javascript">
+				pager.link('#rfchain',{
+					'View|view':['RF Chain Schematic|BKumux_RF_legend2','RF Chain Parts|rf_chain_parts-1']
+				},
+
+				function(params){
+					return params['view']+'.png';
+				}
+				);
+				pager.setparams({'View':'RF Chain Schematic'})
+			</script>
+				<figcaption>
+				The proposed RF chain and coax materials for the Keck umux demonstrator.
+				Part numbers are included, as well as nominal losses throughout the
+				RF chain.
+				</figcaption>
+			</figure>
+
+	
+
+
+			<!--<p>A table summarizing each of the coaxial cables is given below. Lengths have
+			been designed accounting for thermal contraction. The standard vendor is 
+			<a href="coax.co.jp/">Coax Co</a>. The cables are presented in order of input
+			to cryostat to output. The loading and attenuation curves are calculated using
+			the coax wiring code written by Betty Hu, a summer undergrad for Zeesh, and
+			documented <a href="https://github.com/Bettyxhu/Optimize-Wiring">here</a>.
+			</p>-->
+
+			<p> Below we include a table summarizing coax ordering information. Coaxes interfacing with 50K and
+			300K have not been designed as the 300K feedthrough and 50K plate have yet to be finalized. </p> 
+
+			<center>
+			<table style="width:50%" border="1,">
+			<tbody><tr>
+			  <td><b>Name</b></td>
+			  <td><b>Stage 1 Temperature</b></td>
+			  <td><b>Stage 2 Temperature</b></td>
+			  <td><b>Material</b></td>
+			  <td><b>Part Number</b></td>
+			  <td><b>Length (point to point) (cm)</b></td>
+			  <td><b>Length (to be ordered) (cm)</b></td>
+			  <td><b>Conductivity at Temperature 1 (W*cm/K)</b></td>
+			  <td><b>Conductivity at Temperature 2 (W*cm/K)</b></td>
+			  <td><b>Heat load (W)</b></td>
+			  <td><b>Attenuation (dB @ 5GHz)</b></td>
+			  <td><b>Total Attenuation</b></td>
+			  <td><b>References</b></td>
+			  <td><b>Notes</b></td>
+			</tr>
+			<tr>
+			  <td>300.a</td>
+			  <td>300K</td>
+			  <td>50K</td>
+			  <td>Stainless Steel</td>
+			  <td>Coax Co SC086/50-SS-SS</td>
+			  <td>length tbd</td>
+			  <td>length tbd</td>
+			  <td>0.00239 @ 300K</td>
+			  <td>0.000898 @ 50K</td>
+			  <td>loading tbd</td>
+			  <td>9.4 dB/m @ 300K, 6.44 dB/m @ 50K </td>
+			  <td>atten tbd</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/086-50-ss-ss.html">Data Sheet</a>, 
+				<a href="https://trc.nist.gov/cryogenics/Papers/Cryo_Materials.pdf">SS Conductivity</a></td>
+			  <td>Semirigid, cheap, easy to cut/bend to custom shape. Can solder the connectors ourselves. 
+				Not hugely concerned about attenuation on the way in.</td>
+			</tr>
+			<tr>
+			  <td>50.a</td>
+			  <td>50K</td>
+			  <td>4K</td>
+			  <td>Stainless Steel</td>
+			  <td>Coax Co SC219/50-SS-SS</td>
+			  <td>length tbd</td>
+			  <td>length tbd</td>
+			  <td>0.000898 @ 50K</td>
+			  <td>4.30e-5 @ 4K</td>
+			  <td>loading tbd</td>
+			  <td>6.44 dB/m @ 50K, 5.9 dB/m @ 4K </td>
+			  <td>atten tbd</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/086-50-ss-ss.html">Data Sheet</a>, 
+				<a href="https://trc.nist.gov/cryogenics/Papers/Cryo_Materials.pdf">SS Conductivity</a></td>
+			  <td>Semirigid, cheap, easy to cut/bend to custom shape. Can solder the connectors ourselves. 
+				Not hugely concerned about attenuation on the way in.</td>
+			</tr>
+			<tr>
+			  <td>4.a (4K - intermediate bulkhead)</td>
+			  <td>4K</td>
+			  <td>4K</td>
+			  <td>Stainless Steel</td>
+			  <td>Coax Co SC086/219-SS-SS</td>
+			  <td>16.3 cm</td>
+			  <td>20 cm</td>
+			  <td>4.30e-5 @ 4K</td>
+			  <td>4.30e-5 @ 4K</td>
+			  <td>Isothermal</td>
+			  <td>5.9 dB/m @ 4K</td>
+			  <td>1.18 dB</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/219-50-ss-ss.html">Data Sheet</a>, 
+				<a href="https://trc.nist.gov/cryogenics/Papers/Cryo_Materials.pdf">SS Conductivity</a></td>
+			  <td>Semirigid, cheap, easy to cut/bend to custom shape. Can solder the connectors ourselves. 
+				Not hugely concerned about attenuation on the way in. Additional length is for curve 
+				accommodating thermal contraction.</td>
+			</tr>
+			<tr>
+			  <td>4.b (intermediate bulkhead - IC plate)</td>
+			  <td>4K</td>
+			  <td>350mK</td>
+			  <td>Cupronickel</td>
+			  <td>Coax Co SC086/50-CN-CN</td>
+			  <td>4.2cm</td>
+			  <td>8 cm</td>
+			  <td>9.80e-6 @ 4K</td>
+			  <td>2.142e-6 @ 350mK</td>
+			  <td>1.59 uW</td>
+			  <td>12.8 dB/m @ 4K</td>
+			  <td>1.024 dB</td>
+			  <td><a href="https://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">Data Sheet</a>,
+				<a href="https://www.sciencedirect.com/science/article/abs/pii/001122759390027L">CN Conductivity</a></td>
+			  <td>Lower thermal load, relatively easy to bend and relatively cheap. Not hugely concerned
+				about input attenuation. Additional length is for curve accommodating thermal contraction</td>
+			</tr>
+			<tr>
+			  <td>IC.a (4K/IC connector-directional coupler)</td>
+			  <td>350mK</td>
+			  <td>350mK</td>
+			  <td>Copper</td>
+			  <td>RF Coax S086MFUL-*RD</td>
+			  <td>6.14 cm</td>
+			  <td>8 cm</td>
+			  <td>3.97 @ 300K (looking for data on lower temperatures)</td>
+			  <td>--</td>
+			  <td>Isothermal</td>
+			  <td>&lt; 0.5 dB/ft @ 300K</td>
+			  <td>&lt; 0.5 dB</td>
+			  <td><a href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20180518_BKumux_design/S086MFUL-12CMRD.pdf">Data Sheet</a>
+				<a href="https://thermtest.com/materials-database">Copper conductivity</a></td>
+			  <td>Isothermal stage assumes we have good heatsinking at the directional coupler. Copper cables are
+				cheap and easy to install relative to CN or NbTi. Current proposal from Denis is to terminate in
+				a female connector that interfaces directly with 4.b (see above). Lengths assume male connector
+				to bulkhead + right angle; new lengths should add ~3cm to replace this. </td>
+			</tr>
+			<tr>
+			  <td>(IC.b) directional coupler - IC/UC connector</td>
+			  <td>350mK</td>
+			  <td>350mK</td>
+			  <td>Copper</td>
+			  <td>RF Coax S086MFUL-*RD</td>
+			  <td>7.97 cm</td>
+			  <td>8 cm</td>
+			  <td>3.97 @ 300K (looking for data on lower temperatures)</td>
+			  <td>--</td>
+			  <td>Isothermal</td>
+			  <td>&lt; 0.5 dB/ft @ 300K</td>
+			  <td>&lt; 0.5 dB</td>
+			  <td><a href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20180518_BKumux_design/S086MFUL-12CMRD.pdf">Data Sheet</a>
+				<a href="https://thermtest.com/materials-database">Copper conductivity</a></td>
+			  <td>Isothermal stage assumes we have good heatsinking at the directional coupler. Copper cables are
+				cheap and easy to install relative to CN or NbTi. Current proposal from Denis is to terminate in
+				a female connector that interfaces directly with DC block/UC.a (see below). Lengths assume male connector
+				to bulkhead + right angle; new lengths should add ~3cm to replace this. </td>
+	
+			</tr>
+			<tr>
+			  <td>UC.a (IC/UC connector - FPU)</td>
+			  <td>350mK</td>
+			  <td>250mK</td>
+			  <td>Cupronickel</td>
+			  <td>Coax Co SC086/50-CN-CN</td>
+			  <td>10.5cm</td>
+			  <td>12 cm</td>
+			  <td>2.142e-6 @ 350mK</td>
+			  <td>2.142e-6 @ 250mK</td>
+			  <td>17.85nW</td>
+			  <td>12.7 dB/m @ 350mK</td>
+			  <td>1.54 dB</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">Data Sheet</a>
+				<a href="https://www.sciencedirect.com/science/article/abs/pii/001122759390027L">CN conductivity</a></td>
+			  <td>Cupronickel has much lower thermal loading than copper. We are not too worried about attenuation on 
+				the input.</td>
+			</tr>
+			<tr>
+			  <td>UC.b (FPU - IC/UC connector)</td>
+			  <td>250 mK</td>
+			  <td>350 mK</td>
+			  <td>NbTi</td>
+			  <td>Coax Co SC086/50-NbTi-NbTi</td>
+			  <td>10.5cm</td>
+			  <td>12 cm</td>
+			  <td>5.4114e-7 @ 350mK</td>
+			  <td>5.4114e-7 @ 250mK</td>
+			  <td>4.51 nW</td>
+			  <td>&lt; 0.5 dB/m @ 350mK</td>
+			  <td>&lt; 0.5 dB</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">Data Sheet</a>
+			  </td><td>Superconducting wire on the output to minimize loss on the output.</td>
+			</tr>
+			<tr>
+			  <td>IC.c (IC/UC connector - circulator)</td>
+			  <td>350 mK</td>
+			  <td>350 mK</td>
+			  <td>Copper</td>
+			  <td>RF Coax S086MFUL-*RD</td>
+			  <td>6.06cm</td>
+			  <td>7 cm</td>
+			  <td>3.97 @ 300K (looking for data on lower temperatures)</td>
+			  <td>--</td>
+			  <td>Isothermal</td>
+			  <td>&lt; 0.5dB/ft @ 300K</td>
+			  <td>&lt; 0.5 dB</td>
+			  <td><a href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20180518_BKumux_design/S086MFUL-12CMRD.pdf">Data Sheet</a>
+				<a href="https://thermtest.com/materials-database">Copper conductivity</a></td>
+			  <td>Isothermal cable assumes good heat sinking of the circulator. Current proposal from Denis is to terminate in a female
+				connector that connects directly to UC.b (see above), which would require about ~3cm added to the above length.
+				Given copper is low loss, if we heat sink properly it is much easier to use/cheaper than NbTi and eliminates
+				the need for several connectors.</td>
+			</tr>
+			<tr>
+			  <td>IC.d (circulator - 4K/IC connector)</td>
+			  <td>350 mK</td>
+			  <td>350 mK</td>
+			  <td>Copper</td>
+			  <td>RF Coax S086MFUL-*RD</td>
+			  <td>6.71 cm</td>
+			  <td>8 cm</td>
+			  <td>3.97 @ 300K (looking for data on lower temperatures)</td>
+			  <td>--</td>
+			  <td>Isothermal</td>
+			  <td>&lt; 0.5dB/ft @ 300K</td>
+			  <td>&lt; 0.5 dB</td>
+			  <td><a href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20180518_BKumux_design/S086MFUL-12CMRD.pdf">Data Sheet</a>
+				<a href="https://thermtest.com/materials-database">Copper conductivity</a></td>
+			  <td>Isothermal cable assumes good heat sinking of the circulator. Current proposal from Denis is to terminate in a female
+				connector that connects directly to 4.c (see below), which would require about ~3cm added to the above length.
+				Given copper is low loss, if we heat sink properly it is much easier to use/cheaper than NbTi and eliminates
+				the need for several connectors.</td>
+	
+			</tr>
+			<tr>
+			  <td>4.c (4K/IC - bias tee)</td>
+			  <td>350 mK</td>
+			  <td>4 K</td>
+			  <td>NbTi</td>
+			  <td>Coax Co SC086/50-NbTi-NbTi</td>
+			  <td>7.5 cm</td>
+			  <td>12 cm</td>
+			  <td>5.4114e-7 @ 350mK</td>
+			  <td>4.63e-6 @ 4K</td>
+			  <td>644 nW</td>
+			  <td>&lt; 0.5dB/m @ 4K</td>
+			  <td>&lt; 0.5 dB</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html%22">Data Sheet</a></td>
+			  <td>Minimizing loss on the output before the HEMT. Additional margin allows for addition of a small loop (standard
+				practice for allowing for thermal contraction).</td>
+			</tr>
+			<tr>
+			  <td>4.d (HEMT - 4K)</td>
+			  <td>4K</td>
+			  <td>4K</td>
+			  <td>Stainless Steel</td>
+			  <td>Coax Co SC219/50-SS-SS</td>
+			  <td>5.02cm</td>
+			  <td>6 cm</td>
+			  <td>4.30e-5 @ 4K</td>
+			  <td>--</td>
+			  <td>Isothermal</td>
+			  <td>5.9 dB/m @ 4K</td>
+			  <td>0.354 dB</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/086-50-ss-ss.html">Data Sheet</a>, 
+				<a href="https://trc.nist.gov/cryogenics/Papers/Cryo_Materials.pdf">SS Conductivity</a></td>
+			  <td>Semirigid, cheap, easy to cut/bend to custom shape. Can solder the connectors ourselves. 
+				Not hugely concerned about attenuation on the way in.</td>
+			</tr>
+			<tr>
+			  <td>50.b (4K - 50K amplifier)</td>
+			  <td>4K</td>
+			  <td>50K</td>
+			  <td>Stainless Steel</td>
+			  <td>Coax Co SC219/50-SS-SS</td>
+			  <td>tbd</td>
+			  <td>tbd</td>
+			  <td>4.30e-5 @ 4K</td>
+			  <td>0.000898 @ 50K</td>
+			  <td>tbd</td>
+			  <td>5.9 dB/m @ 4K, 6.44 dB/m @ 50K</td>
+			  <td>tbd</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/086-50-ss-ss.html">Data Sheet</a>, 
+				<a href="https://trc.nist.gov/cryogenics/Papers/Cryo_Materials.pdf">SS Conductivity</a></td>
+			  <td>Semirigid, cheap, easy to cut/bend to custom shape. Can solder the connectors ourselves. 
+				Not hugely concerned about attenuation on the way in.</td>
+			</tr>
+			<tr>
+			  <td>50.c (50K amplifier - 50K feedthru)</td>
+			  <td>50K</td>
+			  <td>50K</td>
+			  <td>Stainless Steel</td>
+			  <td>Coax co SC219/50-SS-SS</td>
+			  <td>tbd</td>
+			  <td>tbd</td>
+			  <td>0.000898 @ 50K</td>
+			  <td>--</td>
+			  <td>Isothermal</td>
+			  <td>6.44 dB/m @ 50K</td>
+			  <td>tbd</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/086-50-ss-ss.html">Data Sheet</a>, 
+				<a href="https://trc.nist.gov/cryogenics/Papers/Cryo_Materials.pdf">SS Conductivity</a></td>
+			  <td>Semirigid, cheap, easy to cut/bend to custom shape. Can solder the connectors ourselves. 
+				Not hugely concerned about attenuation on the way in.</td>
+			</tr>
+			<tr>
+			  <td>50.c (50K - 300K)</td>
+			  <td>50K</td>
+			  <td>300K</td>
+			  <td>Stainless Steel</td>
+			  <td>Coax Co SC219/50-SS-SS</td>
+			  <td>tbd</td>
+			  <td>tbd</td>
+			  <td>0.000898 @ 50K</td>
+			  <td>0.00239 @ 300K</td>
+			  <td>tbd</td>
+			  <td>9.4 dB/m @ 300K, 6.44 dB/m @ 50K</td>
+			  <td>tbd</td>
+			  <td><a href="http://www.coax.co.jp/en/product/sc/086-50-ss-ss.html">Data Sheet</a>, 
+				<a href="https://trc.nist.gov/cryogenics/Papers/Cryo_Materials.pdf">SS Conductivity</a></td>
+			  <td>Semirigid, cheap, easy to cut/bend to custom shape. Can solder the connectors ourselves. 
+				Not hugely concerned about attenuation on the way in.</td>
+			</tr>
+			</tbody></table>
+			</center>
+
+
+		</section>
+
+		<section>
+		<h2> DC Routing </h2>
+
+		<p> A DC line is needed to provide power to the amplifiers, as well as
+		distribute the flux ramp and detector bias lines. We will reuse the
+		MDM cables already existing in Keck.
+		</p>
+
+		<figure>
+		<img src="Keck%20umux%20Design%20Review%2020180518_fichiers/dc_chain.png" width="50%">
+			<figcaption> The proposed DC chain reusing existing Tekdata cables. 
+			Note that Cristek filters on the 300K stage are not shown here. 
+			Labels in red correspond to part names that will be used for 
+			standard reference.
+			</figcaption>
+		</figure>
+
+
+		<p>The 4K PCB distributes the flux ramp and detector bias lines to
+		the two 37-way cables that connect to each focal plane module. This
+		additionally has a breakout to power the HEMT.</p>
+
+		<h4>Question</h4> How do we want to power the 50K follow-on amplifier?
+		Current idea is to run a pair of wires back from the 4K stage, rather than
+		adding another hole in the 300K or a break in the 50K DC line.
+
+
+		</section>
+
+		<section>
+		<h2> Receiver Modifications </h2>
+
+		<p> A number of modifications have been made to accommodate the new RF chain. We have tried
+		to keep these modifications minimal. These are outlined below from the outside of the
+		cryostat and proceeding inwards. The FPU module modifications have not been included here.
+		</p>
+
+
+		<h3> 300K stage </h3>
+
+		<p>The MCE feedthroughs have been replaced with 2 hermetic bulkhead connectors
+		for the RF lines. One MDM 100-way connector has been kept for the DC line. The
+		housekeeping feedthrough is untouched. The vacuum feedthrough design is in 
+		progress at Harvard.
+		</p>
+
+		<h3> 50K stage </h3>
+
+		<p> The 50K closeout plate has been adjusted slightly. A small piece
+		has been removed to accommodate an amplifier mount plate. The smaller piece
+		is installed first, and the full plate is installed afterwards. 
+		</p>
+
+		<p> As designed, the amplifier screws directly into the smaller plate. We can
+		consider putting it on a separate bracket for better heat-sinking. The amplifier
+		is 50.5mm long, so including SMA connectors and a DC block I think it unlikely 
+		that we can offset it vertically. Instead, it seems better to route a stainless 
+		steel coax with the use of a right angle connector off of the amplifier.
+		</p>
+
+		<p> This design is in progress at Harvard. </p>
+			<!--The 50K plate must be replaced. We have designed it in two parts: a piece for mounting the
+			   amplifier and bulkheads and the main closeout plate. -->
+
+
+
+		<h3> 4K stage </h3>
+
+		<p> The 4K stage has substantially more room thanks to the removal of the SSA
+		boards. The closeout plate removes two MCE MDM's and replaces them with two
+		RF ports. A bracket with generic holes mounts the RF passive components chain.
+		In order to ease installation, a bulkhead is included so that both the input
+		and output lines have a break at the amplifier mounting bracket. 
+		</p>
+
+			<figure> <!-- Numbered Automatically -->
+			<table class="pager container" id="asm_options"><tbody><tr><td class="pager label">Stage</td><td class="pager options"><a href="javascript:void(0);" class="pager" namespace="pager" paramkey="stg" paramval="full_before">Full Stage Before</a> <a href="javascript:void(0);" class="pager" namespace="pager" paramkey="stg" paramval="full_after">Full Stage After</a> </td></tr></tbody></table><img id="asm" src="Keck%20umux%20Design%20Review%2020180518_fichiers/4K_full_before.png" class="pager" width="50%">
+			<script type="text/javascript">
+				pager.link('#asm',{
+					'Stage|stg':['Full Stage Before|full_before','Full Stage After|full_after']
+				},
+
+				function(params){
+					return '4K_'+params['stg']+'.png';
+				}
+				);
+				pager.setparams({'Stage':'Full Stage Before'})
+			</script>
+				<figcaption>
+				The 4K stage removes the SSA modules and replaces them with a PCB for
+				the flux ramp/detector bias and an RF amplifier module. 
+				</figcaption>
+			</figure>
+
+			<figure>
+			<table class="pager container" id="ft_options"><tbody><tr><td class="pager label">Part View</td><td class="pager options"><a href="javascript:void(0);" class="pager" namespace="pager" paramkey="view" paramval="part_before">Feedthru Before</a> <a href="javascript:void(0);" class="pager" namespace="pager" paramkey="view" paramval="part_after">Feedthru After</a> </td></tr></tbody></table><img id="ft" src="Keck%20umux%20Design%20Review%2020180518_fichiers/4K_part_before.png" class="pager" width="25%">
+			<script type="text/javascript">
+				pager.link('#ft', {
+					'Part View|view':['Feedthru Before|part_before', 'Feedthru After|part_after']
+				},
+
+				function(params){
+					return '4K_'+params['view']+'.png';
+				}
+				);
+				pager.setparams({'Part View':'Feedthru Before'})
+			</script>
+				<figcaption>
+				The 4K feedthrough for the 4K stage removes two MDM's for the MCE's and
+				replaces them with RF ports. 
+				</figcaption>
+			</figure>
+
+		<p> A generic RF mounting bracket and PCB holder are installed. The RF bracket
+		has holes to accommodate moving around the passive components as desired. It
+		further includes an intermediate bulkhead for ease of installation. A view from
+		the handport is included below.
+		</p>
+
+			<figure>
+			<img src="Keck%20umux%20Design%20Review%2020180518_fichiers/4k_pcb.png" width="25%">
+				<figcaption> A PCB breaks the 100-way cable into two 37-way lines. It
+				is mounted using a simple frame consisting of two vertical pieces
+				and two shorter, horizontal pieces ("4K PCB mount--long" and "4K PCB
+				mount--short") and attached using an adapter to the 4K plate ("4K PCB
+				mount--bottom").
+				</figcaption>
+			</figure>
+
+
+			<figure>
+			<img src="Keck%20umux%20Design%20Review%2020180518_fichiers/4k_rfamplifier.png" width="25%">
+				<figcaption> The RF chain includes a bias tee and HEMT mounted on this
+				copper bracket ("4K RF Mount"). The holes extend along the entire 
+				bracket so that components can be added and removed as necessary. A
+				bias tee holder and HEMT holder are used to mount the pieces.
+				</figcaption>
+			</figure>
+
+			<figure>
+			<img src="Keck%20umux%20Design%20Review%2020180518_fichiers/4k_handport.png" width="50%">
+				<figcaption> The connection to the IC mezzanine is accessible through 
+				the existing 4K handport. 
+			</figcaption></figure>
+
+			<center>
+                        <table style="width:50%" border="1,">
+                        <tbody><tr>
+			  <td><b>Part Name</b></td>
+			  <td><b>Description</b></td>
+			</tr>
+			<tr>
+			  <td>4K Feedthrough<!--MCE_RF_connector_plate--></td>
+			  <td>Replace two MCE feedthroughs with two RF ports.</td>
+			</tr>
+			<tr>
+			  <td>4K PCB mount--bottom<!--horz_brace_sqr_bottom_short--></td>
+			  <td>Mount PCB holder to the 4K plate.</td>
+			</tr>
+			<tr>
+			  <td>4K PCB mount--short<!--horz_brace_sqr_short--></td>
+			  <td>2 needed. Short side of the brace for the 4K PCB.</td>
+			</tr>
+			<tr>
+ 			  <td>4K PCB mount--long<!--vert_brace_sqrt_keck_umux--></td>
+			  <td>2 needed. Vertical sides of the brace for the 4K PCB.</td>
+			</tr>
+			<tr>
+			  <td>4K RF mount <!--4K_holderplate--></td>
+			  <td>Mount for RF components.</td>
+			</tr>
+			<tr>
+			  <td>4K RF mount holder <!--4Kplate_to_holderplate--></td>
+			  <td>RF chain holder mount to 4K</td>
+			</tr>
+			<tr>
+			  <td>Bias Tee holder <!--doubleBiasTHolder--></td>
+			  <td>Adapter plate for the bias tee</td>
+			</tr>
+			<tr>
+			  <td>HEMT holder <!--HEMTHolderEdit--></td>
+			  <td>Adapter piece for the LNF HEMT</td>
+			</tr>
+			<tr>
+			  <td>4K intermediate bulkhead<!--4K_inputline_bulkhead--></td>
+			  <td>Break in RF chain on the 4K RF mount to ease installation</td>
+			</tr>
+			</tbody></table>
+			</center>
+
+			<h4>Note</h4> In order to provide a straighter path for 50K to 4K stage 
+			cable routing, we are considering moving the coaxes on the feedthrough 
+			closer to the center of the part. However, we would like to avoid crossing
+			the MDM with the coaxes. This potential update has not yet been realized.
+
+
+
+		<h3> IC mezzanine </h3>
+
+		<p> One side of the MCE heatsink has been replaced. In order to avoid routing
+		wires across the IC mezzanine and around the heatstrap, all RF components have
+		been placed on one side. Figure 4.6 provides several views of the before and
+		after of the IC mezzanine. 
+		</p>
+
+			<figure> <!-- Numbered Automatically -->
+			<table class="pager container" id="clear_options"><tbody><tr><td class="pager label">Stage</td><td class="pager options"><a href="javascript:void(0);" class="pager" namespace="pager" paramkey="stage" paramval="full_before">Full Mezzanine Before</a> <a href="javascript:void(0);" class="pager" namespace="pager" paramkey="stage" paramval="full_after">Full Mezzanine After</a> <a href="javascript:void(0);" class="pager" namespace="pager" paramkey="stage" paramval="part_before">Heatsink Before</a> <a href="javascript:void(0);" class="pager" namespace="pager" paramkey="stage" paramval="part_after">Heatsink After (holes only)</a> <a href="javascript:void(0);" class="pager" namespace="pager" paramkey="stage" paramval="part_after_rf">Heatsink After (with parts)</a> </td></tr></tbody></table><img id="clear" src="Keck%20umux%20Design%20Review%2020180518_fichiers/IC_full_before.png" class="pager" width="50%">
+			<script type="text/javascript">
+				pager.link('#clear',{
+					'Stage|stage':['Full Mezzanine Before|full_before','Full Mezzanine After|full_after',
+						'Heatsink Before|part_before','Heatsink After (holes only)|part_after',
+						'Heatsink After (with parts)|part_after_rf']
+				},
+
+					function(params){
+						return 'IC_'+params['stage']+'.png';
+					}
+				);
+				pager.setparams({'Stage':'Lower'})
+			</script>
+			<figcaption>
+			The IC mezzanine has one side of the MCE replaced with an RF heatsink. This
+			heatsink houses two pairs of bulkheads (connecting to 4K and UC), the circulator,
+			and the directional coupler. We have chosen to keep everything on one side rather
+			than routing across the middle of the mezzanine where the heatstrap is.
+			</figcaption>
+
+			</figure>
+
+
+		<p> The RF line comes in from the 4K stage and goes through the directional
+		coupler on the way in before being passed up to the UC stage. Coming back, it
+		goes through the circulator before being passed back down to the 4K stage. A
+		schematic of a possible wiring route with the direction of the signal is shown
+		in Figure 4.7. This route includes the bulkhead mount/heatsink that connects to
+		right angles. If we eliminate these in favor of semirigid copper, the copper
+		coaxes would take the place of the cable + bulkhead + right angle and terminate
+		in a female connector. The bulkhead mount would then be slotted to provide some
+		heatsinking for the coaxes.  
+		</p>
+
+		<figure>
+		<img src="Keck%20umux%20Design%20Review%2020180518_fichiers/ic_mezz_wiring2.jpg" width="50%">
+			<figcaption> A rough schematic of a possible wiring scheme for the IC
+			mezzanine. Each of these wires is at least 6cm in length, which should
+			be enough length to work with. The input signal heading to the UC stage
+			is given in blue, while the output signal heading down to 4K is shown
+			in green.
+		</figcaption></figure>
+
+		<p> The RF heatsink consists of two pairs of RF lines, one coming up from 4K and
+		the other going up to the UC stage. The coaxes line up with the hole in the sub-K
+		space, where the MCE cables used to run. See Figure 4.8. We will probably have to
+		add some tape in order to guard the coaxes, but I expect the space is plenty
+		large.
+		</p>
+
+		<figure>
+		<img src="Keck%20umux%20Design%20Review%2020180518_fichiers/ic_mezz_rf.png" width="50%">
+			<figcaption> A view of the RF connection ports on the IC mezzanine. The
+			upward-facing connectors on the IC bulkhead mount line up with the hole 
+			in the sub-K space that previously housed the MCE cables. If we use 
+			copper rather than CN/NbTi here, then the bulkhead/right angle will be
+			replaced by a prebent semi-rigid copper that terminates in a female 
+			connector.
+			</figcaption>
+		</figure>
+
+		<figure>
+		<img src="Keck%20umux%20Design%20Review%2020180518_fichiers/wirelength_UCb_2.png" width="50%">
+			<figcaption> A cutaway showing splines for coax routing coming down from 
+			the FPU and connecting to the IC mezzanine. The coaxes run through the 
+			hole previously housing MCE cables.
+			</figcaption>
+		</figure>
+
+
+		<center>
+		<table style="width:50%" border="1,">
+		<tbody><tr>
+		  <td><b>Part Name</b></td>
+		  <td><b>Description</b></td>
+		</tr>
+		<tr>
+		  <td> IC RF heatsink plate<!--sink_plate_circulator_dircoup--></td>
+		  <td> New heatsink replacing the MCE sink plate. Includes holes for mounting
+			  the circulator and directional coupler.</td>
+		</tr>
+		<tr>
+		  <td> IC RF heatsink wafer<!--sink_wafer_circulator_dircoup--></td>
+		  <td> New heatsink replacing the MCE sink wafer. The circulator and directional
+			  coupler screw in from the bottom in this design. The hole
+			  that Tekdata cables used to run through is present on the wafer
+			  and will house the coaxes to/from the UC stage. </td>
+		</tr>
+		<tr>
+		  <td> IC bulkhead mount <!--IC_bulkhead_heatsink--></td>
+		  <td> Includes two pairs of RF lines with right angle adapters. One pair
+			  connects to UC, while the other connects to IC.</td>
+		</tr>
+		</tbody></table>
+		</center>
+
+
+		<h4>Note</h4> The circulator and directional coupler are screwed in from below,
+		which means the full IC mezzanine must be undone in order to remove or replace
+		them. Do we want to design an adapter plate instead? This could improve heat
+		sinking but would be trickier to fit. 
+
+
+		</section>
+
+	<section>
+	<h2>Open Questions</h2>
+	These have been compiled from above, plus some additional notes/areas to consider.
+
+	<ul style="list-style-type:disc">
+	  <li>300K stage: How to best design vacuum feedthrough?</li>
+	  <li>50K stage: How to power the 50K amplifier? Current plan is running wires back 
+		  from 4K. </li>
+	  <li>50K stage: What is thermal loading budget? How does that trade off with 
+		  ease of installation for 50K-4K wiring?</li>
+	  <li>4K stage: Do we want to move the feedthrough around to make the 50K/4K wiring
+		  easier? How does that trade off with 4K stage wiring?</li>
+	  <li>4K stage: If we want to run wires back to 50K for the amplifier, how to make 
+		  a filtered connection?</li>
+	  <li>IC mezz: Is there a better way to install/heatsink the RF components? Should 
+		  they be clamped down from above rather than screwed in from below?</li>
+	  <li>IC mezz: What do we need to keep in mind for routing coaxes through the hole 
+		  in the sub-K stage?</li>
+	</ul>
+	</section>
+
+	
+
+</body></html>

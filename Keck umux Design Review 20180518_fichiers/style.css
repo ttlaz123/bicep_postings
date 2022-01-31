@@ -1,0 +1,85 @@
+
+body{
+	counter-reset:section;
+}
+
+
+section{
+	text-align:left;
+	counter-increment:section;
+	counter-reset:fig;
+	counter-reset:eq;
+	border-bottom:2px ridge gray;
+}
+
+
+figure::before{
+	font-family:Arial;
+	content:'Figure:' counter(section)'.'counter(fig);
+	padding-right:50px;
+	text-decoration:underline;
+	margin-top:10px;
+	display: block;
+}
+
+
+figure{
+	margin-top:10px;
+	padding-bottom:10px;
+	text-align:center;
+	counter-increment:fig;
+	background-color:white;
+	border:2px ridge gray;
+	border-radius: 2px;
+}
+
+figcaption::before{
+	content:'Figure:' counter(section)'.'counter(fig) ' ';
+}
+
+figcaption{
+	text-align:left;
+	margin-top:10px;
+	font-size:14px;
+	margin-left:15%;
+	margin-right:15%;
+}
+
+#plot{
+	width:1000px;
+	height:500px;
+}
+
+#beammap{
+	width:500px;
+	height:500px;
+}
+
+
+
+body{
+	background-color:#f5f5ef;
+	margin-left:15%;
+	margin-right:15%;
+
+}
+
+
+h2::before{
+	content:counter(section) ': ';
+}
+
+
+#title{
+	width:50%;
+	height:100px;
+	margin:auto;
+	border-bottom:4px ridge gray;
+	text-align:center;
+}
+
+
+p{
+	text-align:left;
+}
+
