@@ -1238,19 +1238,20 @@
         <subsection>
             <h3>Assembly Procedure</h3>
             <figure>
-                <img alt="Assembly procedure for warm stages" id="300k" src="#" />
+                <img alt="Assembly procedure for warm stages" id="warm_overall" src="#" />
                 <figcaption>
                     assembly procedure instructions
                 </figcaption>
                 <script type="text/javascript">
-                    pager.link("#300k",
+                    pager.link("#warm_overall",
                         {
-                            'Assembly step|n': ['Overall RF Chain|rf_routing_schematic',
-                                'Warm Stage|warm_stage_schematic_wlegend',
-                                'SubK Stage|subk_stage_schematic_wlegend'],
+                            'View Angle|v': ['Top|top',
+                                'Side|side'],
+                            'Completion|s': ['Before Assembly|before',
+                                'After Assembly|finished'],
                         },
                         function (params) {
-                            name = "figs/300K/" + params.n + ".PNG"
+                            name = "figs/warm_stage/" + 'warm_stages_' + params.s + '_' + params.v + ".png"
                             return name
                         })
 
@@ -1519,13 +1520,17 @@
 
 
     <hr>
-    <section><h2>Open Questions</h2>
+    <section>
+        <h2>Open Questions</h2>
 
-        make a list or something</section>
+        make a list or something
+    </section>
 
-        <section><h2>Appendix</h2>
+    <section>
+        <h2>Appendix</h2>
 
-            add other stuff</section>
-    
+        add other stuff
+    </section>
+
 
 </body>
