@@ -62,6 +62,7 @@
                             'SubK Stage|subk_stage_schematic_wlegend'],
                     },
                     function (params) {
+                        console.log('params' + params)
                         name = "figs/schematics/" + params.n + ".PNG"
                         return name
                     })
@@ -1371,6 +1372,7 @@
                                 'SubK Stage|subk_stage_schematic_wlegend'],
                         },
                         function (params) {
+                            console.log('params:' + params)
                             name = "figs/" + params.n + ".PNG"
                             return name
                         })
