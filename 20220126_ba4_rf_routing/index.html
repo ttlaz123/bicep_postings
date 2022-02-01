@@ -57,13 +57,13 @@
             <script type="text/javascript">
                 pager.link("#rfscheme",
                     {
-                        'Schematic Stages|n': ['Overall RF Chain|rf_routing_schematic',
+                        'Schematic Stages|sc': ['Overall RF Chain|rf_routing_schematic',
                             'Warm Stage|warm_stage_schematic_wlegend',
                             'SubK Stage|subk_stage_schematic_wlegend'],
                     },
                     function (params) {
                         console.log('params' + params)
-                        name = "figs/schematics/" + params.n + ".PNG"
+                        name = "figs/schematics/" + params.sc + ".png"
                         return name
                     })
 
@@ -423,13 +423,13 @@
                 <script type="text/javascript">
                     pager.link("#stage_4k",
                         {
-                            'Assembly step|n': ['4K feedthrough|4K_feedthrough',
+                            'Assembly step|a': ['4K feedthrough|4K_feedthrough',
                                 'Insert Bulkheads|4K_feedthrough_insertbulk',
                                 '4K Feedthrough with Bulkheads|4K_feedthrough_wbulk',
                                 '4K Feedthrough with DC connectors|4K_feedthrough_wdc'],
                         },
                         function (params) {
-                            name = "figs/4k/" + params.n + ".PNG"
+                            name = "figs/4k/" + params.a + ".PNG"
                             return name
                         })
 
@@ -444,7 +444,7 @@
                 <script type="text/javascript">
                     pager.link("#stage_50k",
                         {
-                            'Assembly step|n': 
+                            'Assembly step|b': 
                             ['50K feedthrough|50K_feedthrough_modded',
                             'Insert F to F bulkheads|50K_feedthrough_insertffbulk',
                             '50K feedthrough with bulkheads|50K_feedthrough_wffbulk',
@@ -453,7 +453,7 @@
                             'Attach Attenuator Input Chain|50K_feedthrough_insertatten'],
                         },
                         function (params) {
-                            name = "figs/50K/" + params.n + ".PNG"
+                            name = "figs/50K/" + params.b + ".PNG"
                             return name
                         })
 
@@ -468,13 +468,13 @@
                 <script type="text/javascript">
                     pager.link("#stage_50k4k",
                         {
-                            'Assembly step|n': ['Attach Assembly Rod|50K_feedthrough_insertrod',
+                            'Assembly step|c': ['Attach Assembly Rod|50K_feedthrough_insertrod',
                                 'Attach 4K feedthrough to Assembly Rod|50K_feedthrough_insert4k',
                                 'Align and Connect the Remaining Cables|50K_and_4K_feedthroughs',
                                 'Insert Assembly onto the warm stages|insert_feedthroughs_50k4k'],
                         },
                         function (params) {
-                            name = "figs/50k4k/" + params.n + ".PNG"
+                            name = "figs/50k4k/" + params.c + ".PNG"
                             return name
                         })
 
@@ -489,7 +489,7 @@
                 <script type="text/javascript">
                     pager.link("#stage_300k",
                         {
-                            'Assembly step|n': ['300K feedthrough|300K_modded',
+                            'Assembly step|d': ['300K feedthrough|300K_modded',
                                 'Insert Bulkheads|300K_insertbulk',
                                 'Attach Cables|300K_insertcables',
                                 '300K feedthrough with cables|300K_side',
@@ -497,7 +497,7 @@
                                 'Tighten Cables onto 50K feedthrough|tighten_300k_cables'],
                         },
                         function (params) {
-                            name = "figs/300k/" + params.n + ".PNG"
+                            name = "figs/300k/" + params.d + ".PNG"
                             return name
                         })
 
@@ -515,7 +515,7 @@
             <h3>300K Stage</h3>
             <p>just change feedthroughs</p>
             <figure>
-                <img alt="Modifications to the 300K stage" id="300k" src="#" />
+                <img alt="Modifications to the 300K stage" id="mods_300k" src="#" />
                 <figcaption>
                     Proposed RF chain schematics. The names of each component is colorcoded according to the legend
                     on the right. Cable components have their names on the left side, while the other RF components
@@ -523,14 +523,13 @@
                     table(s) below.
                 </figcaption>
                 <script type="text/javascript">
-                    pager.link("#300k",
-                        {
-                            'Changes|n': ['Overall RF Chain|rf_routing_schematic',
-                                'Warm Stage|warm_stage_schematic_wlegend',
-                                'SubK Stage|subk_stage_schematic_wlegend'],
+                    pager.link("#mods_300k",
+                    {
+                            'Changes|c300': ['300K Feedthrough Before Modifications|300K_before',
+                                '300K Feedthrough After Modifications|300K_modded'],
                         },
                         function (params) {
-                            name = "figs/" + params.n + ".PNG"
+                            name = "figs/modifications/" + params.c300 + ".PNG"
                             return name
                         })
 
@@ -542,7 +541,7 @@
             <h3>50K Stage</h3>
             <p>just change feedthroughs</p>
             <figure>
-                <img alt="Modifications to the 50K stage" id="50k" src="#" />
+                <img alt="Modifications to the 50K stage" id="mods_50k" src="#" />
                 <figcaption>
                     Proposed RF chain schematics. The names of each component is colorcoded according to the legend
                     on the right. Cable components have their names on the left side, while the other RF components
@@ -550,15 +549,13 @@
                     table(s) below.
                 </figcaption>
                 <script type="text/javascript">
-                    pager.link("#50k",
+                    pager.link("#mods_50k",
                         {
-                            'Changes|n': ['Overall RF Chain|rf_routing_schematic',
-                                'Warm Stage|warm_stage_schematic_wlegend',
-                                'SubK Stage|subk_stage_schematic_wlegend'],
+                            'Changes|c50': ['50K Feedthrough Before Modifications|50K_feedthrough_before',
+                                '50K Feedthrough Before Modifications|50K_feedthrough_modded'],
                         },
                         function (params) {
-                            console.log('params:' + params)
-                            name = "figs/" + params.n + ".PNG"
+                            name = "figs/modifications/" + params.c50 + ".PNG"
                             return name
                         })
 
@@ -566,11 +563,12 @@
 
             </figure>
         </subsection>
+        
         <subsection>
             <h3>4K Base Stage</h3>
             <p>cut whole in baseplate, add feedthrough</p>
             <figure>
-                <img alt="Modifications to the 4K base stage" id="4kb" src="#" />
+                <img alt="Modifications to the 4K base stage" id="mods_4kb" src="#" />
                 <figcaption>
                     Proposed RF chain schematics. The names of each component is colorcoded according to the legend
                     on the right. Cable components have their names on the left side, while the other RF components
@@ -578,14 +576,14 @@
                     table(s) below.
                 </figcaption>
                 <script type="text/javascript">
-                    pager.link("#4kb",
+                    pager.link("#mods_4kb",
                         {
-                            'Changes|n': ['Overall RF Chain|rf_routing_schematic',
-                                'Warm Stage|warm_stage_schematic_wlegend',
-                                'SubK Stage|subk_stage_schematic_wlegend'],
+                            'Changes|c4': ['4K Base Plate Before Modifications|4K_before',
+                                '4K Base Plate After Modifications|4K_modded',
+                                'New 4K Base Plate Feedthrough|4K_feedthrough'],
                         },
                         function (params) {
-                            name = "figs/" + params.n + ".PNG"
+                            name = "figs/modifications/" + params.c4 + ".PNG"
                             return name
                         })
 
@@ -597,7 +595,7 @@
             <h3>4K Stage</h3>
             <p>cut some holes, make brackets</p>
             <figure>
-                <img alt="Modifications to the 4K stage" id="4k" src="#" />
+                <img alt="Modifications to the 4K stage" id="mods_4k" src="#" />
                 <figcaption>
                     Proposed RF chain schematics. The names of each component is colorcoded according to the legend
                     on the right. Cable components have their names on the left side, while the other RF components
@@ -605,16 +603,16 @@
                     table(s) below.
                 </figcaption>
                 <script type="text/javascript">
-                    pager.link("#4k",
-                        {
-                            'Changes|n': ['Overall RF Chain|rf_routing_schematic',
-                                'Warm Stage|warm_stage_schematic_wlegend',
-                                'SubK Stage|subk_stage_schematic_wlegend'],
+                    pager.link("#mods_4k",
+                    {
+                            'Changes|c300': ['4K Upper Plate Before Modifications|4k_upper_old',
+                                '4K Upper Plate After Modifications|4k_upper_modded'],
                         },
                         function (params) {
-                            name = "figs/" + params.n + ".PNG"
+                            name = "figs/mod_cold/" + params.c4 + ".PNG"
                             return name
                         })
+
 
                 </script>
 
@@ -624,7 +622,7 @@
             <h3>2K Stage</h3>
             <p>cut some holes</p>
             <figure>
-                <img alt="Modifications to the 2K stage" id="2k" src="#" />
+                <img alt="Modifications to the 2K stage" id="mods_2k" src="#" />
                 <figcaption>
                     Proposed RF chain schematics. The names of each component is colorcoded according to the legend
                     on the right. Cable components have their names on the left side, while the other RF components
@@ -632,16 +630,16 @@
                     table(s) below.
                 </figcaption>
                 <script type="text/javascript">
-                    pager.link("#2k",
-                        {
-                            'Changes|n': ['Overall RF Chain|rf_routing_schematic',
-                                'Warm Stage|warm_stage_schematic_wlegend',
-                                'SubK Stage|subk_stage_schematic_wlegend'],
+                    pager.link("#mods_2k",
+                    {
+                            'Changes|c300': ['300K Feedthrough Before Modifications|300K_before',
+                                '300K Feedthrough Before Modifications|300K_modded'],
                         },
                         function (params) {
-                            name = "figs/" + params.n + ".PNG"
+                            name = "figs/modifications/" + params.c300 + ".PNG"
                             return name
                         })
+
 
                 </script>
 
@@ -660,15 +658,15 @@
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#ic",
-                        {
-                            'Changes|n': ['Overall RF Chain|rf_routing_schematic',
-                                'Warm Stage|warm_stage_schematic_wlegend',
-                                'SubK Stage|subk_stage_schematic_wlegend'],
+                    {
+                            'Changes|c300': ['300K Feedthrough Before Modifications|300K_before',
+                                '300K Feedthrough Before Modifications|300K_modded'],
                         },
                         function (params) {
-                            name = "figs/" + params.n + ".PNG"
+                            name = "figs/modifications/" + params.c300 + ".PNG"
                             return name
                         })
+
 
                 </script>
 
@@ -687,15 +685,15 @@
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#uc",
-                        {
-                            'Changes|n': ['Overall RF Chain|rf_routing_schematic',
-                                'Warm Stage|warm_stage_schematic_wlegend',
-                                'SubK Stage|subk_stage_schematic_wlegend'],
+                    {
+                            'Changes|c300': ['300K Feedthrough Before Modifications|300K_before',
+                                '300K Feedthrough Before Modifications|300K_modded'],
                         },
                         function (params) {
-                            name = "figs/" + params.n + ".PNG"
+                            name = "figs/modifications/" + params.c300 + ".PNG"
                             return name
                         })
+
 
                 </script>
 
