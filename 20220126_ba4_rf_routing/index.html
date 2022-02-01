@@ -461,7 +461,7 @@
 
             </figure>
             <figure>
-                <img alt="Assembly procedure for warm stages" id="stage_50k4k" src="#" />
+                <img alt="Assembly procedure for inserting 50K and 4K feedthroughs" id="stage_50k4k" src="#" />
                 <figcaption>
                     assembly procedure instructions
                 </figcaption>
@@ -475,6 +475,29 @@
                         },
                         function (params) {
                             name = "figs/50k4k/" + params.n + ".PNG"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+            <figure>
+                <img alt="Assembly procedure for 300K stage" id="stage_300k" src="#" />
+                <figcaption>
+                    assembly procedure instructions
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#stage_300k",
+                        {
+                            'Assembly step|n': ['300K feedthrough|300K_modded',
+                                'Insert Bulkheads|300K_insertbulk',
+                                'Attach Cables|300K_insertcables',
+                                '300K feedthrough with cables|300K_side',
+                                'Insert feedthrough into 300K bucket|insert_300K',
+                                'Tighten Cables onto 50K feedthrough|tighten_300k_cables'],
+                        },
+                        function (params) {
+                            name = "figs/300k/" + params.n + ".PNG"
                             return name
                         })
 
