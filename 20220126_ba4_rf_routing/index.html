@@ -461,19 +461,20 @@
 
             </figure>
             <figure>
-                <img alt="Assembly procedure for warm stages" id="300k" src="#" />
+                <img alt="Assembly procedure for warm stages" id="stage_50k4k" src="#" />
                 <figcaption>
                     assembly procedure instructions
                 </figcaption>
                 <script type="text/javascript">
-                    pager.link("#300k",
+                    pager.link("#stage_50k4k",
                         {
-                            'Assembly step|n': ['Overall RF Chain|rf_routing_schematic',
-                                'Warm Stage|warm_stage_schematic_wlegend',
-                                'SubK Stage|subk_stage_schematic_wlegend'],
+                            'Assembly step|n': ['Attach Assembly Rod|50K_feedthrough_insertrod',
+                                'Attach 4K feedthrough to Assembly Rod|50K_feedthrough_insert4k',
+                                'Align and Connect the Remaining Cables|50K_and_4K_feedthroughs',
+                                'Insert Assembly onto the warm stages|insert_feedthroughs_50k4k'],
                         },
                         function (params) {
-                            name = "figs/300K/" + params.n + ".PNG"
+                            name = "figs/50k4k/" + params.n + ".PNG"
                             return name
                         })
 
