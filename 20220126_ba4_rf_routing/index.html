@@ -391,9 +391,9 @@
 
     <section>
         <h2>Mechanical Considerations</h2>
-        <p>talk about assembly procedure</p>
+        <p>still working on modal analysis, talk about assembly procedure</p>
         <subsection>
-            <h3>Assembly Procedure</h3>
+            <h3>Warm Stage Assembly Procedure</h3>
             <figure>
                 <img alt="Overall assembly procedure for warm stages" id="warm_overall" src="#" />
                 <figcaption>
@@ -505,6 +505,32 @@
 
             </figure>
             <p>test</p>
+        </subsection>
+        <subsection>
+            <h3>Cold Stage Components</h3>
+            <figure>
+                <img alt="Cold Stages with Cables" id="cold_comps" src="#" />
+                <figcaption>
+                    assembly procedure instructions
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#cold_comps",
+                        {
+                            'SubK Stage|cc': 
+                            ['4K Upper Stage|4k_upper_wcables',
+                                '2K Stage|2k_wcables',
+                                'IC Stage|ic_wcables',
+                                'UC Stage|uc_wbulk',
+                                'All SubK|subk'],
+                        },
+                        function (params) {
+                            name = "figs/cold_comp/" + params.cc + ".PNG"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
         </subsection>
     </section>
 
