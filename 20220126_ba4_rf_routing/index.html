@@ -578,12 +578,12 @@
                 <script type="text/javascript">
                     pager.link("#mods_4kb",
                         {
-                            'Changes|c4': ['4K Base Plate Before Modifications|4K_before',
+                            'Changes|c4b': ['4K Base Plate Before Modifications|4K_before',
                                 '4K Base Plate After Modifications|4K_modded',
                                 'New 4K Base Plate Feedthrough|4K_feedthrough'],
                         },
                         function (params) {
-                            name = "figs/modifications/" + params.c4 + ".PNG"
+                            name = "figs/modifications/" + params.c4b + ".PNG"
                             return name
                         })
 
@@ -605,7 +605,7 @@
                 <script type="text/javascript">
                     pager.link("#mods_4k",
                     {
-                            'Changes|c300': ['4K Upper Plate Before Modifications|4k_upper_old',
+                            'Changes|c4': ['4K Upper Plate Before Modifications|4k_upper_old',
                                 '4K Upper Plate After Modifications|4k_upper_modded'],
                         },
                         function (params) {
@@ -632,11 +632,11 @@
                 <script type="text/javascript">
                     pager.link("#mods_2k",
                     {
-                            'Changes|c300': ['300K Feedthrough Before Modifications|300K_before',
-                                '300K Feedthrough Before Modifications|300K_modded'],
+                            'Changes|c2': ['2K Plate Before Modifications|2k_old',
+                                '2K Plate After Modifications|2k_modded'],
                         },
                         function (params) {
-                            name = "figs/modifications/" + params.c300 + ".PNG"
+                            name = "figs/mod_cold/" + params.c2 + ".PNG"
                             return name
                         })
 
@@ -649,7 +649,7 @@
             <h3>IC Stage</h3>
             <p>cut some holes, make mounts</p>
             <figure>
-                <img alt="Modifications to the IC stage" id="ic" src="#" />
+                <img alt="Modifications to the IC stage" id="mods_ic" src="#" />
                 <figcaption>
                     Proposed RF chain schematics. The names of each component is colorcoded according to the legend
                     on the right. Cable components have their names on the left side, while the other RF components
@@ -657,13 +657,13 @@
                     table(s) below.
                 </figcaption>
                 <script type="text/javascript">
-                    pager.link("#ic",
+                    pager.link("#mods_ic",
                     {
-                            'Changes|c300': ['300K Feedthrough Before Modifications|300K_before',
-                                '300K Feedthrough Before Modifications|300K_modded'],
+                            'Changes|ci': ['IC Plate Before Modifications|ic_old_bot',
+                                'IC Plate After Modifications|ic_modded_bot'],
                         },
                         function (params) {
-                            name = "figs/modifications/" + params.c300 + ".PNG"
+                            name = "figs/mod_cold/" + params.ci + ".PNG"
                             return name
                         })
 
@@ -676,7 +676,7 @@
             <h3>UC Stage</h3>
             <p>cut some holes, make room for housekeeping</p>
             <figure>
-                <img alt="Modifications to the UC stage" id="uc" src="#" />
+                <img alt="Modifications to the UC stage" id="mods_uc" src="#" />
                 <figcaption>
                     Proposed RF chain schematics. The names of each component is colorcoded according to the legend
                     on the right. Cable components have their names on the left side, while the other RF components
@@ -684,13 +684,13 @@
                     table(s) below.
                 </figcaption>
                 <script type="text/javascript">
-                    pager.link("#uc",
+                    pager.link("#mods_uc",
                     {
-                            'Changes|c300': ['300K Feedthrough Before Modifications|300K_before',
-                                '300K Feedthrough Before Modifications|300K_modded'],
+                            'Changes|cu': ['UC Plate Before Modifications|uc_old',
+                                'UC Plate After Modifications|uc_modded'],
                         },
                         function (params) {
-                            name = "figs/modifications/" + params.c300 + ".PNG"
+                            name = "figs/mod_cold/" + params.cu + ".PNG"
                             return name
                         })
 
