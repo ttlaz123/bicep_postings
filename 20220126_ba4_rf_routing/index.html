@@ -334,6 +334,14 @@
                 </tbody>
             </table>
         </center>
+        <subsection>
+            <h3>
+                Alternative Designs
+            </h3>
+            <p>
+                might go with ardent or delft
+            </p>
+        </subsection>
     </section>
     <section>
         <h2>Electrical Considerations</h2>
@@ -344,7 +352,8 @@
         </p>
 
         <p>The input power of the probe tones are at approximately -32 dBm per tone, which corresponds to about 0.63
-            \(\mu W\). The resonators at the focal plane operate optimally with -75 dBm tones, so we use attenuators to
+            \( \mu W \). The resonators at the focal plane operate optimally with -75 dBm tones, so we use attenuators
+            to
             decrease the power at every stage of the readout chain. Spreading out the attenuators over multiple stages
             provides a larger overall thermal load on the cryostage stages, but having a large attenuation at the warmer
             stages risks the warmer thermal noise becoming a significant franction of the overall power.
@@ -359,11 +368,105 @@
             acts as a DC block, and like the directional coupler, also provides additional heatsinking. Tests are
             undergoing to determine whether a heatsunk attenuator or DC block can serve the same purpose. </p>
 
+        <p>
+            The thermal noise can be modeled by the Johnson-Nyquist noise given by the following:
+        </p>
+        <centering>\(
+            N=k_B T\Delta f
+            \) </centering>
 
+        <p>
+            where \(N\) is the noise power, \(k_B\) is the Boltzman constant, \(T\) is temperature, and \(\Delta f\)
+            is the bandwidth. We can convert the noise power into units \(pA \) per \( \sqrt{Hz} \) with the given 50
+            ohm
+            impedance. We compare this to the power of the RF tones to determine a signal-to-noise ratio. The
+            superconducting cables should not have any resistance, but the
+            impedance of other non-superconducting components might cause Johnson noise.
+        </p>
+        <p>
+            Below is a table summarizing the power of the tones at particular stages, and more detailed calculations are
+            in the appendix.
+
+        </p>
+        <center>
+            <table style="width:100%" border="1,">
+                <tbody>
+                    <tr>
+                        <td><b>Selected Cryostat Stage</b></td>
+                        <td><b>Signal Power per Tone (dBm)</b></td>
+                        <td><b>Noise @ 5 GHz (dBm)</b></td>
+                    </tr>
+                    <tr>
+                        <td>300K</td>
+                        <td>-32</td>
+                        <td>-76</td>
+                    </tr>
+                    <tr>
+                        <td>4K</td>
+                        <td>-48</td>
+                        <td>-95</td>
+                    </tr>
+                    <tr>
+                        <td>0.35K</td>
+                        <td>-71</td>
+                        <td>-107</td>
+                    </tr>
+                    <tr>
+                        <td>Detectors</td>
+                        <td>-75</td>
+                        <td>-107</td>
+                    </tr>
+                    <tr>
+                        <td>0.35K</td>
+                        <td>-86</td>
+                        <td>-107</td>
+                    </tr>
+                    <tr>
+                        <td>4K</td>
+                        <td>-86</td>
+                        <td>-95</td>
+                    </tr>
+                    <tr>
+                        <td>300K</td>
+                        <td>-25</td>
+                        <td>-76</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
     </section>
     <section>
         <h2>Thermal Considerations</h2>
-        <p>write down some equations or something</p>
+        <p>To properly operate, the detector modules need to be at approximately 0.25K, which ultimately determines the
+            thermal budget for each stage of the cryostat. The two main forms of thermal loading in our RF chain are
+            conductive and
+            radiative. Conduction occurs when a warmer temperature physically transfers energy to a cooler stage, and
+            for our RF chain, the cables provide physical connections. The conduction can be approximated with the
+            following equation: </p>
+        <p>
+            \( P = k \frac{\Delta T}{L}\)
+        </p>
+        <p>
+            where \(P\) is the power transfered, \(k\) is the thermal conductivity, \(\Delta T\) is the difference in
+            temperature between the connected stages, and \(L\) is the length of the cables. Note that the \(k\) is the
+            thermal conductivity in units given by the Coax-Co cable catalogues. The thermal conductivity depends on
+            temperature, increasing with increasing temperature. We use the more pessimistic approximation by assuming
+            the warmer thermal conductivity for each connection between the temperature stages.
+        </p>
+        <p>
+            Dissipative loading occurs when the resistance of the cables dissipate the power of the signal as it
+            travels. Again, we produce the pessimistic estimates by assuming all the power is dissipated onto the colder
+            stage. We also assume that all reflections caused by impedance mismatches are eventually dissipated, another
+            overestimate of the thermal loading. The amount of dissipation is calculated by subtracting the input power
+            from the output power at each component.
+        </p>
+        <p>
+            Below is a summary of all the thermal loading in the RF chain. For a more detailed calculation, see the
+            appendix. The maximum allowed loadings are recovered from load curves tested on the other BA receivers. We
+            estimate approximately an additional 6 \(uW\) of radiative power from the sky that hits the 0.25K stage,
+            which means the true maximum allowed loading for the coldest stage is closer to 9 \(u W\) rather than 15
+            \(uW\).
+        </p>
         <center>
             <table style="width:100%" border="1,">
                 <tbody>
@@ -375,15 +478,6 @@
                         <td><b>Total DC (W)</b></td>
                         <td><b>Total Thermal Loading (W)</b></td>
                         <td><b>Maximum Allowed Loading (W)</b></td>
-                    </tr>
-                    <tr>
-                        <td>300K</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>None</td>
                     </tr>
                     <tr>
                         <td>50K</td>
