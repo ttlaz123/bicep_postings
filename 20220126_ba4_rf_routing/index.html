@@ -30,29 +30,58 @@
 
     <hr>
 
-    <p>To readout the detector signal, the fourth receiver of the BICEP Array (BA4) is planning to implement
-        frequency domain multiplexing as opposed to the time domain multiplexing currently in use for the other
-        three receivers. As a result, it is necessary to install semi-rigid coaxial cables over the previously
-        flexible MCE cables. Here, we discuss the thermal, electrical, and mechanical constraints of our design
-        problem and present the first iteration of the RF cable routing for the warm stages. </p>
-
-    <hr>
 
     <section>
         <h2>Introduction</h2>
-        <p>intro intro intro stuff</p>
+        <p>The fourth receiver of the BICEP Array (BA4) plans to have approximately 20000 detectors in its receiver.
+            This
+            significant increase in detector count imposes unique challenges to the readout of the detector signnal,
+            leading
+            to designs different from the previous BICEP Array readout systems. </p>
+
+
+
+
+        <p>Because BA4 consists of more detectors than the other BA receivers, there is a much higher required
+            multiplexing factor to mechanically fit the readout system into the cryostat. A multiplexing factor of 1000
+            would require about 24 readout chains, which leads to a total of 48 channels, with half of the lines being
+            input probe tones provided by SMuRF electronics, and the other half being output modulations on those probe
+            tones.
+        </p>
+        <p>Here, we discuss the thermal,
+            electrical,
+            and mechanical constraints of our design problem and present the first iteration of the RF cable routing
+            design,
+            primarily consisting of semi-rigid coaxial cables.
+        </p>
+
+
+
     </section>
 
     <section>
         <h2>Overall Design</h2>
-        <p>talk about stuff</p>
+        <p>The overall RF chain schematic is similar to the BKumux readout chain. We have stainless steel in the warm
+            stages as
+            they are a relatively cheap material while retaining an appropriate level of signal integrity and minimal
+            thermal conductance. The colder stages require Cupronickel for the input lines to further decrease the
+            thermal load, while the output lines require superconducting Niobium Titanium to preserve the integrity of
+            the signal. </p>
+        <p>To decrease the input probe tone to the necessary power level while preventing the signals from succumbing to
+            thermal noise, several attenuators are spread throughout the RF chain. DC blocks are scattered throughout
+            the chain to both remove unwanted voltage bias while also providing thermal breaks for the inner conductor
+            of the coaxial cables. Amplifiers are placed on the 4K and 50K stage so that the output signal is
+            discernable once it reaches the room temperature electronics. Various other components like directional
+            couplers, bias tees, and circulators are currently included in the design, but pending tests to determine
+            their impact on the overall readout system, these components may be removed. </p>
         <figure>
             <img alt="RF Cable Schematics" id="rfscheme" src="#" />
             <figcaption>
                 Proposed RF chain schematics. The names of each component is colorcoded according to the legend
                 on the right. Cable components have their names on the left side, while the other RF components
-                are named on the right side of the chain. More thermal and electrical details are given in the
-                table(s) below.
+                are named on the right side of the chain. The components are color-coded with red cables, blue
+                attenuators and DC blocks, orange amplifiers, and pruple miscellaneous components. More thermal and
+                electrical details are given in the table(s) below.
             </figcaption>
             <script type="text/javascript">
                 pager.link("#rfscheme",
@@ -71,7 +100,8 @@
 
         </figure>
 
-        <p> some more descriptive text.
+        <p> Below is a table that summarizes the material and order information for each component of the RF chain.
+            Possible modifications are included in the notes column.
         </p>
         <center>
             <table style="width:100%" border="1,">
@@ -90,7 +120,8 @@
                         <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
                                 Coax Co.</a></td>
                         <td>Will likely go with a different company like RF Coax or Intelliconnect for cheaper cables.
-                            Still deciding whether to use Ardent's multicoax TR cables for warm stages.</td>
+                            Still deciding whether to use Ardent's multicoax TR cables or Delft Circuit's multichannel
+                            strips for warm stages.</td>
                     </tr>
                     <tr>
                         <td><span style="color: blue">50K_atten</span></td>
@@ -126,7 +157,7 @@
                         <td>Cri/oFlex 2</td>
                         <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
                                 Delft Circuits</a></td>
-                        <td>Still need to talk with company.</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td><span style="color: blue">4K_atten</span></td>
@@ -257,7 +288,7 @@
                         <td>Cri/oFlex 2</td>
                         <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
                                 Delft Circuits</a></td>
-                        <td>Still need to talk with company.</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td><span style="color: red">4K_to_4Kbase</span></td>
@@ -265,7 +296,7 @@
                         <td>Cri/oFlex 2</td>
                         <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
                                 Delft Circuits</a></td>
-                        <td>Still need to talk with company.</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td><span style="color: blue">4K_base_dcblock_out</span></td>
@@ -306,8 +337,29 @@
     </section>
     <section>
         <h2>Electrical Considerations</h2>
-        <p>talk about noise and stuff</p>
-        
+        <p> The electrical considerations include ensuring that the input probe tones are at an appropriate power level
+            once they reach the focal plane for optimal resonance with the SQUID resonators, optimizing the
+            signal-to-noise ratio, and minimizing reflections and impedance mismatches.
+
+        </p>
+
+        <p>The input power of the probe tones are at approximately -32 dBm per tone, which corresponds to about 0.63
+            \(\mu W\). The resonators at the focal plane operate optimally with -75 dBm tones, so we use attenuators to
+            decrease the power at every stage of the readout chain. Spreading out the attenuators over multiple stages
+            provides a larger overall thermal load on the cryostage stages, but having a large attenuation at the warmer
+            stages risks the warmer thermal noise becoming a significant franction of the overall power.
+        </p>
+        <p>Various other components of the RF chain also produce attenuation. The RF cables have some attenuation
+            depending on their materials and are proportional to the length of the cables. Other components like the DC
+            blocks and bulkheads cause some reflections due to impedance mismatches, and they are upperbounded by the
+            maximum VSWR of the components. </p>
+        <p>The directional coupler acts as an attenuator with additional heatsinking;
+            the electrical signal is inductively carried forward, so there is no physical connection between the inner
+            connductors of the coaxial cables of the warmer and colder side of the directional coupler. The Bias Tee
+            acts as a DC block, and like the directional coupler, also provides additional heatsinking. Tests are
+            undergoing to determine whether a heatsunk attenuator or DC block can serve the same purpose. </p>
+
+
     </section>
     <section>
         <h2>Thermal Considerations</h2>
@@ -444,13 +496,13 @@
                 <script type="text/javascript">
                     pager.link("#stage_50k",
                         {
-                            'Assembly step|b': 
-                            ['50K feedthrough|50K_feedthrough_modded',
-                            'Insert F to F bulkheads|50K_feedthrough_insertffbulk',
-                            '50K feedthrough with bulkheads|50K_feedthrough_wffbulk',
-                            'Assemble Amplifier Chain|4K_to_50K_wbulk',
-                            'Attach Amplifier Output Chain|50K_feedthrough_insertamp',
-                            'Attach Attenuator Input Chain|50K_feedthrough_insertatten'],
+                            'Assembly step|b':
+                                ['50K feedthrough|50K_feedthrough_modded',
+                                    'Insert F to F bulkheads|50K_feedthrough_insertffbulk',
+                                    '50K feedthrough with bulkheads|50K_feedthrough_wffbulk',
+                                    'Assemble Amplifier Chain|4K_to_50K_wbulk',
+                                    'Attach Amplifier Output Chain|50K_feedthrough_insertamp',
+                                    'Attach Attenuator Input Chain|50K_feedthrough_insertatten'],
                         },
                         function (params) {
                             name = "figs/50K/" + params.b + ".png"
@@ -516,12 +568,12 @@
                 <script type="text/javascript">
                     pager.link("#cold_comps",
                         {
-                            'SubK Stage|cc': 
-                            ['4K Upper Stage|4k_upper_wcables',
-                                '2K Stage|2k_wcables',
-                                'IC Stage|ic_wcables',
-                                'UC Stage|uc_wbulk',
-                                'All SubK|subk'],
+                            'SubK Stage|cc':
+                                ['4K Upper Stage|4k_upper_wcables',
+                                    '2K Stage|2k_wcables',
+                                    'IC Stage|ic_wcables',
+                                    'UC Stage|uc_wbulk',
+                                    'All SubK|subk'],
                         },
                         function (params) {
                             name = "figs/cold_comp/" + params.cc + ".png"
@@ -550,7 +602,7 @@
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_300k",
-                    {
+                        {
                             'Changes|c300': ['300K Feedthrough Before Modifications|300K_before',
                                 '300K Feedthrough After Modifications|300K_modded'],
                         },
@@ -589,7 +641,7 @@
 
             </figure>
         </subsection>
-        
+
         <subsection>
             <h3>4K Base Stage</h3>
             <p>cut whole in baseplate, add feedthrough</p>
@@ -630,7 +682,7 @@
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_4k",
-                    {
+                        {
                             'Changes|c4': ['4K Upper Plate Before Modifications|4k_upper_old',
                                 '4K Upper Plate After Modifications|4k_upper_modded'],
                         },
@@ -657,7 +709,7 @@
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_2k",
-                    {
+                        {
                             'Changes|c2': ['2K Plate Before Modifications|2k_old',
                                 '2K Plate After Modifications|2k_modded'],
                         },
@@ -684,7 +736,7 @@
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_ic",
-                    {
+                        {
                             'Changes|ci': ['IC Plate Before Modifications|ic_old_bot',
                                 'IC Plate After Modifications|ic_modded_bot'],
                         },
@@ -711,7 +763,7 @@
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_uc",
-                    {
+                        {
                             'Changes|cu': ['UC Plate Before Modifications|uc_old',
                                 'UC Plate After Modifications|uc_modded'],
                         },
@@ -740,7 +792,7 @@
     <section>
         <h2>Appendix</h2>
 
-        
+
         <center>
             <table style="width:100%" border="1,">
                 <tbody>
