@@ -339,7 +339,11 @@
                 Alternative Designs
             </h3>
             <p>
-                might go with ardent or delft
+                Due to the space constraints in the warm stages of BA4, it may be necessary to explore more scalable
+                solutions. We are currently discussing the possibility of working with Delft Circuits or Ardent
+                Solutions. Price and time permitting, we maywho have multi-channel cables that may remove the need for
+                installing 48 SMA
+                connections per stage.
             </p>
         </subsection>
     </section>
@@ -370,12 +374,9 @@
 
         <p>
             The thermal noise can be modeled by the Johnson-Nyquist noise given by the following:
-        </p>
-        <centering>\(
+            \[
             N=k_B T\Delta f
-            \) </centering>
-
-        <p>
+            \]
             where \(N\) is the noise power, \(k_B\) is the Boltzman constant, \(T\) is temperature, and \(\Delta f\)
             is the bandwidth. We can convert the noise power into units \(pA \) per \( \sqrt{Hz} \) with the given 50
             ohm
@@ -394,42 +395,42 @@
                     <tr>
                         <td><b>Selected Cryostat Stage</b></td>
                         <td><b>Signal Power per Tone (dBm)</b></td>
-                        <td><b>Noise @ 5 GHz (dBm)</b></td>
+                        <td><b>Johnson Noise (pA/\(\sqrt{Hz}\))</b></td>
                     </tr>
                     <tr>
                         <td>300K</td>
                         <td>-32</td>
-                        <td>-76</td>
+                        <td>9.1</td>
                     </tr>
                     <tr>
                         <td>4K</td>
                         <td>-48</td>
-                        <td>-95</td>
+                        <td>1.1</td>
                     </tr>
                     <tr>
                         <td>0.35K</td>
                         <td>-71</td>
-                        <td>-107</td>
+                        <td>0.31</td>
                     </tr>
                     <tr>
                         <td>Detectors</td>
                         <td>-75</td>
-                        <td>-107</td>
+                        <td>0.26</td>
                     </tr>
                     <tr>
                         <td>0.35K</td>
                         <td>-86</td>
-                        <td>-107</td>
+                        <td>0.31</td>
                     </tr>
                     <tr>
                         <td>4K</td>
                         <td>-86</td>
-                        <td>-95</td>
+                        <td>1.1</td>
                     </tr>
                     <tr>
                         <td>300K</td>
                         <td>-25</td>
-                        <td>-76</td>
+                        <td>9.1</td>
                     </tr>
                 </tbody>
             </table>
@@ -442,11 +443,9 @@
             conductive and
             radiative. Conduction occurs when a warmer temperature physically transfers energy to a cooler stage, and
             for our RF chain, the cables provide physical connections. The conduction can be approximated with the
-            following equation: </p>
-        <p>
-            \( P = k \frac{\Delta T}{L}\)
-        </p>
-        <p>
+            following equation:
+            \[ P = k \frac{\Delta T}{L}\]
+
             where \(P\) is the power transfered, \(k\) is the thermal conductivity, \(\Delta T\) is the difference in
             temperature between the connected stages, and \(L\) is the length of the cables. Note that the \(k\) is the
             thermal conductivity in units given by the Coax-Co cable catalogues. The thermal conductivity depends on
@@ -537,13 +536,22 @@
 
     <section>
         <h2>Mechanical Considerations</h2>
-        <p>still working on modal analysis, talk about assembly procedure</p>
+        <p>One of the primary challenges of using semi-rigid coaxial cables is fitting all the necessary wiring into the
+            limited space provided by the cryostat. To accomodate the housekeeping electronics, we chose to distribute
+            the cables over three sections, where each section was half incoming and half outgoing signals. Below, we
+            outline the general placement of the wires and describe the assembly process.</p>
+
         <subsection>
             <h3>Warm Stage Assembly Procedure</h3>
+            <p>
+                The warm stages are connected by two stages of cabling: from 300K to 50K, and from 50K to 4K. The
+                cabling is
+                intending to be nearly entirely assembled outside of the cryostat by attaching the cables to the
+                feedthroughs, then inserting the cable-feedthrough subassembly into the warm stages.</p>
             <figure>
                 <img alt="Overall assembly procedure for warm stages" id="warm_overall" src="#" />
                 <figcaption>
-                    assembly procedure instructions
+                    An overview of the warm stages before and after assembly.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#warm_overall",
@@ -561,10 +569,17 @@
                 </script>
 
             </figure>
+            <p>
+                We first build the 4K feedthrough section on the bench. Set up two styrofoam pieces on the side, then
+                insert the female-female gold plated SMA bulkheads into the appropriate holes. Then, insert the DC
+                connectors onto the feedthrough ports.
+            </p>
             <figure>
                 <img alt="Assembly procedure for 4K feedthrough" id="stage_4k" src="#" />
                 <figcaption>
-                    assembly procedure instructions
+                    a) The feedthrough before assembly. b) A close up view of inserting the bulkhead. c) A view of the
+                    feedthrough after inserting the bulkheads. d) A bottom view of the feedthrough after inserting the
+                    DC connectors. DC wiring is not drawn in.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#stage_4k",
@@ -582,10 +597,21 @@
                 </script>
 
             </figure>
+            <p>
+                Next, we build the 50K feedthrough section. Similarly, set up pieces of styrofoam to hold up the
+                feedthrough plate, then insert the female-female bulkheads into the holes closer to the DC ports.
+                Assemble the amplifier chain separately by attaching the 4K_to_50K cable, amplifier bracket, and
+                male-female bulkhead onto the amplifier. Ensure that the output of the amplifier is directed toward the
+                SMA bulkhead. Insert the amplifier chain into the holes further from the DC feedthrough, then torque the
+                bulkheads. Attach the 10 dB attenuators and the 50K_to_4K cables onto the remaining bulkheads.
+            </p>
             <figure>
                 <img alt="Assembly procedure for 50K feedthrough" id="stage_50k" src="#" />
                 <figcaption>
-                    assembly procedure instructions
+                    a) The feedthrough before assembly. b) A close up view of inserting the bulkhead. c) A view of the
+                    feedthrough after inserting the bulkheads. d) The amplifier chain with the RF cable, bracket, and
+                    bulkhead. e) A view of the feedthrough after the amplifiers are attached. f) A view of the
+                    feedthrough after the attenuator chains are attached. DC wiring and clamps are not drawn in.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#stage_50k",
@@ -606,10 +632,21 @@
                 </script>
 
             </figure>
+            <p>
+                We now connect the 50K feedthrough to the 4K feedthrough. Screw the assembly rod onto the 50K
+                feedthrough plate, then screw the 4K feedthrough on top of the assembly rod. Insert the two aligning
+                bolts to align the feedthroughs, then connect the cables onto the 4K plate. Clamp the
+                DC wiring onto the DC ports. Finally, screw the entire
+                50K to 4K section into the appropriate slot in the warm stages of the cryostat. Remove the assembly rods
+                and aligners. Repeat this process for
+                all three sections.
+            </p>
             <figure>
                 <img alt="Assembly procedure for inserting 50K and 4K feedthroughs" id="stage_50k4k" src="#" />
                 <figcaption>
-                    assembly procedure instructions
+                    a) The 50K feedthrough with the assembly rod. b) The 4K feedthrough attached to the assembly rod.
+                    c) The plates are aligned, then the cables are connected. d) Inserting the 50K and 4K sections into
+                    the cryostat. DC wiring is not drawn in.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#stage_50k4k",
@@ -627,10 +664,18 @@
                 </script>
 
             </figure>
+            <p>
+                We now assemble the 300K feedthrough. Insert the bulkheads onto the 300K feedthrough plate, then attach
+                the 300K_to_50K cables. Screw the feedthrough onto the bucket, then tighten the dangling RF cables onto
+                the 50K feedthrough bulkheads. Connect the DC wiring to the ports. Repeat this process for all three
+                sections. Note that the center feedthrough section cables are different from the side section cables.
+            </p>
             <figure>
                 <img alt="Assembly procedure for 300K stage" id="stage_300k" src="#" />
                 <figcaption>
-                    assembly procedure instructions
+                    a) The feedthrough before assembly. b) Inserting the bulkheads onto the feedthrough.
+                    c) Attaching the cables onto the bulkheads. d) A view of the feedthrough with the cables attached.
+                    e) Attaching the feedthrough onto the 300K bucket. f) Tightening the cables onto the 50K bulkheads.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#stage_300k",
@@ -650,14 +695,26 @@
                 </script>
 
             </figure>
-            <p>test</p>
+            <p>While this assembly is technically possible, it may be time consuming to torque 48 SMA connections for
+                each strage of the cryostat. We are looking into alternatives to SMA connections, such as Ardent
+                Solution's multicoaxial cables and Delft's multichannel strips. Price permitting, these new technologies
+                could greatly simplify the assembly process.</p>
         </subsection>
         <subsection>
             <h3>Cold Stage Components</h3>
+            <p>The cold subK stages would be assmbled outside of the cryostat and placed on top of the 4K baseplate, so
+                the assembly is relatively more straightforward. The most difficult component to attach would be the
+                circulators that are bolted to the IC stage. The insertion of the amplifiers onto the 4K upper plate
+                also requires special attention. Below, we present a summarized view of each cold stage with their
+                respective RF components. </p>
             <figure>
                 <img alt="Cold Stages with Cables" id="cold_comps" src="#" />
                 <figcaption>
-                    assembly procedure instructions
+                    a) A top view of the 4K upper stage, which includes amplfiers and bias tees. b) A view of the 2K
+                    stage, which contains the circulators that are intended to be bolted onto the bottom of the IC
+                    plate. c) A view of the IC stage. d) A view of the UC stage with the bulkheads in the focal plane.
+                    e) A view of the entire wedding cake structure of the cold stage. The bottom of the fridge stand is
+                    in contact with the 4K baseplate.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#cold_comps",
@@ -678,21 +735,25 @@
 
             </figure>
         </subsection>
+        <p>While the cold stages has more complex components, it may still be possible to integrate multicoaxial chains.
+            After speaking with various companies, it appears the outgoing niobium titanium cables still need to be
+            single coaxial SMAs.</p>
     </section>
 
     <section>
         <h2>Cryostat Modifications</h2>
-        <p>summary of all the parts that will be modified</p>
+        <p>Below, we provide summary of all the parts that will be modified. We attempt to minimize the modifications to
+            the existing cryostat.</p>
         <subsection>
             <h3>300K Stage</h3>
-            <p>just change feedthroughs</p>
+            <p>The only required change in the 300K stage is the feedthroughs. We drill 16 holes in each feedthrough for
+                the SMA bulkheads and 4 wide slots to fit the DC connectors.</p>
             <figure>
                 <img alt="Modifications to the 300K stage" id="mods_300k" src="#" />
                 <figcaption>
-                    Proposed RF chain schematics. The names of each component is colorcoded according to the legend
-                    on the right. Cable components have their names on the left side, while the other RF components
-                    are named on the right side of the chain. More thermal and electrical details are given in the
-                    table(s) below.
+                    a) The current 300K feedthrough. b) The 300K feedthrough after drilling the necessary holes. The DC
+                    holes are still tentative, and exact dimensions depend on the finalized decision for the DC cable
+                    connectors.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_300k",
@@ -711,14 +772,13 @@
         </subsection>
         <subsection>
             <h3>50K Stage</h3>
-            <p>just change feedthroughs</p>
+            <p>Similarly to the 300K stage, the modifications are limitted to the feedthroughs. We drill the holes for
+                the SMA bulkheads and the amplfier brackets. We cut out 4 DC feedthroughs holes instead of 5. Finally,
+                there is an extra lip for the assembly rod to fit in.</p>
             <figure>
                 <img alt="Modifications to the 50K stage" id="mods_50k" src="#" />
                 <figcaption>
-                    Proposed RF chain schematics. The names of each component is colorcoded according to the legend
-                    on the right. Cable components have their names on the left side, while the other RF components
-                    are named on the right side of the chain. More thermal and electrical details are given in the
-                    table(s) below.
+                    a) The current 300K feedthrough. b) The 50K feedthrough after drilling the necessary holes.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_50k",
@@ -738,14 +798,12 @@
 
         <subsection>
             <h3>4K Base Stage</h3>
-            <p>cut whole in baseplate, add feedthrough</p>
+            <p>We cut out a section of the 4K baseplate to accomodate the feedthroughs, then machine a new feedthrough
+                for the 4K base stage. </p>
             <figure>
                 <img alt="Modifications to the 4K base stage" id="mods_4kb" src="#" />
                 <figcaption>
-                    Proposed RF chain schematics. The names of each component is colorcoded according to the legend
-                    on the right. Cable components have their names on the left side, while the other RF components
-                    are named on the right side of the chain. More thermal and electrical details are given in the
-                    table(s) below.
+                    a) The current 4K baseplate. b) The 4K baseplate after the cutouts. c) The new 4K feedthroughs.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_4kb",
@@ -764,15 +822,14 @@
             </figure>
         </subsection>
         <subsection>
-            <h3>4K Stage</h3>
-            <p>cut some holes, make brackets</p>
+            <h3>4K Upper Stage</h3>
+            <p>We remove the previous cutouts for the MCE amplifiers and drill new holes to accomodate the SMA
+                bulkheads. Holes are also drilled to attach the 4K amplifiers</p>
             <figure>
                 <img alt="Modifications to the 4K stage" id="mods_4k" src="#" />
                 <figcaption>
-                    Proposed RF chain schematics. The names of each component is colorcoded according to the legend
-                    on the right. Cable components have their names on the left side, while the other RF components
-                    are named on the right side of the chain. More thermal and electrical details are given in the
-                    table(s) below.
+                    a) The current 4K upper plate. b) The 4K upper after drilling SMA bulkhead holes. Note: amplifier
+                    holes are not yet decided.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_4k",
@@ -792,14 +849,11 @@
         </subsection>
         <subsection>
             <h3>2K Stage</h3>
-            <p>cut some holes</p>
+            <p>The modifications are minimal. We drill 48 holes on the outer edges for the SMA bulkheads. </p>
             <figure>
                 <img alt="Modifications to the 2K stage" id="mods_2k" src="#" />
                 <figcaption>
-                    Proposed RF chain schematics. The names of each component is colorcoded according to the legend
-                    on the right. Cable components have their names on the left side, while the other RF components
-                    are named on the right side of the chain. More thermal and electrical details are given in the
-                    table(s) below.
+                    a) The current 2K plate. b) The 2K plate after drilling SMA bulkhead holes.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_2k",
@@ -819,14 +873,12 @@
         </subsection>
         <subsection>
             <h3>IC Stage</h3>
-            <p>cut some holes, make mounts</p>
+            <p>We drill the 48 SMA bulkhead holes on the outer edges and tapped holes for mounting the circulators. </p>
             <figure>
                 <img alt="Modifications to the IC stage" id="mods_ic" src="#" />
                 <figcaption>
-                    Proposed RF chain schematics. The names of each component is colorcoded according to the legend
-                    on the right. Cable components have their names on the left side, while the other RF components
-                    are named on the right side of the chain. More thermal and electrical details are given in the
-                    table(s) below.
+                    a) The current IC plate. b) The IC after drilling SMA bulkhead holes. Note: the mounting bracket
+                    holes are not yet drawn in.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_ic",
@@ -846,14 +898,12 @@
         </subsection>
         <subsection>
             <h3>UC Stage</h3>
-            <p>cut some holes, make room for housekeeping</p>
+            <p> We drill SMA bulkhead holes on the outer corners of the UC plate. Special care was taken to ensure that
+                the RF cables do not interfere with the printed circuit board. </p>
             <figure>
                 <img alt="Modifications to the UC stage" id="mods_uc" src="#" />
                 <figcaption>
-                    Proposed RF chain schematics. The names of each component is colorcoded according to the legend
-                    on the right. Cable components have their names on the left side, while the other RF components
-                    are named on the right side of the chain. More thermal and electrical details are given in the
-                    table(s) below.
+                    a) The current UC plate. b) The UC plate after drilling SMA bulkhead holes.
                 </figcaption>
                 <script type="text/javascript">
                     pager.link("#mods_uc",
@@ -878,15 +928,17 @@
 
     <hr>
     <section>
-        <h2>Open Questions</h2>
-
-        make a list or something
+        <h2>DC Wiring</h2>
+        <p>DC wiring is necessary for providing power to the amplifiers and the detector modules. New and existing holes
+            in the cryostat stages will accomodate the DC connectors and clamps. We plan to have connectors and filters
+            at the 300K, 4K, and UC stages, with clamps to provide thermal contact on the other stages.</p>
     </section>
-
     <section>
         <h2>Appendix</h2>
 
-
+        <h3>
+            Detailed calculations and numbers for thermal loading
+        </h3>
         <center>
             <table style="width:100%" border="1,">
                 <tbody>
@@ -1298,7 +1350,9 @@
                 </tbody>
             </table>
         </center>
-
+        <h3>
+            Detailed calculations and numbers for electrical power
+        </h3>
         <center>
             <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
                 <tbody>
