@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BA4 umux Readout and RF Cable Routing Design -- T. Liu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Load up MathJax for math notation -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: { equationNumbers: { autoNumber: "AMS" } }
+        });
+    </script>
+    <script type="text/javascript" src="../mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body>
+    <!-- Add my custom pa>er script -->
+    <script type="text/javascript" src="scripts/pager.js"></script>
+    <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+
+    <header>
+        <h1>BA4 Microwave Multiplexing Readout and RF Cable Routing Design </h1>
+
+        <time datetime="2022-01-26" class="published updated">
+            2022 Jan 26
+        </time> —
+        Tom Liu
+    </header>
+
+    <hr>
+
+
+    <section>
+        <h2>Introduction</h2>
+        <p>The fourth receiver of the BICEP Array (BA4) plans to have approximately 20000 detectors in its receiver.
+            This
+            significant increase in detector count imposes unique challenges to the readout of the detector signnal,
+            leading
+            to designs different from the previous BICEP Array readout systems. </p>
+
+
+
+
+        <p>Because BA4 consists of more detectors than the other BA receivers, there is a much higher required
+            multiplexing factor to mechanically fit the readout system into the cryostat. A multiplexing factor of 1000
+            would require about 24 readout chains, which leads to a total of 48 channels, with half of the lines being
+            input probe tones provided by SMuRF electronics, and the other half being output modulations on those probe
+            tones.
+        </p>
+        <p>Here, we discuss the thermal,
+            electrical,
+            and mechanical constraints of our design problem and present the first iteration of the RF cable routing
+            design,
+            primarily consisting of semi-rigid coaxial cables.
+        </p>
+
+
+
+    </section>
+
+    <section>
+        <h2>Overall Design</h2>
+        <p>The overall RF chain schematic is similar to the BKumux readout chain. We have stainless steel in the warm
+            stages as
+            they are a relatively cheap material while retaining an appropriate level of signal integrity and minimal
+            thermal conductance. The colder stages require Cupronickel for the input lines to further decrease the
+            thermal load, while the output lines require superconducting Niobium Titanium to preserve the integrity of
+            the signal. </p>
+        <p>To decrease the input probe tone to the necessary power level while preventing the signals from succumbing to
+            thermal noise, several attenuators are spread throughout the RF chain. DC blocks are scattered throughout
+            the chain to both remove unwanted voltage bias while also providing thermal breaks for the inner conductor
+            of the coaxial cables. Amplifiers are placed on the 4K and 50K stage so that the output signal is
+            discernable once it reaches the room temperature electronics. Various other components like directional
+            couplers, bias tees, and circulators are currently included in the design, but pending tests to determine
+            their impact on the overall readout system, these components may be removed. </p>
+        <figure>
+            <img alt="RF Cable Schematics" id="rfscheme" src="#" />
+            <figcaption>
+                Proposed RF chain schematics. The names of each component is colorcoded according to the legend
+                on the right. Cable components have their names on the left side, while the other RF components
+                are named on the right side of the chain. The components are color-coded with red cables, blue
+                attenuators and DC blocks, orange amplifiers, and pruple miscellaneous components. More thermal and
+                electrical details are given in the table(s) below.
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#rfscheme",
+                    {
+                        'Schematic Stages|sc': ['Overall RF Chain|rf_routing_schematic',
+                            'Warm Stage|warm_stage_schematic_wlegend',
+                            'SubK Stage|subk_stage_schematic_wlegend'],
+                    },
+                    function (params) {
+                        console.log('params' + params)
+                        name = "figs/schematics/" + params.sc + ".PNG"
+                        return name
+                    })
+
+            </script>
+
+        </figure>
+
+        <p> Below is a table that summarizes the material and order information for each component of the RF chain.
+            Possible modifications are included in the notes column.
+        </p>
+        <center>
+            <table style="width:100%" border="1,">
+                <tbody>
+                    <tr>
+                        <td><b>Component Name</b></td>
+                        <td><b>Material</b></td>
+                        <td><b>Part Number</b></td>
+                        <td><b>References </b></td>
+                        <td><b>Notes</b></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">300K_to_50K</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SC-119/50-SS-SS</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                        <td>Will likely go with a different company like RF Coax or Intelliconnect for cheaper cables.
+                            Still deciding whether to use Ardent's multicoax TR cables or Delft Circuit's multichannel
+                            strips for warm stages.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">50K_atten</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SKU: SA18E-10</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/10db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-10-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">50K_to_4K</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SC-119/50-SS-SS</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                        <td>See 300K_to_50K</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">4Kbase_dcblock_in</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SKU: SD3258</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        </td>
+                        <td>RF lambda has slightly cheaper ones, but unclear if they can operate at the necessary
+                            temperatures</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4Kbase_to_4K</span></td>
+                        <td>Copper</td>
+                        <td>Cri/oFlex 2</td>
+                        <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
+                                Delft Circuits</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">4K_atten</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SKU: SA18E-10</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/10db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-10-p.aspx">
+                                Fairview Microwave</a></td>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4K_to_2K</span></td>
+                        <td>Cupronickel</td>
+                        <td>SC-086/50-CN-CN</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">2K_dcblock_in</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SKU: SD3258</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">2K_atten</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SKU: SA18E-06</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/6db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-06-p.aspxx">
+                                Fairview Microwave</a></td>
+                        </td>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">2K_to_IC</span></td>
+                        <td>Cupronickel</td>
+                        <td>SC-086/50-CN-CN</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: purple">IC_dcoup</span></td>
+                        <td>Berylium Copper, Gold, Stainless Steel</td>
+                        <td>SKU: MC2047-06</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/sma-directional-coupler-6-db-8-ghz-50-watts-mc2047-06-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>May be replace with a heatsunk 2dB attenuator</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">IC_to_UC</span></td>
+                        <td>Cupronickel</td>
+                        <td>SC-086/50-CN-CN</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">UC_to_IC</span></td>
+                        <td>Niobium Titanium</td>
+                        <td>SC-086/50-NbTi-NbTi</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: purple">IC_circ</span></td>
+                        <td></td>
+                        <td>SKU: FMCR1006</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/sma-female-high-power-circulator-18db-isolation-8-ghz-50-watts-fmcr1006-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">IC_to_2K</span></td>
+                        <td>Niobium Titanium</td>
+                        <td>SC-086/50-NbTi-NbTi</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">2K_dcblock_out</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SKU: SD3258</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">2K_to_HEMT</span></td>
+                        <td>Niobium Titanium</td>
+                        <td>SC-086/50-NbTi-NbTi</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: purple">4K_biastee</span></td>
+                        <td></td>
+                        <td>SKU: SB5792</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/sma-bias-tee-0.1-mhz-12.4-ghz-700-ma-50-volts-dc-sb5792-p.aspx">
+                                Coax Co.</a></td>
+                        <td>This may be replaced with a 0dB heatsunk attenuator, or removed completely. Tests pending.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: rgb(169, 100, 11)">4K_HEMT</span></td>
+                        <td></td>
+                        <td> LNF-LNC4_8C</td>
+                        <td><a href="https://www.lownoisefactory.com/products/cryogenic/lnc-4-8-ghz/">
+                                Low Noise Factory</a></td>
+                        <td>May look for alternative amplifiers</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">HEMT_to_4K</span></td>
+                        <td>Copper</td>
+                        <td>Cri/oFlex 2</td>
+                        <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
+                                Delft Circuits</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4K_to_4Kbase</span></td>
+                        <td>Copper</td>
+                        <td>Cri/oFlex 2</td>
+                        <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
+                                Delft Circuits</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">4K_base_dcblock_out</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SKU: SD3258</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4K_to_50K</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SC-119/50-SS-SS</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                        <td>See 300K_to_50K</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: rgb(169, 100, 11)">50K_amp</span></td>
+                        <td></td>
+                        <td>BZ‐04000800‐081245‐102014</td>
+                        <td><a href="https://bnztech.com/datasheets/BZ-04000800-081245-102014.pdf">
+                                B&Z Tech</a></td>
+                        <td>Still need to decide if we want to go with the amplifiers from ASU</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">50K_to_300K</span></td>
+                        <td>Stainless Steel</td>
+                        <td>SC-119/50-SS-SS</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                        <td>See 300K_to_50K</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <subsection>
+            <h3>
+                Alternative Designs
+            </h3>
+            <p>
+                Due to the space constraints in the warm stages of BA4, it may be necessary to explore more scalable
+                solutions. We are currently discussing the possibility of working with Delft Circuits or Ardent
+                Solutions. Price and time permitting, we maywho have multi-channel cables that may remove the need for
+                installing 48 SMA
+                connections per stage.
+            </p>
+        </subsection>
+    </section>
+    <section>
+        <h2>Electrical Considerations</h2>
+        <p> The electrical considerations include ensuring that the input probe tones are at an appropriate power level
+            once they reach the focal plane for optimal resonance with the SQUID resonators, optimizing the
+            signal-to-noise ratio, and minimizing reflections and impedance mismatches.
+
+        </p>
+
+        <p>The input power of the probe tones are at approximately -32 dBm per tone, which corresponds to about 0.63
+            \( \mu W \). The resonators at the focal plane operate optimally with -75 dBm tones, so we use attenuators
+            to
+            decrease the power at every stage of the readout chain. Spreading out the attenuators over multiple stages
+            provides a larger overall thermal load on the cryostage stages, but having a large attenuation at the warmer
+            stages risks the warmer thermal noise becoming a significant franction of the overall power.
+        </p>
+        <p>Various other components of the RF chain also produce attenuation. The RF cables have some attenuation
+            depending on their materials and are proportional to the length of the cables. Other components like the DC
+            blocks and bulkheads cause some reflections due to impedance mismatches, and they are upperbounded by the
+            maximum VSWR of the components. </p>
+        <p>The directional coupler acts as an attenuator with additional heatsinking;
+            the electrical signal is inductively carried forward, so there is no physical connection between the inner
+            connductors of the coaxial cables of the warmer and colder side of the directional coupler. The Bias Tee
+            acts as a DC block, and like the directional coupler, also provides additional heatsinking. Tests are
+            undergoing to determine whether a heatsunk attenuator or DC block can serve the same purpose. </p>
+
+        <p>
+            The thermal noise can be modeled by the Johnson-Nyquist noise given by the following:
+            \[
+            N=k_B T\Delta f
+            \]
+            where \(N\) is the noise power, \(k_B\) is the Boltzman constant, \(T\) is temperature, and \(\Delta f\)
+            is the bandwidth. We can convert the noise power into units \(pA \) per \( \sqrt{Hz} \) with the given 50
+            ohm
+            impedance. We compare this to the power of the RF tones to determine a signal-to-noise ratio. The
+            superconducting cables should not have any resistance, but the
+            impedance of other non-superconducting components might cause Johnson noise.
+        </p>
+        <p>
+            Below is a table summarizing the power of the tones at particular stages, and more detailed calculations are
+            in the appendix.
+
+        </p>
+        <center>
+            <table style="width:100%" border="1,">
+                <tbody>
+                    <tr>
+                        <td><b>Selected Cryostat Stage</b></td>
+                        <td><b>Signal Power per Tone (dBm)</b></td>
+                        <td><b>Johnson Noise (pA/\(\sqrt{Hz}\))</b></td>
+                    </tr>
+                    <tr>
+                        <td>300K</td>
+                        <td>-32</td>
+                        <td>9.1</td>
+                    </tr>
+                    <tr>
+                        <td>4K</td>
+                        <td>-48</td>
+                        <td>1.1</td>
+                    </tr>
+                    <tr>
+                        <td>0.35K</td>
+                        <td>-71</td>
+                        <td>0.31</td>
+                    </tr>
+                    <tr>
+                        <td>Detectors</td>
+                        <td>-75</td>
+                        <td>0.26</td>
+                    </tr>
+                    <tr>
+                        <td>0.35K</td>
+                        <td>-86</td>
+                        <td>0.31</td>
+                    </tr>
+                    <tr>
+                        <td>4K</td>
+                        <td>-86</td>
+                        <td>1.1</td>
+                    </tr>
+                    <tr>
+                        <td>300K</td>
+                        <td>-25</td>
+                        <td>9.1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </section>
+    <section>
+        <h2>Thermal Considerations</h2>
+        <p>To properly operate, the detector modules need to be at approximately 0.25K, which ultimately determines the
+            thermal budget for each stage of the cryostat. The two main forms of thermal loading in our RF chain are
+            conductive and
+            radiative. Conduction occurs when a warmer temperature physically transfers energy to a cooler stage, and
+            for our RF chain, the cables provide physical connections. The conduction can be approximated with the
+            following equation:
+            \[ P = k \frac{\Delta T}{L}\]
+
+            where \(P\) is the power transfered, \(k\) is the thermal conductivity, \(\Delta T\) is the difference in
+            temperature between the connected stages, and \(L\) is the length of the cables. Note that the \(k\) is the
+            thermal conductivity in units given by the Coax-Co cable catalogues. The thermal conductivity depends on
+            temperature, increasing with increasing temperature. We use the more pessimistic approximation by assuming
+            the warmer thermal conductivity for each connection between the temperature stages.
+        </p>
+        <p>
+            Dissipative loading occurs when the resistance of the cables dissipate the power of the signal as it
+            travels. Again, we produce the pessimistic estimates by assuming all the power is dissipated onto the colder
+            stage. We also assume that all reflections caused by impedance mismatches are eventually dissipated, another
+            overestimate of the thermal loading. The amount of dissipation is calculated by subtracting the input power
+            from the output power at each component.
+        </p>
+        <p>
+            Below is a summary of all the thermal loading in the RF chain. For a more detailed calculation, see the
+            appendix. The maximum allowed loadings are recovered from load curves tested on the other BA receivers. We
+            estimate approximately an additional 6 \(uW\) of radiative power from the sky that hits the 0.25K stage,
+            which means the true maximum allowed loading for the coldest stage is closer to 9 \(u W\) rather than 15
+            \(uW\).
+        </p>
+        <center>
+            <table style="width:100%" border="1,">
+                <tbody>
+                    <tr>
+                        <td><b>Cryostat Stage</b></td>
+                        <td><b>Dissipation RF (W)</b></td>
+                        <td><b>Conduction RF (W)</b></td>
+                        <td><b>Total RF (W)</b></td>
+                        <td><b>Total DC (W)</b></td>
+                        <td><b>Total Thermal Loading (W)</b></td>
+                        <td><b>Maximum Allowed Loading (W)</b></td>
+                    </tr>
+                    <tr>
+                        <td>50K</td>
+                        <td>0.15</td>
+                        <td>2.91</td>
+                        <td>3.06</td>
+                        <td>0.56</td>
+                        <td>
+                            < 3.7</td>
+                        <td>> 10</td>
+                    </tr>
+                    <tr>
+                        <td>4K</td>
+                        <td>0.001</td>
+                        <td>0.101</td>
+                        <td>0.102</td>
+                        <td>0.047</td>
+                        <td>
+                            < 0.15</td>
+                        <td>0.2</td>
+                    </tr>
+                    <tr>
+                        <td>2K</td>
+                        <td>37.0E-6</td>
+                        <td>62.8E-6</td>
+                        <td>100 E-6</td>
+                        <td>101 E-6</td>
+                        <td>
+                            < 200 E-6</td>
+                        <td>230 E-6</td>
+                    </tr>
+                    <tr>
+                        <td>0.35K</td>
+                        <td>6.3E-6</td>
+                        <td>21.7E-6</td>
+                        <td>28 E-6</td>
+                        <td>34 E-6</td>
+                        <td>
+                            < 60 E-6</td>
+                        <td>70 E-6</td>
+                    </tr>
+                    <tr>
+                        <td>0.25K</td>
+                        <td>1.3E-6</td>
+                        <td>0.19E-6</td>
+                        <td>1.5E-6</td>
+                        <td>0.23 E-6</td>
+                        <td>
+                            < 2 E-6</td>
+                        <td>15 E-6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        For detailed numbers see appendix.
+    </section>
+
+    <section>
+        <h2>Mechanical Considerations</h2>
+        <p>One of the primary challenges of using semi-rigid coaxial cables is fitting all the necessary wiring into the
+            limited space provided by the cryostat. To accomodate the housekeeping electronics, we chose to distribute
+            the cables over three sections, where each section was half incoming and half outgoing signals. Below, we
+            outline the general placement of the wires and describe the assembly process.</p>
+
+        <subsection>
+            <h3>Warm Stage Assembly Procedure</h3>
+            <p>
+                The warm stages are connected by two stages of cabling: from 300K to 50K, and from 50K to 4K. The
+                cabling is
+                intending to be nearly entirely assembled outside of the cryostat by attaching the cables to the
+                feedthroughs, then inserting the cable-feedthrough subassembly into the warm stages.</p>
+            <figure>
+                <img alt="Overall assembly procedure for warm stages" id="warm_overall" src="#" />
+                <figcaption>
+                    An overview of the warm stages before and after assembly.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#warm_overall",
+                        {
+                            'View Angle|v': ['Top|top',
+                                'Side|side'],
+                            'Completion|s': ['Before Assembly|before',
+                                'After Assembly|finished'],
+                        },
+                        function (params) {
+                            name = "figs/warm_stage/" + 'warm_stages_' + params.s + '_' + params.v + ".png"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+            <p>
+                We first build the 4K feedthrough section on the bench. Set up two styrofoam pieces on the side, then
+                insert the female-female gold plated SMA bulkheads into the appropriate holes. Then, insert the DC
+                connectors onto the feedthrough ports.
+            </p>
+            <figure>
+                <img alt="Assembly procedure for 4K feedthrough" id="stage_4k" src="#" />
+                <figcaption>
+                    a) The feedthrough before assembly. b) A close up view of inserting the bulkhead. c) A view of the
+                    feedthrough after inserting the bulkheads. d) A bottom view of the feedthrough after inserting the
+                    DC connectors. DC wiring is not drawn in.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#stage_4k",
+                        {
+                            'Assembly step|a': ['4K feedthrough|4K_feedthrough',
+                                'Insert Bulkheads|4K_feedthrough_insertbulk',
+                                '4K Feedthrough with Bulkheads|4K_feedthrough_wbulk',
+                                '4K Feedthrough with DC connectors|4K_feedthrough_wdc'],
+                        },
+                        function (params) {
+                            name = "figs/4k/" + params.a + ".png"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+            <p>
+                Next, we build the 50K feedthrough section. Similarly, set up pieces of styrofoam to hold up the
+                feedthrough plate, then insert the female-female bulkheads into the holes closer to the DC ports.
+                Assemble the amplifier chain separately by attaching the 4K_to_50K cable, amplifier bracket, and
+                male-female bulkhead onto the amplifier. Ensure that the output of the amplifier is directed toward the
+                SMA bulkhead. Insert the amplifier chain into the holes further from the DC feedthrough, then torque the
+                bulkheads. Attach the 10 dB attenuators and the 50K_to_4K cables onto the remaining bulkheads.
+            </p>
+            <figure>
+                <img alt="Assembly procedure for 50K feedthrough" id="stage_50k" src="#" />
+                <figcaption>
+                    a) The feedthrough before assembly. b) A close up view of inserting the bulkhead. c) A view of the
+                    feedthrough after inserting the bulkheads. d) The amplifier chain with the RF cable, bracket, and
+                    bulkhead. e) A view of the feedthrough after the amplifiers are attached. f) A view of the
+                    feedthrough after the attenuator chains are attached. DC wiring and clamps are not drawn in.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#stage_50k",
+                        {
+                            'Assembly step|b':
+                                ['50K feedthrough|50K_feedthrough_modded',
+                                    'Insert F to F bulkheads|50K_feedthrough_insertffbulk',
+                                    '50K feedthrough with bulkheads|50K_feedthrough_wffbulk',
+                                    'Assemble Amplifier Chain|4K_to_50K_wbulk',
+                                    'Attach Amplifier Output Chain|50K_feedthrough_insertamp',
+                                    'Attach Attenuator Input Chain|50K_feedthrough_insertatten'],
+                        },
+                        function (params) {
+                            name = "figs/50k/" + params.b + ".png"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+            <p>
+                We now connect the 50K feedthrough to the 4K feedthrough. Screw the assembly rod onto the 50K
+                feedthrough plate, then screw the 4K feedthrough on top of the assembly rod. Insert the two aligning
+                bolts to align the feedthroughs, then connect the cables onto the 4K plate. Clamp the
+                DC wiring onto the DC ports. Finally, screw the entire
+                50K to 4K section into the appropriate slot in the warm stages of the cryostat. Remove the assembly rods
+                and aligners. Repeat this process for
+                all three sections.
+            </p>
+            <figure>
+                <img alt="Assembly procedure for inserting 50K and 4K feedthroughs" id="stage_50k4k" src="#" />
+                <figcaption>
+                    a) The 50K feedthrough with the assembly rod. b) The 4K feedthrough attached to the assembly rod.
+                    c) The plates are aligned, then the cables are connected. d) Inserting the 50K and 4K sections into
+                    the cryostat. DC wiring is not drawn in.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#stage_50k4k",
+                        {
+                            'Assembly step|c': ['Attach Assembly Rod|50K_feedthrough_insertrod',
+                                'Attach 4K feedthrough to Assembly Rod|50K_feedthrough_insert4k',
+                                'Align and Connect the Remaining Cables|50K_and_4K_feedthroughs',
+                                'Insert Assembly onto the warm stages|insert_feedthroughs_50k4k'],
+                        },
+                        function (params) {
+                            name = "figs/50k4k/" + params.c + ".png"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+            <p>
+                We now assemble the 300K feedthrough. Insert the bulkheads onto the 300K feedthrough plate, then attach
+                the 300K_to_50K cables. Screw the feedthrough onto the bucket, then tighten the dangling RF cables onto
+                the 50K feedthrough bulkheads. Connect the DC wiring to the ports. Repeat this process for all three
+                sections. Note that the center feedthrough section cables are different from the side section cables.
+            </p>
+            <figure>
+                <img alt="Assembly procedure for 300K stage" id="stage_300k" src="#" />
+                <figcaption>
+                    a) The feedthrough before assembly. b) Inserting the bulkheads onto the feedthrough.
+                    c) Attaching the cables onto the bulkheads. d) A view of the feedthrough with the cables attached.
+                    e) Attaching the feedthrough onto the 300K bucket. f) Tightening the cables onto the 50K bulkheads.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#stage_300k",
+                        {
+                            'Assembly step|d': ['300K feedthrough|300K_modded',
+                                'Insert Bulkheads|300K_insertbulk',
+                                'Attach Cables|300K_insertcables',
+                                '300K feedthrough with cables|300K_side',
+                                'Insert feedthrough into 300K bucket|insert_300K',
+                                'Tighten Cables onto 50K feedthrough|tighten_300k_cables'],
+                        },
+                        function (params) {
+                            name = "figs/300k/" + params.d + ".png"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+            <p>While this assembly is technically possible, it may be time consuming to torque 48 SMA connections for
+                each strage of the cryostat. We are looking into alternatives to SMA connections, such as Ardent
+                Solution's multicoaxial cables and Delft's multichannel strips. Price permitting, these new technologies
+                could greatly simplify the assembly process.</p>
+        </subsection>
+        <subsection>
+            <h3>Cold Stage Components</h3>
+            <p>The cold subK stages would be assmbled outside of the cryostat and placed on top of the 4K baseplate, so
+                the assembly is relatively more straightforward. The most difficult component to attach would be the
+                circulators that are bolted to the IC stage. The insertion of the amplifiers onto the 4K upper plate
+                also requires special attention. Below, we present a summarized view of each cold stage with their
+                respective RF components. </p>
+            <figure>
+                <img alt="Cold Stages with Cables" id="cold_comps" src="#" />
+                <figcaption>
+                    a) A top view of the 4K upper stage, which includes amplfiers and bias tees. b) A view of the 2K
+                    stage, which contains the circulators that are intended to be bolted onto the bottom of the IC
+                    plate. c) A view of the IC stage. d) A view of the UC stage with the bulkheads in the focal plane.
+                    e) A view of the entire wedding cake structure of the cold stage. The bottom of the fridge stand is
+                    in contact with the 4K baseplate.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#cold_comps",
+                        {
+                            'SubK Stage|cc':
+                                ['4K Upper Stage|4k_upper_wcables',
+                                    '2K Stage|2k_wcables',
+                                    'IC Stage|ic_wcables',
+                                    'UC Stage|uc_wbulk',
+                                    'All SubK|subk'],
+                        },
+                        function (params) {
+                            name = "figs/cold_comp/" + params.cc + ".png"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+        </subsection>
+        <p>While the cold stages has more complex components, it may still be possible to integrate multicoaxial chains.
+            After speaking with various companies, it appears the outgoing niobium titanium cables still need to be
+            single coaxial SMAs.</p>
+    </section>
+
+    <section>
+        <h2>Cryostat Modifications</h2>
+        <p>Below, we provide summary of all the parts that will be modified. We attempt to minimize the modifications to
+            the existing cryostat.</p>
+        <subsection>
+            <h3>300K Stage</h3>
+            <p>The only required change in the 300K stage is the feedthroughs. We drill 16 holes in each feedthrough for
+                the SMA bulkheads and 4 wide slots to fit the DC connectors.</p>
+            <figure>
+                <img alt="Modifications to the 300K stage" id="mods_300k" src="#" />
+                <figcaption>
+                    a) The current 300K feedthrough. b) The 300K feedthrough after drilling the necessary holes. The DC
+                    holes are still tentative, and exact dimensions depend on the finalized decision for the DC cable
+                    connectors.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#mods_300k",
+                        {
+                            'Changes|c300': ['300K Feedthrough Before Modifications|300K_before',
+                                '300K Feedthrough After Modifications|300K_modded'],
+                        },
+                        function (params) {
+                            name = "figs/modifications/" + params.c300 + ".png"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+        </subsection>
+        <subsection>
+            <h3>50K Stage</h3>
+            <p>Similarly to the 300K stage, the modifications are limitted to the feedthroughs. We drill the holes for
+                the SMA bulkheads and the amplfier brackets. We cut out 4 DC feedthroughs holes instead of 5. Finally,
+                there is an extra lip for the assembly rod to fit in.</p>
+            <figure>
+                <img alt="Modifications to the 50K stage" id="mods_50k" src="#" />
+                <figcaption>
+                    a) The current 300K feedthrough. b) The 50K feedthrough after drilling the necessary holes.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#mods_50k",
+                        {
+                            'Changes|c50': ['50K Feedthrough Before Modifications|50K_feedthrough_before',
+                                '50K Feedthrough Before Modifications|50K_feedthrough_modded'],
+                        },
+                        function (params) {
+                            name = "figs/modifications/" + params.c50 + ".png"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+        </subsection>
+
+        <subsection>
+            <h3>4K Base Stage</h3>
+            <p>We cut out a section of the 4K baseplate to accomodate the feedthroughs, then machine a new feedthrough
+                for the 4K base stage. </p>
+            <figure>
+                <img alt="Modifications to the 4K base stage" id="mods_4kb" src="#" />
+                <figcaption>
+                    a) The current 4K baseplate. b) The 4K baseplate after the cutouts. c) The new 4K feedthroughs.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#mods_4kb",
+                        {
+                            'Changes|c4b': ['4K Base Plate Before Modifications|4K_before',
+                                '4K Base Plate After Modifications|4K_modded',
+                                'New 4K Base Plate Feedthrough|4K_feedthrough'],
+                        },
+                        function (params) {
+                            name = "figs/modifications/" + params.c4b + ".png"
+                            return name
+                        })
+
+                </script>
+
+            </figure>
+        </subsection>
+        <subsection>
+            <h3>4K Upper Stage</h3>
+            <p>We remove the previous cutouts for the MCE amplifiers and drill new holes to accomodate the SMA
+                bulkheads. Holes are also drilled to attach the 4K amplifiers</p>
+            <figure>
+                <img alt="Modifications to the 4K stage" id="mods_4k" src="#" />
+                <figcaption>
+                    a) The current 4K upper plate. b) The 4K upper after drilling SMA bulkhead holes. Note: amplifier
+                    holes are not yet decided.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#mods_4k",
+                        {
+                            'Changes|c4': ['4K Upper Plate Before Modifications|4k_upper_old',
+                                '4K Upper Plate After Modifications|4k_upper_modded'],
+                        },
+                        function (params) {
+                            name = "figs/mod_cold/" + params.c4 + ".png"
+                            return name
+                        })
+
+
+                </script>
+
+            </figure>
+        </subsection>
+        <subsection>
+            <h3>2K Stage</h3>
+            <p>The modifications are minimal. We drill 48 holes on the outer edges for the SMA bulkheads. </p>
+            <figure>
+                <img alt="Modifications to the 2K stage" id="mods_2k" src="#" />
+                <figcaption>
+                    a) The current 2K plate. b) The 2K plate after drilling SMA bulkhead holes.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#mods_2k",
+                        {
+                            'Changes|c2': ['2K Plate Before Modifications|2k_old',
+                                '2K Plate After Modifications|2k_modded'],
+                        },
+                        function (params) {
+                            name = "figs/mod_cold/" + params.c2 + ".png"
+                            return name
+                        })
+
+
+                </script>
+
+            </figure>
+        </subsection>
+        <subsection>
+            <h3>IC Stage</h3>
+            <p>We drill the 48 SMA bulkhead holes on the outer edges and tapped holes for mounting the circulators. </p>
+            <figure>
+                <img alt="Modifications to the IC stage" id="mods_ic" src="#" />
+                <figcaption>
+                    a) The current IC plate. b) The IC after drilling SMA bulkhead holes. Note: the mounting bracket
+                    holes are not yet drawn in.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#mods_ic",
+                        {
+                            'Changes|ci': ['IC Plate Before Modifications|ic_old_bot',
+                                'IC Plate After Modifications|ic_modded_bot'],
+                        },
+                        function (params) {
+                            name = "figs/mod_cold/" + params.ci + ".png"
+                            return name
+                        })
+
+
+                </script>
+
+            </figure>
+        </subsection>
+        <subsection>
+            <h3>UC Stage</h3>
+            <p> We drill SMA bulkhead holes on the outer corners of the UC plate. Special care was taken to ensure that
+                the RF cables do not interfere with the printed circuit board. </p>
+            <figure>
+                <img alt="Modifications to the UC stage" id="mods_uc" src="#" />
+                <figcaption>
+                    a) The current UC plate. b) The UC plate after drilling SMA bulkhead holes.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#mods_uc",
+                        {
+                            'Changes|cu': ['UC Plate Before Modifications|uc_old',
+                                'UC Plate After Modifications|uc_modded'],
+                        },
+                        function (params) {
+                            name = "figs/mod_cold/" + params.cu + ".png"
+                            return name
+                        })
+
+
+                </script>
+
+            </figure>
+        </subsection>
+    </section>
+
+
+
+
+    <hr>
+    <section>
+        <h2>DC Wiring</h2>
+        <p>DC wiring is necessary for providing power to the amplifiers and the detector modules. New and existing holes
+            in the cryostat stages will accomodate the DC connectors and clamps. We plan to have connectors and filters
+            at the 300K, 4K, and UC stages, with clamps to provide thermal contact on the other stages.</p>
+    </section>
+    <section>
+        <h2>Appendix</h2>
+
+        <h3>
+            Detailed calculations and numbers for thermal loading
+        </h3>
+        <center>
+            <table style="width:100%" border="1,">
+                <tbody>
+                    <tr>
+                        <td><b>Component Name</b></td>
+                        <td><b>Temperature Start (K)</b></td>
+                        <td><b>Temperature End (K)</b></td>
+                        <td><b>Length (cm)</b></td>
+                        <td><b>Conductivity at Warmer Temperature (W cm/K)</b></td>
+                        <td><b>Conductive Load (W)</b></td>
+                        <td><b>Total Attenuation, rounded (dB)</b></td>
+                        <td><b>Dissipative Load (W)</b></td>
+                        <td><b>Total Thermal Load (W)</b> </td>
+                        <td><b>References </b></td>
+                        <td><b>Notes</b></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">300K_to_50K</span></td>
+                        <td>300</td>
+                        <td>50</td>
+                        <td>16.5</td>
+                        <td>4.0 E-3</td>
+                        <td>6.1 E-2</td>
+                        <td>3</td>
+                        <td>2.9 E-4</td>
+                        <td><b>6.1 E-2</b></td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                        <td>Stainless steel balances the thermal budget with the cost of the material. The majority of
+                            the thermal load is conductive for the warm stages.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">50K_atten</span></td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>3.0 E-4</td>
+                        <td><b>3.0 E-4</b></td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/10db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-10-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>A 10dB attenuation provides negligible thermal loading at this stage</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">50K_to_4K</span></td>
+                        <td>50</td>
+                        <td>4</td>
+                        <td>14.7</td>
+                        <td>6.0 E-4</td>
+                        <td>1.9 E-3</td>
+                        <td>2</td>
+                        <td>1.1 E-5</td>
+                        <td><b>1.9 E-3</b></td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                        <td>Stainless steel balances the thermal budget with the cost of the material. The majority of
+                            the thermal load is conductive for the warm stages.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">4Kbase_dcblock_in</span></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>4.5 E-7</td>
+                        <td><b>4.5 E-7</b></td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC blocks provide a thermal break for the inner conductor. </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4Kbase_to_4K</span></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>24</td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>5.4 E-7</td>
+                        <td><b>5.4 E-7</b></td>
+                        <td><a
+                                href="https://www.lakeshore.com/products/categories/specification/temperature-products/cryogenic-accessories/cryogenic-wire">
+                                Copper Resistance</a></td>
+                        <td>The dissipation from the copper wires is negligible at this stage.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">4K_atten</span></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>1.8 E-5</td>
+                        <td><b>1.8 E-5</b></td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/10db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-10-p.aspx">
+                                Fairview Microwave</a></td>
+                        </td>
+                        <td>A 10dB attenuation at this stage is the majority of the thermal cost at this stage.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4K_to_2K</span></td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>10.9</td>
+                        <td>9.8 E-6</td>
+                        <td>1.8 E-6</td>
+                        <td> 2 </td>
+                        <td>5.1 E-7</td>
+                        <td><b>2.3 E-6</b></td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">
+                                Coax Co.</a></td>
+                        <td>Dissipation becomes a more significant fraction of the total thermal load at the colder
+                            stages.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">2K_dcblock_in</span></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3.0 E-8</td>
+                        <td><b>3.0 E-8</b></td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC blocks provide a thermal break for the inner conductor. </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">2K_atten</span></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>10 </td>
+                        <td>9.9 E-7</td>
+                        <td><b>9.9 E-7</b></td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/6db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-06-p.aspxx">
+                                Fairview Microwave</a></td>
+                        </td>
+                        <td>The attenuator is a non-negligible fraction of the total thermal load at this stage.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">2K_to_IC</span></td>
+                        <td>2</td>
+                        <td>0.35</td>
+                        <td>10.5</td>
+                        <td>4.5 E-6</td>
+                        <td>7.1 E-7</td>
+                        <td>1</td>
+                        <td>8.5 E-8</td>
+                        <td><b>7.9 E-7</b></td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">
+                                Coax Co.</a></td>
+                        <td>Dissipation becomes a more significant fraction of the total thermal load at the colder
+                            stages.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: purple">IC_dcoup</span></td>
+                        <td>0.35</td>
+                        <td>0.35</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>1.7 E-7</td>
+                        <td><b>1.7 E-7</b></td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/sma-directional-coupler-6-db-8-ghz-50-watts-mc2047-06-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC coupler provides a 6dB attenuation while also acting as a heat sink for the inner
+                            conductor
+                            of the coaxial cables. Tests are pending to determine whether the DC coupler can be replaced
+                            with an aggressively heat-sunk attenuator. </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">IC_to_UC</span></td>
+                        <td>0.35</td>
+                        <td>0.25</td>
+                        <td>22.3</td>
+                        <td>1.5 E-6</td>
+                        <td>6.7 E-9</td>
+                        <td>3</td>
+                        <td>2.8 E-8</td>
+                        <td><b>3.4 E-8</b></td>
+
+                        <td>
+                            <li><a href="https://arxiv.org/pdf/1809.03689.pdf">
+                                    SMURF Electronics</a></li>
+                            <li><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">
+                                    Coax Co.</a></li>
+
+                        </td>
+                        <td>Dissipation becomes a smaller fraction of the total thermal load at the later
+                            stages because the input power becomes much smaller and there is minimal dissipation in
+                            superconducting cables.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">UC_to_IC</span></td>
+                        <td>0.25</td>
+                        <td>0.35</td>
+                        <td>22.3</td>
+                        <td>3.0 E-7</td>
+                        <td>1.4 E-9</td>
+                        <td>0</td>
+                        <td>7.1 E-11</td>
+                        <td><b>1.4 E-9</b></td>
+                        <td>
+                            <li><a href="https://arxiv.org/pdf/1809.03689.pdf">
+                                    SMURF Electronics</a></li>
+                            <li><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">
+                                    Coax Co.</a></li>
+                        </td>
+                        <td>Dissipation becomes a majority of the total thermal load at the subK
+                            stages.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: purple">IC_circ</span></td>
+                        <td>0.35</td>
+                        <td>0.35</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>4.6 E-11</td>
+                        <td><b>4.6 E-11</b></td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/sma-female-high-power-circulator-18db-isolation-8-ghz-50-watts-fmcr1006-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>The Circulator directs the reflected power into a terminating load. The real thermal loading
+                            will likely be larger by about a factor of two as the reflections from the warmer stages
+                            terminate at IC rather than bouncing back to 2K.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">IC_to_2K</span></td>
+                        <td>0.35</td>
+                        <td>2</td>
+                        <td>12.6</td>
+                        <td>1.5 E-6</td>
+                        <td>2.0 E-7</td>
+                        <td>0</td>
+                        <td>3.8 E-11</td>
+                        <td><b>2.0 E-7</b></td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">
+                                Coax Co.</a></td>
+                        <td>Dissipation becomes a smaller fraction of the total thermal load at the later
+                            stages because the input power becomes much smaller and there is minimal dissipation in
+                            superconducting cables.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">2K_dcblock_out</span></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>5.8 E-11</td>
+                        <td><b>5.8 E-11</b></td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC blocks provide a thermal break for the inner conductor. </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">2K_to_HEMT</span></td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>11.4</td>
+                        <td>4.6 E-6</td>
+                        <td>8.1 E-7</td>
+                        <td>0</td>
+                        <td>3.3 E-11</td>
+                        <td><b>8.1 E-7</b></td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">
+                                Coax Co.</a></td>
+                        <td>Dissipation becomes a smaller fraction of the total thermal load at the later
+                            stages because the input power becomes much smaller and there is minimal dissipation in
+                            superconducting cables.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: purple">4K_biastee</span></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1.33 E-10</td>
+                        <td><b>1.33 E-10</b></td>
+
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/sma-bias-tee-0.1-mhz-12.4-ghz-700-ma-50-volts-dc-sb5792-p.aspx">
+                                Coax Co.</a></td>
+                        <td>The bias tee provides a heatsink for the inner-conductor of the coaxial cable. Tests are
+                            pending for determining whether this component is necessary.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: rgb(169, 100, 11)">4K_HEMT</span></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>+22</td>
+                        <td>??</td>
+                        <td><b>??</b></td>
+                        <td><a href="https://www.lownoisefactory.com/products/cryogenic/lnc-4-8-ghz/">
+                                Low Noise Factory</a></td>
+                        <td> The power dissipated by the amplifier depends on the bias applied.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">HEMT_to_4K</span></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>7.9</td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3.4 E-9</td>
+                        <td><b>3.4 E-9</b></td>
+                        <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
+                                Delft Circuits</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4K_to_4Kbase</span></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>24</td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1.0 E-8</td>
+                        <td><b>1.0 E-8</b></td>
+                        <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
+                                Delft Circuits</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">4K_base_dcblock_out</span></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>7.9 E-9</td>
+                        <td><b>7.9 E-9</b></td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC blocks provide a thermal break for the inner conductor. </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4K_to_50K</span></td>
+                        <td>4</td>
+                        <td>50</td>
+                        <td>11.9</td>
+                        <td>6.0 E-4</td>
+                        <td>2.3 E-3</td>
+                        <td>2</td>
+                        <td>1.0 E-7</td>
+                        <td><b>2.3 E-3</b></td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: rgb(169, 100, 11)">50K_amp</span></td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td></td>
+                        <td>Isothermal</td>
+                        <td>0</td>
+                        <td>+47</td>
+                        <td>??</td>
+                        <td><b>??</b></td>
+                        <td><a href="https://bnztech.com/datasheets/BZ-04000800-081245-102014.pdf">
+                                B&Z Tech</a></td>
+                        <td> The power dissipated by the amplifier depends on the bias applied.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">50K_to_300K</span></td>
+                        <td>50</td>
+                        <td>300</td>
+                        <td>16.5</td>
+                        <td>4.0 E-3</td>
+                        <td>6.1 E-2</td>
+                        <td>3</td>
+                        <td>5.6 E-3</td>
+                        <td><b>6.6 E-2</b></td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <h3>
+            Detailed calculations and numbers for electrical power
+        </h3>
+        <center>
+            <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
+                <tbody>
+                    <tr>
+                        <td><b>Component Name</b></td>
+                        <td><b>Input Power per Tone (dBm)</b></td>
+                        <td><b>Nominal Attenuation at 5 GHz (dB) </b></td>
+                        <td><b>Mismatch Loss (dB) </b></td>
+                        <td><b>Total Attenuation, rounded (dB) </b></td>
+                        <td><b>Output Power per Tone (dBm)</b></td>
+                        <td><b>Johnson Noise at Temperature Stage (dBm)</b></td>
+                        <td><b>References </b></td>
+                        <td><b>Notes</b></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">300K_to_50K</span></td>
+
+                        <td>-32</td>
+                        <td>2.7</td>
+                        <td>
+                            < 0.1</td>
+                        <td>3</td>
+                        <td>-35</td>
+                        <td>-75</td>
+                        <td>
+
+                            <li><a href="https://arxiv.org/pdf/1805.08363.pdf">
+                                    SMURF Electronics</a></li>
+                            <li><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                    Coax Co.</a></li>
+
+                        </td>
+                        <td>Input power provided by SMURF is -32 dBm per tone. </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">50K_atten</span></td>
+
+                        <td>-35</td>
+                        <td>10</td>
+                        <td>0.1</td>
+                        <td>10</td>
+                        <td>-45</td>
+                        <td>-83</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/10db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-10-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>A 10dB attenuation at this stage decreases the thermal load on later stages without
+                            sacrificing signal quality</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">50K_to_4K</span></td>
+
+                        <td>-45</td>
+                        <td>1.9</td>
+                        <td>
+                            < 0.1</td>
+                        <td>2</td>
+                        <td>-47</td>
+                        <td>-83</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">4Kbase_dcblock_in</span></td>
+
+                        <td>-47</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-47</td>
+                        <td>-94</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC blocks remove potential DC bias from the probe tones while providing thermal breaks.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4Kbase_to_4K</span></td>
+
+                        <td>-47</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-47</td>
+                        <td>-94</td>
+                        <td><a
+                                href="https://www.lakeshore.com/products/categories/specification/temperature-products/cryogenic-accessories/cryogenic-wire">
+                                Copper Resistance</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">4K_atten</span></td>
+
+                        <td>-47</td>
+                        <td>10</td>
+                        <td>0.1</td>
+                        <td>10</td>
+
+                        <td>-57</td>
+                        <td>-94</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/10db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-10-p.aspx">
+                                Fairview Microwave</a></td>
+                        </td>
+                        <td>A 10dB attenuation at this stage decreases the thermal load on the cold stages without
+                            sacrificing signal quality.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4K_to_2K</span></td>
+
+                        <td>-57</td>
+                        <td>1.5</td>
+                        <td>
+                            < 0.1</td>
+                        <td> 2 </td>
+
+                        <td>-59</td>
+                        <td>-94</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">
+                                Coax Co.</a></td>
+                        <td></td>
+
+                    <tr>
+                        <td><span style="color: blue">2K_dcblock_in</span></td>
+
+                        <td>-59</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-59</td>
+                        <td>-97</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC blocks remove potential DC bias from the probe tones while providing thermal breaks.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">2K_atten</span></td>
+
+                        <td>-59</td>
+                        <td>6</td>
+                        <td>
+                            < 0.1</td>
+                        <td>6</td>
+
+                        <td>-65</td>
+                        <td>-97</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/6db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-06-p.aspxx">
+                                Fairview Microwave</a></td>
+                        </td>
+                        <td>The power must be at around -75 dBm by the time the probe tones reach the SQUID readout</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">2K_to_IC</span></td>
+
+                        <td>-65</td>
+                        <td>1.3</td>
+                        <td>
+                            < 0.1</td>
+                        <td>1</td>
+
+                        <td>-66</td>
+                        <td>-97</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: purple">IC_dcoup</span></td>
+
+                        <td>-66</td>
+                        <td>6</td>
+                        <td> 0.1</td>
+                        <td>6</td>
+
+                        <td>-72</td>
+                        <td>-104</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/sma-directional-coupler-6-db-8-ghz-50-watts-mc2047-06-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC coupler provides a 6dB attenuation while also acting as a heat sink for the inner
+                            conductor
+                            of the coaxial cables. Tests are pending to determine whether the DC coupler can be replaced
+                            with an aggressively heat-sunk attenuator. </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">IC_to_UC</span></td>
+
+                        <td>-72</td>
+                        <td>2.9</td>
+                        <td>
+                            < 0.1</td>
+                        <td>3</td>
+
+                        <td>-75</td>
+                        <td>-104</td>
+                        <td>
+                            <li><a href="https://arxiv.org/pdf/1809.03689.pdf">
+                                    SMURF Electronics</a></li>
+                            <li><a href="http://www.coax.co.jp/en/product/sc/086-50-cn-cn.html">
+                                    Coax Co.</a></li>
+
+                        </td>
+                        <td>The power of the input probe tones should be at around -75 dBm to optimally interact with
+                            the resonators</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">UC_to_IC</span></td>
+
+                        <td>-86</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-86</td>
+                        <td>-104</td>
+                        <td>
+                            <li><a href="https://arxiv.org/pdf/1809.03689.pdf">
+                                    SMURF Electronics</a></li>
+                            <li><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">
+                                    Coax Co.</a></li>
+                        </td>
+                        <td>The resonators attenuate the signal power of each tone by about 10 dB. </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: purple">IC_circ</span></td>
+
+                        <td>-86</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-86</td>
+                        <td>-104</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/sma-female-high-power-circulator-18db-isolation-8-ghz-50-watts-fmcr1006-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>The Circulator is necessary for preventing reflections from interfering with the SQUID
+                            electronics </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">IC_to_2K</span></td>
+
+                        <td>-86</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-86</td>
+                        <td>-97</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">
+                                Coax Co.</a></td>
+                        <td>Superconducting Niobium Titanium minimizes the loss of signal</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">2K_dcblock_out</span></td>
+
+                        <td>-86</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-86</td>
+                        <td>-97</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC blocks remove potential DC bias from the probe tones while providing thermal breaks.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">2K_to_HEMT</span></td>
+
+                        <td>-86</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-86</td>
+                        <td>-94</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/086-50-nbti-nbti.html">
+                                Coax Co.</a></td>
+                        <td>Superconducting Niobium Titanium minimizes the loss of signal</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: purple">4K_biastee</span></td>
+
+                        <td>-86</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            0.2</td>
+                        <td>0</td>
+
+                        <td>-86</td>
+                        <td>-94</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/sma-bias-tee-0.1-mhz-12.4-ghz-700-ma-50-volts-dc-sb5792-p.aspx">
+                                Coax Co.</a></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: rgb(169, 100, 11)">4K_HEMT</span></td>
+
+                        <td>-86</td>
+                        <td>+22</td>
+                        <td>
+                            < 0.1</td>
+                        <td>+22</td>
+
+                        <td>-64</td>
+                        <td>-94</td>
+                        <td><a href="https://www.lownoisefactory.com/products/cryogenic/lnc-4-8-ghz/">
+                                Low Noise Factory</a></td>
+                        <td> Amplifies signal to a more readable power. Still deciding which exact amplifier to use.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">HEMT_to_4K</span></td>
+
+                        <td>-64</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-64</td>
+                        <td>-94</td>
+                        <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
+                                Delft Circuits</a></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4K_to_4Kbase</span></td>
+
+                        <td>-64</td>
+                        <td>0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-64</td>
+                        <td>-94</td>
+                        <td><a href="https://delft-circuits.com/wp-content/uploads/2019/08/Datasheet-CrioFlex-CF2.pdf">
+                                Delft Circuits</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: blue">4K_base_dcblock_out</span></td>
+
+                        <td>-64</td>
+                        <td>
+                            < 0.1</td>
+                        <td>
+                            < 0.1</td>
+                        <td>0</td>
+
+                        <td>-64</td>
+                        <td>-94</td>
+                        <td><a
+                                href="https://www.fairviewmicrowave.com/inner-outer-dc-block-10-mhz-18-ghz-sma-connectors-sd3258-p.aspx">
+                                Fairview Microwave</a></td>
+                        <td>DC blocks remove potential DC bias from the probe tones while providing thermal breaks.</td>
+
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">4K_to_50K</span></td>
+
+                        <td>-64</td>
+                        <td>1.5</td>
+                        <td>
+                            < 0.1</td>
+                        <td>2</td>
+
+                        <td>-66</td>
+                        <td>-83</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: rgb(169, 100, 11)">50K_amp</span></td>
+
+                        <td>-66</td>
+                        <td>+47</td>
+                        <td>
+                            < 0.1</td>
+                        <td>+47</td>
+
+                        <td>-19</td>
+                        <td>-83</td>
+                        <td><a href="https://bnztech.com/datasheets/BZ-04000800-081245-102014.pdf">
+                                B&Z Tech</a></td>
+                        <td> We use two amplifiers at different stages to improve linearity and reduce noise.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: red">50K_to_300K</span></td>
+
+                        <td>-19</td>
+                        <td>2.7</td>
+                        <td>
+                            < 0.1</td>
+                        <td>3</td>
+
+                        <td>-22</td>
+                        <td>-75</td>
+                        <td><a href="http://www.coax.co.jp/en/product/sc/119-50-ss-ss.html">
+                                Coax Co.</a></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </section>
+
+
+</body>
