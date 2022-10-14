@@ -33,8 +33,10 @@
 
     <section>
         <h2>Introduction</h2>
-        <p> The BICEP Array 1 receiver (BA1) has an absorptive forebaffle attached to reduce signal contamination from the ground. 
-            The forebaffle acts as a shield that absorbs stray light to ensure the receiver sees only signal from the sky. 
+        <p> The BICEP Array 1 receiver (BA1) has an absorptive forebaffle attached to reduce signal contamination from
+            the ground.
+            The forebaffle acts as a shield that absorbs stray light to ensure the receiver sees only signal from the
+            sky.
             Unfortunately, the forebaffle itself contributes its own thermal loading onto the BA1 detectors.
             In this posting, we measure the thermal loading caused by the BA1 forebaffle in various configurations. </p>
 
@@ -46,14 +48,18 @@
 
     <section>
         <h2>Background</h2>
-        <p>The detectors in BA1 are Transition Edge Sensors (TES), which pass along a signal that is later amplified by Superconductive Quantum
+        <p>The detectors in BA1 are Transition Edge Sensors (TES), which pass along a signal that is later amplified by
+            Superconductive Quantum
             Interference Devices (SQuIDs). </p>
-        <p>The TES works as follows. Light from the sky and environment is captured by antennas, which then heats up the microwave termination (Fig 2.1b). 
-            A resister sits at the edge of the transition between superconducting and normal, so a slight change in temperature creates a 
-            significant change in resistance, causing \(R_{TES}\) to be extremely sensitive to photons absorbed by the antenna. 
-            A bias current is passed throgh the entire circuit, so 
-            this change in resistance then causes a change in the current \(I_{TES}\) passing through \(R_{TES}\), which 
-            ultimately amplified by the inductively coupled SQuID. Because the TES is also thermally coupled to a 
+        <p>The TES works as follows. Light from the sky and environment is captured by antennas, which then heats up the
+            microwave termination (Fig 2.1b).
+            A resister sits at the edge of the transition between superconducting and normal, so a slight change in
+            temperature creates a
+            significant change in resistance, causing \(R_{TES}\) to be extremely sensitive to photons absorbed by the
+            antenna.
+            A bias current is passed throgh the entire circuit, so
+            this change in resistance then causes a change in the current \(I_{TES}\) passing through \(R_{TES}\), which
+            ultimately amplified by the inductively coupled SQuID. Because the TES is also thermally coupled to a
             thermal bath, the temperature eventually returns to the edge of the transition.
         </p>
         <figure>
@@ -65,8 +71,8 @@
                 pager.link("#tes",
                     {
                         'TES |sc': ['TES Schematic Circuit|TES_schematic',
-                                    'TES Photo|TES_image',
-                            ],
+                            'TES Photo|TES_image',
+                        ],
                     },
                     function (params) {
                         console.log('params' + params)
@@ -78,25 +84,29 @@
 
         </figure>
 
-        <p> We can plot the bias current \(I_b\) against the current passing through the TES, \(I_{TES}\) to verify the behavior of our TES.
-            We expect the 
+        <p> We can plot the bias current \(I_b\) against the current passing through the TES, \(I_{TES}\) to verify the
+            behavior of our TES.
+            We expect the
         </p>
         <p>
+            negative electrothermal feedback, bias current adjust down electrical power when increase in optical power,
+            locks detector island at a temperature
+
             blah blah blah give more background
         </p>
         <figure>
             <img alt="TES Curves" id="current" src="#" />
             <figcaption>
-                 Sketch of the bias current vs TES current (a) and the curve with real data (b). 
-                 Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
+                Sketch of the bias current vs TES current (a) and the curve with real data (b).
+                Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
             </figcaption>
             <script type="text/javascript">
                 pager.link("#current",
                     {
                         'Load Curves|sc': ['Sketch of current curve|current_sketch',
-                                            'Current Curve with real data|current_data',
-                                            'Sketch of power curve|thermal_sketch',
-                                            'Power Curve with real data|thermal_data',
+                            'Current Curve with real data|current_data',
+                            'Sketch of power curve|thermal_sketch',
+                            'Power Curve with real data|thermal_data',
                         ],
                     },
                     function (params) {
@@ -118,8 +128,8 @@
         <section>
             <h2>Examining the data</h2>
             <p> make some plots of load curves with forebaffle on and off</p>
-    
-    
+
+
             <subsection>
                 <h3>
                     tile plots
@@ -129,13 +139,13 @@
                 </p>
 
             </subsection>
-<section>
-    <h2>Conclusion</h2>
-    <p>
-        analyze data some more
-    </p>
-</section>    
-    
+            <section>
+                <h2>Conclusion</h2>
+                <p>
+                    analyze data some more
+                </p>
+            </section>
+
         </section>
 
 </body>
