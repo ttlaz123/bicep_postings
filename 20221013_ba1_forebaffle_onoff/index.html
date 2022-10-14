@@ -128,7 +128,30 @@
         <section>
             <h2>Examining the data</h2>
             <p> make some plots of load curves with forebaffle on and off</p>
+            <figure>
+                <img alt="TES Curves" id="onoff" src="#" />
+                <figcaption>
+                    Sketch of the bias current vs TES current (a) and the curve with real data (b).
+                    Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#onoff",
+                        {
+                            'Load Curves|sc': ['Sketch of current curve|thermal_onoff',
+                                'Current Curve with real data|onoff_zoomedin',
+                                'Sketch of power curve|thermal_onoffhalf',
+                                'Power Curve with real data|thermal_data',
+                            ],
+                        },
+                        function (params) {
+                            console.log('params' + params)
+                            name = "figs/curves/" + params.sc + ".png"
+                            return name
+                        })
 
+                </script>
+
+            </figure>
 
             <subsection>
                 <h3>
