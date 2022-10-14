@@ -86,48 +86,98 @@
 
         <p> We can plot the bias current \(I_b\) against the current passing through the TES, \(I_{TES}\) to verify the
             behavior of our TES.
-            We expect the
+            When the bias current is low and the TES is cold enough to be superconducting, the TES current is nearly
+            equal to the bias current because none of the current passes through \(R_L\) as shown in Fig 2.1a.
+            The inductance \(L\) contributes negligible impedance.
+            As the current increases, it heats up the resistor past the superconducting regime, increasing its
+            resistance.
+            As the resistance drastically increases, the current passing through it decreases.
+            Then, once the resistor is fully in the normal regime, the resistance increases less strongly, so
+            \(R_{TES}\) is
+            nearly constant with respect to \(I_b\). This leads to \(I_{TES}\) varying linearly again with the bias
+            current,
+            but with a shallower slope depending on \(R_L\).
         </p>
-        <p>
-            negative electrothermal feedback, bias current adjust down electrical power when increase in optical power,
-            locks detector island at a temperature
 
-            blah blah blah give more background
-        </p>
         <figure>
             <img alt="TES Curves" id="current" src="#" />
             <figcaption>
                 Sketch of the bias current vs TES current (a) and the curve with real data (b).
-                Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
             </figcaption>
             <script type="text/javascript">
                 pager.link("#current",
                     {
-                        'Load Curves|sc': ['Sketch of current curve|current_sketch',
+                        'Load Curves|c': ['Sketch of current curve|current_sketch',
                             'Current Curve with real data|current_data',
-                            'Sketch of power curve|thermal_sketch',
-                            'Power Curve with real data|thermal_data',
                         ],
                     },
                     function (params) {
                         console.log('params' + params)
-                        name = "figs/curves/" + params.sc + ".png"
+                        name = "figs/curves/" + params.c + ".png"
                         return name
                     })
 
             </script>
 
         </figure>
-        <subsection>
-            <h3>
-                subsection
-            </h3>
-            <p>
-            </p>
-        </subsection>
+        <p>
+            To determine the power loading on the TES, we plot the power running through the TES as a function of the
+            TES resistance.
+            Because the TES is coupled to a thermal bath, the equation for the power is
+            \[ P_{bath} = Q + P_J\]
+            where \(P_J\) is the \(I^2 R\) running through the TES, \(Q\) is the optical loading from the sky, and
+            \(P_{bath}\)
+            is the amount of power transfered from the TES to the thermal bath.
+
+            Because the setup uses negative electrothermal feedback, the bias current adjusts the electrical power down
+            when there is an increase in optical power, locking the TES at a constant temperature.
+            \(P_{bath}\) is kept constant within the phase transition of the TES resistor,
+            so for a constant sky loading \(Q\), the power running through the TES is also constant with respect to an
+            increase in resistance.
+            In the superconducting regime, no current is running through the TES resistor, so \(P_J\) is zero,
+            and once the bias current increases the temperature enough to the normal regime, the power can
+            increase without an increase in the TES resistance.
+
+
+        </p>
+        <p>
+            Note that in the forebaffle on-off experiment, the bias current starts high, where the TES is in the normal
+            regime,
+            then decreases until the resistor enters the phase transition.
+        </p>
+        <figure>
+            <img alt="TES Curves" id="thermal" src="#" />
+            <figcaption>
+                Sketch of the TES resistance vs TES power (a) and the curve with real data (b).
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#thermal",
+                    {
+                        'Load Curves|l': [
+                            'Sketch of power curve|thermal_sketch',
+                            'Power Curve with real data|thermal_data',
+                        ],
+                    },
+                    function (params) {
+                        console.log('params' + params)
+                        name = "figs/curves/" + params.l + ".png"
+                        return name
+                    })
+
+            </script>
+
+        </figure>
         <section>
             <h2>Examining the data</h2>
-            <p> make some plots of load curves with forebaffle on and off</p>
+            <p> In order to determine the effect of the forebaffle on the thermal loading of the TES, we plot this
+                \(P_J\) load curve for each detector and
+                for several configurations for the forebaffle. Because we expect the forebaffle to contribute additional
+                optical loading,
+                the increase in \(Q\) corresponds to a decrease in \(P_J\) in the transition. When plotting the \(P_J\)
+                load
+                curve, we can see this gap as shown in Fig 3.4. This gap is the optical power contributed by the
+                forebaffle
+                onto a specific detector. </p>
             <figure>
                 <img alt="TES Curves" id="onoff" src="#" />
                 <figcaption>
@@ -137,15 +187,14 @@
                 <script type="text/javascript">
                     pager.link("#onoff",
                         {
-                            'Load Curves|sc': ['Sketch of current curve|thermal_onoff',
-                                'Current Curve with real data|onoff_zoomedin',
-                                'Sketch of power curve|thermal_onoffhalf',
-                                'Power Curve with real data|thermal_data',
+                            'Forebaffle Configuration|f': ['Load Curve on-off|thermal_onoff',
+                                'Zoomed in load curve|onoff_zoomedin',
+                                'Zoomed in half off|thermal_onoffhalf',
                             ],
                         },
                         function (params) {
                             console.log('params' + params)
-                            name = "figs/curves/" + params.sc + ".png"
+                            name = "figs/curves/" + params.f + ".png"
                             return name
                         })
 
