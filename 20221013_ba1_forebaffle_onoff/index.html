@@ -210,123 +210,169 @@
                     We extract the size of the gap between the flat parts of the load curves and plot 
                     the value on tile plots for each detector, giving us plots as follows: 
                 </p>
+                <figure>
+                    <img alt="Tile Plots" id="tile" src="#" />
+                    <figcaption>
+                        Tile plots
+                    </figcaption>
+                    <script type="text/javascript">
+                        pager.link("#tile",
+                            {
+                                'Forebaffle Configuration 1|fb1': [
+                                    'Initial PLC (forebaffle off)|noneinit1',
+                                    'Initial Forebaffle off |noneinit2',
+                                    'Forebaffle lower half on BA1|ba1half1',
+                                    'Forebaffle fully on BA1|ba1full',
+                                    'Forebaffle lower half on BA1 (2)|ba1half2',
+                                    'Middle Forebaffle off|nonemid',
+                                    'Forebaffle on Rx1|keckrx11',
+                                    'Forebaffle on Rx1 again|keckrx12',
+                                    'Forebaffle on Rx2|keckrx21',
+                                    'Forebaffle on Rx2 again|keckrx22',
+                                    'Forebaffle on Rx3|keckrx3',
+                                    'Final Forebaffle off|nonefinal',
+                                ],
+                                'Forebaffle Configuration 2|fb2': [
+                                    'Initial PLC (forebaffle off)|noneinit1',
+                                    'Initial Forebaffle off |noneinit2',
+                                    'Forebaffle lower half on BA1|ba1half1',
+                                    'Forebaffle fully on BA1|ba1full',
+                                    'Forebaffle lower half on BA1 (2)|ba1half2',
+                                    'Middle Forebaffle off|nonemid',
+                                    'Forebaffle on Rx1|keckrx11',
+                                    'Forebaffle on Rx1 again|keckrx12',
+                                    'Forebaffle on Rx2|keckrx21',
+                                    'Forebaffle on Rx2 again|keckrx22',
+                                    'Forebaffle on Rx3|keckrx3',
+                                    'Final Forebaffle off|nonefinal',
+                                ],
+                                'Receiver Number|rx': [
+                                    'BA1|0',
+                                    'Keck Rx1|1',
+                                    'Keck Rx2|2',
+                                    'Keck Rx3|3',
+                                ],
+                            },
+                            function (params) {
+                                console.log('params' + params)
+                                name = "figs/tile/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx +".png"
+                                return name
+                            })
+        
+                    </script>
+        
+                </figure>
+                <h3>
+                    Forebaffle Configuration Timestamps
+                </h3>
                 <center>
                     <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
                         <tbody>
                             <tr>
                                 <td><b>Forebaffle Configuration</b></td>
-                                <td><b>Starting command do_partial_loadcurve</b></td>
-                                <td><b>Partial load curve script execution successfully completed</b></td>
-                                <td><b>Configuration Complete</b></td>
+                                <td><b>Starting command do_partial_loadcurve<br>  (2022-Jan-15)</b></td>
+                                <td><b>Partial load curve script execution successfully completed<br> (2022-Jan-15)</b></td>
+                                <td><b>Configuration Complete<br>  (2022-Jan-15)</b></td>
                                 <td><b>Average power loading difference from init 1 </b></td>
                                 <td><b>Notes</b></td>
                             </tr>
                             <tr>
                                 <td>Initial PLC</td>
         
-                                <td>Starting command do_partial_loadcurve: 15-JAN-2022 03:01:09</td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 03:02:50
-                                    220115 03:03:38 Initial PLC complete.</td>
+                                <td>03:01:09</td>
+                                <td>03:02:50</td>
+                                <td>03:03:38</td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>Forebaffle off</td>
         
-                                <td>Starting command do_partial_loadcurve: 15-JAN-2022 03:39:00</td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 03:40:41
-                                    220115 03:41:29 Forebaffle off complete.
-                                </td>
+                                <td>03:39:00</td>
+                                <td>03:40:41</td>
+                                <td>03:41:29</td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>Forebaffle lower-half on</td>
         
-                                <td>Starting command do_partial_loadcurve: 15-JAN-2022 03:47:38</td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 03:49:19
-                                    220115 03:50:07 Forebaffle lower-half on complete. </td>
+                                <td>03:47:38</td>
+                                <td>03:49:19</td>
+                                <td>03:50:07</td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>Forebaffle upper-half on</td>
         
-                                <td>03:53:10 Starting command do_partial_loadcurve: 15-JAN-2022 03:53:10</td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 03:54:51
-                                    220115 03:55:39 Forebaffle upper-half on complete. </td>
+                                <td>03:53:10</td>
+                                <td>03:54:51</td>
+                                 <td>03:55:39</td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>Forebaffle lower-half on</td>
         
-                                <td>Starting command do_partial_loadcurve: 15-JAN-2022 03:58:02</td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 03:59:43
-                                    220115 04:00:31 Forebaffle lower-half on complete.
-                                </td>
+                                <td>03:58:02</td>
+                                <td>03:59:43</td>
+                                <td> 04:00:31 </td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>None (mid), no forebaffle</td>
         
-                                <td>Starting command do_partial_loadcurve: 15-JAN-2022 04:07:39</td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 04:09:20
-                                    220115 04:10:08 Forebaffle off complete.
-                                </td>
+                                <td>04:07:39</td>
+                                <td>04:09:20</td>
+                                <td> 04:10:08 </td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td> keck rx1 (1) </td>
         
-                                <td>Starting command do_partial_loadcurve: 15-JAN-2022 04:12:43 </td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 04:14:24
-                                    220115 04:15:12 Forebaffle on complete.
-                                </td>
+                                <td>04:12:43 </td>
+                                <td>04:14:24</td>
+                                <td> 04:15:12 </td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>   keck rx1 (2) </td>    
-                                <td> Starting command do_partial_loadcurve: 15-JAN-2022 04:16:23</td>
-                                <td> Partial load curve script execution successfully completed: 15-JAN-2022 04:18:04
-                                    220115 04:18:52 Forebaffle off complete
-                                </td>
+                                <td> 04:16:23</td>
+                                <td> 04:18:04</td>
+                                <td>04:18:52 </td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>   keck rx2 (1) </td>
-                                <td> Starting command do_partial_loadcurve: 15-JAN-2022 04:22:33</td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 04:24:14
-                                    220115 04:25:02 Forebaffle on complete
-                                </td>
+                                <td> 04:22:33</td>
+                                <td>04:24:14</td>
+                                 <td>04:25:02 </td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr><td>   keck rx2 (2)  </td>
-                                <td>Starting command do_partial_loadcurve: 15-JAN-2022 04:25:57</td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 04:27:38
-                                    220115 04:28:26 Forebaffle off complete.
-                                </td>
+                                <td>04:25:57</td>
+                                <td>04:27:38</td>
+                                <td> 04:28:26</td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr><td> keck rx3  </td>
-                                <td>Starting command do_partial_loadcurve: 15-JAN-2022 04:31:48</td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 04:33:29
-                                    220115 04:34:16 Forebaffle on complete.
-                                </td>
+                                <td>04:31:48</td>
+                                <td>04:33:29</td>
+                                <td> 04:34:16 </td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr><td>  None (final), no forebaffle</td>
-                                <td>Starting command do_partial_loadcurve: 15-JAN-2022 04:42:51                                </td>
-                                <td>Partial load curve script execution successfully completed: 15-JAN-2022 04:44:31
-                                    Exiting command do_partial_loadcurve: 15-JAN-2022 04:45:20
-                                </td>
+                                <td>04:42:51 </td>
+                                <td>04:44:31</td>
+                                <td> 04:45:20 </td>
                                 <td></td>
                                 <td></td>
                             </tr>
