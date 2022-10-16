@@ -78,8 +78,12 @@
                         console.log('params' + params)
                         name = "figs/tes/" + params.sc + ".png"
                         return name
-                    })
-
+                    });
+            pager.setparams(
+                {
+                    'sc':TES_schematic
+                }
+            );
             </script>
 
         </figure>
@@ -115,8 +119,12 @@
                         console.log('params' + params)
                         name = "figs/curves/" + params.c + ".png"
                         return name
-                    })
-
+                    });
+                    pager.setparams(
+                {
+                    'c':current_sketch
+                }
+            );            
             </script>
 
         </figure>
@@ -162,8 +170,12 @@
                         console.log('params' + params)
                         name = "figs/curves/" + params.l + ".png"
                         return name
-                    })
-
+                    });
+                pager.setparams(
+                {
+                    'l':thermal_sketch
+                }
+            );  
             </script>
 
         </figure>
@@ -196,8 +208,12 @@
                             console.log('params' + params)
                             name = "figs/curves/" + params.f + ".png"
                             return name
-                        })
-
+                        });
+                        pager.setparams(
+                {
+                    'f':thermal_onoff
+                }
+            );  
                 </script>
 
             </figure>
@@ -255,9 +271,17 @@
                             },
                             function (params) {
                                 console.log('params' + params)
-                                name = "figs/tile/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx +".png"
+                                name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx +".png"
                                 return name
-                            })
+                            });
+                        pager.setparams(
+                {
+                    'fb1':'noneinit1',
+                    'fb2':'noneinit2',
+                    'rx':'0',
+
+                }
+            );  
         
                     </script>
         
