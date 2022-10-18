@@ -286,6 +286,42 @@
                     </script>
         
                 </figure>
+
+                <figure>
+                    <img alt="Sample checks" id="samp" src="#" />
+                    <figcaption>
+                        Sample problem detectors
+                    </figcaption>
+                    <script type="text/javascript">
+                        pager.link("#samp",
+                            {
+                                'Sample|sa': ['Sample 1|rx0_tile3_row1_col4_polB.png',
+                                            'Sample 2|rx0_tile3_row2_col1_polB.png',
+                                            'Sample 3|rx0_tile3_row3_col1_polA.png',
+                                            'Sample 4|rx0_tile3_row3_col1_polB.png',
+                                            'Sample 5|rx0_tile5_row2_col3_polB.png',
+                                            'Sample 6|rx0_tile5_row3_col3_polA.png',
+                                            'Sample 7|rx0_tile5_row3_col3_polB.png',
+                                            'Sample 8|rx0_tile5_row4_col5_polB.png',
+                                            'Sample 9|rx0_tile5_row5_col4_polA.png',
+                                            'Sample 9|rx0_tile5_row5_col4_polB.png',
+                                ],
+                            },
+                            function (params) {
+                                console.log('params' + params)
+                                name = "figs/samps/" + params.sa 
+                                return name
+                            });
+                            pager.setparams(
+                    {
+                        'f':thermal_onoff
+                    }
+                );  
+                    </script>
+    
+                </figure>
+
+
                 <h3>
                     Forebaffle Configuration Timestamps
                 </h3>
@@ -414,3 +450,7 @@
         </section>
 
 </body>
+
+
+
+
