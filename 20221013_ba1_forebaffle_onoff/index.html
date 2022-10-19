@@ -179,44 +179,48 @@
             </script>
 
         </figure>
+
+        <p> In order to determine the effect of the forebaffle on the thermal loading of the TES, we plot this
+            \(P_J\) load curve for each detector and
+            for several configurations for the forebaffle. Because we expect the forebaffle to contribute additional
+            optical loading,
+            the increase in \(Q\) corresponds to a decrease in \(P_J\) in the transition. When plotting the \(P_J\)
+            load
+            curve, we can see this gap as shown in Fig 3.4. This gap is the optical power contributed by the
+            forebaffle
+            onto a specific detector. </p>
+        <figure>
+            <img alt="TES Curves" id="onoff" src="#" />
+            <figcaption>
+                Sketch of the bias current vs TES current (a) and the curve with real data (b).
+                Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#onoff",
+                    {
+                        'Forebaffle Configuration|f': ['Load Curve on-off|thermal_onoff',
+                            'Zoomed in load curve|onoff_zoomedin',
+                            'Zoomed in half off|thermal_onoffhalf',
+                        ],
+                    },
+                    function (params) {
+                        console.log('params' + params)
+                        name = "figs/curves/" + params.f + ".png"
+                        return name
+                    });
+                    pager.setparams(
+            {
+                'f':thermal_onoff
+            }
+        );  
+            </script>
+
+        </figure>
+
+
         <section>
             <h2>Examining the data</h2>
-            <p> In order to determine the effect of the forebaffle on the thermal loading of the TES, we plot this
-                \(P_J\) load curve for each detector and
-                for several configurations for the forebaffle. Because we expect the forebaffle to contribute additional
-                optical loading,
-                the increase in \(Q\) corresponds to a decrease in \(P_J\) in the transition. When plotting the \(P_J\)
-                load
-                curve, we can see this gap as shown in Fig 3.4. This gap is the optical power contributed by the
-                forebaffle
-                onto a specific detector. </p>
-            <figure>
-                <img alt="TES Curves" id="onoff" src="#" />
-                <figcaption>
-                    Sketch of the bias current vs TES current (a) and the curve with real data (b).
-                    Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
-                </figcaption>
-                <script type="text/javascript">
-                    pager.link("#onoff",
-                        {
-                            'Forebaffle Configuration|f': ['Load Curve on-off|thermal_onoff',
-                                'Zoomed in load curve|onoff_zoomedin',
-                                'Zoomed in half off|thermal_onoffhalf',
-                            ],
-                        },
-                        function (params) {
-                            console.log('params' + params)
-                            name = "figs/curves/" + params.f + ".png"
-                            return name
-                        });
-                        pager.setparams(
-                {
-                    'f':thermal_onoff
-                }
-            );  
-                </script>
-
-            </figure>
+            
 
             <subsection>
                 <h3>
@@ -288,7 +292,7 @@
                     </script>
         
                 </figure>
-
+                To more closely examine each detector, we can plot the individual electrical power load curves.
                 <figure>
                     <img alt="Individual Curves" id="indiv" src="#" />
                     <figcaption>
@@ -345,9 +349,21 @@
                             },
                             function (params) {
                                 console.log('params' + params)
+                                const fs = require("fs");
                                 name = "figs/samps/rx" + params.rx +'_tile'+params.tile+
                                         '_row'+params.row +"_col" + params.col + 
                                         "_pol"+params.pol + ".png"
+                                
+                                try{
+                                    if(fs.existsSync(name)){
+                                        return name;
+                                    } else {
+                                        return "figs/samp/dne.png";
+                                    }
+
+                                } catch(e){
+                                    console.log(e);
+                                }
                                 return name
                             });
                         pager.setparams(
