@@ -580,21 +580,28 @@
                                     '12|12',
                                 ],
                                 'Cuts|cut':[
-                                    'Yes|w',
-                                    'No|wo',
+                                    'Yes|with',
+                                    'No|without',
+                                ],
+                                'Absolute or Relative|dif':[
+                                    'Absolute Power|abs',
+                                    'Power difference|diff',
                                 ]
                             },
                             function (params) {
                                 console.log('params' + params)
-                                name = "figs/boxplots/box_rx" + params.rx + "_tile" +params.tiles +'_'+ params.cut + "cuts.png"
-                                if(params.rx > 0 && params.tiles >4 || params.tiles < 0){
+                                if(params.dif == 'abs'){
+                                    params.cut = 'with';
+                                }
+                                name = "figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+ params.cut + "cuts.png"
+                                if(params.rx > 0 && params.tiles >4 || params.tiles < 0 ){
                                     return  "figs/samps/dne.png";
                                 }
                                 return name
                             });
                             pager.setparams(
                     {
-                        'rx':'0', 'tiles':'-All', 'cut':'w'
+                        'rx':'0', 'tiles':'-All', 'cut':'with', 'dif':'diff'
                     }
                 );  
                     </script>
