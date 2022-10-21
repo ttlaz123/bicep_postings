@@ -586,6 +586,10 @@
                                 'Absolute or Relative|dif':[
                                     'Absolute Power|abs',
                                     'Power difference|diff',
+                                ],
+                                'Timestamps|t':[
+                                    'Timestamps|ts-',
+                                    'Tags|'
                                 ]
                             },
                             function (params) {
@@ -593,7 +597,7 @@
                                 if(params.dif == 'abs'){
                                     params.cut = 'with';
                                 }
-                                name = "figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+ params.cut + "cuts.png"
+                                name = "figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+ params.t + params.cut + "cuts.png"
                                 if(params.rx > 0 && params.tiles >4 || params.tiles < 0 ){
                                     return  "figs/samps/dne.png";
                                 }
@@ -601,7 +605,7 @@
                             });
                             pager.setparams(
                     {
-                        'rx':'0', 'tiles':'-All', 'cut':'with', 'dif':'diff'
+                        'rx':'0', 'tiles':'-All', 'cut':'with', 'dif':'diff', 't':'ts'
                     }
                 );  
                     </script>
