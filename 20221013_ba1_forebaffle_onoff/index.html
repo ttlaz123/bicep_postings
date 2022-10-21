@@ -516,10 +516,14 @@
                                     'Keck Rx2|2',
                                     'Keck Rx3|3',
                                 ],
+                                'Cuts|cut':[
+                                    'Yes|w',
+                                    'No|wo',
+                                ]
                             },
                             function (params) {
                                 console.log('params' + params)
-                                name = "figs/boxplots/rx" + params.rx + ".png"
+                                name = "figs/boxplots/box_rx" + params.rx + "_" + params.cut + "cuts.png"
                                 return name
                             });
                             pager.setparams(
