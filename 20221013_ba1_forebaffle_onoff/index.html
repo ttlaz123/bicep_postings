@@ -518,6 +518,22 @@
                                     'Keck Rx2|2',
                                     'Keck Rx3|3',
                                 ],
+                                'Tile|tile': [
+                                    'All|-All',
+                                    '1|1',
+                                    '2|2',
+                                    '3|3',
+                                    '4|4',
+                                    '------------------BA1 Only below---------------|-1',
+                                    '5|5',
+                                    '6|6',
+                                    '7|7',
+                                    '8|8',
+                                    '9|9',
+                                    '10|10',
+                                    '11|11',
+                                    '12|12',
+                                ],
                                 'Cuts|cut':[
                                     'Yes|w',
                                     'No|wo',
@@ -525,12 +541,15 @@
                             },
                             function (params) {
                                 console.log('params' + params)
-                                name = "figs/boxplots/box_rx" + params.rx + "_" + params.cut + "cuts.png"
+                                name = "figs/boxplots/box_rx" + params.rx + "_tile" +params.tile +'_'+ params.cut + "cuts.png"
+                                if(params.rx > 0 && params.tile >4 || params.tile < 0){
+                                    return  "figs/samps/dne.png";
+                                }
                                 return name
                             });
                             pager.setparams(
                     {
-                        'rx':'0'
+                        'rx':'0', 'tile':'-All', 'cut':'w'
                     }
                 );  
                     </script>
