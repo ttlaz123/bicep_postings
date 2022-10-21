@@ -81,7 +81,7 @@
                     });
             pager.setparams(
                 {
-                    'sc':TES_schematic
+                    'sc':'TES_schematic'
                 }
             );
             </script>
@@ -122,7 +122,7 @@
                     });
                     pager.setparams(
                 {
-                    'c':current_sketch
+                    'c':'current_sketch'
                 }
             );            
             </script>
@@ -173,50 +173,54 @@
                     });
                 pager.setparams(
                 {
-                    'l':thermal_sketch
+                    'l':'thermal_sketch'
                 }
             );  
             </script>
 
         </figure>
+
+        <p> In order to determine the effect of the forebaffle on the thermal loading of the TES, we plot this
+            \(P_J\) load curve for each detector and
+            for several configurations for the forebaffle. Because we expect the forebaffle to contribute additional
+            optical loading,
+            the increase in \(Q\) corresponds to a decrease in \(P_J\) in the transition. When plotting the \(P_J\)
+            load
+            curve, we can see this gap as shown in Fig 3.4. This gap is the optical power contributed by the
+            forebaffle
+            onto a specific detector. </p>
+        <figure>
+            <img alt="TES Curves" id="onoff" src="#" />
+            <figcaption>
+                Sketch of the bias current vs TES current (a) and the curve with real data (b).
+                Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#onoff",
+                    {
+                        'Forebaffle Configuration|f': ['Load Curve on-off|thermal_onoff',
+                            'Zoomed in load curve|onoff_zoomedin',
+                            'Zoomed in half off|thermal_onoffhalf',
+                        ],
+                    },
+                    function (params) {
+                        console.log('params' + params)
+                        name = "figs/curves/" + params.f + ".png"
+                        return name
+                    });
+                    pager.setparams(
+            {
+                'f':'thermal_onoff'
+            }
+        );  
+            </script>
+
+        </figure>
+
+
         <section>
             <h2>Examining the data</h2>
-            <p> In order to determine the effect of the forebaffle on the thermal loading of the TES, we plot this
-                \(P_J\) load curve for each detector and
-                for several configurations for the forebaffle. Because we expect the forebaffle to contribute additional
-                optical loading,
-                the increase in \(Q\) corresponds to a decrease in \(P_J\) in the transition. When plotting the \(P_J\)
-                load
-                curve, we can see this gap as shown in Fig 3.4. This gap is the optical power contributed by the
-                forebaffle
-                onto a specific detector. </p>
-            <figure>
-                <img alt="TES Curves" id="onoff" src="#" />
-                <figcaption>
-                    Sketch of the bias current vs TES current (a) and the curve with real data (b).
-                    Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
-                </figcaption>
-                <script type="text/javascript">
-                    pager.link("#onoff",
-                        {
-                            'Forebaffle Configuration|f': ['Load Curve on-off|thermal_onoff',
-                                'Zoomed in load curve|onoff_zoomedin',
-                                'Zoomed in half off|thermal_onoffhalf',
-                            ],
-                        },
-                        function (params) {
-                            console.log('params' + params)
-                            name = "figs/curves/" + params.f + ".png"
-                            return name
-                        });
-                        pager.setparams(
-                {
-                    'f':thermal_onoff
-                }
-            );  
-                </script>
-
-            </figure>
+            
 
             <subsection>
                 <h3>
@@ -274,6 +278,9 @@
                             function (params) {
                                 console.log('params' + params)
                                 name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx +".png"
+                                if(params.fb1 == 'xxx' || params.fb2 == 'xxx'){
+                                    return "figs/samps/dne.png";
+                                }
                                 return name
                             });
                         pager.setparams(
@@ -288,7 +295,7 @@
                     </script>
         
                 </figure>
-
+                To more closely examine each detector, we can plot the individual electrical power load curves.
                 <figure>
                     <img alt="Individual Curves" id="indiv" src="#" />
                     <figcaption>
@@ -308,7 +315,7 @@
                                     '2|2',
                                     '3|3',
                                     '4|4',
-                                    '---BA1-Only Tiles below---',
+                                    '---BA1-Only Tiles below---|0',
                                     '5|5',
                                     '6|6',
                                     '7|7',
@@ -345,10 +352,22 @@
                             },
                             function (params) {
                                 console.log('params' + params)
+                                
                                 name = "figs/samps/rx" + params.rx +'_tile'+params.tile+
                                         '_row'+params.row +"_col" + params.col + 
-                                        "_pol"+params.pol + ".png"
-                                return name
+                                        "_pol"+params.pol + ".png";
+                                if(params.rx == 0 && (
+                                            (params.row > 5 || params.col > 5) ||  (
+                                                !(params.tile == 1 || params.tile == 5 || params.tile == 7 || params.tile == 11) &&
+                                                (params.row > 4 || params.col > 4)
+                                            )
+                                    ) || (params.rx > 0 && params.tile > 4)
+                                    ||params.tile==0) {
+                                    return "figs/samps/dne.png";
+                                }
+                                return name;
+                                
+
                             });
                         pager.setparams(
                 {
@@ -483,6 +502,38 @@
                         </tbody>
                     </table>
                 </center>
+                <figure>
+                    <img alt="Box plots" id="box" src="#" />
+                    <figcaption>
+                        box plots
+                    </figcaption>
+                    <script type="text/javascript">
+                        pager.link("#box",
+                            {
+                                'Receiver Number|rx': [
+                                    'BA1|0',
+                                    'Keck Rx1|1',
+                                    'Keck Rx2|2',
+                                    'Keck Rx3|3',
+                                ],
+                                'Cuts|cut':[
+                                    'Yes|w',
+                                    'No|wo',
+                                ]
+                            },
+                            function (params) {
+                                console.log('params' + params)
+                                name = "figs/boxplots/box_rx" + params.rx + "_" + params.cut + "cuts.png"
+                                return name
+                            });
+                            pager.setparams(
+                    {
+                        'rx':'0'
+                    }
+                );  
+                    </script>
+        
+                </figure>
             </subsection>
             <section>
                 <h2>Conclusion</h2>
