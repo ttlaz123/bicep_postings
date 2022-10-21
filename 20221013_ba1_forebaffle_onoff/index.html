@@ -81,7 +81,7 @@
                     });
             pager.setparams(
                 {
-                    'sc':TES_schematic
+                    'sc':'TES_schematic'
                 }
             );
             </script>
@@ -122,7 +122,7 @@
                     });
                     pager.setparams(
                 {
-                    'c':current_sketch
+                    'c':'current_sketch'
                 }
             );            
             </script>
@@ -173,7 +173,7 @@
                     });
                 pager.setparams(
                 {
-                    'l':thermal_sketch
+                    'l':'thermal_sketch'
                 }
             );  
             </script>
@@ -210,7 +210,7 @@
                     });
                     pager.setparams(
             {
-                'f':thermal_onoff
+                'f':'thermal_onoff'
             }
         );  
             </script>
@@ -278,6 +278,9 @@
                             function (params) {
                                 console.log('params' + params)
                                 name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx +".png"
+                                if(params.fb1 == 'xxx' || params.fb2 == 'xxx'){
+                                    return "figs/samps/dne.png";
+                                }
                                 return name
                             });
                         pager.setparams(
@@ -312,7 +315,7 @@
                                     '2|2',
                                     '3|3',
                                     '4|4',
-                                    '---BA1-Only Tiles below---',
+                                    '---BA1-Only Tiles below---|0',
                                     '5|5',
                                     '6|6',
                                     '7|7',
@@ -349,22 +352,22 @@
                             },
                             function (params) {
                                 console.log('params' + params)
-                                const fs = require("fs");
+                                
                                 name = "figs/samps/rx" + params.rx +'_tile'+params.tile+
                                         '_row'+params.row +"_col" + params.col + 
-                                        "_pol"+params.pol + ".png"
-                                
-                                try{
-                                    if(fs.existsSync(name)){
-                                        return name;
-                                    } else {
-                                        return "figs/samp/dne.png";
-                                    }
-
-                                } catch(e){
-                                    console.log(e);
+                                        "_pol"+params.pol + ".png";
+                                if(params.rx == 0 && (
+                                            (params.row > 5 || params.col > 5) ||  (
+                                                !(params.tile == 1 || params.tile == 5 || params.tile == 7 || params.tile == 11) &&
+                                                (params.row > 4 || params.col > 4)
+                                            )
+                                    ) || (params.rx > 0 && params.tile > 4)
+                                    ||params.tile==0) {
+                                    return "figs/samps/dne.png";
                                 }
-                                return name
+                                return name;
+                                
+
                             });
                         pager.setparams(
                 {
@@ -499,6 +502,34 @@
                         </tbody>
                     </table>
                 </center>
+                <figure>
+                    <img alt="Box plots" id="box" src="#" />
+                    <figcaption>
+                        box plots
+                    </figcaption>
+                    <script type="text/javascript">
+                        pager.link("#box",
+                            {
+                                'Receiver Number|rx': [
+                                    'BA1|0',
+                                    'Keck Rx1|1',
+                                    'Keck Rx2|2',
+                                    'Keck Rx3|3',
+                                ],
+                            },
+                            function (params) {
+                                console.log('params' + params)
+                                name = "figs/boxplots/rx" + params.rx + ".png"
+                                return name
+                            });
+                            pager.setparams(
+                    {
+                        'rx':'0'
+                    }
+                );  
+                    </script>
+        
+                </figure>
             </subsection>
             <section>
                 <h2>Conclusion</h2>
