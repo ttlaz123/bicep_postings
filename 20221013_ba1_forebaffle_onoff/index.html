@@ -270,6 +270,7 @@
                                 ],
                                 'Receiver Number|rx': [
                                     'BA1|0',
+                                    'BA1 (Krj)|0krj',
                                     'Keck Rx1|1',
                                     'Keck Rx2|2',
                                     'Keck Rx3|3',
@@ -352,7 +353,9 @@
                             },
                             function (params) {
                                 console.log('params' + params)
-                                
+                                if(params.rx == '0krj'){
+                                    params.rx = '0';
+                                }
                                 name = "figs/samps/rx" + params.rx +'_tile'+params.tile+
                                         '_row'+params.row +"_col" + params.col + 
                                         "_pol"+params.pol + ".png";
@@ -393,15 +396,18 @@
                     <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
                         <tbody>
                             <tr>
-                                <td><b>Forebaffle Configuration</b></td>
-                                <td><b>Starting command do_partial_loadcurve<br>  (2022-Jan-15)</b></td>
-                                <td><b>Partial load curve script execution successfully completed<br> (2022-Jan-15)</b></td>
-                                <td><b>Configuration Complete<br>  (2022-Jan-15)</b></td>
-                                <td><b>Rx0 Average power loading difference from init 1 (pW) </b></td>
-                                <td><b>Rx1 Average power loading difference from init 1 (pW) </b></td>
-                                <td><b>Rx2 Average power loading difference from init 1 (pW) </b></td>
-                                <td><b>Rx3 Average power loading difference from init 1 (pW) </b></td>
-                                <td><b>Notes</b></td>
+                                <td rowspan="2"><b>Forebaffle Configuration</b></td>
+                                <td rowspan="2"><b>Starting command do_partial_loadcurve<br>  (2022-Jan-15)</b></td>
+                                <td rowspan="2"><b>Partial load curve script execution successfully completed<br> (2022-Jan-15)</b></td>
+                                <td rowspan="2"><b>Configuration Complete<br>  (2022-Jan-15)</b></td>
+                                <td colspan="4"><b>Average power loading difference from init 1 (pW) </b></td>
+                                <td rowspan="2"><b>Notes</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>Rx0  </b></td>
+                                <td><b>rx1 </b></td>
+                                <td><b>Rx2  </b></td>
+                                <td><b>Rx3 </b></td>
                             </tr>
                             <tr>
                                 <td>Tag 1,<br> Initial PLC</td>
@@ -599,6 +605,9 @@
                                 console.log('params' + params)
                                 if(params.dif == 'abs'){
                                     params.cut = 'with';
+                                }
+                                if(params.rx == '0krj'){
+                                    params.rx = '0';
                                 }
                                 name = "figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+ params.t + params.cut + "cuts.png"
                                 if(params.rx > 0 && params.tiles >4 || params.tiles < 0 ){
