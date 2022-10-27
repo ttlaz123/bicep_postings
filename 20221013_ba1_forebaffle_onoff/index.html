@@ -275,10 +275,14 @@
                                     'Keck Rx2|2',
                                     'Keck Rx3|3',
                                 ],
+                                'Type|type':[
+                                    'Lights|',
+                                    'Darks|darks',
+                                ],
                             },
                             function (params) {
                                 console.log('params' + params)
-                                name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx +".png"
+                                name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx + params.type + ".png"
                                 if(params.fb1 == 'xxx' || params.fb2 == 'xxx'){
                                     return "figs/samps/dne.png";
                                 }
@@ -349,6 +353,10 @@
                                 'Polarization|pol': [
                                     'A|A',
                                     'B|B',
+                                ],
+                                'Band|band': [
+                                    '30 Hz|30',
+                                    '40 Hz|40',
                                 ]
                             },
                             function (params) {
