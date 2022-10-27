@@ -467,7 +467,7 @@
                                 }
                                 name = ("figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+
                                                 params.t + params.cut + "cuts" + params.typex+".png");
-                                if((params.rx > 0 && params.tiles >4) || params.tiles < 0 || (params.dif=="abs" && params.cut=='without')){
+                                if((params.rx > 0 && params.tiles >4) || params.tiles < 0 || (params.dif=="abs" && (params.cut=='without' || params.typex !=''))){
                                     return  "figs/samps/dne.png";
                                 }
                                 return name
