@@ -392,6 +392,93 @@
                     Forebaffle Configuration Timestamps
                 </h3>
 
+                
+                <figure>
+                    <img alt="Box plots" id="box" src="#" />
+                    <figcaption>
+                        The median is the middle red line, and the top/bottom edges of the boxes correspond 
+                        to 75th and 25th percentiles respectively. 
+                        Outliers (red crosses) are anything beyond 1x the interquartile range.
+                        <br>
+                        Cuts are performed by checking for 2 lines: horizontal and vertical. 
+                        If the middle 60 percent of the domain and range have their min 
+                        and max values within 10 percent of each other, then the lines are considered 
+                        roughly horizontal/vertical 
+                    </figcaption>
+                    <script type="text/javascript">
+                        pager.link("#box",
+                            {
+                                'Receiver Number|rx': [
+                                    'BA1|0',
+                                    'Keck Rx1|1',
+                                    'Keck Rx2|2',
+                                    'Keck Rx3|3',
+                                ],
+                                'Tile|tiles': [
+                                    'All|-All',
+                                    '1|1',
+                                    '2|2',
+                                    '3|3',
+                                    '4|4',
+                                    '------------------BA1 Only below---------------|-1',
+                                    '5|5',
+                                    '6|6',
+                                    '7|7',
+                                    '8|8',
+                                    '9|9',
+                                    '10|10',
+                                    '11|11',
+                                    '12|12',
+                                ],
+                                'Cuts|cut':[
+                                    'Yes|with',
+                                    'No|without',
+                                ],
+                                'Baseline|dif':[
+                                    'Absolute Power|abs',
+                                    'Initial PLC|diff1',
+                                    'Beginning|diff2',
+                                    'Middle|diff6',
+                                    'End|diff12',
+                                ],
+                                'Timestamps|t':[
+                                    'Timestamps|ts-',
+                                    'Tags|'
+                                ]
+                            },
+                            function (params) {
+                                console.log('params' + params)
+                                
+                                if(params.rx == '0krj'){
+                                    params.rx = '0';
+                                }
+                                name = "figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+ params.t + params.cut + "cuts.png"
+                                if((params.rx > 0 && params.tiles >4) || params.tiles < 0 || (params.dif=="abs" && params.cut=='without')){
+                                    return  "figs/samps/dne.png";
+                                }
+                                return name
+                            });
+                            pager.setparams(
+                    {
+                        'rx':'0', 'tiles':'-All', 'cut':'with', 'dif':'diff1', 't':'ts-'
+                    }
+                );  
+                    </script>
+        
+                </figure>
+            </subsection>
+            <section>
+                <h2>Conclusion</h2>
+                <p>
+                    analyze data some more
+                </p>
+            </section>
+
+            <section>
+                <h2>Appendix</h2>
+                <p>
+                    analyze data some more
+                </p>
                 <center>
                     <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
                         <tbody>
@@ -400,7 +487,7 @@
                                 <td rowspan="2"><b>Starting command do_partial_loadcurve<br>  (2022-Jan-15)</b></td>
                                 <td rowspan="2"><b>Partial load curve script execution successfully completed<br> (2022-Jan-15)</b></td>
                                 <td rowspan="2"><b>Configuration Complete<br>  (2022-Jan-15)</b></td>
-                                <td colspan="4"><b>Average power loading difference from init 1 (pW) </b></td>
+                                <td colspan="4"><b>Mean +- std power loading difference from init 1 (pW) </b></td>
                                 <td rowspan="2"><b>Notes</b></td>
                             </tr>
                             <tr>
@@ -548,87 +635,6 @@
                         </tbody>
                     </table>
                 </center>
-                <figure>
-                    <img alt="Box plots" id="box" src="#" />
-                    <figcaption>
-                        The median is the middle red line, and the top/bottom edges of the boxes correspond 
-                        to 75th and 25th percentiles respectively. 
-                        Outliers (red crosses) are anything beyond 1x the interquartile range.
-                        <br>
-                        Cuts are performed by checking for 2 lines: horizontal and vertical. 
-                        If the middle 60 percent of the domain and range have their min 
-                        and max values within 10 percent of each other, then the lines are considered 
-                        roughly horizontal/vertical 
-                    </figcaption>
-                    <script type="text/javascript">
-                        pager.link("#box",
-                            {
-                                'Receiver Number|rx': [
-                                    'BA1|0',
-                                    'Keck Rx1|1',
-                                    'Keck Rx2|2',
-                                    'Keck Rx3|3',
-                                ],
-                                'Tile|tiles': [
-                                    'All|-All',
-                                    '1|1',
-                                    '2|2',
-                                    '3|3',
-                                    '4|4',
-                                    '------------------BA1 Only below---------------|-1',
-                                    '5|5',
-                                    '6|6',
-                                    '7|7',
-                                    '8|8',
-                                    '9|9',
-                                    '10|10',
-                                    '11|11',
-                                    '12|12',
-                                ],
-                                'Cuts|cut':[
-                                    'Yes|with',
-                                    'No|without',
-                                ],
-                                'Baseline|dif':[
-                                    'Absolute Power|abs',
-                                    'Initial PLC|diff1',
-                                    'Beginning|diff2',
-                                    'Middle|diff6',
-                                    'End|diff12',
-                                ],
-                                'Timestamps|t':[
-                                    'Timestamps|ts-',
-                                    'Tags|'
-                                ]
-                            },
-                            function (params) {
-                                console.log('params' + params)
-                                if(params.dif == 'abs'){
-                                    params.cut = 'with';
-                                }
-                                if(params.rx == '0krj'){
-                                    params.rx = '0';
-                                }
-                                name = "figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+ params.t + params.cut + "cuts.png"
-                                if(params.rx > 0 && params.tiles >4 || params.tiles < 0 ){
-                                    return  "figs/samps/dne.png";
-                                }
-                                return name
-                            });
-                            pager.setparams(
-                    {
-                        'rx':'0', 'tiles':'-All', 'cut':'with', 'dif':'diff1', 't':'ts-'
-                    }
-                );  
-                    </script>
-        
-                </figure>
-            </subsection>
-            <section>
-                <h2>Conclusion</h2>
-                <p>
-                    analyze data some more
-                </p>
             </section>
 
         </section>
