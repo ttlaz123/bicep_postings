@@ -453,10 +453,10 @@
                                     'Timestamps|ts-',
                                     'Tags|'
                                 ],
-                                'type|type':[
+                                'type|typex':[
                                     'Both|',
-                                    'Lights|lights',
-                                    'Darks|dark',
+                                    'Lights|_lights',
+                                    'Darks|_darks',
                                 ]
                             },
                             function (params) {
@@ -465,7 +465,8 @@
                                 if(params.rx == '0krj'){
                                     params.rx = '0';
                                 }
-                                name = "figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+ params.t + params.cut + "cuts.png"
+                                name = ("figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+
+                                                params.t + params.cut + "cuts" + params.typex+".png");
                                 if((params.rx > 0 && params.tiles >4) || params.tiles < 0 || (params.dif=="abs" && params.cut=='without')){
                                     return  "figs/samps/dne.png";
                                 }
@@ -473,7 +474,7 @@
                             });
                             pager.setparams(
                     {
-                        'rx':'0', 'tiles':'-All', 'cut':'with', 'dif':'diff1', 't':'ts-'
+                        'rx':'0', 'tiles':'-All', 'cut':'with', 'dif':'diff1', 't':'ts-', 'typex':''
                     }
                 );  
                     </script>
