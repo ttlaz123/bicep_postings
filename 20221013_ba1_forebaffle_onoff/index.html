@@ -284,7 +284,7 @@
                                 console.log('params' + params)
                                 name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx + params.type + ".png"
                                 if(params.fb1 == 'xxx' || params.fb2 == 'xxx'){
-                                    return "figs/samps/dne.png";
+                                    return "figs/dne.png";
                                 }
                                 return name
                             });
@@ -364,7 +364,7 @@
                                 if(params.rx == '0krj'){
                                     params.rx = '0';
                                 }
-                                name = "figs/samps/rx" + params.rx +'_tile'+params.tile+
+                                name = "figs/plcs/rx" + params.rx +'_tile'+params.tile+
                                         '_row'+params.row +"_col" + params.col + 
                                         "_pol"+params.pol + ".png";
                                 if(params.rx == 0 && (
@@ -374,7 +374,7 @@
                                             )
                                     ) || (params.rx > 0 && params.tile > 4)
                                     ||params.tile==0) {
-                                    return "figs/samps/dne.png";
+                                    return "figs/dne.png";
                                 }
                                 return name;
                                 
@@ -468,7 +468,7 @@
                                 name = ("figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+
                                                 params.t + params.cut + "cuts" + params.typex+".png");
                                 if((params.rx > 0 && params.tiles >4) || params.tiles < 0 || (params.dif=="abs" && (params.cut=='without' || params.typex !=''))){
-                                    return  "figs/samps/dne.png";
+                                    return  "figs/dne.png";
                                 }
                                 return name
                             });
