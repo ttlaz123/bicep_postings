@@ -63,7 +63,7 @@
             thermal bath, the temperature eventually returns to the edge of the transition.
         </p>
         <figure>
-            <img alt="TES Schematics, from https://sites.astro.caltech.edu/~rogero/thesis/Ch3_TES_Bolometers.pdf and https://en.wikipedia.org/wiki/File:TES_schematic.pdf" id="tes" src="#" />
+            <img alt="TES Schematics, from https://sites.astro.caltech.edu/~rogero/thesis/Ch3_TES_Bolometers.pdf and https://en.wikipedia.org/wiki/File:TES_schematic.pdf" width="600" height="600"id="tes" src="#" />
             <figcaption>
                 Schematic circuit (a) and a real life image (b) for the TES .
             </figcaption>
@@ -103,7 +103,7 @@
         </p>
 
         <figure>
-            <img alt="TES Curves" id="current" src="#" />
+            <img alt="TES Curves" id="current" src="#" width="600" height="600"/>
             <figcaption>
                 Sketch of the bias current vs TES current (a) and the curve with real data (b).
             </figcaption>
@@ -152,7 +152,7 @@
             then decreases until the resistor enters the phase transition.
         </p>
         <figure>
-            <img alt="TES Curves" id="thermal" src="#" />
+            <img alt="TES Curves" id="thermal" src="#"  width="600" height="600"/>
             <figcaption>
                 Sketch of the TES resistance vs TES power (a) and the curve with real data (b).
             </figcaption>
@@ -187,7 +187,7 @@
             forebaffle
             onto a specific detector. </p>
         <figure>
-            <img alt="TES Curves" id="onoff" src="#" />
+            <img alt="TES Curves" id="onoff" src="#" width="600" height="600"/>
             <figcaption>
                 Sketch of the bias current vs TES current (a) and the curve with real data (b).
                 Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
@@ -195,9 +195,9 @@
             <script type="text/javascript">
                 pager.link("#onoff",
                     {
-                        'Forebaffle Configuration|f': ['Load Curve on-off|thermal_onoff',
+                        'Forebaffle Configuration|f': [
+                            'Load Curve on-off|thermal_onoffhalf',
                             'Zoomed in load curve|onoff_zoomedin',
-                            'Zoomed in half off|thermal_onoffhalf',
                         ],
                     },
                     function (params) {
@@ -206,7 +206,7 @@
                     });
                     pager.setparams(
             {
-                'f':'thermal_onoff'
+                'f':'thermal_onoffhalf'
             }
         );  
             </script>
@@ -483,6 +483,70 @@
                     </script>
         
                 </figure>
+                <center>
+                    <table border="1px" style="text-align:center;border-spacing:5px">
+                        <tbody><tr>
+                            <td></td>
+                            <td colspan="2"><strong>Light Loading (pW)</strong></td>
+                            <td colspan="2"><strong>Dark Loading (pW)</strong></td>
+                            <td colspan="2"><strong>Lights Temp_RJ (K)</strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>With Cuts</td>
+                            <td>No Cuts</td>
+                            <td>With Cuts</td>
+                            <td>No Cuts</td>
+                            <td>With Cuts</td>
+                            <td>No Cuts</td>
+                        </tr>
+                        <tr>
+                            <td>Rx0 (30)</td>
+                            <td>0.155</td>
+                            <td>9.909</td>
+                            <td>0.081</td>
+                            <td>1.83</td>
+                            <td>10.3</td>
+                            <td>12.6</td>
+                        </tr>
+                        <tr>
+                            <td>Rx0 (40)</td>
+                            <td>0.223</td>
+                            <td>3.185</td>
+                            <td>0.067</td>
+                            <td>0.067</td>
+                            <td>5.12</td>
+                            <td>5.05</td>
+                        </tr>
+                        <tr>
+                            <td>Rx1 (210)</td>
+                            <td>0.279</td>
+                            <td>4.266</td>
+                            <td>0.124</td>
+                            <td>0.111</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Rx2 (210)</td>
+                            <td>0.32</td>
+                            <td>0.19</td>
+                            <td>0.01 (large spread)</td>
+                            <td>-0.23 </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Rx3 (270)</td>
+                            <td>0.51</td>
+                            <td>0.39</td>
+                            <td>0.14</td>
+                            <td>-0.12</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody></table>
+                    </center>
             </subsection>
             <section>
                 <h2>Conclusion</h2>
