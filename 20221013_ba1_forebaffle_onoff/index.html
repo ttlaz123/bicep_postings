@@ -38,7 +38,9 @@
             The forebaffle acts as a shield that absorbs stray light to ensure the receiver sees only signal from the
             sky.
             Unfortunately, the forebaffle itself contributes its own thermal loading onto the BA1 detectors.
-            In this posting, we measure the thermal loading caused by the BA1 forebaffle in various configurations. </p>
+            In this posting, we measure the thermal loading caused by the BA1 forebaffle in various configurations. 
+            In 2022, the low-bandpass filter was changed to block out more unwanted signal. 
+            We compare our results to previous years' forebaffle loading to check the effectiveness of this change. </p>
 
 
 
@@ -224,7 +226,29 @@
                 </h3>
                 <p>
                     We extract the size of the gap between the flat parts of the load curves and plot 
-                    the value on tile plots for each detector, giving us plots as follows: 
+                    the value on tile plots for each detector, giving us plots below. The red means that the 
+                    second forebaffle configuration has higher heat loading, while the blue means that the 
+                    second forebaffle configuration has lower heat loading compared to the first. 
+                </p>
+                <p>
+                    For example, when the forebaffle is Fully on BA1, when compared to the Initial PLC, the 
+                    tiles are yellow-ish orange, which is between 0.1 - 0.3 pW of power, suggesting that the 
+                    forebaffle contributes about 0.2 pW when it is fully on the receiver. 
+
+                </p>
+                <p>
+                    When the forebaffle is on a different receiver (Rx 1/2/3), the coloring on the BA1 tiles is green, 
+                    suggesting that the forebaffle doesn't change the optical loading received by BA1 in comparison 
+                    to its initial configuration. However, when switching over to view the Keck Rx1 receiver, we see 
+                    that having the forebaffle on Rx1 contributes about 0.3-0.5 pW of power to the detectors on Rx1. 
+                </p>
+                <p>
+                    Instead of plotting the power in pW, we can also plot the Rayleigh Jean Temperature, represented by
+                    \(K_{rj}\) in the pager. The RJ temperature is given by \(T_{RJ} = \frac{P}{dP/dT}\), where \(P\) is the 
+                    original optical loading, and \(dP/dT\) is a parameter of each detector, representing how much 
+                    loading is caused by a change in temperature of a hypothetical blackbody. Thus, the RJ temperature represents 
+                    the equivalent temperature of the forebaffle if it were a blackbody covering the entire aperature. The tile plot 
+                    is mostly orange to deep red, suggesting a 
                 </p>
                 <figure>
                     <img alt="Tile Plots" id="tile" src="#" />
@@ -264,7 +288,7 @@
                                     'Final off|nonefinal',
                                     '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
                                 ],
-                                'Receiver Number|rx': [
+                                'Receiver Number|rxx': [
                                     'BA1|0',
                                     'BA1 (Krj)|0krj',
                                     'Keck Rx1|1',
@@ -275,9 +299,16 @@
                                     'Lights|',
                                     'Darks|darks',
                                 ],
+                                'Det params?|dp':[
+                                    'Yes|y',
+                                    'No|n'
+                                ]
                             },
                             function (params) {
-                                name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx + params.type + ".png"
+                                if(params.dp =='y'){
+                                    return "figs/detparams.png";
+                                }
+                                name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rxx + params.type + ".png"
                                 if(params.fb1 == 'xxx' || params.fb2 == 'xxx'){
                                     return "figs/dne.png";
                                 }
@@ -287,8 +318,9 @@
                 {
                     'fb1':'noneinit1',
                     'fb2':'noneinit2',
-                    'rx':'0',
-                    'type:':'',
+                    'rxx':'0',
+                    'type':'',
+                    'dp':'n',
 
                 }
             );  
