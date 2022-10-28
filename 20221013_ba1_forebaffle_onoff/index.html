@@ -214,13 +214,12 @@
             </script>
 
         </figure>
-
+        </section>
 
         <section>
             <h2>Examining the data</h2>
             
 
-            <subsection>
                 <h3>
                     Tile Plots
                 </h3>
@@ -248,10 +247,12 @@
                     original optical loading, and \(dP/dT\) is a parameter of each detector, representing how much 
                     loading is caused by a change in temperature of a hypothetical blackbody. Thus, the RJ temperature represents 
                     the equivalent temperature of the forebaffle if it were a blackbody covering the entire aperature. The tile plot 
-                    is mostly orange to deep red, suggesting a 
+                    is mostly orange to deep red, suggesting an RJ temperature between 3-7 K. We see that some tiles have higher 
+                    RJ temperatures than others despite having similar loading. We can attribute this to a low \(dP/dT\) for those 
+                    tiles, as we can see when we check the "Det params?" tile plot.  
                 </p>
                 <figure>
-                    <img alt="Tile Plots" id="tile" src="#" />
+                    <img alt="Tile Plots" id="tile" src="#"  width="750" height="750"/>
                     <figcaption>
                         Tile plots
                     </figcaption>
@@ -328,7 +329,12 @@
                     </script>
         
                 </figure>
-                To more closely examine each detector, we can plot the individual electrical power load curves.
+                Some of the detector tiles have vastly different values from the rest. To determine the cause, we can view individual detectors 
+                below. Each Rx, Tile, and row/col is a small square in the tile plot. Each tile is either divided into 2 or 4 triangles. 
+                Two triangles means there is one detector for each polarization, 'A' and 'B'. Four means for each polarization, there are 
+                in addition 2 different bands. The different bands are only relevant for BA1. In the two side by side plots, the left plot 
+                is all the datapoints on one graph, while the right plot is the same data but plotted in a specific range. The x and y range 
+                are consistent within each receiver to provide a better idea of the data's scale. 
                 <figure>
                     <img alt="Individual Curves" id="indiv" src="#" onerror="javascript:this.src='figs/dne.png'"/>
                     <figcaption>
@@ -432,10 +438,22 @@
                 </figure>
 
 
-                <h3>
-                    Forebaffle Configuration Timestamps
-                </h3>
+                <p> 
+                By examining the different load curves, it becomes straightforward to cut the data based on the load curve quality. We 
+                fit two lines, one horizontal and one vertical onto the loadcurve. If all the points are within approximately 10 percent 
+                of that fitted line, we consider the curve to be good. If any load curve does not satisfy our requirements, we cut the detector.
+                </p>
+                <p>
+                We plot the extra loading for different baselines, showing the median and quartiles for each forebaffle configuration. 
+                 We can see that having no cuts introduces many more outliers.
 
+                </p>
+                <p>
+                    We also see that for the BA1 receiver, the baseline line is pretty consistent, that when there is no forebaffle on BA1, 
+                    the extra loading is not visible to 0.05 pW. However, for each Keck receiver, there is a clear power drift as we 
+                    process the different tags. The leading hypothesis is that because the Keck receivers are higher frequency and more 
+                    susceptible to weather, they pick up slight differences in sky loading. We subtract away this offset in our final analysis.  
+                </p>
                 
                 <figure>
                     <img alt="Box plots" id="box" src="#" />
@@ -515,6 +533,27 @@
                     </script>
         
                 </figure>
+                </section>
+                <section>
+                <h2>Conclusion</h2>
+                <p>
+                    We provide the mean forebaffle loading for each receiver, with and without cuts. Without cuts, the mean averages into 
+                    the extreme outliers (which can be observed in the tile plots), and significantly changes the average. For each column of 
+                    "No Cuts", the spread is nearly larger than the value itself. 
+                </p>
+                <p>
+                    With the cuts, the values for the Keck receivers are roughly equal to the 
+                    <a href="https://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20200312_FB_onoff/">
+                        previous 2020 posting examining forebaffle loading</a> at about 0.3 pW. However, Rx3 has a slightly larger loading 
+                        at 0.5 pW, but this is consistent with 
+                        <a href="https://bicep.rc.fas.harvard.edu/keck/analysis_logbook/analysis/20180108_Keck_Rx4_forebaffle_onoff_measurements/">Kenny's
+                            2018 posting</a>.
+                </p>
+                <p>
+                    The BA1 receiver has about half as much loading as the 2020 posting, suggesting that fixing the low-pass band filter has improved 
+                    performance. Even though the loading itself was cut by about half, the RJ temperature has only decreased by about 1.5K. 
+                    This might be due to a slightly lower \(dP/dT\) for some of the detectors compared to 2020.  
+                </p>
                 <center>
                     <table border="1px" style="text-align:center;border-spacing:5px">
                         <tbody><tr>
@@ -579,18 +618,13 @@
                         </tr>
                     </tbody></table>
                     </center>
-            </subsection>
-            <section>
-                <h2>Conclusion</h2>
-                <p>
-                    analyze data some more
-                </p>
             </section>
 
             <section>
                 <h2>Appendix</h2>
                 <p>
-                    analyze data some more
+                    Here are the time stamps and the means +- standard deviation for each tag's difference from the intial PLC. 
+                    The means include cuts, but no offset is applied.
                 </p>
                 <center>
                     <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
@@ -750,7 +784,6 @@
                 </center>
             </section>
 
-        </section>
 
 </body>
 
