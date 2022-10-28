@@ -75,7 +75,6 @@
                         ],
                     },
                     function (params) {
-                        console.log('params' + params)
                         name = "figs/tes/" + params.sc + ".png"
                         return name
                     });
@@ -116,7 +115,6 @@
                         ],
                     },
                     function (params) {
-                        console.log('params' + params)
                         name = "figs/curves/" + params.c + ".png"
                         return name
                     });
@@ -167,7 +165,6 @@
                         ],
                     },
                     function (params) {
-                        console.log('params' + params)
                         name = "figs/curves/" + params.l + ".png"
                         return name
                     });
@@ -204,7 +201,6 @@
                         ],
                     },
                     function (params) {
-                        console.log('params' + params)
                         name = "figs/curves/" + params.f + ".png"
                         return name
                     });
@@ -281,7 +277,6 @@
                                 ],
                             },
                             function (params) {
-                                console.log('params' + params)
                                 name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rx + params.type + ".png"
                                 if(params.fb1 == 'xxx' || params.fb2 == 'xxx'){
                                     return "figs/dne.png";
@@ -293,6 +288,7 @@
                     'fb1':'noneinit1',
                     'fb2':'noneinit2',
                     'rx':'0',
+                    'type:':'',
 
                 }
             );  
@@ -302,9 +298,9 @@
                 </figure>
                 To more closely examine each detector, we can plot the individual electrical power load curves.
                 <figure>
-                    <img alt="Individual Curves" id="indiv" src="#" />
+                    <img alt="Individual Curves" id="indiv" src="#" onerror="javascript:this.src='figs/dne.png'"/>
                     <figcaption>
-                        Individual curves
+                        Individual curves dictionary, use to find any load curve.
                     </figcaption>
                     <script type="text/javascript">
                         pager.link("#indiv",
@@ -354,28 +350,34 @@
                                     'A|A',
                                     'B|B',
                                 ],
-                                'Band|band': [
+                                'Band (BA1 only)|band': [
                                     '30 Hz|30',
                                     '40 Hz|40',
+                                ],
+                                'Type (BA1 only)|typey':[
+                                    'Light |L',
+                                    'Dark|D'
                                 ]
                             },
                             function (params) {
-                                console.log('params' + params)
                                 if(params.rx == '0krj'){
                                     params.rx = '0';
                                 }
+                                if(params.rx == '1' || params.rx == '2'){
+                                    params.band = '210';
+                                    if(params.typey == 'D'){
+                                        params.band = '0';
+                                    }
+                                } else if (params.rx == '3'){
+                                    params.band = '270';
+                                    if(params.typey == 'D'){
+                                        params.band = '0';
+                                    }
+                                }
                                 name = "figs/plcs/rx" + params.rx +'_tile'+params.tile+
                                         '_row'+params.row +"_col" + params.col + 
-                                        "_pol"+params.pol + ".png";
-                                if(params.rx == 0 && (
-                                            (params.row > 5 || params.col > 5) ||  (
-                                                !(params.tile == 1 || params.tile == 5 || params.tile == 7 || params.tile == 11) &&
-                                                (params.row > 4 || params.col > 4)
-                                            )
-                                    ) || (params.rx > 0 && params.tile > 4)
-                                    ||params.tile==0) {
-                                    return "figs/dne.png";
-                                }
+                                        "_pol"+params.pol + "_band" + params.band + 
+                                        "_type" + params.typey+".png";
                                 return name;
                                 
 
@@ -387,6 +389,8 @@
                     'row':'1',
                     'col':'1',
                     'pol':'A',
+                    'band':'30',
+                    'typey':'L'
 
                 }
             );  
@@ -460,7 +464,6 @@
                                 ]
                             },
                             function (params) {
-                                console.log('params' + params)
                                 
                                 if(params.rx == '0krj'){
                                     params.rx = '0';
