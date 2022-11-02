@@ -554,11 +554,10 @@
     <section>
         <h2>Conclusion</h2>
         <p>
-            We provide the mean forebaffle loading for each receiver, with and without cuts. Without cuts, the mean
+            We provide the median  forebaffle loading for each receiver with cuts. Without cuts, the mean
             averages into
-            the extreme outliers (which can be observed in the tile plots), and significantly changes the average. For
-            each column of
-            "No Cuts", the spread is nearly larger than the value itself.
+            the extreme outliers (which can be observed in the tile plots), and significantly changes the average. Without cuts,
+             the spread is nearly larger than the value itself.
         </p>
         <p>
             With the cuts, the values for the Keck receivers are roughly equal to the
@@ -571,74 +570,54 @@
                 2018 posting</a>.
         </p>
         <p>
-            The BA1 receiver has about half as much loading as the 2020 posting, suggesting that fixing the low-pass
+            The BA1 receiver has about half as much loading as the 2020 posting, suggesting that adding the low-pass
             band filter has improved
             performance. Even though the loading itself was cut by about half, the RJ temperature has only decreased by
-            about 1.5K.
-            This might be due to a slightly lower \(dP/dT\) for some of the detectors compared to 2020.
+            about 1-2K.
+            This is likely due to a slightly lower \(dP/dT\) for some of the detectors compared to 2020.
         </p>
         <center>
             <table border="1px" style="text-align:center;border-spacing:5px">
                 <tbody>
                     <tr>
                         <td></td>
-                        <td colspan="2"><strong>Light Loading (pW)</strong></td>
-                        <td colspan="2"><strong>Dark Loading (pW)</strong></td>
-                        <td colspan="2"><strong>Lights Temp_RJ (K)</strong></td>
+                        <td colspan="1"><strong>Light Loading (pW)</strong></td>
+                        <td colspan="1"><strong>Dark Loading (pW)</strong></td>
+                        <td colspan="1"><strong>Lights Temp_RJ (K)</strong></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>With Cuts</td>
-                        <td>No Cuts</td>
                         <td>With Cuts</td>
-                        <td>No Cuts</td>
                         <td>With Cuts</td>
-                        <td>No Cuts</td>
                     </tr>
                     <tr>
                         <td>Rx0 (30)</td>
-                        <td>0.155</td>
-                        <td>9.909</td>
-                        <td>0.081</td>
-                        <td>1.83</td>
-                        <td>10.3</td>
-                        <td>12.6</td>
+                        <td>0.15</td>
+                        <td>0.08</td>
+                        <td>7.4</td>
                     </tr>
                     <tr>
                         <td>Rx0 (40)</td>
-                        <td>0.223</td>
-                        <td>3.185</td>
-                        <td>0.067</td>
-                        <td>0.067</td>
-                        <td>5.12</td>
-                        <td>5.05</td>
+                        <td>0.20</td>
+                        <td>0.06</td>
+                        <td>4.5</td>
                     </tr>
                     <tr>
                         <td>Rx1 (210)</td>
-                        <td>0.279</td>
-                        <td>4.266</td>
-                        <td>0.124</td>
-                        <td>0.111</td>
+                        <td>0.29</td>
+                        <td>0.12</td>
                         <td></td>
-                        <td></td>
-                    </tr>
                     <tr>
                         <td>Rx2 (210)</td>
                         <td>0.32</td>
-                        <td>0.19</td>
                         <td>0.01 (large spread)</td>
-                        <td>-0.23 </td>
-                        <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>Rx3 (270)</td>
                         <td>0.51</td>
-                        <td>0.39</td>
                         <td>0.14</td>
-                        <td>-0.12</td>
-                        <td></td>
-                        <td></td>
                     </tr>
                 </tbody>
             </table>
@@ -657,161 +636,130 @@
             <table border="1px" style="text-align:center;border-spacing:5px">
                 <tbody>
                     <tr>
-                        <td rowspan="2"><strong>Tile (name)</strong></td>
+                        <td rowspan="1"><strong>Tile (name)</strong></td>
                         <td style="background-color: black;"></td>
-                        <td colspan="2"><strong>Light Forebaffle Loading (pW)</strong></td>
-                        <td rowspan="2"><strong> dP/dT Light (pW/K)</strong></td>
-                        <td colspan="2"><strong>Dark Forebaffle Loading (pW)</strong></td>
-                        <td rowspan="2"><strong> dP/dT Dark (pW/K)</strong></td>
-                        <td rowspan="2"> <strong>Rayleigh-Jean Temperature (K)</strong></td>
-                        <td rowspan="2"> <strong>Inband Rayleigh-Jean Temperature (K)</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="background-color: black;"></td>
-                        <td>
-                            <strong>Median</strong>
-                        </td>
-                        <td><strong>STD</strong></td>
-                        <td>
-                            <strong> Median</strong>
-                        </td>
-                        <td><strong>STD</strong></td>
+                        <td colspan="1"><strong>Light Forebaffle Loading (pW)</strong></td>
+                        <td rowspan="1"><strong> dP/dT Light (pW/K)</strong></td>
+                        <td colspan="1"><strong>Dark Forebaffle Loading (pW)</strong></td>
+                        <td rowspan="1"><strong> dP/dT Dark (pW/K)</strong></td>
+                        <td rowspan="1"> <strong>Rayleigh-Jean Temperature (K)</strong></td>
+                        <td rowspan="1"> <strong>Inband Rayleigh-Jean Temperature (K)</strong></td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile1 (M4)</td>
+                        <td>Tile1 (M4),<br>  band 40</td>
                         <td style="background-color: black;"></td>
-                        <td>0.21905</td>
-                        <td>0.037318</td>
-                        <td>0.057549</td>
-                        <td>0.068206</td>
-                        <td>0.049521</td>
-                        <td>0.0017648</td>
-                        <td>3.8063</td>
-                        <td>2.7041</td>
+                        <td>0.22</td>
+                        <td>0.058</td>
+                        <td>0.07</td>
+                        <td>0.002</td>
+                        <td>3.8</td>
+                        <td>2.7</td>
                     </tr>
                     <tr style="color: rgb(255, 0, 0)">
                         <td>2019 M4</td>
                         <td style="background-color: black;"></td>
-                        <td>0.3378</td>
-                        <td></td>
-                        <td>0.063468</td>
-                        <td>0.1725</td>
-                        <td></td>
-                        <td>0.0055541</td>
-                        <td>5.322</td>
-                        <td>5.737</td>
+                        <td>0.34</td>
+                        <td>0.063</td>
+                        <td>0.17</td>
+                        <td>0.006</td>
+                        <td>5.3</td>
+                        <td>5.7</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile2 (Mx8)</td>
+                        <td>Tile2 (Mx8),<br>  band 31,41</td>
                         <td style="background-color: black;"></td>
-                        <td>0.10092</td>
-                        <td>0.029157</td>
-                        <td>0.0053685</td>
-                        <td>0.072328</td>
-                        <td>0</td>
-                        <td>0.0010118</td>
-                        <td>18.7995</td>
-                        <td>6.5637</td>
+                        <td>0.10</td>
+                        <td>0.005</td>
+                        <td>0.07</td>
+                        <td>0.001</td>
+                        <td>18.8</td>
+                        <td>6.6</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile3 (N4)</td>
+                        <td>Tile3 (N4),<br>  band 30</td>
                         <td style="background-color: black;"></td>
-                        <td>0.1648</td>
-                        <td>0.0067012</td>
-                        <td>0.02113</td>
-                        <td>0.077467</td>
-                        <td>0.0059072</td>
-                        <td>0.0024505</td>
-                        <td>7.799</td>
-                        <td>4.675</td>
+                        <td>0.16</td>
+                        <td>0.021</td>
+                        <td>0.08</td>
+                        <td>0.002</td>
+                        <td>7.8</td>
+                        <td>4.7</td>
                     </tr>
                     <tr style="color: rgb(255, 0, 0)">
                         <td>2019 N4</td>
                         <td style="background-color: black;"></td>
-                        <td>0.3299</td>
-                        <td></td>
-                        <td>0.027618</td>
-                        <td>0.2207</td>
-                        <td></td>
-                        <td>0.0069453</td>
-                        <td>11.945</td>
-                        <td>5.282</td>
+                        <td>0.33</td>
+                        <td>0.028</td>
+                        <td>0.22</td>
+                        <td>0.007</td>
+                        <td>11.9</td>
+                        <td>5.3</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile4 (N5)</td>
+                        <td>Tile4 (N5),<br>  band 30</td>
                         <td style="background-color: black;"></td>
-                        <td>0.15709</td>
-                        <td>0.0113</td>
-                        <td>0.019991</td>
-                        <td>0.077209</td>
-                        <td>0.0048531</td>
-                        <td>-0.00014327</td>
-                        <td>7.8583</td>
-                        <td>3.9676</td>
+                        <td>0.16</td>
+                        <td>0.020</td>
+                        <td>0.08</td>
+                        <td>0.000</td>
+                        <td>7.6</td>
+                        <td>4.0</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile5 (M6)</td>
+                        <td>Tile5 (M6),<br>  band 40</td>
                         <td style="background-color: black;"></td>
-                        <td>0.22193</td>
-                        <td>0.035774</td>
-                        <td>0.057468</td>
-                        <td>0.070482</td>
-                        <td>0.025611</td>
-                        <td>0.0021213</td>
-                        <td>3.8618</td>
-                        <td>2.7363</td>
+                        <td>0.22</td>
+                        <td>0.057</td>
+                        <td>0.07</td>
+                        <td>0.002</td>
+                        <td>3.9</td>
+                        <td>2.7</td>
                     </tr>
                     <tr style="color: rgb(255, 0, 0)">
                         <td>2019 M6</td>
                         <td style="background-color: black;"></td>
-                        <td>0.3907</td>
-                        <td></td>
-                        <td>0.065931</td>
-                        <td>0.2285</td>
-                        <td></td>
-                        <td>0.0069889</td>
-                        <td>5.926</td>
-                        <td>2.752</td>
+                        <td>0.39</td>
+                        <td>0.066</td>
+                        <td>0.23</td>
+                        <td>0.007</td>
+                        <td>5.9</td>
+                        <td>2.8</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile6 (N1)</td>
+                        <td>Tile6 (N1),<br>  band 30</td>
                         <td style="background-color: black;"></td>
-                        <td>0.15655</td>
-                        <td>0.015221</td>
-                        <td>0.021215</td>
-                        <td>0.073519</td>
-                        <td>0.0055544</td>
-                        <td>0.0025711</td>
-                        <td>7.379</td>
-                        <td>4.4533</td>
+                        <td>0.16</td>
+                        <td>0.021</td>
+                        <td>0.07</td>
+                        <td>0.003</td>
+                        <td>7.4</td>
+                        <td>4.5</td>
                     </tr>
                     <tr style="color: rgb(255, 0, 0)">
                         <td>2019 N1</td>
                         <td style="background-color: black;"></td>
                         <td>NaN</td>
-                        <td></td>
-                        <td>0.027177</td>
+                        <td>0.027</td>
                         <td>NaN</td>
-                        <td></td>
-                        <td>0.0072581</td>
+                        <td>0.007</td>
                         <td>NaN</td>
                         <td>NaN</td>
                     </tr>
@@ -819,112 +767,96 @@
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile7 (M7)</td>
+                        <td>Tile7 (M7),<br>  band 40</td>
                         <td style="background-color: black;"></td>
-                        <td>0.22173</td>
-                        <td>0.033632</td>
-                        <td>0.050807</td>
-                        <td>0.063295</td>
-                        <td>0.0095733</td>
-                        <td>0.0019278</td>
-                        <td>4.3642</td>
-                        <td>3.2414</td>
+                        <td>0.22</td>
+                        <td>0.051</td>
+                        <td>0.06</td>
+                        <td>0.002</td>
+                        <td>4.4</td>
+                        <td>3.2</td>
                     </tr>
                     <tr style="color: rgb(255, 0, 0)">
                         <td>2019 M7</td>
                         <td style="background-color: black;"></td>
-                        <td>0.3259</td>
-                        <td></td>
-                        <td>0.057078</td>
-                        <td>0.1949</td>
-                        <td></td>
-                        <td>0.0046359</td>
-                        <td>5.710</td>
-                        <td>2.498</td>
+                        <td>0.33</td>
+                        <td>0.057</td>
+                        <td>0.19</td>
+                        <td>0.005</td>
+                        <td>5.7</td>
+                        <td>2.5</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile8 (Mx2)</td>
+                        <td>Tile8 (Mx2),<br>  band 31, 41</td>
                         <td style="background-color: black;"></td>
-                        <td>0.17213</td>
-                        <td>0.054787</td>
-                        <td>0.047138</td>
-                        <td>0.074152</td>
-                        <td>0.0025227</td>
-                        <td>0.0021113</td>
-                        <td>3.6516</td>
-                        <td>2.176</td>
+                        <td>0.17</td>
+                        <td>0.047</td>
+                        <td>0.07</td>
+                        <td>0.002</td>
+                        <td>3.7</td>
+                        <td>2.2</td>
                     </tr>
                     <tr style="color: rgb(255, 0, 0)">
                         <td>2019 Mx2</td>
                         <td style="background-color: black;"></td>
-                        <td>0.3376</td>
-                        <td></td>
-                        <td>0.05316</td>
+                        <td>0.34</td>
+                        <td>0.053</td>
                         <td>NaN</td>
-                        <td></td>
                         <td>NaN</td>
-                        <td>6.351</td>
+                        <td>6.4</td>
                         <td>NaN</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile9 (N6)</td>
+                        <td>Tile9 (N6),<br>  band 30</td>
                         <td style="background-color: black;"></td>
-                        <td>0.12603</td>
-                        <td>0.010612</td>
-                        <td>0.018912</td>
-                        <td>0.080376</td>
-                        <td>0.00357</td>
-                        <td>0.0028592</td>
-                        <td>6.6641</td>
-                        <td>2.8442</td>
+                        <td>0.13</td>
+                        <td>0.019</td>
+                        <td>0.08</td>
+                        <td>0.003</td>
+                        <td>6.7</td>
+                        <td>2.8</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile10 (Mx7)</td>
+                        <td>Tile10 (Mx7), <br> band 31, 41</td>
                         <td style="background-color: black;"></td>
-                        <td>0.1217</td>
-                        <td>0.026774</td>
-                        <td>0.018733</td>
-                        <td>0.069327</td>
-                        <td>0</td>
-                        <td>0.0018189</td>
-                        <td>6.4968</td>
-                        <td>3.0966</td>
+                        <td>0.12</td>
+                        <td>0.019</td>
+                        <td>0.07</td>
+                        <td>0.002</td>
+                        <td>6.5</td>
+                        <td>3.1</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
                     </tr>
                     <tr>
-                        <td>Tile11 (M3)</td>
+                        <td>Tile11 (M3), band 40</td>
                         <td style="background-color: black;"></td>
-                        <td>0.21435</td>
-                        <td>0.04065</td>
-                        <td>0.05404</td>
-                        <td>0.031935</td>
-                        <td>0.001298</td>
-                        <td>0.0014159</td>
-                        <td>3.9665</td>
-                        <td>3.4663</td>
+                        <td>0.21</td>
+                        <td>0.054</td>
+                        <td>0.03</td>
+                        <td>0.001</td>
+                        <td>4.0</td>
+                        <td>3.5</td>
                     </tr>
                     <tr style="color: rgb(255, 0, 0)">
                         <td>2019 M3</td>
                         <td style="background-color: black;"></td>
-                        <td>0.3344</td>
-                        <td></td>
-                        <td>0.06209</td>
-                        <td>0.1546</td>
-                        <td></td>
-                        <td>0.005659</td>
-                        <td>5.386</td>
-                        <td>3.186</td>
+                        <td>0.33</td>
+                        <td>0.062</td>
+                        <td>0.15</td>
+                        <td>0.006</td>
+                        <td>5.4</td>
+                        <td>3.2</td>
                     </tr>
                     <tr style="background-color: black">
                         <td colspan="10"></td>
@@ -932,8 +864,6 @@
                     <tr>
                         <td>Tile12 (Mx6)</td>
                         <td style="background-color: black;"></td>
-                        <td>NaN</td>
-                        <td>NaN</td>
                         <td>NaN</td>
                         <td>NaN</td>
                         <td>NaN</td>
