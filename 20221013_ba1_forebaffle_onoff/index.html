@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>2022 BA1 Forebaffle On-Off -- T. Liu</title>
+    <title>BA1 Forebaffle On-Off 2022 -- T. Liu</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- Load up MathJax for math notation -->
     <script type="text/x-mathjax-config">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="scripts/pager.css">
 
     <header>
-        <h1>2022 BA1 Forebaffle On-Off </h1>
+        <h1>BA1 Forebaffle On-Off 2022 </h1>
 
         <time datetime="2022-10-13" class="published updated">
             2022 Oct 13
@@ -38,8 +38,8 @@
             The forebaffle acts as a shield that absorbs stray light to ensure the receiver sees only signal from the
             sky.
             Unfortunately, the forebaffle itself contributes its own thermal loading onto the BA1 detectors.
-            In this posting, we measure the thermal loading caused by the BA1 forebaffle in various configurations. 
-            In 2022, the low-bandpass filter was changed to block out more unwanted signal. 
+            In this posting, we measure the thermal loading caused by the BA1 forebaffle in various configurations.
+            In 2022, the low-bandpass filter was changed to block out more unwanted signal.
             We compare our results to previous years' forebaffle loading to check the effectiveness of this change. </p>
 
 
@@ -65,7 +65,8 @@
             thermal bath, the temperature eventually returns to the edge of the transition.
         </p>
         <figure>
-            <img alt="TES Schematics, from https://sites.astro.caltech.edu/~rogero/thesis/Ch3_TES_Bolometers.pdf and https://en.wikipedia.org/wiki/File:TES_schematic.pdf" width="600" height="600"id="tes" src="#" />
+            <img alt="TES Schematics, from https://sites.astro.caltech.edu/~rogero/thesis/Ch3_TES_Bolometers.pdf and https://en.wikipedia.org/wiki/File:TES_schematic.pdf"
+                width="600" height="600" id="tes" src="#" />
             <figcaption>
                 Schematic circuit (a) and a real life image (b) for the TES .
             </figcaption>
@@ -80,11 +81,11 @@
                         name = "figs/tes/" + params.sc + ".png"
                         return name
                     });
-            pager.setparams(
-                {
-                    'sc':'TES_schematic'
-                }
-            );
+                pager.setparams(
+                    {
+                        'sc': 'TES_schematic'
+                    }
+                );
             </script>
 
         </figure>
@@ -105,7 +106,7 @@
         </p>
 
         <figure>
-            <img alt="TES Curves" id="current" src="#" width="600" height="600"/>
+            <img alt="TES Curves" id="current" src="#" width="600" height="600" />
             <figcaption>
                 Sketch of the bias current vs TES current (a) and the curve with real data (b).
             </figcaption>
@@ -120,11 +121,11 @@
                         name = "figs/curves/" + params.c + ".png"
                         return name
                     });
-                    pager.setparams(
-                {
-                    'c':'current_sketch'
-                }
-            );            
+                pager.setparams(
+                    {
+                        'c': 'current_sketch'
+                    }
+                );            
             </script>
 
         </figure>
@@ -154,7 +155,7 @@
             then decreases until the resistor enters the phase transition.
         </p>
         <figure>
-            <img alt="TES Curves" id="thermal" src="#"  width="600" height="600"/>
+            <img alt="TES Curves" id="thermal" src="#" width="600" height="600" />
             <figcaption>
                 Sketch of the TES resistance vs TES power (a) and the curve with real data (b).
             </figcaption>
@@ -171,10 +172,10 @@
                         return name
                     });
                 pager.setparams(
-                {
-                    'l':'thermal_sketch'
-                }
-            );  
+                    {
+                        'l': 'thermal_sketch'
+                    }
+                );  
             </script>
 
         </figure>
@@ -189,7 +190,7 @@
             forebaffle
             onto a specific detector. </p>
         <figure>
-            <img alt="TES Curves" id="onoff" src="#" width="600" height="600"/>
+            <img alt="TES Curves" id="onoff" src="#" width="600" height="600" />
             <figcaption>
                 Sketch of the bias current vs TES current (a) and the curve with real data (b).
                 Sketch of the TES resistance vs TES power (c) and the curve with real data (d).
@@ -206,586 +207,913 @@
                         name = "figs/curves/" + params.f + ".png"
                         return name
                     });
-                    pager.setparams(
-            {
-                'f':'thermal_onoffhalf'
-            }
-        );  
+                pager.setparams(
+                    {
+                        'f': 'thermal_onoffhalf'
+                    }
+                );  
             </script>
 
         </figure>
-        </section>
+    </section>
 
-        <section>
-            <h2>Examining the data</h2>
-            
-
-                <h3>
-                    Tile Plots
-                </h3>
-                <p>
-                    We extract the size of the gap between the flat parts of the load curves and plot 
-                    the value on tile plots for each detector, giving us plots below. The red means that the 
-                    second forebaffle configuration has higher heat loading, while the blue means that the 
-                    second forebaffle configuration has lower heat loading compared to the first. 
-                </p>
-                <p>
-                    For example, when the forebaffle is Fully on BA1, when compared to the Initial PLC, the 
-                    tiles are yellow-ish orange, which is between 0.1 - 0.3 pW of power, suggesting that the 
-                    forebaffle contributes about 0.2 pW when it is fully on the receiver. 
-
-                </p>
-                <p>
-                    When the forebaffle is on a different receiver (Rx 1/2/3), the coloring on the BA1 tiles is green, 
-                    suggesting that the forebaffle doesn't change the optical loading received by BA1 in comparison 
-                    to its initial configuration. However, when switching over to view the Keck Rx1 receiver, we see 
-                    that having the forebaffle on Rx1 contributes about 0.3-0.5 pW of power to the detectors on Rx1. 
-                </p>
-                <p>
-                    Instead of plotting the power in pW, we can also plot the Rayleigh Jean Temperature, represented by
-                    \(K_{rj}\) in the pager. The RJ temperature is given by \(T_{RJ} = \frac{P}{dP/dT}\), where \(P\) is the 
-                    original optical loading, and \(dP/dT\) is a parameter of each detector, representing how much 
-                    loading is caused by a change in temperature of a hypothetical blackbody. Thus, the RJ temperature represents 
-                    the equivalent temperature of the forebaffle if it were a blackbody covering the entire aperature. The tile plot 
-                    is mostly orange to deep red, suggesting an RJ temperature between 3-7 K. We see that some tiles have higher 
-                    RJ temperatures than others despite having similar loading. We can attribute this to a low \(dP/dT\) for those 
-                    tiles, as we can see when we check the "Det params?" tile plot.  
-                </p>
-                <figure>
-                    <img alt="Tile Plots" id="tile" src="#"  width="750" height="750"/>
-                    <figcaption>
-                        Tile plots
-                    </figcaption>
-                    <script type="text/javascript">
-                        pager.link("#tile",
-                            {
-                                'Forebaffle Configuration 1|fb1': [
-                                    'Initial PLC |noneinit1',
-                                    'Initial  off |noneinit2',
-                                    'Lower half on BA1|ba1half1',
-                                    'Fully on BA1|ba1full',
-                                    'Lower half on BA1 (2)|ba1half2',
-                                    'Middle off|nonemid',
-                                    'On Rx1|keckrx11',
-                                    'On Rx1 again|keckrx12',
-                                    'On Rx2|keckrx21',
-                                    'On Rx2 again|keckrx22',
-                                    'On Rx3|keckrx3',
-                                    'Final off|nonefinal',
-                                    '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
-                                ],
-                                'Forebaffle Configuration 2|fb2': [
-                                'Initial PLC |noneinit1',
-                                    'Initial  off |noneinit2',
-                                    'Lower half on BA1|ba1half1',
-                                    'Fully on BA1|ba1full',
-                                    'Lower half on BA1 (2)|ba1half2',
-                                    'Middle off|nonemid',
-                                    'On Rx1|keckrx11',
-                                    'On Rx1 again|keckrx12',
-                                    'On Rx2|keckrx21',
-                                    'On Rx2 again|keckrx22',
-                                    'On Rx3|keckrx3',
-                                    'Final off|nonefinal',
-                                    '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
-                                ],
-                                'Receiver Number|rxx': [
-                                    'BA1|0',
-                                    'BA1 (Krj)|0krj',
-                                    'Keck Rx1|1',
-                                    'Keck Rx2|2',
-                                    'Keck Rx3|3',
-                                ],
-                                'Type|type':[
-                                    'Lights|',
-                                    'Darks|darks',
-                                ],
-                                'Det params?|dp':[
-                                    'Yes|y',
-                                    'No|n'
-                                ]
-                            },
-                            function (params) {
-                                if(params.dp =='y'){
-                                    return "figs/detparams.png";
-                                }
-                                name = "figs/tiles/" + params.fb1 +'_'+params.fb2+'_rx'+params.rxx + params.type + ".png"
-                                if(params.fb1 == 'xxx' || params.fb2 == 'xxx'){
-                                    return "figs/dne.png";
-                                }
-                                return name
-                            });
-                        pager.setparams(
-                {
-                    'fb1':'noneinit1',
-                    'fb2':'noneinit2',
-                    'rxx':'0',
-                    'type':'',
-                    'dp':'n',
-
-                }
-            );  
-        
-                    </script>
-        
-                </figure>
-                Some of the detector tiles have vastly different values from the rest. To determine the cause, we can view individual detectors 
-                below. Each Rx, Tile, and row/col is a small square in the tile plot. Each tile is either divided into 2 or 4 triangles. 
-                Two triangles means there is one detector for each polarization, 'A' and 'B'. Four means for each polarization, there are 
-                in addition 2 different bands. The different bands are only relevant for BA1. In the two side by side plots, the left plot 
-                is all the datapoints on one graph, while the right plot is the same data but plotted in a specific range. The x and y range 
-                are consistent within each receiver to provide a better idea of the data's scale. 
-                <figure>
-                    <img alt="Individual Curves" id="indiv" src="#" onerror="javascript:this.src='figs/dne.png'"/>
-                    <figcaption>
-                        Individual curves dictionary, use to find any load curve.
-                    </figcaption>
-                    <script type="text/javascript">
-                        pager.link("#indiv",
-                            {
-                                'Rx|rx': [
-                                    '0|0',
-                                    '1|1',
-                                    '2|2',
-                                    '3|3',
-                                ],
-                                'Tile|tile': [
-                                    '1|1',
-                                    '2|2',
-                                    '3|3',
-                                    '4|4',
-                                    '---BA1-Only Tiles below---|0',
-                                    '5|5',
-                                    '6|6',
-                                    '7|7',
-                                    '8|8',
-                                    '9|9',
-                                    '10|10',
-                                    '11|11',
-                                    '12|12',
-                                ],
-                                'Row|row': [
-                                    '1|1',
-                                    '2|2',
-                                    '3|3',
-                                    '4|4',
-                                    '5|5',
-                                    '6|6',
-                                    '7|7',
-                                    '8|8',
-                                ],
-                                'Col|col': [
-                                    '1|1',
-                                    '2|2',
-                                    '3|3',
-                                    '4|4',
-                                    '5|5',
-                                    '6|6',
-                                    '7|7',
-                                    '8|8',
-                                ],
-                                'Polarization|pol': [
-                                    'A|A',
-                                    'B|B',
-                                ],
-                                'Band (BA1 only)|band': [
-                                    '30 Hz|30',
-                                    '40 Hz|40',
-                                ],
-                                'Type (BA1 only)|typey':[
-                                    'Light |L',
-                                    'Dark|D'
-                                ]
-                            },
-                            function (params) {
-                                if(params.rx == '0krj'){
-                                    params.rx = '0';
-                                }
-                                if(params.rx == '1' || params.rx == '2'){
-                                    params.band = '210';
-                                    if(params.typey == 'D'){
-                                        params.band = '0';
-                                    }
-                                } else if (params.rx == '3'){
-                                    params.band = '270';
-                                    if(params.typey == 'D'){
-                                        params.band = '0';
-                                    }
-                                }
-                                name = "figs/plcs/rx" + params.rx +'_tile'+params.tile+
-                                        '_row'+params.row +"_col" + params.col + 
-                                        "_pol"+params.pol + "_band" + params.band + 
-                                        "_type" + params.typey+".png";
-                                return name;
-                                
-
-                            });
-                        pager.setparams(
-                {
-                    'rx':'0',
-                    'tile':'1',
-                    'row':'1',
-                    'col':'1',
-                    'pol':'A',
-                    'band':'30',
-                    'typey':'L'
-
-                }
-            );  
-        
-                    </script>
-        
-                </figure>
+    <section>
+        <h2>Examining the data</h2>
 
 
-                <p> 
-                By examining the different load curves, it becomes straightforward to cut the data based on the load curve quality. We 
-                fit two lines, one horizontal and one vertical onto the loadcurve. If all the points are within approximately 10 percent 
-                of that fitted line, we consider the curve to be good. If any load curve does not satisfy our requirements, we cut the detector.
-                </p>
-                <p>
-                We plot the extra loading for different baselines, showing the median and quartiles for each forebaffle configuration. 
-                 We can see that having no cuts introduces many more outliers.
+        <h3>
+            Tile Plots
+        </h3>
+        <p>
+            We extract the size of the gap between the flat parts of the load curves and plot
+            the value on tile plots for each detector, giving us plots below. The red means that the
+            second forebaffle configuration has higher heat loading, while the blue means that the
+            second forebaffle configuration has lower heat loading compared to the first.
+        </p>
+        <p>
+            For example, when the forebaffle is Fully on BA1, when compared to the Initial PLC, the
+            tiles are yellow-ish orange, which is between 0.1 - 0.3 pW of power, suggesting that the
+            forebaffle contributes about 0.2 pW when it is fully on the receiver.
 
-                </p>
-                <p>
-                    We also see that for the BA1 receiver, the baseline line is pretty consistent, that when there is no forebaffle on BA1, 
-                    the extra loading is not visible to 0.05 pW. However, for each Keck receiver, there is a clear power drift as we 
-                    process the different tags. The leading hypothesis is that because the Keck receivers are higher frequency and more 
-                    susceptible to weather, they pick up slight differences in sky loading. We subtract away this offset in our final analysis.  
-                </p>
-                
-                <figure>
-                    <img alt="Box plots" id="box" src="#" />
-                    <figcaption>
-                        The median is the middle red line, and the top/bottom edges of the boxes correspond 
-                        to 75th and 25th percentiles respectively. 
-                        Outliers (red crosses) are anything beyond 1x the interquartile range.
-                        <br>
-                        Cuts are performed by checking for 2 lines: horizontal and vertical. 
-                        If the middle 60 percent of the domain and range have their min 
-                        and max values within 10 percent of each other, then the lines are considered 
-                        roughly horizontal/vertical 
-                    </figcaption>
-                    <script type="text/javascript">
-                        pager.link("#box",
-                            {
-                                'Receiver Number|rx': [
-                                    'BA1|0',
-                                    'Keck Rx1|1',
-                                    'Keck Rx2|2',
-                                    'Keck Rx3|3',
-                                ],
-                                'Tile|tiles': [
-                                    'All|-All',
-                                    '1|1',
-                                    '2|2',
-                                    '3|3',
-                                    '4|4',
-                                    '------------------BA1 Only below---------------|-1',
-                                    '5|5',
-                                    '6|6',
-                                    '7|7',
-                                    '8|8',
-                                    '9|9',
-                                    '10|10',
-                                    '11|11',
-                                    '12|12',
-                                ],
-                                'Cuts|cut':[
-                                    'Yes|with',
-                                    'No|without',
-                                ],
-                                'Baseline|dif':[
-                                    'Absolute Power|abs',
-                                    'Initial PLC|diff1',
-                                    'Beginning|diff2',
-                                    'Middle|diff6',
-                                    'End|diff12',
-                                ],
-                                'Timestamps|t':[
-                                    'Timestamps|ts-',
-                                    'Tags|'
-                                ],
-                                'type|typex':[
-                                    'Both|',
-                                    'Lights|_lights',
-                                    'Darks|_darks',
-                                ]
-                            },
-                            function (params) {
-                                
-                                if(params.rx == '0krj'){
-                                    params.rx = '0';
-                                }
-                                name = ("figs/boxplots/"+params.dif+"_box_rx" + params.rx + "_tile" +params.tiles +'_'+
-                                                params.t + params.cut + "cuts" + params.typex+".png");
-                                if((params.rx > 0 && params.tiles >4) || params.tiles < 0 || (params.dif=="abs" && (params.cut=='without' || params.typex !=''))){
-                                    return  "figs/dne.png";
-                                }
-                                return name
-                            });
-                            pager.setparams(
+        </p>
+        <p>
+            When the forebaffle is on a different receiver (Rx 1/2/3), the coloring on the BA1 tiles is green,
+            suggesting that the forebaffle doesn't change the optical loading received by BA1 in comparison
+            to its initial configuration. However, when switching over to view the Keck Rx1 receiver, we see
+            that having the forebaffle on Rx1 contributes about 0.3-0.5 pW of power to the detectors on Rx1.
+        </p>
+        <p>
+            Instead of plotting the power in pW, we can also plot the Rayleigh Jean Temperature, represented by
+            \(K_{rj}\) in the pager. The RJ temperature is given by \(T_{RJ} = \frac{P}{dP/dT}\), where \(P\) is the
+            original optical loading, and \(dP/dT\) is a parameter of each detector, representing how much
+            loading is caused by a change in temperature of a hypothetical blackbody. Thus, the RJ temperature
+            represents
+            the equivalent temperature of the forebaffle if it were a blackbody covering the entire aperature. The tile
+            plot
+            is mostly orange to deep red, suggesting an RJ temperature between 3-7 K. We see that some tiles have higher
+            RJ temperatures than others despite having similar loading. We can attribute this to a low \(dP/dT\) for
+            those
+            tiles, as we can see when we check the "Det params?" tile plot.
+        </p>
+        <figure>
+            <img alt="Tile Plots" id="tile" src="#" width="750" height="750" />
+            <figcaption>
+                Tile plots
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#tile",
                     {
-                        'rx':'0', 'tiles':'-All', 'cut':'with', 'dif':'diff1', 't':'ts-', 'typex':''
+                        'Forebaffle Configuration 1|fb1': [
+                            'Initial PLC |noneinit1',
+                            'Initial  off |noneinit2',
+                            'Lower half on BA1|ba1half1',
+                            'Fully on BA1|ba1full',
+                            'Lower half on BA1 (2)|ba1half2',
+                            'Middle off|nonemid',
+                            'On Rx1|keckrx11',
+                            'On Rx1 again|keckrx12',
+                            'On Rx2|keckrx21',
+                            'On Rx2 again|keckrx22',
+                            'On Rx3|keckrx3',
+                            'Final off|nonefinal',
+                            '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
+                        ],
+                        'Forebaffle Configuration 2|fb2': [
+                            'Initial PLC |noneinit1',
+                            'Initial  off |noneinit2',
+                            'Lower half on BA1|ba1half1',
+                            'Fully on BA1|ba1full',
+                            'Lower half on BA1 (2)|ba1half2',
+                            'Middle off|nonemid',
+                            'On Rx1|keckrx11',
+                            'On Rx1 again|keckrx12',
+                            'On Rx2|keckrx21',
+                            'On Rx2 again|keckrx22',
+                            'On Rx3|keckrx3',
+                            'Final off|nonefinal',
+                            '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
+                        ],
+                        'Receiver Number|rxx': [
+                            'BA1|0',
+                            'BA1 (Krj)|0krj',
+                            'Keck Rx1|1',
+                            'Keck Rx2|2',
+                            'Keck Rx3|3',
+                        ],
+                        'Type|type': [
+                            'Lights|',
+                            'Darks|darks',
+                        ],
+                        'Det params?|dp': [
+                            'Yes|y',
+                            'No|n'
+                        ]
+                    },
+                    function (params) {
+                        if (params.dp == 'y') {
+                            return "figs/detparams.png";
+                        }
+                        name = "figs/tiles/" + params.fb1 + '_' + params.fb2 + '_rx' + params.rxx + params.type + ".png"
+                        if (params.fb1 == 'xxx' || params.fb2 == 'xxx') {
+                            return "figs/dne.png";
+                        }
+                        return name
+                    });
+                pager.setparams(
+                    {
+                        'fb1': 'noneinit1',
+                        'fb2': 'noneinit2',
+                        'rxx': '0',
+                        'type': '',
+                        'dp': 'n',
+
+                    }
+                );
+
+            </script>
+
+        </figure>
+        Some of the detector tiles have vastly different values from the rest. To determine the cause, we can view
+        individual detectors
+        below. Each Rx, Tile, and row/col is a small square in the tile plot. Each tile is either divided into 2 or 4
+        triangles.
+        Two triangles means there is one detector for each polarization, 'A' and 'B'. Four means for each polarization,
+        there are
+        in addition 2 different bands. The different bands are only relevant for BA1. In the two side by side plots, the
+        left plot
+        is all the datapoints on one graph, while the right plot is the same data but plotted in a specific range. The x
+        and y range
+        are consistent within each receiver to provide a better idea of the data's scale.
+        <figure>
+            <img alt="Individual Curves" id="indiv" src="#" onerror="javascript:this.src='figs/dne.png'" />
+            <figcaption>
+                Individual curves dictionary, use to find any load curve.
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#indiv",
+                    {
+                        'Rx|rx': [
+                            '0|0',
+                            '1|1',
+                            '2|2',
+                            '3|3',
+                        ],
+                        'Tile|tile': [
+                            '1|1',
+                            '2|2',
+                            '3|3',
+                            '4|4',
+                            '---BA1-Only Tiles below---|0',
+                            '5|5',
+                            '6|6',
+                            '7|7',
+                            '8|8',
+                            '9|9',
+                            '10|10',
+                            '11|11',
+                            '12|12',
+                        ],
+                        'Row|row': [
+                            '1|1',
+                            '2|2',
+                            '3|3',
+                            '4|4',
+                            '5|5',
+                            '6|6',
+                            '7|7',
+                            '8|8',
+                        ],
+                        'Col|col': [
+                            '1|1',
+                            '2|2',
+                            '3|3',
+                            '4|4',
+                            '5|5',
+                            '6|6',
+                            '7|7',
+                            '8|8',
+                        ],
+                        'Polarization|pol': [
+                            'A|A',
+                            'B|B',
+                        ],
+                        'Band (BA1 only)|band': [
+                            '30 Hz|30',
+                            '40 Hz|40',
+                        ],
+                        'Type (BA1 only)|typey': [
+                            'Light |L',
+                            'Dark|D'
+                        ]
+                    },
+                    function (params) {
+                        if (params.rx == '0krj') {
+                            params.rx = '0';
+                        }
+                        if (params.rx == '1' || params.rx == '2') {
+                            params.band = '210';
+                            if (params.typey == 'D') {
+                                params.band = '0';
+                            }
+                        } else if (params.rx == '3') {
+                            params.band = '270';
+                            if (params.typey == 'D') {
+                                params.band = '0';
+                            }
+                        }
+                        name = "figs/plcs/rx" + params.rx + '_tile' + params.tile +
+                            '_row' + params.row + "_col" + params.col +
+                            "_pol" + params.pol + "_band" + params.band +
+                            "_type" + params.typey + ".png";
+                        return name;
+
+
+                    });
+                pager.setparams(
+                    {
+                        'rx': '0',
+                        'tile': '1',
+                        'row': '1',
+                        'col': '1',
+                        'pol': 'A',
+                        'band': '30',
+                        'typey': 'L'
+
+                    }
+                );
+
+            </script>
+
+        </figure>
+
+
+        <p>
+            By examining the different load curves, it becomes straightforward to cut the data based on the load curve
+            quality. We
+            fit two lines, one horizontal and one vertical onto the loadcurve. If all the points are within
+            approximately 10 percent
+            of that fitted line, we consider the curve to be good. If any load curve does not satisfy our requirements,
+            we cut the detector.
+        </p>
+        <p>
+            We plot the extra loading for different baselines, showing the median and quartiles for each forebaffle
+            configuration.
+            We can see that having no cuts introduces many more outliers.
+
+        </p>
+        <p>
+            We also see that for the BA1 receiver, the baseline line is pretty consistent, that when there is no
+            forebaffle on BA1,
+            the extra loading is not visible to 0.05 pW. However, for each Keck receiver, there is a clear power drift
+            as we
+            process the different tags. The leading hypothesis is that because the Keck receivers are higher frequency
+            and more
+            susceptible to weather, they pick up slight differences in sky loading. We subtract away this offset in our
+            final analysis.
+        </p>
+
+        <figure>
+            <img alt="Box plots" id="box" src="#" />
+            <figcaption>
+                The median is the middle red line, and the top/bottom edges of the boxes correspond
+                to 75th and 25th percentiles respectively.
+                Outliers (red crosses) are anything beyond 1x the interquartile range.
+                <br>
+                Cuts are performed by checking for 2 lines: horizontal and vertical.
+                If the middle 60 percent of the domain and range have their min
+                and max values within 10 percent of each other, then the lines are considered
+                roughly horizontal/vertical
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#box",
+                    {
+                        'Receiver Number|rx': [
+                            'BA1|0',
+                            'Keck Rx1|1',
+                            'Keck Rx2|2',
+                            'Keck Rx3|3',
+                        ],
+                        'Tile|tiles': [
+                            'All|-All',
+                            '1|1',
+                            '2|2',
+                            '3|3',
+                            '4|4',
+                            '------------------BA1 Only below---------------|-1',
+                            '5|5',
+                            '6|6',
+                            '7|7',
+                            '8|8',
+                            '9|9',
+                            '10|10',
+                            '11|11',
+                            '12|12',
+                        ],
+                        'Cuts|cut': [
+                            'Yes|with',
+                            'No|without',
+                        ],
+                        'Baseline|dif': [
+                            'Absolute Power|abs',
+                            'Initial PLC|diff1',
+                            'Beginning|diff2',
+                            'Middle|diff6',
+                            'End|diff12',
+                        ],
+                        'Timestamps|t': [
+                            'Timestamps|ts-',
+                            'Tags|'
+                        ],
+                        'type|typex': [
+                            'Both|',
+                            'Lights|_lights',
+                            'Darks|_darks',
+                        ]
+                    },
+                    function (params) {
+
+                        if (params.rx == '0krj') {
+                            params.rx = '0';
+                        }
+                        name = ("figs/boxplots/" + params.dif + "_box_rx" + params.rx + "_tile" + params.tiles + '_' +
+                            params.t + params.cut + "cuts" + params.typex + ".png");
+                        if ((params.rx > 0 && params.tiles > 4) || params.tiles < 0 || (params.dif == "abs" && (params.cut == 'without' || params.typex != ''))) {
+                            return "figs/dne.png";
+                        }
+                        return name
+                    });
+                pager.setparams(
+                    {
+                        'rx': '0', 'tiles': '-All', 'cut': 'with', 'dif': 'diff1', 't': 'ts-', 'typex': ''
                     }
                 );  
-                    </script>
-        
-                </figure>
-                </section>
-                <section>
-                <h2>Conclusion</h2>
-                <p>
-                    We provide the mean forebaffle loading for each receiver, with and without cuts. Without cuts, the mean averages into 
-                    the extreme outliers (which can be observed in the tile plots), and significantly changes the average. For each column of 
-                    "No Cuts", the spread is nearly larger than the value itself. 
-                </p>
-                <p>
-                    With the cuts, the values for the Keck receivers are roughly equal to the 
-                    <a href="https://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20200312_FB_onoff/">
-                        previous 2020 posting examining forebaffle loading</a> at about 0.3 pW. However, Rx3 has a slightly larger loading 
-                        at 0.5 pW, but this is consistent with 
-                        <a href="https://bicep.rc.fas.harvard.edu/keck/analysis_logbook/analysis/20180108_Keck_Rx4_forebaffle_onoff_measurements/">Kenny's
-                            2018 posting</a>.
-                </p>
-                <p>
-                    The BA1 receiver has about half as much loading as the 2020 posting, suggesting that fixing the low-pass band filter has improved 
-                    performance. Even though the loading itself was cut by about half, the RJ temperature has only decreased by about 1.5K. 
-                    This might be due to a slightly lower \(dP/dT\) for some of the detectors compared to 2020.  
-                </p>
-                <center>
-                    <table border="1px" style="text-align:center;border-spacing:5px">
-                        <tbody><tr>
-                            <td></td>
-                            <td colspan="2"><strong>Light Loading (pW)</strong></td>
-                            <td colspan="2"><strong>Dark Loading (pW)</strong></td>
-                            <td colspan="2"><strong>Lights Temp_RJ (K)</strong></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>With Cuts</td>
-                            <td>No Cuts</td>
-                            <td>With Cuts</td>
-                            <td>No Cuts</td>
-                            <td>With Cuts</td>
-                            <td>No Cuts</td>
-                        </tr>
-                        <tr>
-                            <td>Rx0 (30)</td>
-                            <td>0.155</td>
-                            <td>9.909</td>
-                            <td>0.081</td>
-                            <td>1.83</td>
-                            <td>10.3</td>
-                            <td>12.6</td>
-                        </tr>
-                        <tr>
-                            <td>Rx0 (40)</td>
-                            <td>0.223</td>
-                            <td>3.185</td>
-                            <td>0.067</td>
-                            <td>0.067</td>
-                            <td>5.12</td>
-                            <td>5.05</td>
-                        </tr>
-                        <tr>
-                            <td>Rx1 (210)</td>
-                            <td>0.279</td>
-                            <td>4.266</td>
-                            <td>0.124</td>
-                            <td>0.111</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Rx2 (210)</td>
-                            <td>0.32</td>
-                            <td>0.19</td>
-                            <td>0.01 (large spread)</td>
-                            <td>-0.23 </td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Rx3 (270)</td>
-                            <td>0.51</td>
-                            <td>0.39</td>
-                            <td>0.14</td>
-                            <td>-0.12</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody></table>
-                    </center>
-            </section>
+            </script>
 
-            <section>
-                <h2>Appendix</h2>
-                <p>
-                    Here are the time stamps and the means +- standard deviation for each tag's difference from the intial PLC. 
-                    The means include cuts, but no offset is applied.
-                </p>
-                <center>
-                    <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
-                        <tbody>
-                            <tr>
-                                <td rowspan="2"><b>Forebaffle Configuration</b></td>
-                                <td rowspan="2"><b>Starting command do_partial_loadcurve<br>  (2022-Jan-15)</b></td>
-                                <td rowspan="2"><b>Partial load curve script execution successfully completed<br> (2022-Jan-15)</b></td>
-                                <td rowspan="2"><b>Configuration Complete<br>  (2022-Jan-15)</b></td>
-                                <td colspan="4"><b>Mean +- std power loading difference from init 1 (pW) </b></td>
-                                <td rowspan="2"><b>Notes</b></td>
-                            </tr>
-                            <tr>
-                                <td><b>Rx0  </b></td>
-                                <td><b>Rx1 </b></td>
-                                <td><b>Rx2  </b></td>
-                                <td><b>Rx3 </b></td>
-                            </tr>
-                            <tr>
-                                <td>Tag 1,<br> Initial PLC</td>
-        
-                                <td>03:01:09</td>
-                                <td>03:02:50</td>
-                                <td>03:03:38</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Tag 2,<br> Forebaffle off</td>
-        
-                                <td>03:39:00</td>
-                                <td>03:40:41</td>
-                                <td>03:41:29</td>
-                                <td>0.00113 +- 0.00869</td>
-                                <td>-0.035316 +-0.011398</td>
-                                <td>-0.044217 +-0.025717</td>
-                                <td>-0.023059 +-0.040461</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Tag 3,<br> Forebaffle lower-half on</td>
-        
-                                <td>03:47:38</td>
-                                <td>03:49:19</td>
-                                <td>03:50:07</td>
-                                <td>0.06442 +- 0.02939</td>
-                                <td>-0.032069 +-0.012151</td>
-                                <td>-0.037632 +-0.01558</td>
-                                <td>-0.014089 +-0.04177</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Tag 4, <br>Forebaffle upper-half on</td>
-        
-                                <td>03:53:10</td>
-                                <td>03:54:51</td>
-                                 <td>03:55:39</td>
-                                <td>0.15534 +- 0.06409</td>
-                                <td>-0.023352 +-0.0089198</td>
-                                <td>-0.03075 +-0.023788</td>
-                                <td>-0.0049996 +-0.041813</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Tag 5,<br> Forebaffle lower-half on</td>
-        
-                                <td>03:58:02</td>
-                                <td>03:59:43</td>
-                                <td> 04:00:31 </td>
-                                <td>0.06868 +- 0.02989</td>
-                                <td>-0.01593 +-0.0082595</td>
-                                <td>-0.020878 +-0.02533</td>
-                                <td>0.0042077 +-0.041684</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Tag 6, <br>None (mid), no forebaffle</td>
-        
-                                <td>04:07:39</td>
-                                <td>04:09:20</td>
-                                <td> 04:10:08 </td>
-                                <td>0.00199 +- 0.00869</td>
-                                <td>0.025234 +-0.0082926</td>
-                                <td>0.023592 +-0.020676</td>
-                                <td>0.032157 +-0.042556</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Tag 7, <br> keck rx1 (1) </td>
-        
-                                <td>04:12:43 </td>
-                                <td>04:14:24</td>
-                                <td> 04:15:12 </td>
-                                <td> -0.00036 +-0.00863</td>
-                                <td>0.29857 +-0.051795</td>
-                                <td>-0.018066 +-0.011363</td>
-                                <td>0.010484 +-0.044418</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td> Tag 8,<br> keck rx1 (2) </td>    
-                                <td> 04:16:23</td>
-                                <td> 04:18:04</td>
-                                <td>04:18:52 </td>
-                                <td>-0.0023792 +-0.0086044</td>
-                                <td>0.28361 +-0.051219</td>
-                                <td>-0.049011 +-0.027495</td>
-                                <td>-0.0398 +-0.04216</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>   Tag 9,<br> keck rx2 (1) </td>
-                                <td> 04:22:33</td>
-                                <td>04:24:14</td>
-                                 <td>04:25:02 </td>
-                                <td>-0.0030296 +-0.0058443</td>
-                                <td>-0.00049229 +-0.0091881</td>
-                                <td>0.33294 +-0.071068</td>
-                                <td>0.031394 +-0.0425</td>
-                                <td></td>
-                            </tr>
-                            <tr><td>   Tag 10,<br> keck rx2 (2)  </td>
-                                <td>04:25:57</td>
-                                <td>04:27:38</td>
-                                <td> 04:28:26</td>
-                                <td>-0.0043145 +-0.0085983</td>
-                                <td>-0.0073203 +-0.0099529</td>
-                                <td>0.31723 +-0.067604</td>
-                                <td>0.002818 +-0.042093</td>
-                                <td></td>
-                            </tr>
-                            <tr><td> Tag 11,<br> keck rx3  </td>
-                                <td>04:31:48</td>
-                                <td>04:33:29</td>
-                                <td> 04:34:16 </td>
-                                <td>-0.0055804 +-0.005544</td>
-                                <td>-0.030507 +-0.014098</td>
-                                <td>-0.04793 +-0.027177</td>
-                                <td>0.48235 +-0.085573</td>
-                                <td></td>
-                            </tr>
-                            <tr><td>  Tag 12, <br>None (final), no forebaffle</td>
-                                <td>04:42:51 </td>
-                                <td>04:44:31</td>
-                                <td> 04:45:20 </td>
-                                <td>-0.0074202 +-0.011379</td>
-                                <td>-0.064852 +-0.024848</td>
-                                <td>-0.082529 +-0.033988</td>
-                                <td>-0.060872 +-0.042902</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </center>
-            </section>
+        </figure>
+    </section>
+    <section>
+        <h2>Conclusion</h2>
+        <p>
+            We provide the mean forebaffle loading for each receiver, with and without cuts. Without cuts, the mean
+            averages into
+            the extreme outliers (which can be observed in the tile plots), and significantly changes the average. For
+            each column of
+            "No Cuts", the spread is nearly larger than the value itself.
+        </p>
+        <p>
+            With the cuts, the values for the Keck receivers are roughly equal to the
+            <a href="https://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20200312_FB_onoff/">
+                previous 2020 posting examining forebaffle loading</a> at about 0.3 pW. However, Rx3 has a slightly
+            larger loading
+            at 0.5 pW, but this is consistent with
+            <a
+                href="https://bicep.rc.fas.harvard.edu/keck/analysis_logbook/analysis/20180108_Keck_Rx4_forebaffle_onoff_measurements/">Kenny's
+                2018 posting</a>.
+        </p>
+        <p>
+            The BA1 receiver has about half as much loading as the 2020 posting, suggesting that fixing the low-pass
+            band filter has improved
+            performance. Even though the loading itself was cut by about half, the RJ temperature has only decreased by
+            about 1.5K.
+            This might be due to a slightly lower \(dP/dT\) for some of the detectors compared to 2020.
+        </p>
+        <center>
+            <table border="1px" style="text-align:center;border-spacing:5px">
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td colspan="2"><strong>Light Loading (pW)</strong></td>
+                        <td colspan="2"><strong>Dark Loading (pW)</strong></td>
+                        <td colspan="2"><strong>Lights Temp_RJ (K)</strong></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>With Cuts</td>
+                        <td>No Cuts</td>
+                        <td>With Cuts</td>
+                        <td>No Cuts</td>
+                        <td>With Cuts</td>
+                        <td>No Cuts</td>
+                    </tr>
+                    <tr>
+                        <td>Rx0 (30)</td>
+                        <td>0.155</td>
+                        <td>9.909</td>
+                        <td>0.081</td>
+                        <td>1.83</td>
+                        <td>10.3</td>
+                        <td>12.6</td>
+                    </tr>
+                    <tr>
+                        <td>Rx0 (40)</td>
+                        <td>0.223</td>
+                        <td>3.185</td>
+                        <td>0.067</td>
+                        <td>0.067</td>
+                        <td>5.12</td>
+                        <td>5.05</td>
+                    </tr>
+                    <tr>
+                        <td>Rx1 (210)</td>
+                        <td>0.279</td>
+                        <td>4.266</td>
+                        <td>0.124</td>
+                        <td>0.111</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Rx2 (210)</td>
+                        <td>0.32</td>
+                        <td>0.19</td>
+                        <td>0.01 (large spread)</td>
+                        <td>-0.23 </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Rx3 (270)</td>
+                        <td>0.51</td>
+                        <td>0.39</td>
+                        <td>0.14</td>
+                        <td>-0.12</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <br>
+        <br>
+        We plot the loading and RJ temperature for each tile and compare it to the <a
+            href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20200909_forebaffle_coupling/">2019
+            results</a>, which are in red. We see that for every tile, there is a significant improvement in loading
+        (approximately 50%
+        less) and RJ temperature (approximately 30-40% less). The RJ temperature is given by the median of the
+        light forebaffle loading divided by the \(dp/dT\) parameter for each detector. The inband RJ temperature is
+        given by
+        \[T_{RJ,inband}=\frac{P_{fb,L}-P_{fb,D}}{(dP/dT)_{L}-(dP/dT)_{D}}\]
+        <center>
+            <table border="1px" style="text-align:center;border-spacing:5px">
+                <tbody>
+                    <tr>
+                        <td rowspan="2"><strong>Tile (name)</strong></td>
+                        <td style="background-color: black;"></td>
+                        <td colspan="2"><strong>Light Forebaffle Loading (pW)</strong></td>
+                        <td rowspan="2"><strong> dP/dT Light (pW/K)</strong></td>
+                        <td colspan="2"><strong>Dark Forebaffle Loading (pW)</strong></td>
+                        <td rowspan="2"><strong> dP/dT Dark (pW/K)</strong></td>
+                        <td rowspan="2"> <strong>Rayleigh-Jean Temperature (K)</strong></td>
+                        <td rowspan="2"> <strong>Inband Rayleigh-Jean Temperature (K)</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: black;"></td>
+                        <td>
+                            <strong>Median</strong>
+                        </td>
+                        <td><strong>STD</strong></td>
+                        <td>
+                            <strong> Median</strong>
+                        </td>
+                        <td><strong>STD</strong></td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile1 (M4)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.21905</td>
+                        <td>0.037318</td>
+                        <td>0.057549</td>
+                        <td>0.068206</td>
+                        <td>0.049521</td>
+                        <td>0.0017648</td>
+                        <td>3.8063</td>
+                        <td>2.7041</td>
+                    </tr>
+                    <tr style="color: rgb(255, 0, 0)">
+                        <td>2019 M4</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.3378</td>
+                        <td></td>
+                        <td>0.063468</td>
+                        <td>0.1725</td>
+                        <td></td>
+                        <td>0.0055541</td>
+                        <td>5.322</td>
+                        <td>5.737</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile2 (Mx8)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.10092</td>
+                        <td>0.029157</td>
+                        <td>0.0053685</td>
+                        <td>0.072328</td>
+                        <td>0</td>
+                        <td>0.0010118</td>
+                        <td>18.7995</td>
+                        <td>6.5637</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile3 (N4)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.1648</td>
+                        <td>0.0067012</td>
+                        <td>0.02113</td>
+                        <td>0.077467</td>
+                        <td>0.0059072</td>
+                        <td>0.0024505</td>
+                        <td>7.799</td>
+                        <td>4.675</td>
+                    </tr>
+                    <tr style="color: rgb(255, 0, 0)">
+                        <td>2019 N4</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.3299</td>
+                        <td></td>
+                        <td>0.027618</td>
+                        <td>0.2207</td>
+                        <td></td>
+                        <td>0.0069453</td>
+                        <td>11.945</td>
+                        <td>5.282</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile4 (N5)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.15709</td>
+                        <td>0.0113</td>
+                        <td>0.019991</td>
+                        <td>0.077209</td>
+                        <td>0.0048531</td>
+                        <td>-0.00014327</td>
+                        <td>7.8583</td>
+                        <td>3.9676</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile5 (M6)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.22193</td>
+                        <td>0.035774</td>
+                        <td>0.057468</td>
+                        <td>0.070482</td>
+                        <td>0.025611</td>
+                        <td>0.0021213</td>
+                        <td>3.8618</td>
+                        <td>2.7363</td>
+                    </tr>
+                    <tr style="color: rgb(255, 0, 0)">
+                        <td>2019 M6</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.3907</td>
+                        <td></td>
+                        <td>0.065931</td>
+                        <td>0.2285</td>
+                        <td></td>
+                        <td>0.0069889</td>
+                        <td>5.926</td>
+                        <td>2.752</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile6 (N1)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.15655</td>
+                        <td>0.015221</td>
+                        <td>0.021215</td>
+                        <td>0.073519</td>
+                        <td>0.0055544</td>
+                        <td>0.0025711</td>
+                        <td>7.379</td>
+                        <td>4.4533</td>
+                    </tr>
+                    <tr style="color: rgb(255, 0, 0)">
+                        <td>2019 N1</td>
+                        <td style="background-color: black;"></td>
+                        <td>NaN</td>
+                        <td></td>
+                        <td>0.027177</td>
+                        <td>NaN</td>
+                        <td></td>
+                        <td>0.0072581</td>
+                        <td>NaN</td>
+                        <td>NaN</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile7 (M7)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.22173</td>
+                        <td>0.033632</td>
+                        <td>0.050807</td>
+                        <td>0.063295</td>
+                        <td>0.0095733</td>
+                        <td>0.0019278</td>
+                        <td>4.3642</td>
+                        <td>3.2414</td>
+                    </tr>
+                    <tr style="color: rgb(255, 0, 0)">
+                        <td>2019 M7</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.3259</td>
+                        <td></td>
+                        <td>0.057078</td>
+                        <td>0.1949</td>
+                        <td></td>
+                        <td>0.0046359</td>
+                        <td>5.710</td>
+                        <td>2.498</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile8 (Mx2)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.17213</td>
+                        <td>0.054787</td>
+                        <td>0.047138</td>
+                        <td>0.074152</td>
+                        <td>0.0025227</td>
+                        <td>0.0021113</td>
+                        <td>3.6516</td>
+                        <td>2.176</td>
+                    </tr>
+                    <tr style="color: rgb(255, 0, 0)">
+                        <td>2019 Mx2</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.3376</td>
+                        <td></td>
+                        <td>0.05316</td>
+                        <td>NaN</td>
+                        <td></td>
+                        <td>NaN</td>
+                        <td>6.351</td>
+                        <td>NaN</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile9 (N6)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.12603</td>
+                        <td>0.010612</td>
+                        <td>0.018912</td>
+                        <td>0.080376</td>
+                        <td>0.00357</td>
+                        <td>0.0028592</td>
+                        <td>6.6641</td>
+                        <td>2.8442</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile10 (Mx7)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.1217</td>
+                        <td>0.026774</td>
+                        <td>0.018733</td>
+                        <td>0.069327</td>
+                        <td>0</td>
+                        <td>0.0018189</td>
+                        <td>6.4968</td>
+                        <td>3.0966</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile11 (M3)</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.21435</td>
+                        <td>0.04065</td>
+                        <td>0.05404</td>
+                        <td>0.031935</td>
+                        <td>0.001298</td>
+                        <td>0.0014159</td>
+                        <td>3.9665</td>
+                        <td>3.4663</td>
+                    </tr>
+                    <tr style="color: rgb(255, 0, 0)">
+                        <td>2019 M3</td>
+                        <td style="background-color: black;"></td>
+                        <td>0.3344</td>
+                        <td></td>
+                        <td>0.06209</td>
+                        <td>0.1546</td>
+                        <td></td>
+                        <td>0.005659</td>
+                        <td>5.386</td>
+                        <td>3.186</td>
+                    </tr>
+                    <tr style="background-color: black">
+                        <td colspan="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Tile12 (Mx6)</td>
+                        <td style="background-color: black;"></td>
+                        <td>NaN</td>
+                        <td>NaN</td>
+                        <td>NaN</td>
+                        <td>NaN</td>
+                        <td>NaN</td>
+                        <td>NaN</td>
+                        <td>NaN</td>
+                        <td>NaN</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </center>
+    </section>
+
+    <section>
+        <h2>Appendix</h2>
+        <p>
+            Here are the time stamps and the means +- standard deviation for each tag's difference from the intial PLC.
+            The means include cuts, but no offset is applied.
+        </p>
+        <center>
+            <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
+                <tbody>
+                    <tr>
+                        <td rowspan="2"><b>Forebaffle Configuration</b></td>
+                        <td rowspan="2"><b>Starting command do_partial_loadcurve<br> (2022-Jan-15)</b></td>
+                        <td rowspan="2"><b>Partial load curve script execution successfully completed<br>
+                                (2022-Jan-15)</b></td>
+                        <td rowspan="2"><b>Configuration Complete<br> (2022-Jan-15)</b></td>
+                        <td colspan="4"><b>Mean +- std power loading difference from init 1 (pW) </b></td>
+                        <td rowspan="2"><b>Notes</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Rx0 </b></td>
+                        <td><b>rx1 </b></td>
+                        <td><b>Rx2 </b></td>
+                        <td><b>Rx3 </b></td>
+                    </tr>
+                    <tr>
+                        <td>Tag 1,<br> Initial PLC</td>
+
+                        <td>03:01:09</td>
+                        <td>03:02:50</td>
+                        <td>03:03:38</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tag 2,<br> Forebaffle off</td>
+
+                        <td>03:39:00</td>
+                        <td>03:40:41</td>
+                        <td>03:41:29</td>
+                        <td>0.00113 +- 0.00869</td>
+                        <td>-0.035316 +-0.011398</td>
+                        <td>-0.044217 +-0.025717</td>
+                        <td>-0.023059 +-0.040461</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tag 3,<br> Forebaffle lower-half on</td>
+
+                        <td>03:47:38</td>
+                        <td>03:49:19</td>
+                        <td>03:50:07</td>
+                        <td>0.06442 +- 0.02939</td>
+                        <td>-0.032069 +-0.012151</td>
+                        <td>-0.037632 +-0.01558</td>
+                        <td>-0.014089 +-0.04177</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tag 4, <br>Forebaffle upper-half on</td>
+
+                        <td>03:53:10</td>
+                        <td>03:54:51</td>
+                        <td>03:55:39</td>
+                        <td>0.15534 +- 0.06409</td>
+                        <td>-0.023352 +-0.0089198</td>
+                        <td>-0.03075 +-0.023788</td>
+                        <td>-0.0049996 +-0.041813</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tag 5,<br> Forebaffle lower-half on</td>
+
+                        <td>03:58:02</td>
+                        <td>03:59:43</td>
+                        <td> 04:00:31 </td>
+                        <td>0.06868 +- 0.02989</td>
+                        <td>-0.01593 +-0.0082595</td>
+                        <td>-0.020878 +-0.02533</td>
+                        <td>0.0042077 +-0.041684</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tag 6, <br>None (mid), no forebaffle</td>
+
+                        <td>04:07:39</td>
+                        <td>04:09:20</td>
+                        <td> 04:10:08 </td>
+                        <td>0.00199 +- 0.00869</td>
+                        <td>0.025234 +-0.0082926</td>
+                        <td>0.023592 +-0.020676</td>
+                        <td>0.032157 +-0.042556</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tag 7, <br> keck rx1 (1) </td>
+
+                        <td>04:12:43 </td>
+                        <td>04:14:24</td>
+                        <td> 04:15:12 </td>
+                        <td> -0.00036 +-0.00863</td>
+                        <td>0.29857 +-0.051795</td>
+                        <td>-0.018066 +-0.011363</td>
+                        <td>0.010484 +-0.044418</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> Tag 8,<br> keck rx1 (2) </td>
+                        <td> 04:16:23</td>
+                        <td> 04:18:04</td>
+                        <td>04:18:52 </td>
+                        <td>-0.0023792 +-0.0086044</td>
+                        <td>0.28361 +-0.051219</td>
+                        <td>-0.049011 +-0.027495</td>
+                        <td>-0.0398 +-0.04216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> Tag 9,<br> keck rx2 (1) </td>
+                        <td> 04:22:33</td>
+                        <td>04:24:14</td>
+                        <td>04:25:02 </td>
+                        <td>-0.0030296 +-0.0058443</td>
+                        <td>-0.00049229 +-0.0091881</td>
+                        <td>0.33294 +-0.071068</td>
+                        <td>0.031394 +-0.0425</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> Tag 10,<br> keck rx2 (2) </td>
+                        <td>04:25:57</td>
+                        <td>04:27:38</td>
+                        <td> 04:28:26</td>
+                        <td>-0.0043145 +-0.0085983</td>
+                        <td>-0.0073203 +-0.0099529</td>
+                        <td>0.31723 +-0.067604</td>
+                        <td>0.002818 +-0.042093</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> Tag 11,<br> keck rx3 </td>
+                        <td>04:31:48</td>
+                        <td>04:33:29</td>
+                        <td> 04:34:16 </td>
+                        <td>-0.0055804 +-0.005544</td>
+                        <td>-0.030507 +-0.014098</td>
+                        <td>-0.04793 +-0.027177</td>
+                        <td>0.48235 +-0.085573</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> Tag 12, <br>None (final), no forebaffle</td>
+                        <td>04:42:51 </td>
+                        <td>04:44:31</td>
+                        <td> 04:45:20 </td>
+                        <td>-0.0074202 +-0.011379</td>
+                        <td>-0.064852 +-0.024848</td>
+                        <td>-0.082529 +-0.033988</td>
+                        <td>-0.060872 +-0.042902</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </section>
 
 
 </body>
-
-
-
