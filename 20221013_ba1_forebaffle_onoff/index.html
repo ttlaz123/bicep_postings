@@ -34,23 +34,135 @@
     <section>
         <h2>Introduction</h2>
         <p> The BICEP Array 1 receiver (BA1) has an absorptive forebaffle attached to reduce signal contamination from
-            the ground.
-            The forebaffle absorbs stray light to ensure the receiver sees only signal from the
-            sky.
-            Unfortunately, the forebaffle itself contributes its own thermal loading onto the BA1 detectors.
-            In this posting, we measure the thermal loading caused by the BA1 forebaffle in various configurations.
-            In 2022, the cardiff low-bandpass filter was changed to block out the blue-leak dark coupling. 
-            A 4 icm filter was added to the existing 1.6 icm.
-            We compare our results to previous years' forebaffle loading to determine the effectiveness of this addition. </p>
+            the ground by absorbing stray light to ensure that the receiver sees only signal from the sky.
+            Unfortunately, the forebaffle itself contributes its own thermal loading onto the BA1 detectors that may interfere with measurements.
+            <a href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20200909_forebaffle_coupling/" >
+                Previous forebaffle on-off measurements of BA1 </a> 
+            have shown thermal loading of up to 0.4 pW coming from the forebaffle, but in 2022, the 
+            <a href="http://bicep.rc.fas.harvard.edu/bicep_array/testruns/ba1_testruns/RunBA1_13/" >
+                cardiff low-bandpass filter was modified </a>  
+            to black out the blue-leak dark coupling by adding a 4 icm filter to the existing 1.6 icm filter.
+            </p>
+            <p>Forebaffle loading is determined by taking partial load curves (PLC) with various setups of the forebaffle. 
+                In 2022 January 15, a dataset of partial load curves for BA1, Rx 1, 2, and 3 was taken with twelve different forebaffle configurations, 
+                with each configuration summarized in the table below.  
+                    The load curves measure the electrical power as a function of the TES resistance, 
+                    and we extract the power difference to determine the amount of forebaffle loading.
+                    </p>
+                    
+                    <p>
+                    In this posting, we measure the thermal loading caused by the BA1 forebaffle in various configurations.
+                    We compare our results to previous years' forebaffle loading to determine the effectiveness of the cardiff filter modification. </p>
+            </p>
+
+            <center>
+                <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
+                    <tbody>
+                        <tr>
+                            <td><b>Tag</b></td>
+                            <td rowspan="1"><b>Forebaffle Configuration</b></td>
+                            <td rowspan="1"><b>Starting command do_partial_loadcurve<br> (2022-Jan-15)</b></td>
+                            <td rowspan="1"><b>Partial load curve script execution successfully completed<br>
+                                    (2022-Jan-15)</b></td>
+                            <td rowspan="1"><b>Configuration Complete<br> (2022-Jan-15)</b></td>
+                        </tr>
+                        <tr>
+                            <td>Tag 1</td>
+                            <td><b>Initial PLC</b><br>All forebaffles off</td>
+    
+                            <td>03:01:09</td>
+                            <td>03:02:50</td>
+                            <td>03:03:38</td>
+                        </tr>
+                        <tr>
+                            <td>Tag 2</td>
+                            <td><b>Beginning Off</b><br> All forebaffles off, immediately before putting on forebaffles</td>
+    
+                            <td>03:39:00</td>
+                            <td>03:40:41</td>
+                            <td>03:41:29</td>
+                        </tr>
+                        <tr>
+                            <td>Tag 3</td>
+                            <td><b>Lower-half on BA1</b> <br> Only half of the forebaffle on BA1, no FB on other receivers</td>
+    
+                            <td>03:47:38</td>
+                            <td>03:49:19</td>
+                            <td>03:50:07</td>
+                        </tr>
+                        <tr>
+                            <td>Tag 4</td>
+                            <td><b>Fully on BA1</b> <br> The entire forebaffle on BA1, no FB on other receivers</td>
+    
+                            <td>03:53:10</td>
+                            <td>03:54:51</td>
+                            <td>03:55:39</td>
+                        </tr>
+                        <tr>
+                            <td>Tag 5</td>
+                            <td><b>Lower-half on BA1 Again</b> <br> Only half of the forebaffle on BA1, no FB on other receivers</td>
+    
+                            <td>03:58:02</td>
+                            <td>03:59:43</td>
+                            <td> 04:00:31 </td>
+                        </tr>
+                        <tr>
+                            <td>Tag 6</td>
+                            <td><b>Middle Off</b> <br> All forebaffles completely off all receivers</td>
+    
+                            <td>04:07:39</td>
+                            <td>04:09:20</td>
+                            <td> 04:10:08 </td>
+                        </tr>
+                        <tr>
+                            <td>Tag 7</td>
+                            <td><b>On Rx1</b> <br> Entire forebaffle on Rx1, no FB on other receivers </td>
+    
+                            <td>04:12:43 </td>
+                            <td>04:14:24</td>
+                            <td> 04:15:12 </td>
+                        </tr>
+                        <tr>
+                            <td>Tag 8</td>
+                            <td><b>On Rx1 Again</b> <br> Entire forebaffle on Rx1, no FB on other receivers</td>
+                            <td> 04:16:23</td>
+                            <td> 04:18:04</td>
+                            <td>04:18:52 </td>
+                        </tr>
+                        <tr>
+                            <td>Tag 9</td>
+                            <td><b>On Rx2</b> <br> Entire forebaffle on Rx2, no FB on other receivers</td>
+                            <td> 04:22:33</td>
+                            <td>04:24:14</td>
+                            <td>04:25:02 </td>
+                        </tr>
+                        <tr>
+                            <td>Tag 10</td>
+                            <td><b>On Rx2 Again</b> <br> Entire forebaffle on Rx2, no FB on other receivers</td>
+                            <td>04:25:57</td>
+                            <td>04:27:38</td>
+                            <td> 04:28:26</td>
+                        </tr>
+                        <tr>
+                            <td>Tag 11</td>
+                            <td><b>On Rx3</b> <br> Entire forebaffle on Rx3, no FB on other receivers</td>
+                            <td>04:31:48</td>
+                            <td>04:33:29</td>
+                            <td> 04:34:16 </td>
+                        </tr>
+                        <tr>
+                            <td>Tag 12</td>
+                            <td><b>Final Off</b> <br> All forebaffles completely off all receivers</td>
+                            <td>04:42:51 </td>
+                            <td>04:44:31</td>
+                            <td> 04:45:20 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+           
 
 
-            Forebaffle loading is determined by taking load curves with different 
-
-            2022 dataset 12 partial load curves, configuration of each load curve is summarized in
-
-            put table here, explain how the load curves were taken, make column more informative
-
-            then talk about load curves a little bit, extract power difference (not gap) between load curves under different config 
 
 
     </section>
@@ -222,6 +334,31 @@
             </script>
 
         </figure>
+        <figure>
+                <img alt="TES Curves" id="onoff" src="#" width="600" height="600" />
+                <figcaption>
+                    Example of the load curves for a particular detector with various forebaffle configurations.
+                </figcaption>
+                <script type="text/javascript">
+                    pager.link("#onoff",
+                        {
+                            'Forebaffle Configuration|f': [
+                                'Load Curve on-off|thermal_onoffhalf',
+                                'Zoomed in load curve|onoff_zoomedin',
+                            ],
+                        },
+                        function (params) {
+                            name = "figs/curves/" + params.f + ".png"
+                            return name
+                        });
+                    pager.setparams(
+                        {
+                            'f': 'thermal_onoffhalf'
+                        }
+                    );  
+                </script>
+    
+            </figure>
     </section>
 --->
     <section>
@@ -265,9 +402,17 @@
             the equivalent temperature of the forebaffle if it were a blackbody covering the entire aperature. The tile
             plot
             is mostly orange to deep red, suggesting an RJ temperature between 3-7 K. We see that some tiles have higher
-            RJ temperatures than others despite having similar loading. We can attribute this to a low \(dP/dT\) for
+            RJ temperatures than others despite having similar loading. <!--We can attribute this to a low \(dP/dT\) for
             those
-            tiles, as we can see when we check the "Det params?" tile plot.
+            tiles, as we can see when we check the "Det params?" tile plot.-->
+
+            30 GHz vs 40 GHz, one has higher rj temp
+
+            make note, dark detectors aren't in the right location
+
+            link filter code in posting
+
+
         </p>
         <figure>
             <img alt="Tile Plots" id="tile" src="#" width="750" height="750" />
@@ -279,10 +424,10 @@
                     {
                         'Forebaffle Configuration 1|fb1': [
                             'Initial PLC |noneinit1',
-                            'Initial  off |noneinit2',
+                            'Beginning off |noneinit2',
                             'Lower half on BA1|ba1half1',
                             'Fully on BA1|ba1full',
-                            'Lower half on BA1 (2)|ba1half2',
+                            'Lower half on BA1 again|ba1half2',
                             'Middle off|nonemid',
                             'On Rx1|keckrx11',
                             'On Rx1 again|keckrx12',
@@ -294,10 +439,10 @@
                         ],
                         'Forebaffle Configuration 2|fb2': [
                             'Initial PLC |noneinit1',
-                            'Initial  off |noneinit2',
+                            'Beginning off |noneinit2',
                             'Lower half on BA1|ba1half1',
                             'Fully on BA1|ba1full',
-                            'Lower half on BA1 (2)|ba1half2',
+                            'Lower half on BA1 again|ba1half2',
                             'Middle off|nonemid',
                             'On Rx1|keckrx11',
                             'On Rx1 again|keckrx12',
@@ -894,169 +1039,26 @@
     <section>
         <h2>Appendix</h2>
         <p>
-            Here are the time stamps and the means +- standard deviation for each tag's difference from the intial PLC.
-            The means include cuts, but no offset is applied.
+           Path to mat files:<pre>
+            
+
+           </pre>
+           <br>
+           Path to load curve filtering code:
+           <pre>
+
+           </pre> 
+           Path to forebaffle on-off schedule:
+           <pre>
+            /n/holylfs04/LABS/kovac_lab/bicep_array/badaq/autoqueue/done/1_forebaffle_on_off_002.sch
+           </pre>
+           Path to schedule log file:
+           <pre>
+            /n/holylfs04/LABS/kovac_lab/bicep_array/badaq/log/20220115_001341.log
+
+           </pre>
         </p>
-        <center>
-            <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
-                <tbody>
-                    <tr>
-                        <td rowspan="2"><b>Forebaffle Configuration</b></td>
-                        <td rowspan="2"><b>Starting command do_partial_loadcurve<br> (2022-Jan-15)</b></td>
-                        <td rowspan="2"><b>Partial load curve script execution successfully completed<br>
-                                (2022-Jan-15)</b></td>
-                        <td rowspan="2"><b>Configuration Complete<br> (2022-Jan-15)</b></td>
-                        <td colspan="4"><b>Mean +- std power loading difference from init 1 (pW) </b></td>
-                        <td rowspan="2"><b>Notes</b></td>
-                    </tr>
-                    <tr>
-                        <td><b>Rx0 </b></td>
-                        <td><b>rx1 </b></td>
-                        <td><b>Rx2 </b></td>
-                        <td><b>Rx3 </b></td>
-                    </tr>
-                    <tr>
-                        <td>Tag 1,<br> Initial PLC</td>
-
-                        <td>03:01:09</td>
-                        <td>03:02:50</td>
-                        <td>03:03:38</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Tag 2,<br> Forebaffle off</td>
-
-                        <td>03:39:00</td>
-                        <td>03:40:41</td>
-                        <td>03:41:29</td>
-                        <td>0.00113 +- 0.00869</td>
-                        <td>-0.035316 +-0.011398</td>
-                        <td>-0.044217 +-0.025717</td>
-                        <td>-0.023059 +-0.040461</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Tag 3,<br> Forebaffle lower-half on</td>
-
-                        <td>03:47:38</td>
-                        <td>03:49:19</td>
-                        <td>03:50:07</td>
-                        <td>0.06442 +- 0.02939</td>
-                        <td>-0.032069 +-0.012151</td>
-                        <td>-0.037632 +-0.01558</td>
-                        <td>-0.014089 +-0.04177</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Tag 4, <br>Forebaffle upper-half on</td>
-
-                        <td>03:53:10</td>
-                        <td>03:54:51</td>
-                        <td>03:55:39</td>
-                        <td>0.15534 +- 0.06409</td>
-                        <td>-0.023352 +-0.0089198</td>
-                        <td>-0.03075 +-0.023788</td>
-                        <td>-0.0049996 +-0.041813</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Tag 5,<br> Forebaffle lower-half on</td>
-
-                        <td>03:58:02</td>
-                        <td>03:59:43</td>
-                        <td> 04:00:31 </td>
-                        <td>0.06868 +- 0.02989</td>
-                        <td>-0.01593 +-0.0082595</td>
-                        <td>-0.020878 +-0.02533</td>
-                        <td>0.0042077 +-0.041684</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Tag 6, <br>None (mid), no forebaffle</td>
-
-                        <td>04:07:39</td>
-                        <td>04:09:20</td>
-                        <td> 04:10:08 </td>
-                        <td>0.00199 +- 0.00869</td>
-                        <td>0.025234 +-0.0082926</td>
-                        <td>0.023592 +-0.020676</td>
-                        <td>0.032157 +-0.042556</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Tag 7, <br> keck rx1 (1) </td>
-
-                        <td>04:12:43 </td>
-                        <td>04:14:24</td>
-                        <td> 04:15:12 </td>
-                        <td> -0.00036 +-0.00863</td>
-                        <td>0.29857 +-0.051795</td>
-                        <td>-0.018066 +-0.011363</td>
-                        <td>0.010484 +-0.044418</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td> Tag 8,<br> keck rx1 (2) </td>
-                        <td> 04:16:23</td>
-                        <td> 04:18:04</td>
-                        <td>04:18:52 </td>
-                        <td>-0.0023792 +-0.0086044</td>
-                        <td>0.28361 +-0.051219</td>
-                        <td>-0.049011 +-0.027495</td>
-                        <td>-0.0398 +-0.04216</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td> Tag 9,<br> keck rx2 (1) </td>
-                        <td> 04:22:33</td>
-                        <td>04:24:14</td>
-                        <td>04:25:02 </td>
-                        <td>-0.0030296 +-0.0058443</td>
-                        <td>-0.00049229 +-0.0091881</td>
-                        <td>0.33294 +-0.071068</td>
-                        <td>0.031394 +-0.0425</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td> Tag 10,<br> keck rx2 (2) </td>
-                        <td>04:25:57</td>
-                        <td>04:27:38</td>
-                        <td> 04:28:26</td>
-                        <td>-0.0043145 +-0.0085983</td>
-                        <td>-0.0073203 +-0.0099529</td>
-                        <td>0.31723 +-0.067604</td>
-                        <td>0.002818 +-0.042093</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td> Tag 11,<br> keck rx3 </td>
-                        <td>04:31:48</td>
-                        <td>04:33:29</td>
-                        <td> 04:34:16 </td>
-                        <td>-0.0055804 +-0.005544</td>
-                        <td>-0.030507 +-0.014098</td>
-                        <td>-0.04793 +-0.027177</td>
-                        <td>0.48235 +-0.085573</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td> Tag 12, <br>None (final), no forebaffle</td>
-                        <td>04:42:51 </td>
-                        <td>04:44:31</td>
-                        <td> 04:45:20 </td>
-                        <td>-0.0074202 +-0.011379</td>
-                        <td>-0.064852 +-0.024848</td>
-                        <td>-0.082529 +-0.033988</td>
-                        <td>-0.060872 +-0.042902</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </center>
+        
     </section>
 
 
