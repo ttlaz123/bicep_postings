@@ -41,7 +41,9 @@
             have shown thermal loading of up to 0.4 pW coming from the forebaffle, but in 2022, the 
             <a href="http://bicep.rc.fas.harvard.edu/bicep_array/testruns/ba1_testruns/RunBA1_13/" >
                 cardiff low-bandpass filter was modified </a>  
-            to black out the blue-leak dark coupling by adding a 4 icm filter to the existing 1.6 icm filter.
+            to black out the blue-leak dark coupling by adding a 4 icm filter to the existing 1.6 icm filter. 
+            Here is a <a href="http://bicep.rc.fas.harvard.edu/bicep_array/pole_photos/2021_BA1_Run1.13/" >
+                photo album </a>   of the filter addition.
             </p>
             <p>Forebaffle loading is determined by taking partial load curves (PLC) with various setups of the forebaffle. 
                 In 2022 January 15, a dataset of partial load curves for BA1, Rx 1, 2, and 3 was taken with twelve different forebaffle configurations, 
@@ -369,10 +371,19 @@
             Tile Plots
         </h3>
         <p>
-            We extract the size of the gap between the flat parts of the load curves and plot
-            the value on tile plots for each detector, giving us plots below. The red means that the
-            second forebaffle configuration has higher heat loading, while the blue means that the
-            second forebaffle configuration has lower heat loading compared to the first.
+            We extract the power difference for the load curves for each detector and plot
+            the values on tile plots, given below. When selecting the two forebaffle configurations to compare,
+            the red indicates that the
+            second forebaffle configuration has higher heat loading, while the blue indicates that the
+            second forebaffle configuration has lower heat loading compared to the first. Green indicates 
+            similar loadings for both configurations. 
+        </p>
+        <p>
+            The results are as expected, with larger forebaffle loadings on BA1 when more of the forebaffle is on.
+            Notably, when the forebaffle is on a different receiver (Rx 1/2/3), the coloring on the BA1 tiles is mostly green,
+            suggesting that the forebaffle doesn't change the optical loading received by BA1 in comparison
+            to its initial configuration. The loading received by the Keck Receivers (Rx 1/2/3) does have a measurable 
+            change when the forebaffle is placed on other receiveres, but this loading is dwarfed by weather effects.
         </p>
         <!--
         <p>
@@ -383,41 +394,33 @@
         </p>
          -->
 
-        <p>
-            in appendix, put links to mat files and code
-            be more succint, give detailed, talk about how receivers see nothing unless forebaffle is on
-            mention change is not significant compared to weather 
-            When the forebaffle is on a different receiver (Rx 1/2/3), the coloring on the BA1 tiles is green,
-            suggesting that the forebaffle doesn't change the optical loading received by BA1 in comparison
-            to its initial configuration. However, when switching over to view the Keck Rx1 receiver, we see
-            that having the forebaffle on Rx1 contributes about 0.3-0.5 pW of power to the detectors on Rx1.
-        </p>
        
-        <p> optical efficiency 
-            Instead of plotting the power in pW, we can also plot the Rayleigh Jean Temperature, represented by
-            \(K_{rj}\) in the pager. The RJ temperature is given by \(T_{RJ} = \frac{P}{dP/dT}\), where \(P\) is the
-            original optical loading, and \(dP/dT\) is a parameter of each detector, representing how much
+       
+        <p> 
+            Instead of plotting the power in pW, we can also plot the Rayleigh Jean (RJ) Temperature for BA1, represented by
+            \(T_{rj}\) in the pager. The RJ temperature is given by \(T_{RJ} = \frac{P}{dP/dT}\), where \(P\) is the
+            original optical loading, and \(dP/dT\) is the optical efficiency parameter of each detector, representing how much
             change in loading is caused by a 1K increase in temperature of a hypothetical blackbody. Thus, the RJ temperature
             represents
             the equivalent temperature of the forebaffle if it were a blackbody covering the entire aperature. The tile
             plot
-            is mostly orange to deep red, suggesting an RJ temperature between 3-7 K. We see that some tiles have higher
-            RJ temperatures than others despite having similar loading. <!--We can attribute this to a low \(dP/dT\) for
+            is mostly orange to deep red, indicating an RJ temperature between 3-7 K. We see that the 30 GHz tiles have higher
+            RJ Temperatures despite having lower loading than the 40 GHz tiles. <!--We can attribute this to a low \(dP/dT\) for
             those
             tiles, as we can see when we check the "Det params?" tile plot.-->
 
-            30 GHz vs 40 GHz, one has higher rj temp
+           
 
-            make note, dark detectors aren't in the right location
-
-            link filter code in posting
 
 
         </p>
         <figure>
             <img alt="Tile Plots" id="tile" src="#" width="750" height="750" />
             <figcaption>
-                Tile plots
+                Tile plots indicating forebaffle loading. The power is given by the load curve difference between the 
+                first configuration and the second configuration. The dark detectors for BA1 are not physically on the 
+                given rows and columns; they are plotted merely for the purposes of visualizations. 
+                The optical efficiency parameters (Det params) are only available for BA1 and do not depend on forebaffle configuration.
             </figcaption>
             <script type="text/javascript">
                 pager.link("#tile",
@@ -454,7 +457,7 @@
                         ],
                         'Receiver Number|rxx': [
                             'BA1|0',
-                            'BA1 (Krj)|0krj',
+                            'BA1 (Trj)|0krj',
                             'Keck Rx1|1',
                             'Keck Rx2|2',
                             'Keck Rx3|3',
@@ -492,21 +495,25 @@
             </script>
 
         </figure>
-        Some of the detector tiles have vastly different values from the rest. To determine the cause, we can view
+        <h3>
+            Individual Load Curves
+        </h3>
+        Some of the detector tiles have significantly different values from the rest. To determine the cause, we can view
         individual detectors
-        below. Each Rx, Tile, and row/col is a small square in the tile plot. Each tile is either divided into 2 or 4
-        triangles.
-        Two triangles means there is one detector for each polarization, 'A' and 'B'. Four means for each polarization,
-        there are
-        in addition 2 different bands. The different bands are only relevant for BA1. In the two side by side plots, the
-        left plot
-        is all the datapoints on one graph, while the right plot is the same data but plotted in a specific range. The x
-        and y range
-        are consistent within each receiver to provide a better idea of the data's scale.
+        below. Note that the correct Band must also be selected to view the desired load curve. Bands for each tile are given 
+        in the Conclusion table. 
         <figure>
             <img alt="Individual Curves" id="indiv" src="#" onerror="javascript:this.src='figs/dne.png'" />
             <figcaption>
-                Individual curves dictionary, use to find any load curve.
+                Each Rx, Tile, and row/col is a small square in the tile plot. Each tile is either divided into 2 or 4
+            triangles.
+            Two triangles means there is one detector for each polarization, 'A' and 'B'. Four means for each polarization,
+            there are
+            in addition 2 different bands. The different bands are only relevant for BA1. In the two side by side plots, the
+            left plot
+            is all the datapoints on one graph, while the right plot is the same data but plotted in a specific range. The x
+            and y range
+            are consistent within each receiver to provide a better idea of the data's scale.
             </figcaption>
             <script type="text/javascript">
                 pager.link("#indiv",
@@ -605,14 +612,16 @@
 
         </figure>
 
-
+        <h3>
+            Box Plots and Cuts
+        </h3>
         <p>
             By examining the different load curves, it becomes straightforward to cut the data based on the load curve
             quality. We
             fit two lines, one horizontal and one vertical onto the loadcurve. If all the points are within
             approximately 10 percent
             of that fitted line, we consider the curve to be good. If any load curve does not satisfy our requirements,
-            we cut the detector.
+            we cut the detector. The path to the filtering algorithm is provided in the appendix. 
         </p>
         <p>
             We plot the extra loading for different baselines, showing the median and quartiles for each forebaffle
@@ -621,14 +630,14 @@
 
         </p>
         <p>
-            We also see that for the BA1 receiver, the baseline line is pretty consistent, that when there is no
+            We also see that for the BA1 receiver, the baseline line is quite consistent; when there is no
             forebaffle on BA1,
-            the extra loading is not visible to 0.05 pW. However, for each Keck receiver, there is a clear power drift
+            the extra loading is not significant to within 0.01 pW. However, for each Keck receiver, there is a clear power drift
             as we
             process the different tags. The leading hypothesis is that because the Keck receivers are higher frequency
             and more
             susceptible to weather, they pick up slight differences in sky loading. We subtract away this offset in our
-            final analysis.
+            final analysis. 
         </p>
 
         <figure>
@@ -640,7 +649,7 @@
                 <br>
                 Cuts are performed by checking for 2 lines: horizontal and vertical.
                 If the middle 60 percent of the domain and range have their min
-                and max values within 10 percent of each other, then the lines are considered
+                and max values within 10 percent of the line value, then the lines are considered
                 roughly horizontal/vertical
             </figcaption>
             <script type="text/javascript">
@@ -713,7 +722,7 @@
     <section>
         <h2>Conclusion</h2>
         <p>
-            We provide the median  forebaffle loading for each receiver with cuts. Without cuts, the mean
+            We provide the median forebaffle loading for each receiver with cuts. Without cuts, the mean
             averages into
             the extreme outliers (which can be observed in the tile plots), and significantly changes the average. Without cuts,
              the spread is nearly larger than the value itself.
@@ -731,9 +740,9 @@
         <p>
             The BA1 receiver has about half as much loading as the 2020 posting, suggesting that adding the low-pass
             band filter has improved
-            performance. Even though the loading itself was cut by about half, the RJ temperature has only decreased by
-            about 1-2K.
-            This is likely due to a slightly lower \(dP/dT\) for some of the detectors compared to 2020.
+            performance. Even though the loading itself was cut by about half, the RJ temperature has only decreased from 11.9K to 7.4K for the 30 GHz band, 
+            and from 6.5K to 4.5K for the 40 GHz band.
+        
         </p>
         <center>
             <table border="1px" style="text-align:center;border-spacing:5px">
@@ -783,7 +792,7 @@
         </center>
         <br>
         <br>
-        We plot the loading and RJ temperature for each tile and compare it to the <a
+        To verify this improvement, We plot the loading and RJ temperature for each tile and compare it to the <a
             href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20200909_forebaffle_coupling/">2019
             results</a>, which are in red. We see that for every tile, there is a significant improvement in loading
         (approximately 50%
@@ -1041,8 +1050,8 @@
         <p>
            Path to mat files:
            <pre>
-            /n/home08/liuto/bapipe/www/analysis_logbook/20221013_ba1_forebaffle_onoff/files/fbonoff_reduceddata_202201_aftercut.mat
-            /n/home08/liuto/bapipe/www/analysis_logbook/20221013_ba1_forebaffle_onoff/files/2022_BA1_detparams.mat
+            /n/holylfs04/LABS/kovac_lab/www/bicep_array/analysis_logbook/20221013_ba1_forebaffle_onoff/files/fbonoff_reduceddata_202201_aftercut.mat
+            /n/holylfs04/LABS/kovac_lab/www/bicep_array/analysis_logbook/20221013_ba1_forebaffle_onoff/files/2022_BA1_detparams.mat
            </pre>
            Path to load curve filtering code (other code available upon request):
            <pre>
