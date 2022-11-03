@@ -723,14 +723,13 @@
         <h2>Conclusion</h2>
         <p>
             We provide the median forebaffle loading for each receiver with cuts. Without cuts, the mean
-            averages into
-            the extreme outliers (which can be observed in the tile plots), and significantly changes the average. Without cuts,
-             the spread is nearly larger than the value itself.
+            averages in the extreme outliers (which can be observed in the tile plots), which significantly changes the average
+            and causes the spread to be nearly larger than the value itself.
         </p>
         <p>
             With the cuts, the values for the Keck receivers are roughly equal to the
             <a href="https://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20200312_FB_onoff/">
-                previous 2020 posting examining forebaffle loading</a> at about 0.3 pW. However, Rx3 has a slightly
+                previous 2020 posting examining forebaffle loading</a> at about 0.3 pW. Rx3 has a slightly
             larger loading
             at 0.5 pW, but this is consistent with
             <a
@@ -740,7 +739,7 @@
         <p>
             The BA1 receiver has about half as much loading as the 2020 posting, suggesting that adding the low-pass
             band filter has improved
-            performance. Even though the loading itself was cut by about half, the RJ temperature has only decreased from 11.9K to 7.4K for the 30 GHz band, 
+            performance. However, even though the loading itself was cut by about half, the RJ temperature has only decreased from 11.9K to 7.4K for the 30 GHz band, 
             and from 6.5K to 4.5K for the 40 GHz band.
         
         </p>
@@ -791,15 +790,20 @@
             </table>
         </center>
         <br>
-        <br>
+        <p>
         To verify this improvement, We plot the loading and RJ temperature for each tile and compare it to the <a
             href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/20200909_forebaffle_coupling/">2019
-            results</a>, which are in red. We see that for every tile, there is a significant improvement in loading
-        (approximately 50%
-        less) and RJ temperature (approximately 30-40% less). The RJ temperature is given by the median of the
+            results</a>, which are in red.  The RJ temperature is given by the median of the
         light forebaffle loading divided by the \(dp/dT\) parameter for each detector. The inband RJ temperature is
         given by
         \[T_{RJ,inband}=\frac{P_{fb,L}-P_{fb,D}}{(dP/dT)_{L}-(dP/dT)_{D}}\]
+        We see that for every tile, there is a significant improvement in loading
+        (approximately 50%
+        less) and RJ temperature (approximately 30-40% less). The 40 GHz tiles have slightly larger power loading but 
+        significantly lower RJ temperatures around 4K. Tile 2 has a particularly large RJ temperature, which 
+        we can verify with the tile plots.
+    </p>
+
         <center>
             <table border="1px" style="text-align:center;border-spacing:5px">
                 <tbody>
