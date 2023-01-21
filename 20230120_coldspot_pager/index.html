@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BA1 Forebaffle On-Off 2022 -- T. Liu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Load up MathJax for math notation -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: { equationNumbers: { autoNumber: "AMS" } }
+        });
+    </script>
+    <script type="text/javascript" src="../mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body>
+    <!-- Add my custom pa>er script -->
+    <script type="text/javascript" src="scripts/pager.js"></script>
+    <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+
+    <header>
+        <h1>BA1 Forebaffle On-Off 2022 </h1>
+
+        <time datetime="2022-11-02" class="published updated">
+            2022 Nov 02
+        </time> —
+        Tom Liu, Cheng Zhang
+    </header>
+
+    <hr>
+
+
+    <section>
+        <h2>Introduction</h2>
+       
+           
+
+
+
+
+    </section>
+
+    <section>
+        <h2>Examining the data</h2>
+
+
+        <h3>
+            Tile Plots
+        </h3>
+        <p>
+            We extract the power difference for the load curves for each detector and plot
+            the values on tile plots, given below. When selecting the two forebaffle configurations to compare,
+            the red indicates that the
+            second forebaffle configuration has higher heat loading, while the blue indicates that the
+            second forebaffle configuration has lower heat loading compared to the first. Green indicates 
+            similar loadings for both configurations. 
+        </p>
+        <p>
+            The results are as expected, with larger forebaffle loadings on BA1 when more of the forebaffle is on.
+            Notably, when the forebaffle is on a different receiver (Rx 1/2/3), the coloring on the BA1 tiles is mostly green,
+            suggesting that the forebaffle doesn't change the optical loading received by BA1 in comparison
+            to its initial configuration. The loading received by the Keck Receivers (Rx 1/2/3) does have a measurable 
+            change when the forebaffle is placed on other receiveres, but this loading is dwarfed by weather effects.
+        </p>
+        <!--
+        <p>
+            For example, when the forebaffle is Fully on BA1, when compared to the Initial PLC, the
+            tiles are yellow-ish orange, which is between 0.1 - 0.3 pW of power, suggesting that the
+            forebaffle contributes about 0.2 pW when it is fully on the receiver.
+
+        </p>
+         -->
+
+       
+       
+        <p> 
+            Instead of plotting the power in pW, we can also plot the Rayleigh Jean (RJ) Temperature for BA1, represented by
+            \(T_{rj}\) in the pager. The RJ temperature is given by \(T_{RJ} = \frac{P}{dP/dT}\), where \(P\) is the
+            original optical loading, and \(dP/dT\) is the optical efficiency parameter of each detector, representing how much
+            change in loading is caused by a 1K increase in temperature of a hypothetical blackbody. Thus, the RJ temperature
+            represents
+            the equivalent temperature of the forebaffle if it were a blackbody covering the entire aperature. The tile
+            plot
+            is mostly orange to deep red, indicating an RJ temperature between 3-7 K. We see that the 30 GHz tiles have higher
+            RJ Temperatures despite having lower loading than the 40 GHz tiles. <!--We can attribute this to a low \(dP/dT\) for
+            those
+            tiles, as we can see when we check the "Det params?" tile plot.-->
+
+           
+
+
+
+        </p>
+        <figure>
+            <img alt="Cold Spot Maps" id="maps" src="#" width="750" height="750" />
+            <figcaption>
+                Map pager
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#maps",
+                    {
+                        'Map Sim Num|simtype': [
+                            'Real|real',
+                            '001|001',
+                            '002|002',
+                            '003|003',
+                            '004|004',
+                            '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
+                        ],
+                        'Deprojection Number|dp': [
+                            'Initial PLC |noneinit1',
+                            'Beginning off |noneinit2',
+                            'Lower half on BA1|ba1half1',
+                            'Fully on BA1|ba1full',
+                            'Lower half on BA1 again|ba1half2',
+                            'Middle off|nonemid',
+                            'On Rx1|keckrx11',
+                            'On Rx1 again|keckrx12',
+                            'On Rx2|keckrx21',
+                            'On Rx2 again|keckrx22',
+                            'On Rx3|keckrx3',
+                            'Final off|nonefinal',
+                            '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
+                        ],
+                        'Jackknife Number|jack': [
+                            'BA1|0',
+                            'BA1 (Trj)|0krj',
+                            'Keck Rx1|1',
+                            'Keck Rx2|2',
+                            'Keck Rx3|3',
+                        ],
+                    },
+                    function (params) {
+                        daughter = '_cs_test2021_'
+                        filters = '_filtp3_weight3_gs_'
+                        dirpath = '/n/holylfs04/LABS/kovac_lab/bicep3/pipeline/maps/6703/'
+                        filename = params.symtype + daughter + filters+ 'dp'+params.dp+'_jack'+params.jack+'.mat'
+                        return dirpath + name
+                    });
+                pager.setparams(
+                    {
+                        'fb1': 'noneinit1',
+                        'fb2': 'noneinit2',
+                        'rxx': '0',
+                        'type': '',
+                        'dp': 'n',
+
+                    }
+                );
+
+            </script>
+
+        </figure>
+
+    </section>
+
+    <section>
+        <h2>Appendix</h2>
+        <p>
+           Path to mat files:
+           <pre>
+            /n/holylfs04/LABS/kovac_lab/www/bicep_array/analysis_logbook/20221013_ba1_forebaffle_onoff/files/fbonoff_reduceddata_202201_aftercut.mat
+            /n/holylfs04/LABS/kovac_lab/www/bicep_array/analysis_logbook/20221013_ba1_forebaffle_onoff/files/2022_BA1_detparams.mat
+           </pre>
+           Path to load curve filtering code (other code available upon request):
+           <pre>
+            /n/home08/liuto/bapipe/www/analysis_logbook/20221013_ba1_forebaffle_onoff/files/filter_loadcurve.m
+           </pre> 
+           Path to forebaffle on-off schedule:
+           <pre>
+            /n/holylfs04/LABS/kovac_lab/bicep_array/badaq/autoqueue/done/1_forebaffle_on_off_002.sch
+           </pre>
+           Path to schedule log file:
+           <pre>
+            /n/holylfs04/LABS/kovac_lab/bicep_array/badaq/log/20220115_001341.log
+
+           </pre>
+        </p>
+        
+    </section>
+
+
+</body>
