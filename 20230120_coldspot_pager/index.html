@@ -152,7 +152,9 @@
                         filters = '_filtp3_weight3_gs_'
                         dirpath = '/n/holylfs04/LABS/kovac_lab/bicep3/pipeline/maps/6703/'
                         filename = params.simsernum + params.simtype + daughter + filters+ 'dp'+params.dp+'_jack'+params.jack+'.mat'
-                        return dirpath + name
+                        name = dirpath + filename
+                        console.log(name) 
+                        return name
                     });
                 pager.setparams(
                     {
