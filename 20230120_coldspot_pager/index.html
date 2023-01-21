@@ -100,51 +100,66 @@
             <script type="text/javascript">
                 pager.link("#maps",
                     {
-                        'Map Sim Num|simtype': [
+                        'Map Sim Num|simsernum': [
                             'Real|real',
                             '001|001',
                             '002|002',
                             '003|003',
                             '004|004',
+                            '005|005',
+                            '006|006',
+                            '007|007',
+                            '008|008',
+                            '009|009',
+                            '010|010',
                             '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
                         ],
+                        'Sim Type|simtype':[
+                            '2|2'
+                        ],
                         'Deprojection Number|dp': [
-                            'Initial PLC |noneinit1',
-                            'Beginning off |noneinit2',
-                            'Lower half on BA1|ba1half1',
-                            'Fully on BA1|ba1full',
-                            'Lower half on BA1 again|ba1half2',
-                            'Middle off|nonemid',
-                            'On Rx1|keckrx11',
-                            'On Rx1 again|keckrx12',
-                            'On Rx2|keckrx21',
-                            'On Rx2 again|keckrx22',
-                            'On Rx3|keckrx3',
-                            'Final off|nonefinal',
+                            '0000|0000',
+                            '0100|0100',
+                            '1000|1000',
+                            '1100|1100',
+                            '1101|1101',
+                            '1102|1102',
+                            '1110|1110',
+                            '1111|1111',
+                            '1112|1112',
                             '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
                         ],
                         'Jackknife Number|jack': [
-                            'BA1|0',
-                            'BA1 (Trj)|0krj',
-                            'Keck Rx1|1',
-                            'Keck Rx2|2',
-                            'Keck Rx3|3',
+                            '01|01',
+                            '11|11',
+                            '21|21',
+                            '31|31',
+                            '41|41',
+                            '51|51',
+                            '61|61',
+                            '71|71',
+                            '81|81',
+                            '91|91',
+                            'a1|a1',
+                            'b1|b1',
+                            'c1|c1',
+                            'd1|d1',
+                            'e1|e1',
                         ],
                     },
                     function (params) {
                         daughter = '_cs_test2021_'
                         filters = '_filtp3_weight3_gs_'
                         dirpath = '/n/holylfs04/LABS/kovac_lab/bicep3/pipeline/maps/6703/'
-                        filename = params.symtype + daughter + filters+ 'dp'+params.dp+'_jack'+params.jack+'.mat'
+                        filename = params.simsernum + params.simtype + daughter + filters+ 'dp'+params.dp+'_jack'+params.jack+'.mat'
                         return dirpath + name
                     });
                 pager.setparams(
                     {
-                        'fb1': 'noneinit1',
-                        'fb2': 'noneinit2',
-                        'rxx': '0',
-                        'type': '',
-                        'dp': 'n',
+                        'simsernum': 'real',
+                        'simtype': '2',
+                        'dp': '1102',
+                        'jack': '01',
 
                     }
                 );
