@@ -115,6 +115,7 @@
                             '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
                         ],
                         'Sim Type|simtype':[
+                            'Real|',
                             '2|2'
                         ],
                         'Deprojection Number|dp': [
@@ -146,12 +147,30 @@
                             'd1|d1',
                             'e1|e1',
                         ],
+                        'Plotted Value|c':[
+                            'B|B',
+                            'E|E',
+                            'EB|EB',
+                            'Q|Q',
+                            'T|T',
+                            'TB|TB',
+                            'U|U',
+                            'TE|TE'
+                        ],
+                        'Apodization|ap':[
+                            'map|map',
+                            'apmap|apmap',
+                            'kendrick_apmap|kendrick_apmap',
+                            'kendrick_speclin|kendrick_speclin',
+                            'noi|noi',
+                            'speclin|speclin',
+                        ]
                     },
                     function (params) {
                         daughter = '_cs_test2021_'
                         filters = '_filtp3_weight3_gs_'
-                        dirpath = '/liuto/b3/maps/'
-                        filename = params.simsernum + params.simtype + daughter + filters+ 'dp'+params.dp+'_jack'+params.jack+'.mat'
+                        dirpath = '/liuto/b3/reduc_plotcomap_pager/6703/'
+                        filename = params.simsernum + params.simtype + daughter + filters+ 'dp'+params.dp+'_jack'+params.jack+'_' + params.c + '_' + params.ap + '_fcs.png'
                         name = dirpath + filename
                         console.log(name) 
                         return name
@@ -159,9 +178,11 @@
                 pager.setparams(
                     {
                         'simsernum': 'real',
-                        'simtype': '2',
+                        'simtype': '',
                         'dp': '1102',
                         'jack': '01',
+                        'c':'T',
+                        'ap':'map'
 
                     }
                 );
