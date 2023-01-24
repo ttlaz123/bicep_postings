@@ -45,49 +45,7 @@
         <h2>Examining the data</h2>
 
 
-        <h3>
-            Tile Plots
-        </h3>
-        <p>
-            We extract the power difference for the load curves for each detector and plot
-            the values on tile plots, given below. When selecting the two forebaffle configurations to compare,
-            the red indicates that the
-            second forebaffle configuration has higher heat loading, while the blue indicates that the
-            second forebaffle configuration has lower heat loading compared to the first. Green indicates 
-            similar loadings for both configurations. 
-        </p>
-        <p>
-            The results are as expected, with larger forebaffle loadings on BA1 when more of the forebaffle is on.
-            Notably, when the forebaffle is on a different receiver (Rx 1/2/3), the coloring on the BA1 tiles is mostly green,
-            suggesting that the forebaffle doesn't change the optical loading received by BA1 in comparison
-            to its initial configuration. The loading received by the Keck Receivers (Rx 1/2/3) does have a measurable 
-            change when the forebaffle is placed on other receiveres, but this loading is dwarfed by weather effects.
-        </p>
-        <!--
-        <p>
-            For example, when the forebaffle is Fully on BA1, when compared to the Initial PLC, the
-            tiles are yellow-ish orange, which is between 0.1 - 0.3 pW of power, suggesting that the
-            forebaffle contributes about 0.2 pW when it is fully on the receiver.
-
-        </p>
-         -->
-
        
-       
-        <p> 
-            Instead of plotting the power in pW, we can also plot the Rayleigh Jean (RJ) Temperature for BA1, represented by
-            \(T_{rj}\) in the pager. The RJ temperature is given by \(T_{RJ} = \frac{P}{dP/dT}\), where \(P\) is the
-            original optical loading, and \(dP/dT\) is the optical efficiency parameter of each detector, representing how much
-            change in loading is caused by a 1K increase in temperature of a hypothetical blackbody. Thus, the RJ temperature
-            represents
-            the equivalent temperature of the forebaffle if it were a blackbody covering the entire aperature. The tile
-            plot
-            is mostly orange to deep red, indicating an RJ temperature between 3-7 K. We see that the 30 GHz tiles have higher
-            RJ Temperatures despite having lower loading than the 40 GHz tiles. <!--We can attribute this to a low \(dP/dT\) for
-            those
-            tiles, as we can see when we check the "Det params?" tile plot.-->
-
-           
 
 
 
@@ -164,12 +122,16 @@
                             'kendrick_speclin|kendrick_speclin',
                             'noi|noi',
                             'speclin|speclin',
+                        ],
+                        'Serial Number|sernum':[
+                            '6703|6703',
+                            '6704|6704'
                         ]
                     },
                     function (params) {
                         daughter = '_cs_test2021_'
                         filters = '_filtp3_weight3_gs_'
-                        dirpath = '/liuto/b3/reduc_plotcomap_pager/6703/'
+                        dirpath = '/liuto/b3/reduc_plotcomap_pager/' + params.sernum + '/'
                         filename = params.simsernum + params.simtype + daughter + filters+ 'dp'+params.dp+'_jack'+params.jack+'_' + params.c + '_' + params.ap + '_fcs.png'
                         name = dirpath + filename
                         console.log(name) 
@@ -182,7 +144,8 @@
                         'dp': '1102',
                         'jack': '01',
                         'c':'T',
-                        'ap':'map'
+                        'ap':'map',
+                        'sernum':'6703'
 
                     }
                 );
@@ -198,20 +161,6 @@
         <p>
            Path to mat files:
            <pre>
-            /n/holylfs04/LABS/kovac_lab/www/bicep_array/analysis_logbook/20221013_ba1_forebaffle_onoff/files/fbonoff_reduceddata_202201_aftercut.mat
-            /n/holylfs04/LABS/kovac_lab/www/bicep_array/analysis_logbook/20221013_ba1_forebaffle_onoff/files/2022_BA1_detparams.mat
-           </pre>
-           Path to load curve filtering code (other code available upon request):
-           <pre>
-            /n/home08/liuto/bapipe/www/analysis_logbook/20221013_ba1_forebaffle_onoff/files/filter_loadcurve.m
-           </pre> 
-           Path to forebaffle on-off schedule:
-           <pre>
-            /n/holylfs04/LABS/kovac_lab/bicep_array/badaq/autoqueue/done/1_forebaffle_on_off_002.sch
-           </pre>
-           Path to schedule log file:
-           <pre>
-            /n/holylfs04/LABS/kovac_lab/bicep_array/badaq/log/20220115_001341.log
 
            </pre>
         </p>
