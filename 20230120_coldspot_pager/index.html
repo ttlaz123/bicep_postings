@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>BA1 Forebaffle On-Off 2022 -- T. Liu</title>
+    <title>Coldspot Maps Pager -- T. Liu</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- Load up MathJax for math notation -->
     <script type="text/x-mathjax-config">
@@ -33,8 +33,8 @@
 
     <section>
         <h2>Introduction</h2>
-       
-           
+
+
 
 
 
@@ -45,7 +45,7 @@
         <h2>Examining the data</h2>
 
 
-       
+
 
 
 
@@ -72,7 +72,7 @@
                             '010|010',
                             '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
                         ],
-                        'Sim Type|simtype':[
+                        'Sim Type|simtype': [
                             'Real|',
                             '2|2'
                         ],
@@ -105,7 +105,7 @@
                             'd1|d1',
                             'e1|e1',
                         ],
-                        'Plotted Value|c':[
+                        'Plotted Value|c': [
                             'B|B',
                             'E|E',
                             'EB|EB',
@@ -115,7 +115,7 @@
                             'U|U',
                             'TE|TE'
                         ],
-                        'Apodization|ap':[
+                        'Apodization|ap': [
                             'map|map',
                             'apmap|apmap',
                             'kendrick_apmap|kendrick_apmap',
@@ -123,7 +123,7 @@
                             'noi|noi',
                             'speclin|speclin',
                         ],
-                        'Serial Number|sernum':[
+                        'Serial Number|sernum': [
                             '6703|6703',
                             '6704|6704'
                         ]
@@ -132,9 +132,9 @@
                         daughter = '_cs_test2021_'
                         filters = '_filtp3_weight3_gs_'
                         dirpath = '/liuto/b3/reduc_plotcomap_pager/' + params.sernum + '/'
-                        filename = params.simsernum + params.simtype + daughter + filters+ 'dp'+params.dp+'_jack'+params.jack+'_' + params.c + '_' + params.ap + '_fcs.png'
+                        filename = params.simsernum + params.simtype + daughter + filters + 'dp' + params.dp + '_jack' + params.jack + '_' + params.c + '_' + params.ap + '_fcs.png'
                         name = dirpath + filename
-                        console.log(name) 
+                        console.log(name)
                         return name
                     });
                 pager.setparams(
@@ -143,9 +143,9 @@
                         'simtype': '',
                         'dp': '1102',
                         'jack': '01',
-                        'c':'T',
-                        'ap':'map',
-                        'sernum':'6703'
+                        'c': 'T',
+                        'ap': 'map',
+                        'sernum': '6703'
 
                     }
                 );
@@ -159,12 +159,12 @@
     <section>
         <h2>Appendix</h2>
         <p>
-           Path to mat files:
-           <pre>
+            Path to mat files:
+        <pre>
 
            </pre>
         </p>
-        
+
     </section>
 
 
