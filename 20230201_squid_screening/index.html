@@ -33,20 +33,92 @@
 
     <section>
         <h2>Introduction</h2>
-        
+        <p>
+            Superconducting Quantum Interference Devices, or SQuIDs, have been used in detector modules for many years.
+            As the detector density has increased with newer receivers, so has the required number of SQuID chips.
+            The newest BICEP receivers, BA2 and BA4, each have 12 detector modules requiring 64 squid chips each, for a
+            total of 768 chips.
+        </p>
+        <p>
+            Unfortunately, squid chips are frequently faulty, and a single failed chip will often affect the performance
+            of
+            nearby chips in a module. Thus, it is necessary to pre-screen the squid chips before integrating them into
+            the detector modules. This screening was historically performed by Prof. Kent Irwin's lab before the task
+            was transfered to Prof. Chao-Lin Kuo's lab in the summer of 2022.
+        </p>
+        <p>
+            Below, we summarize the procedure and statistics of the squid screening since it was taken up by the Kuo
+            lab.
+        </p>
+        <h3>The SQuID Chip, Screening PCB, and Screening Tower</h3>
+        <p>
+            The squid chip is quite small and fragile, measuring 6.6 mm by 3.0 mm by 0.18 mm. While handling, great care
+            must be taken
+            to only handle the sides of the chip, as touching the top can damage the sensitive electronics. The squids
+            are
+            delivered
+            by NIST in gel packs, which serve as their ideal storage system due to the electrical insulation and
+            physical
+            stability.
+        </p>
+        <p>
+            The chip serves as an amplifier at its superconducting temperatures below 10K, but it is typically
+            tested and used at temperatures below 4K. As a time domain multiplexor, the squid reads in 11 inputs (IN)
+            that are
+            all output on a single output line (OUT). The row selects (RS) are applied to select a single input at a
+            time
+            for a specific amount of time. By correlating the signal to the corresponding row select, it is possible to
+            read
+            out 11 different inputs with a single squid chip.
+        </p>
+        <p>
+            The feedback line (FB) serves to bias the input to maximize the sensitivity, but during screening, the FB
+            acts as the varying input to verify the ideal bias current that should run through OUT.
+        </p>
 
-
-
-
-    </section>
-
-    <section>
-        <h2>Procedure</h2>
-        <h3>General Information</h3>
         <figure>
-            <img alt="Board and Chip" id="info" src="#" width="750" height="750" />
+            <img alt="Chip" id="chip" src="#" width="750" height="750" />
             <figcaption>
-                Pictures of Chip Gluing
+                Pictures of the squid chip.
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#chip",
+                    {
+                        'Squid Chip|parts': [
+                            'Schematic|schematic',
+                            'Gel Pack|gelpak',
+                            'Circuit Diagram|circuit'
+                        ]
+                    },
+                    function (params) {
+                        dirpath = 'figs/chip'
+                        filename = dirpath + '/' + params.parts + '.jpg'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'parts': 'schematic',
+
+                    }
+                );
+
+            </script>
+
+        </figure>
+        <p>
+            The screening PCB has 24 slots for squid chips and 10 connectors, each of which has 8 signal/ground pairs.
+            The row selects make up the majority of the connectors, with 5 connectors responsible for the 33 row
+            selects. With 3 rows labeled X, Y, and Z, each row select activates the response of up to 8 squid chips.
+        </p>
+        <p>
+            The INPUT, FB1, and MUXOUT are connected to the sides of the chip slot area, while
+            SAOUT and SAFB are connected to the pin area where the Squid Series Array box is attached during screening.
+            These connectors all have 8 signal/ground pairs for the 8 channels labeled 0 through 7.
+        </p>
+        <figure>
+            <img alt="Board" id="info" src="#" width="750" height="750" />
+            <figcaption>
+                Pictures of the screening PCB
             </figcaption>
             <script type="text/javascript">
                 pager.link("#info",
@@ -71,7 +143,7 @@
                     });
                 pager.setparams(
                     {
-                        'part':'chip_slots',
+                        'part': 'chip_slots',
 
                     }
                 );
@@ -79,29 +151,85 @@
             </script>
 
         </figure>
+        <p>
+            The screening tower is blahblahblah
+        </p>
+        <figure>
+            <img alt="Tower" id="tower" src="#" width="750" height="750" />
+            <figcaption>
+                Pictures of the screening PCB
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#tower",
+                    {
+                        'Screening Part|part': [
+                            'Screening PCB|clean_board',
+                            'Chip Slots|chip_slots',
+                            'Row Select Pads|remove_chip',
+                            'Feedback and Output Pads|clean_chip',
+                            'Squid Array Pins|dry_chip',
+                            'Row X connectors|acquire_glue',
+                            'Row Y connectors|glue_chip',
+                            'Feedback connectors|full_board',
+                            'Muxout connectors|muxout',
+                            'Input connectors|input'
+                        ]
+                    },
+                    function (params) {
+                        dirpath = 'figs/info'
+                        filename = dirpath + '/' + params.part + '.jpg'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'part': 'chip_slots',
+
+                    }
+                );
+
+            </script>
+
+        </figure>
+
+    </section>
+
+    <section>
+        <h2>Procedure</h2>
+
         <h3>Squid Chip Preparation and Mounting</h3>
-        At this stage, the goal is the mount the desired number of Squid chips onto the screening board. The screening PCB contains 24 slots for Squid chips, 
-        but not all 24 slots need to be used. The chips need to be glued, wirebonded, and have their positions recorded. 
+        At this stage, the goal is the mount the desired number of Squid chips onto the screening board. The screening
+        PCB contains 24 slots for Squid chips,
+        but not all 24 slots need to be used. The chips need to be glued, wirebonded, and have their positions recorded.
         <h4>General notes</h4>
         <ul>
-            <li>Always grab the chips with tweezers by the edges of the chip; try to avoid touching the flat top of the chip whenever possible</li>
+            <li>Always grab the chips with tweezers by the edges of the chip; try to avoid touching the flat top of the
+                chip whenever possible</li>
             <li>Wear electrostatic discharge (ESD) protection whenever possible</li>
         </ul>
         <h4>Gluing: 30 - 60 min per board</h4>
-        Below is a summary of the procedure for gluing chips onto a PCB. For a more detailed Standard Operating Procedure, see here: 
+        Below is a summary of the procedure for gluing chips onto a PCB. For a more detailed Standard Operating
+        Procedure, see here:
         <a href="gluing.html">Gluing Procedure</a>
 
         <ul>
-            <li>Clean the PCB bond pads with the white eraser, pink eraser, and isopropyl alcohol in the respective order. The bond pads should be shiny by the end of the cleaning</li>
-            <li>Set up 3 aluminum trays, 1 for isopropyl alcohol (IPA), and 2 for acetone. Squirt the liquids into their respective tins up to a depth of approximately 5 mm, enough to submerge the Squid chips.</li>
-            <li>Using a vacuum try handling system, carefully remove a chip from its gel pack with tweezers.</li> 
-            <li>While holding the chip with tweezers, gently shake the chip in the acetone tray for 10 seconds or until the photoresist has been completely removed. 
-                Repeat the chip shaking in the other acetone tray, then in the IPA tray. If the chip already has its photoresist removed, the first aceton tray is optional.</li>
-            <li>Holding the chip on the Kimwipe, blow dry nitrogen from a Compressed Nitrogen Gun until chip is dry.</li>
+            <li>Clean the PCB bond pads with the white eraser, pink eraser, and isopropyl alcohol in the respective
+                order. The bond pads should be shiny by the end of the cleaning</li>
+            <li>Set up 3 aluminum trays, 1 for isopropyl alcohol (IPA), and 2 for acetone. Squirt the liquids into their
+                respective tins up to a depth of approximately 5 mm, enough to submerge the Squid chips.</li>
+            <li>Using a vacuum try handling system, carefully remove a chip from its gel pack with tweezers.</li>
+            <li>While holding the chip with tweezers, gently shake the chip in the acetone tray for 10 seconds or until
+                the photoresist has been completely removed.
+                Repeat the chip shaking in the other acetone tray, then in the IPA tray. If the chip already has its
+                photoresist removed, the first aceton tray is optional.</li>
+            <li>Holding the chip on the Kimwipe, blow dry nitrogen from a Compressed Nitrogen Gun until chip is dry.
+            </li>
             <li>Using a small wooden rod, lightly dab the bottle of rubber cement to cover the tip of the rod. </li>
-            <li>Apply the glue from the wooden rod onto a Squid chip slot on the PCB, then place the Squid chip on top of the glue, ensuring correct orientation. 
-                Use two wooden rods to press the Squids onto the board, making sure to only touch the corners of the chip. </li>
-            <li>Repeat the process until the board is full of Squid chips. Use a microscope to verify the IDs of the chips, 
+            <li>Apply the glue from the wooden rod onto a Squid chip slot on the PCB, then place the Squid chip on top
+                of the glue, ensuring correct orientation.
+                Use two wooden rods to press the Squids onto the board, making sure to only touch the corners of the
+                chip. </li>
+            <li>Repeat the process until the board is full of Squid chips. Use a microscope to verify the IDs of the
+                chips,
                 and record them in a table while double checking for the correct orientation.</li>
         </ul>
         <figure>
@@ -130,7 +258,7 @@
                     });
                 pager.setparams(
                     {
-                        'gluestep':'remove_chip',
+                        'gluestep': 'remove_chip',
 
                     }
                 );
@@ -138,29 +266,37 @@
             </script>
 
         </figure>
-        <h4>Wirebonding (2 - 4 hr per board)</h4>
-        Below is a summary of how to wirebond each group of pads. For a more detailed explanation, see here: 
+        <h4>Wirebonding: 2 - 4 hr per board</h4>
+        Below is a summary of how to wirebond each group of pads. For a more detailed explanation, see here:
         <a href="wirebond.html">Wirebonding Procedure</a>
         <ul>
             <li>Mount the PCB onto the wirebonding block</li>
-            <li>Wirebond the row selects, making sure to start at the copper PCB pads and end on the NbTi pads of the Squids. 
-                There are a total of 11 row selects per chip, with an input and output, for a total of 22 wirebonds per chip. 
+            <li>Wirebond the row selects, making sure to start at the copper PCB pads and end on the NbTi pads of the
+                Squids.
+                There are a total of 11 row selects per chip, with an input and output, for a total of 22 wirebonds per
+                chip.
                 A full board has a max of 24 chips, for a maximum of 528 bonds.
             </li>
-            <li>Wirebond the inputs in a stitch pattern on the Squid chip, ensuring the input coils are all connected in series. 
-                Ensure that the bonds are in the middle of the pad so that the bond surface does not touch two different pads. 
+            <li>Wirebond the inputs in a stitch pattern on the Squid chip, ensuring the input coils are all connected in
+                series.
+                Ensure that the bonds are in the middle of the pad so that the bond surface does not touch two different
+                pads.
                 Keeping the bonds short and triangular shaped will also decrease the probability of cross-shorts.
-                Then, wirebond the first and last input on the chip to the PCB. 
-                There are a total of 11 inputs, requiring 10 wirebonds to connect them in series. 
-                Adding the two wirebonds for connecting the inputs to the PCB, this is a total of 12 wirebonds per chip. 
+                Then, wirebond the first and last input on the chip to the PCB.
+                There are a total of 11 inputs, requiring 10 wirebonds to connect them in series.
+                Adding the two wirebonds for connecting the inputs to the PCB, this is a total of 12 wirebonds per chip.
                 This is a total of 288 max bonds per board.
             </li>
-            <li>Wirebond the feedback and output pads. These bonds on the sides of the chips are mostly straightforward except for the bonds
-                on the outside of row X. These bonds are in a pentagonal shape with crossing wires, increasing the chance of contact shorts. 
-                Great care must be taken to ensure ideal bond lengths. There are a total of 8 bonds per chip, for a maximum of 192 bonds per board.
+            <li>Wirebond the feedback and output pads. These bonds on the sides of the chips are mostly straightforward
+                except for the bonds
+                on the outside of row X. These bonds are in a pentagonal shape with crossing wires, increasing the
+                chance of contact shorts.
+                Great care must be taken to ensure ideal bond lengths. There are a total of 8 bonds per chip, for a
+                maximum of 192 bonds per board.
             </li>
             <li>
-                Once all the wirebonds are complete, either store the board in a nitrogen cabinet or move directly to room temperature screening. 
+                Once all the wirebonds are complete, either store the board in a nitrogen cabinet or move directly to
+                room temperature screening.
                 A single board has a maximum of 1008 bonds, from 42 bonds per chip.
             </li>
         </ul>
@@ -188,24 +324,311 @@
                     });
                 pager.setparams(
                     {
-                        'wirestep':'single_chip',
+                        'wirestep': 'single_chip',
                     }
                 );
 
             </script>
 
         </figure>
-        <h3>Room Temperature Screening</h3>
-        This step is crucial for increasing the yield of the overall screening process. Without checking for opens and cross-shorts at room temperature,
-        these issues can cause an entire row or column of chips to fail cold screening. Here, we identify the chips that read abnormal resistances,
+        <h3>Room Temperature Screening: 20 - 120 min per board</h3>
+        This step is crucial for increasing the yield of the overall screening process. Without checking for opens and
+        cross-shorts at room temperature,
+        these issues can cause an entire row or column of chips to fail cold screening. Here, we identify the chips that
+        read abnormal resistances,
         then wirebond over the chip to bypass the chip entirely.
         <h4>Identifying Faulty Chips</h4>
+        Below is a summary of the procedure for identifying faulty chips. For a detailed account, see here: <a
+            href="roomtemp.html">Room Temperature Screening Procedure</a>
         <ul>
-            <li>Connect</li> 
+            <li>Connect the screening PCB to the screening tower.</li>
+            <li>Record the resistance of the Input, Row Selects, and Feedback lines using a multimeter and the breakout
+                box.</li>
+            <li>With the PCB still attached, probe the pairs of pins with just a multimeter to record the resistance of
+                the Out lines.</li>
+            <li>Detach the PCB from the tower, and record the resistance of the Out lines.</li>
+            <li>Using the multimeter, probe the connectors directly to determine the resistance of Input, Row Select,
+                and Feedback lines</li>
+            <li>Identify any resistance reading that is more than 10% off from the other readings of the same type,
+                or when a difference in resistance is caused by connecting the PCB to the tower.</li>
         </ul>
+        <p>The purpose of recording two sets of resistances is to see if any abnormal resistance readings are a result
+            of
+            cross-shorts. When the PCB is connected to the tower, every connector is connected to a common ground. Thus,
+            any
+            cross-short would allow a current to flow through an additional path to the common ground, causing a change
+            in
+            resistance. The most common identified errors are cross-shorts, opens, and single point abnormal
+            resistances.
+            We will explore how to identify the exact chip in each of these cases.</p>
+        <figure>
+            <img alt="Shorting Bonds" id="probe" src="#" width="750" height="750" />
+            <figcaption>
+                Pictures of abnormalities
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#probe",
+                    {
+                        'Shorting Bond Type|short': [
+                            'Row Select|rs',
+                            'Feedback|fb',
+                            'Out|out',
+                            'Input|input',
+                            'Feedback (red) and Out (blue)|fbout',
+                        ]
+                    },
+                    function (params) {
+                        dirpath = 'figs/bypass'
+                        filename = dirpath + '/' + params.short + '_shorts.jpg'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'short': 'rs',
+                    }
+                );
+
+            </script>
+
+        </figure>
+        <b>Cross-short:</b>
+        <ul>
+            <li>
+                The cross-short means that within a specific chip, electrical lines are shorted where they shouldn't be.
+                This leads to a smaller resistance reading for any measurement involving the short.
+            </li>
+            <li>
+                For example, if a chip has the RS 4 shorted to the Feedback line, then while the tower is connected
+                to the PCB, this will result in a smaller resistance reading for both the feedback in that channel
+                and for the entire row select. When the tower is not connected, the resistances will read normally,
+                because the cross-short will not allow current to flow through the disconnected ground.
+            </li>
+            <li>
+                To verify the chip that is causing the lowered resistance readings, while the PCB is disconnected
+                from the tower, measure the resistance between the RS 4 connector and the feedback row that
+                contains the chip. If this resistance is not open, that indicates a cross-short.
+            </li>
+            <li> When the cross-short occurs between a row select and a channel reading like FB, OUT, or INPUT, then
+                it is easy to find the faulty chip by finding the row and column where a short exists.
+            </li>
+            <li>When the cross-short occurs between two row readings or two column readings, then identification
+                becomes trickier. The most certain method is to debond and bypass a chip, then remeasure the
+                resistances. If the resistance readings become normal, then that was the faulty chip. Otherwise,
+                rebond and debond a different chip until the problem chip is found. There are other tricks for
+                identifying the problem chip more quickly like calculating the position through expected
+                resistance readings, but those methods require more intuition and experience and have a
+                higher chance of damaging the chip.
+            </li>
+        </ul>
+        <b>Opens:</b>
+        <ul>
+            <li>Opens are identified by measuring an unexpected open across the disconnected PCB. An open on a row
+                select
+                could be any one of 8 chips in the row, while an open across a column has only 3 potential suspects.
+            </li>
+            <li>
+                Opens can always be caused by a faulty wirebond. Before performing additional wirebonds to short across
+                suspected opens, it may save time to perform pull tests on the wirebonds in the problem row/column.
+            </li>
+            <li>When there's an open across the Feedback or Out, start shorting across chips starting from row Z. By
+                wirebonding
+                the two Feedback/Out pads on row Y, the chip on row Z becomes bypassed. Measure the resistance. Repeat
+                until
+                the multimeter no longer reads open, and the last bypassed chip is the cause of the open. Bonding on the
+                PCB pads
+                decreases the possibility of damage on the chips themselves.
+
+            </li>
+            <li>
+                If there's an open across the Input, choose a chip in the column, then perform a long wirebond from one
+                end of the
+                input to the other. Measure to check if the Input row is still open. Repeat until the open Input chip is
+                identified.
+            </li>
+            <li>If there's an open across a RS, choose a chip in the row, then wirebond the two adjacent RS pads to
+                short the RS
+                of that chip. Measure the RS to check for the open. Repeat until the open RS chip is identified.
+            </li>
+        </ul>
+
+        <b>Singular abnormal readings</b>
+        <ul>
+            <li>
+                Very occassionally, a single resistance reading will be significantly higher or lower than expected, but
+                without affecting the resistance readings of any other lines.
+            </li>
+            <li>
+                In this case, the procedure is similar to that of identifying faulty chip causing an open: short across
+                each chip in the row/column and observe the change in resistance. For row selects, shorting across
+                a single chip should decrease the resistance reading by about 1.0kOhm +- 0.1 kOhm. The full list of
+                expected resistance per chip will be in the next section.
+            </li>
+            <li>
+                If the change in resistance is much higher or lower than expected, that indicates that the chip contains
+                a singular abnormal reading, and needs to be bypassed.
+            </li>
+        </ul>
+        Once the problem chips are identified, the temporary shorting bonds are removed, and the problem chip is
+        bypassed.
+        <figure>
+            <img alt="Shorting Bonds" id="abnormal" src="#" width="750" height="750" />
+            <figcaption>
+                Pictures of Chip Wirebonding
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#abnormal",
+                    {
+                        'Shorting Bond Type|short': [
+                            'Row Select|rs',
+                            'Feedback|fb',
+                            'Out|out',
+                            'Input|input',
+                            'Feedback (red) and Out (blue)|fbout',
+                        ]
+                    },
+                    function (params) {
+                        dirpath = 'figs/bypass'
+                        filename = dirpath + '/' + params.short + '_shorts.jpg'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'short': 'rs',
+                    }
+                );
+
+            </script>
+
+        </figure>
         <h4>Bypassing Chips</h4>
+
+        <ul>
+            <li>To bypass a squid chip, we remove the wirebonds attached the chip and replace them with shorting bonds
+                on the PCB bond pads. The squid chip may be removed to ease the shorting process.
+            </li>
+            <li>
+                The row selects are the easiest to short across. The RS+ bond and the RS- bond are next to each other,
+                so to make the shorting bond, simply bond the two adjacent RS pads on the PCB.
+            </li>
+            <li>
+                The input shorting bond requires bonding across the entire chip. The Out and Feedback lines
+                have similar shorting bonds, except two bonds are required because the signal and ground
+                both come from the left side.
+            </li>
+            <li>
+                When the chip to bypass is in column Z, it provides an easier shorting bond. Here, it is only necessary
+                to bond the adjacent Out and Feedback pads to the left of the Z chip. If both Y and Z need to be
+                bypassed,
+                then it is only necessary to bond the adjacent pads to the left of the Y chip, as shown in the figure
+                below.
+                If all three chips are to be bypassed, then none of the shorting bonds are required besides the
+                RS shorting bonds, as that column will not be screened during cold screening anyway.
+            </li>
+        </ul>
+        The Figure below has diagrams for the different types of shorting bonds. Every type of shorting bond bypasses
+        a single chip except for the shorting bond on the Feedback and Out diagram. When that type of shorting bond is
+        placed, every chip to the right is bypassed. In the diagram, both chip Y and Z are bypassed with just two
+        wirebonds. The diagram shows Chip X, the left side of Chip Y, and the right side of Chip Z for column 0 only.
+        <figure>
+            <img alt="Shorting Bonds" id="shorts" src="#" width="750" height="750" />
+            <figcaption>
+                Pictures of Chip Wirebonding
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#shorts",
+                    {
+                        'Shorting Bond Type|short': [
+                            'Row Select|rs',
+                            'Feedback|fb',
+                            'Out|out',
+                            'Input|input',
+                            'Feedback (red) and Out (blue)|fbout',
+                        ]
+                    },
+                    function (params) {
+                        dirpath = 'figs/bypass'
+                        filename = dirpath + '/' + params.short + '_shorts.jpg'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'short': 'rs',
+                    }
+                );
+
+            </script>
+
+        </figure>
+
+        After the bypassing is complete, an additional resistance check should be performed to verify there are no more
+        abnormalities. Due to the bypassing, some of the resistance readings will be lower. The table below specifies
+        the approximate expected resistance for each non-bypassed chip. Note that the specific numbers will vary by chip
+        wafer, with a deviation up to 10-20%.
+
+        <center>
+            <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
+                <tbody>
+                    <tr>
+                        <td><b>Resistance Reading</b></td>
+                        <td rowspan="1"><b>Constant Resistance from Tower (Ohms)</b></td>
+                        <td rowspan="1"><b>Resistance per Chip (Ohms)</b></td>
+                        <td rowspan="1"><b>Expected Resistance with all Chips present (Ohms)</b></td>
+                        <td rowspan="1"><b>Expected Resistance with 2 Chips missing (Ohms)</td>
+                    </tr>
+                    <tr>
+                        <td>Row Select (max 8 chips)</td>
+                        <td>2 k</td>
+
+                        <td>1.1 k</td>
+                        <td>10.8 k</td>
+                        <td>8.6 k</td>
+                    </tr>
+                    <tr>
+                        <td>Input (max 3 chips)</td>
+                        <td>5 k </td>
+
+                        <td>0.5 M</td>
+                        <td>1.5 M</td>
+                        <td>0.5 M</td>
+                    </tr>
+                    <tr>
+                        <td>Output (max 3 chips)</td>
+                        <td>0
+                        </td>
+
+                        <td>7 k</td>
+                        <td>21 k</td>
+                        <td>7 k</td>
+                    </tr>
+                    <tr>
+                        <td>Feedback (max 3 chips)</td>
+                        <td>5 k</td>
+
+                        <td>15 k</td>
+                        <td>50 k</td>
+                        <td>20 k</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+
         <h3>Cryogenic Testing</h3>
+        After a screening board has been prepared with chips free of abnormal resistance readings, it is now ready for
+        cryogenic screening. The purpose of this stage
+        is to ensure each chip can serve its purpose in the detector module as a proper superconducting amplifier. Due
+        to the fragile nature of the chips, they may not function
+        perfectly despite normal room temperature resistances.
+
         <h4>Managing Helium</h4>
+        To ensure the squid chips are superconducting, they must be dipped into liquid helium, which has a boiling point
+        of 4K. Because helium has such a low boiling point, it is necessary to keep it in a well insulated dewawr;
+        however,
+        the opening must be large enough to fit the screening PCB and the screening tower. Helium in their storage
+        dewars
+        must be transfered into the specially designed Blue Dewar for screening to procede. For a detailed account on
+        how
+        to transfer helium, see here: <a href="transfer.html">Helium Transfer</a>
+
         <h4>Connecting to and Running the Software</h4>
         <h4>Recording faulty chips</h4>
         <h3>Packaging and Delivery</h3>
@@ -213,7 +636,7 @@
         <h4>Final Verfication</h4>
         <h4>Delivery</h4>
 
-       
+
     </section>
 
     <section>
@@ -230,12 +653,12 @@
 
     <section>
         <h2>Case Study</h2>
-        
+
     </section>
 
     <section>
         <h2>Conclusions</h2>
-        
+
     </section>
 
 </body>
