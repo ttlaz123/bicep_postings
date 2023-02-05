@@ -619,7 +619,7 @@
         to the fragile nature of the chips, they may not function
         perfectly despite normal room temperature resistances.
 
-        <h4>Managing Helium</h4>
+        <h4>Managing Helium: 2-3 hours per dewar</h4>
         To ensure the squid chips are superconducting, they must be dipped into liquid helium, which has a boiling point
         of 4K. Because helium has such a low boiling point, it is necessary to keep it in a well insulated dewawr;
         however,
@@ -627,14 +627,249 @@
         dewars
         must be transfered into the specially designed Blue Dewar for screening to procede. For a detailed account on
         how
-        to transfer helium, see here: <a href="transfer.html">Helium Transfer</a>
+        to transfer helium, see here: <a href="transfer.html">Helium Transfer</a>. A single 100L dewar of helium
+        can screen between 5 - 15 boards depending on how quickly the screening is performed.
 
-        <h4>Connecting to and Running the Software</h4>
-        <h4>Recording faulty chips</h4>
+        <h4>Connecting to the Software: 30 min per board</h4>
+        Once the blue helium dewar is sufficiently filled, the cryogenic screening can proceed. Below is a
+        summary for dipping and connecting the screening PCB to the screening software. A detailed procedure
+        is here:
+        <a href="software.html"> Connecting to Software </a>.
+        <ul>
+            <li>Attach the Squid Series Array box to the Screening PCB, screw the PCB to the bottom of the
+                screening tower, secure the Samtech connectors, and put on the magnetic shield cylinder.
+            </li>
+            <li>
+                With the venting valve open, remove the cap on the blue helium dewar and stick the magnetic shield end
+                of the tower into the dewar.
+                Be sure to tightly screw the flange onto the blue dewar.
+            </li>
+            <lI>
+                Slowly lower the tower into the blue dewar by alternating the loosening of the white plastic collar.
+                Be sure to go slowly enough for the helium to evaporate at a slow rate. Tighten both colors and close
+                the venting valve once the tower has reached the bottom.
+            </lI>
+            <li>
+                Connect up the electronics. The relevant connections of the screening tower are nine HDMI sockets,
+                32 SMB sockets, a fiber optic socket, and 3 power plugs. Turn on the electronics to their proper
+                setting.
+                A full list of the electronics and their settings are included in the detailed procedure.
+            </li>
+            <li>
+                Open the automated squid screening software, fill in the date of the screening, and enter the
+                name of the PCB.
+            </li>
+        </ul>
+        <h4>Running the cold screening software: 2-3 hours per board</h4>
+        <p>
+            The automated screening software checks for 4 quantities: critical current of the column \(I_{C,col}\),
+            modulation, current with maximum modulation \(I_{C,max}\), and current with minimum modulation
+            \(I_{C,min}\).
+        </p>
+        <ul>
+            <li>
+                Modulation is specific to each Row select, and it indicates how much an input signal on that row can be
+                amplified. The larger the modulation, the easier it is to see a small signal.
+            </li>
+            <li>For each row select,
+                there is a particular device current, \(I_{C,max}\), at which the modulation is at its largest.
+            </li>
+            <li>
+                \(I_{C,col}\) is screened across an entire column of 3 chips, and it indicates the maximum device
+                current
+                that
+                can be applied before current starts flowing through the Input squids, at which point the row is turned
+                on.
+                Time domain multiplexing requires specific rows to turn on only when current is applied to the specific
+                row
+                select, thus it is desirable for
+                \(I_{C,col}\) to be significantly higher than any \(I_{C,max}\) in the chips on the column. If
+                \(I_{C,col}\)
+                were lower than the \(I_{C,max}\) in any row, then it is no longer possible to achieve maximum
+                modulation
+                for the squid chip without certainty which row the signal is arriving from.
+            </li>
+            <li>
+                \(I_{C,min}\) specifies the minimum current at which a specific row sees some modulation. To ensure that
+                a particular row only turns on when chosen by the Row Select, it is desireable for \(I_{C,min}\) to
+                be significantly above 0, but a small fraction of \(I_{C,max}\) (typically around a fifth to a tenth)
+                so there is room to adjust the bias current.
+            </li>
+        </ul>
+        Below is a summary of the cold screening. For a detailed procedure, see here: <a href="software.html"> Running
+            the Software </a>
+        <ul>
+            <li>Ensure the electronics are properly connected, choose a column/channel to screen, and click "Start
+                Screening". </li>
+
+            <li>The program will prompt to make sure the SMB connectors are connected to the correct channels: the SAFB
+                connector should be connected to the same column number as the channel number being screened,
+                but MUXOUT, SAOUT, and FB1 are all connected backward. </li>
+            <li>The program will first scan for the modulation of the Squid Series Array. On the Oscilloscope,
+                a sine wave should be visible with a modulation that varies over time. Here, the SAFB is providing
+                an 8 KHz ramp function as an input current, and the Squid Series Array's response are the
+                expected sine waves. During the scan, the bias current varies, which changes the modulation
+                response of the sine waves. The purpose of the scan is the determine the series resistance of the
+                SSA, which is used in later calculations.
+            </li>
+            <li>
+                The program will now determine the \(I_{C,col}\) of the channel. With all the row selects turned off,
+                and the feedback kept at the 8 KHz ramp function, the bias current is slowly increased until
+                some modulation is observed. The device current at which the modulation just begins is calculated
+                to be \(I_{C,col}\). Recalculate the value if it does not match the observed value on the oscilliscope
+            </li>
+            <li>
+                Next, the program will individually scan each row select. The same varying bias current and feedback
+                are applied as for determining \(I_{C,col}\), but an individual row select will be turned on.
+                The program will calculate the device current at which modulation just appears, \(I_{C,min}\),
+                and the device current
+                at which the modulation is at its maximum, \(I_{C,max}\). These values will be recorded in a
+                plot shown by the software. The modulation will also be recorded on a separate graph.
+                After all the row selects are screened, the program will stop.
+                If there are bypassed chips in the row, it saves time to manually skip over the row selects.
+            </li>
+            <li>Repeat the above until all channels are screened.</li>
+            <li> When finished, disconnect the electronics and open the vent valve.
+                Remove the tower from the helium dewar slowly, using the white plastic collar to prevent
+                the tower from slipping. Unscrew the flange and replace it with the dewar cap.
+                Leave the tower on a table to warm up for 20-30 min before running the next board.
+                It is very important for all the ice to melt for the next connection to be firm. If
+                any water or ice is still on the connectors, it will disrupt the connection of the next board
+                as it is lowered into helium, preventing some row selects from being screened.
+            </li>
+
+        </ul>
+
+        <h4>Possible failure modes</h4>
+        As the cold screening takes place, it is important to record whether each chip has passed or failed.
+        A chip that passes screening requires the following criteria:
+        <ul>
+            <li>Each of its 11 row selects have approximately the same \(I_{C,max}\), \(I_{C,min}\), and modulation.
+                Typical values are between 8-10 microamps for \(I_{C,max}\), 1-2 microamps for \(I_{C,min}\), and
+                20-30 V for modulation. These values should be within approximately 10% of each other; otherwise,
+                it suggests the squid's waveform is not a perfect sine wave.
+            </li>
+            <li>
+                The \(I_{C,col}\) of the channel which contains the chip is above every \(I_{C,max}\). To determine
+                whether the \(I_{C,col}\) is high enough, it is necessary to observe the plot produced during
+                screening. If the plot appears to modulate slowly, it likely suggests that the chips have passed.
+                However, if the modulation appears too quickly with a sudden peak, it suggests that one of the
+                chips in the channel is faulty.
+            </li>
+        </ul>
+        Below, we outline some of the common failure modes during cold screening.
+        <ul>
+            <li>During the SSA scan, no modulation is observed.
+                <ul>
+                    <li>First, check to make sure all the cables are properly connected to the correct channels.
+                        The fiber optic cable also frequently comes loose.</li>
+                    <li>
+                        It has been observed that decreasing the current on the current sources and
+                        turning it back on allows the modulation to reappear. It is currently
+                        unknown why this fixes the issue.
+                    </li>
+                    <li>
+                        Probe the connection between the tower sockets and the Samtech connectors. If either
+                        the SAFB connection or SAOUT connection is open, that suggests the cable is torn.
+                        Visually inspect the cabling for breaks. Be sure to keep the probe current below 1mA
+                        to avoid blowing the amplifier. If there are breaks, the only current solution
+                        is to solder over the break with copper wire. Unfortunately, this fix is only
+                        temporary as the solder will not likely hold for very long.
+                    </li>
+                    <li>
+                        It is possible that the squids in the SSA box are faulty. To test this, swap the SSA
+                        chips within the squid box after taking the tower out of the dewar, and retest the
+                        same channels. If modulation returns, the fault is in the SSA chips.
+                    </li>
+                    <li>
+                        It is possible that the Low Noise Amplifier (LNA) in the tower for the channel has been blown,
+                        in which the only
+                        recourse is to replace the LNA.
+                    </li>
+                    <li>
+                        This symptom also occurs when the squids are no longer superconducting. Thump the dewar
+                        to check that there is enough helium.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                During the scan for \(I_{C,col}\), there is no modulation.
+                <ul>
+                    <li>
+                        This situation is similar to no modulation during the SSA scan, but the potential problem areas
+                        are now the SQ1Bias and FB1 connections. Check that these cables are connected to the
+                        correct channels and check for opens.
+                    </li>
+                    <li>
+                        There is a small chance that the \(I_{C,col}\) is simply too large, so it is out of range of
+                        the scan. To verify this, simply start scanning the Row Selects. If modulation is observed,
+                        then there is no issue.
+                    </li>
+                    <li> If the channel is not screenable, the chips need to be rescreened.</li>
+                </ul>
+            </li>
+            <li>
+                During the scan for \(I_{C,col}\), the modulation appears too quickly.
+                <ul>
+                    <li>
+                        If the modulation appears early but then decreases again, this suggests that there is cross-talk
+                        on one of the chips. All three chips on the channel will need to be rescreened to pin down
+                        which chip is the culprit.
+                    </li>
+                    <li>
+                        If the modulation appear immediately or does not follow a sine wave pattern, this suggests a
+                        cross-short that was not caught during room temperature screening.
+                        If the row selects can still scan, it is useful to do so for future reference even though
+                        the chips cannot pass this screening. Typically, however, this usually renders the entire
+                        channel unscreenable. Regardless, the chips need to be rescreened
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                While scanning the row selects, there are abnormal values for modulation or the critical currents.
+                <ul>
+                    <li>The most sure-fire way to determine the problem is to observe the waveform on the oscilloscope.
+                        The expected pattern is for a sine wave to appear, reach some maximum modulation, then slowly
+                        shrink.
+                    </li>
+                    <li>
+                        Common abnormal waveforms include a wave with multiple peaks, a wave that does not complete
+                        full modulation, a noisy waveform, or no modulation at all.
+                    </li>
+                    <li>If there is no modulation at all, or if the modulation is very low, that suggests that
+                        the row select was not turned on. In this case, the \(I_{C,min}\) sometimes
+                        matches the \(I_{C,col}\). If this same issue occurs in the RS of every channel, that suggests
+                        there is an open: either a wirebond came off or the connector was not fastened properly.
+                        This can be easily verified with the multimeter and breakout box. In this case, the chips
+                        need to be rescreened.
+                    </li>
+                    <li>If there is a double peak, this usually means there is some damage to the squids in that row.
+                        If the modulation and \(I_{C,max}\) aren't too different from the other rows, and if the
+                        waveform at the max modulation is still a single peak sine wave, then the chip may still
+                        be acceptable. Otherwise, the chip has failed screening.
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+        During this scan, mark each chip as either passed, failed, or unknown (and need to be rescreened). Specifying
+        the
+        exact failure mode will help in determining the best rescreen pattern. Currently, all the results are
+        recorded in the spreadsheet <a
+            href="https://docs.google.com/spreadsheets/d/1P4ldsPritsVjOpLrGDMMjEQIUl2pGGT145hiWrTprlA/edit#gid=0">here</a>.
         <h3>Packaging and Delivery</h3>
+        Once the screening results are obtained, each chip is sorted into passed, failed (includes both chips that
+        were bypassed during room temperature screening and failed cold screening), or need to be rescreened.
         <h4>Dismounting Chips</h4>
-        <h4>Final Verfication</h4>
-        <h4>Delivery</h4>
+        A tweezer is used to pull off the wirebonds. Two wooden sticks are used to twist the squid chips from the
+        side, which twists off the rubber cement used to glue the chip. The chip is then placed into a gel pack
+        labeled passed, failed, or rescreen. Repeat until all the chips are sorted.
+        <h4>Final Verfication and Delivery</h4>
+        Each chip in the passed gelpack is observed under a microscope to verify its ID, which is used to
+        cross-reference the screening data. Once verification is complete, the gel pack is packaged and shipped.
+        For a detailed account on how to package a gel pack of squid chips, see here: <a href="package.html">Squid
+            Packaging</a>
 
 
     </section>
