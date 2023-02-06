@@ -52,7 +52,8 @@
         </p>
         <h3>The SQuID Chip, Screening PCB, and Screening Tower</h3>
         <p>
-            The squid chip is quite small and fragile, measuring 6.6 mm by 3.0 mm by 0.18 mm. While handling, great care
+            The MUX 15b SQuID Chip is quite small and fragile, measuring 6.6 mm by 3.0 mm by 0.18 mm. While handling,
+            great care
             must be taken
             to only handle the sides of the chip, as touching the top can damage the sensitive electronics. The squids
             are
@@ -106,7 +107,8 @@
 
         </figure>
         <p>
-            The screening PCB has 24 slots for squid chips and 10 connectors, each of which has 8 signal/ground pairs.
+            The Dr Eleven screening PCB has 24 slots for squid chips and 10 connectors, each of which has 8
+            signal/ground pairs.
             The row selects make up the majority of the connectors, with 5 connectors responsible for the 33 row
             selects. With 3 rows labeled X, Y, and Z, each row select activates the response of up to 8 squid chips.
         </p>
@@ -116,34 +118,35 @@
             These connectors all have 8 signal/ground pairs for the 8 channels labeled 0 through 7.
         </p>
         <figure>
-            <img alt="Board" id="info" src="#" width="750" height="750" />
+            <img alt="PCB Board" id="pcbs" src="#" width="750" height="750" />
             <figcaption>
-                Pictures of the screening PCB
+                Pictures of the screening PCB and related traces. Blue are traces above the board, and red are
+                traces underneath the board.
             </figcaption>
             <script type="text/javascript">
-                pager.link("#info",
+                pager.link("#pcbs",
                     {
-                        'Screening Part|part': [
-                            'Screening PCB|clean_board',
-                            'Chip Slots|chip_slots',
-                            'Row Select Pads|remove_chip',
-                            'Feedback and Output Pads|clean_chip',
-                            'Squid Array Pins|dry_chip',
-                            'Row X connectors|acquire_glue',
-                            'Row Y connectors|glue_chip',
-                            'Feedback connectors|full_board',
-                            'Muxout connectors|muxout',
+                        'Screening PCB Part|pcbs': [
+                            'Screening PCB|pcb',
+                            'Chip Slots|chip_slot',
+                            'Squid Array Feedback and Output|ssa',
+                            'Squid Series Array Box|ssabox',
+                            'Row X connectors|rowx',
+                            'Row Y connectors|rowy',
+                            'Row Z connectors|rowz',
+                            'Feedback connectors|fb',
+                            'Muxout connectors|out',
                             'Input connectors|input'
                         ]
                     },
                     function (params) {
-                        dirpath = 'figs/info'
-                        filename = dirpath + '/' + params.part + '.jpg'
+                        dirpath = 'figs/pcb'
+                        filename = dirpath + '/' + params.pcbs + '.jpg'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'part': 'chip_slots',
+                        'pcbs': 'pcb',
 
                     }
                 );
@@ -152,7 +155,13 @@
 
         </figure>
         <p>
-            The screening tower is blahblahblah
+            The screening tower is a device provided by NIST for the express purpose of interfacing with the
+            screening PCB. The top of the tower houses the electronics and the connector sockets for
+            interfacing with external electronics like oscilliscopes and current supplies. The 5 rows of HDMI
+            cables connect to the Row Selects. For the bottom row, only one connection is used. The
+            SMB connectors come in groups of 8 for the 8 channels on the PCB. All the names
+            are the same except SQ2BIAS connects to MUXOUT. The connectors
+            on the bottom of the tower connect to the Samtech connectors on the screening PCB.
         </p>
         <figure>
             <img alt="Tower" id="tower" src="#" width="750" height="750" />
@@ -162,27 +171,20 @@
             <script type="text/javascript">
                 pager.link("#tower",
                     {
-                        'Screening Part|part': [
-                            'Screening PCB|clean_board',
-                            'Chip Slots|chip_slots',
-                            'Row Select Pads|remove_chip',
-                            'Feedback and Output Pads|clean_chip',
-                            'Squid Array Pins|dry_chip',
-                            'Row X connectors|acquire_glue',
-                            'Row Y connectors|glue_chip',
-                            'Feedback connectors|full_board',
-                            'Muxout connectors|muxout',
-                            'Input connectors|input'
+                        'Tower Part|tower': [
+                            'Whole Tower|whole',
+                            'Top Part|top',
+                            'Bottom Part|bottom',
                         ]
                     },
                     function (params) {
-                        dirpath = 'figs/info'
-                        filename = dirpath + '/' + params.part + '.jpg'
+                        dirpath = 'figs/tower'
+                        filename = dirpath + '/' + params.tower + '.jpg'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'part': 'chip_slots',
+                        'tower': 'whole',
 
                     }
                 );
@@ -196,7 +198,7 @@
     <section>
         <h2>Procedure</h2>
 
-        <h3>Squid Chip Preparation and Mounting</h3>
+        <h3>Squid Chip Preparation and Mounting: 2.5 - 5 hours per board</h3>
         At this stage, the goal is the mount the desired number of Squid chips onto the screening board. The screening
         PCB contains 24 slots for Squid chips,
         but not all 24 slots need to be used. The chips need to be glued, wirebonded, and have their positions recorded.
@@ -348,7 +350,7 @@
                 the Out lines.</li>
             <li>Detach the PCB from the tower, and record the resistance of the Out lines.</li>
             <li>Using the multimeter, probe the connectors directly to determine the resistance of Input, Row Select,
-                and Feedback lines</li>
+                and Feedback lines. Note that the Row Select numbers are 1 off from the numbers marked on the PCB.</li>
             <li>Identify any resistance reading that is more than 10% off from the other readings of the same type,
                 or when a difference in resistance is caused by connecting the PCB to the tower.</li>
         </ul>
@@ -362,29 +364,33 @@
             resistances.
             We will explore how to identify the exact chip in each of these cases.</p>
         <figure>
-            <img alt="Shorting Bonds" id="probe" src="#" width="750" height="750" />
+            <img alt="Probing room temperature" id="probe" src="#" width="750" height="750" />
             <figcaption>
                 Pictures of abnormalities
             </figcaption>
             <script type="text/javascript">
                 pager.link("#probe",
                     {
-                        'Shorting Bond Type|short': [
+                        'Shorting Bond Type|probe': [
                             'Row Select|rs',
-                            'Feedback|fb',
+                            'Feedback|feedback',
                             'Out|out',
                             'Input|input',
-                            'Feedback (red) and Out (blue)|fbout',
+                            'Direct Row Select|rsd',
+                            'Direct Feedback|fbd',
+                            'Direct Input|inputd',
+                            'Record Info in a Table|resistance_table',
+                            'Include Chip IDs|chipid'
                         ]
                     },
                     function (params) {
-                        dirpath = 'figs/bypass'
-                        filename = dirpath + '/' + params.short + '_shorts.jpg'
+                        dirpath = 'figs/probe'
+                        filename = dirpath + '/' + params.probe + '.jpg'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'short': 'rs',
+                        'probe': 'rs',
                     }
                 );
 
@@ -478,22 +484,26 @@
             <script type="text/javascript">
                 pager.link("#abnormal",
                     {
-                        'Shorting Bond Type|short': [
-                            'Row Select|rs',
-                            'Feedback|fb',
-                            'Out|out',
-                            'Input|input',
-                            'Feedback (red) and Out (blue)|fbout',
-                        ]
+                        'Cause of abnormal resistance|abn': [
+                            'Cross-short between RS and Feedback|crossshort1',
+                            'Cross-short between Out and Feedback|crossshort2',
+                            'Cross-short between RS and RS|crossshort3',
+                            'Open across Feedback|open1'
+                        ],
+                        'What to look at|cc': [
+                            'Problem Chip|chip',
+                            'Check connectors to verify|connectors',
+                        ],
                     },
                     function (params) {
-                        dirpath = 'figs/bypass'
-                        filename = dirpath + '/' + params.short + '_shorts.jpg'
+                        dirpath = 'figs/abnormals'
+                        filename = dirpath + '/' + params.abn + '_' + params.cc + '.jpg'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'short': 'rs',
+                        'abn': 'crossshort1',
+                        'cc': 'chip',
                     }
                 );
 
@@ -612,7 +622,7 @@
             </table>
         </center>
 
-        <h3>Cryogenic Testing</h3>
+        <h3>Cryogenic Testing: 3 - 4 hours per board</h3>
         After a screening board has been prepared with chips free of abnormal resistance readings, it is now ready for
         cryogenic screening. The purpose of this stage
         is to ensure each chip can serve its purpose in the detector module as a proper superconducting amplifier. Due
@@ -660,6 +670,36 @@
                 name of the PCB.
             </li>
         </ul>
+        <figure>
+            <img alt="Electronics" id="electronics" src="#" width="750" height="750" />
+            <figcaption>
+                Pictures of Screening Electronics
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#electronics",
+                    {
+                        'Electronics|electronics': [
+                            'Power Supply|power',
+                            'Voltage Bias|bias',
+                            'Connection to tower|connect',
+                            'Overall setup|setup',
+                            'All connections|signals',
+                        ]
+                    },
+                    function (params) {
+                        dirpath = 'figs/electronics'
+                        filename = dirpath + '/' + params.electronics + '.jpg'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'electronics': 'setup',
+                    }
+                );
+
+            </script>
+
+        </figure>
         <h4>Running the cold screening software: 2-3 hours per board</h4>
         <p>
             The automated screening software checks for 4 quantities: critical current of the column \(I_{C,col}\),
@@ -739,7 +779,35 @@
             </li>
 
         </ul>
+        <figure>
+            <img alt="Screening" id="screening" src="#" width="750" height="750" />
+            <figcaption>
+                Pictures of Screening Electronics
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#screening",
+                    {
+                        'Screening Step|screening': [
+                            'Ic min and max for Row Selects|rs',
+                            'Modulation Curve for each Row Select|curve',
+                            'Max Modulation for Row Selects|modulation',
+                            'Ic col curve|iccol',
+                        ]
+                    },
+                    function (params) {
+                        dirpath = 'figs/screening'
+                        filename = dirpath + '/' + params.screening + '.jpg'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'screening': 'rs',
+                    }
+                );
 
+            </script>
+
+        </figure>
         <h4>Possible failure modes</h4>
         As the cold screening takes place, it is important to record whether each chip has passed or failed.
         A chip that passes screening requires the following criteria:
@@ -858,6 +926,37 @@
         exact failure mode will help in determining the best rescreen pattern. Currently, all the results are
         recorded in the spreadsheet <a
             href="https://docs.google.com/spreadsheets/d/1P4ldsPritsVjOpLrGDMMjEQIUl2pGGT145hiWrTprlA/edit#gid=0">here</a>.
+
+        <figure>
+            <img alt="Failure Modes" id="fail" src="#" width="750" height="750" />
+            <figcaption>
+                Pictures of Failure mode examples
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#fail",
+                    {
+                        'Failure Mode|fail': [
+                            'No modulation appears during SSA scan|ssa',
+                            'No modulation appears during Ic cols can|iccol',
+                            'Ic col scan modulates too quickly|iccol_fast',
+                            'Ic col scan modulates multiple times|iccol_multi',
+                            'Double Peak during RS scan|rs_multi',
+                        ]
+                    },
+                    function (params) {
+                        dirpath = 'figs/fail'
+                        filename = dirpath + '/' + params.fail + '.jpg'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'fail': 'ssa',
+                    }
+                );
+
+            </script>
+
+        </figure>
         <h3>Packaging and Delivery</h3>
         Once the screening results are obtained, each chip is sorted into passed, failed (includes both chips that
         were bypassed during room temperature screening and failed cold screening), or need to be rescreened.
