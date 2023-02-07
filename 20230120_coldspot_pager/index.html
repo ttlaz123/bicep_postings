@@ -140,13 +140,14 @@
                         ]
                     },
                     function (params) {
-                        filters = '_filtp3_weight3_gs_'
-                        dirpath = '/liuto/b3/reduc_plotcomap_pager/' + params.sernum + '/'
+                        
                         if(params.daughter == '_cs_test2021_'){
                             params.sernum = '6703';
                         } else if (params.daughter == '_cs_2019all'){
                             params.sernum = '6704';
                         }
+                        filters = '_filtp3_weight3_gs_'
+                        dirpath = '/liuto/b3/reduc_plotcomap_pager/' + params.sernum + '/'
                         filename = params.simsernum + params.simtype + params.daughter + filters + 'dp' + params.dp + '_jack' + params.jack + '_' + params.c + '_' + params.ap + '_fcs.png'
                         name = dirpath + filename
                         console.log(name)
