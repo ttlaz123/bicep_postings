@@ -44,12 +44,12 @@
     <section>
         <h2>Maps Pager</h2>
         <ul>
-        <li>Serial Number
-            <ul>
-                <li>6703: 2021 Novemeber Data, used for initial testing</li>
-                <li>6704: 2019 all data</li>
-            </ul>
-        </li>
+            <li>Serial Number
+                <ul>
+                    <li>6703: 2021 Novemeber Data, used for initial testing</li>
+                    <li>6704: 2019 all data</li>
+                </ul>
+            </li>
         </ul>
 
 
@@ -78,10 +78,6 @@
                             '009|009',
                             '010|010',
                             '~~~~~~~~~~~~~~~~~~~~~~~|xxx',
-                        ],
-                        'Sim Type|simtype': [
-                            'Real|',
-                            '2|2'
                         ],
                         'Deprojection Number|dp': [
                             '0000|0000',
@@ -134,17 +130,18 @@
                             'Cold Spot Test 2021 Nov|_cs_test2021_',
                             'Cold Spot 2019 All|_cs_2019all'
                         ],
-                        'Serial Number|sernum': [
-                            '6703|6703',
-                            '6704|6704'
-                        ]
                     },
                     function (params) {
-                        
-                        if(params.daughter == '_cs_test2021_'){
+
+                        if (params.daughter == '_cs_test2021_') {
                             params.sernum = '6703';
-                        } else if (params.daughter == '_cs_2019all'){
+                        } else if (params.daughter == '_cs_2019all') {
                             params.sernum = '6704';
+                        }
+                        if (params.simsernum == 'real') {
+                            params.simtype = ''
+                        } else {
+                            params.simtype = '2'
                         }
                         filters = '_filtp3_weight3_gs_'
                         dirpath = '/liuto/b3/reduc_plotcomap_pager/' + params.sernum + '/'
