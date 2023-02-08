@@ -980,7 +980,62 @@
 
         <h3>Cryogenic Testing</h3>
 
+        <figure>
+            <img alt="Failure Statistics" id="coldstats" src="#" width="1250" height="750" />
+            <figcaption>
+                Pictures of Failure mode examples
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#coldstats",
+                    {
+                        'Statistics |coldstats': [
+                            'Pass rate by wafer|passrate_by_wafer',
+                            'Number of rescreens by wafer|rescreen_by_wafer',
+                            'Sample|sample',
+                        ]
+                    },
+                    function (params) {
+                        dirpath = 'scripts'
+                        filename = dirpath + '/' + params.coldstats + '.png'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'coldstats': 'passrate_by_wafer',
+                    }
+                );
+
+            </script>
+
+        </figure>
         <h3>New Chips vs Rescreens</h3>
+        Number passed after nth screen:
+        1: 742
+        2:155
+        3:49
+        4:3
+        5:0
+
+        N screens:
+        1: 957
+        2: 336
+        3: 119
+        4: 15
+        5: 3
+
+        >= N screens:
+        1: 1430
+        2: 473
+        3: 137
+        4: 18
+        5: 3
+
+        number of rescreens after nth screen
+        by wafer
+        by screening batch
+        by screening person
+
+        bypassed rate, by rescreen num
 
         <h3>Total Screening per Chip</h3>
 

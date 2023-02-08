@@ -155,6 +155,55 @@ def plot_passrate_data(chip_dict: dict, pcb_dict:dict, savename:str,
     plt.savefig(savename)
     plt.show()
 
+def plot_passrate_by_rescreen(chip_dict, pcb_dict, savename,
+                       startdate:str = '00000000', enddate:str = '99999999'):
+    plt.figure(figsize=(16,6))
+    barWidth = 0.3
+    rescreens = {1:0, 2:0, 3:0, 4:0, 5:0}
+    passes = {1:0, 2:0, 3:0, 4:0, 5:0}
+    for chip in chip_dict:
+        pcbs = chip_dict[chip][PCB_NAME]
+        dates = [p.split('_')[0] for p in pcbs]
+        dates.sort()
+        if(not within_dates(dates, startdate, enddate)):
+            continue
+        rescreen_count = 0
+
+        for date in dates:
+            rescreen_count += 1
+            if(date > startdate and date < enddate):
+                rescreens[rescreen_count] += 1
+                if(chip_dict[chip][PASSED] and date == max(dates)):
+                        passes[rescreen_count] += 1
+                
+    bars_count = []
+    bars_passed = []
+    xlabels = []
+    for n in rescreens:
+        percent = passes[n] / rescreens[n]
+        xlabels.append('Screen number ' + str(n) + ': ' + str(int(percent*100)) + '%')
+        bars_count.append(rescreens[n])
+        bars_passed.append(passes[n])
+    r1 = np.arange(len(bars_count))
+    r2 = [x + barWidth for x in r1]
+
+    plt.bar(r1, bars_count, width = barWidth, color = 'blue', 
+            edgecolor = 'black', capsize=7, label='All')
+ 
+    plt.bar(r2, bars_passed, width = barWidth, color = 'cyan', 
+            edgecolor = 'black',  capsize=7, label='Passed')
+    
+    plt.xticks([r + barWidth for r in range(len(bars_count))], xlabels)
+    plt.ylabel('Count')
+    plt.title('Pass Rate of Squid Chips by Screen Number from ' + 
+              startdate + ' to ' + enddate)
+    plt.legend()
+    
+    plt.savefig(savename)
+    plt.show()
+
+
+
 def plot_rescreen_data(chip_dict, pcb_dict, savename,
                        startdate:str = '00000000', enddate:str = '99999999'):
     plt.figure(figsize=(16,6))
@@ -223,8 +272,8 @@ def main():
     badstart = '20220901'
     nickstart = '20210501'
     c,p = read_squid_data('../cold_screening.tsv')
-    plot_rescreen_data(c,p,'sample.png', 
-                       startdate=kuostart, enddate=badstart)
+    plot_passrate_by_rescreen(c,p,'sample.png', 
+                       startdate=startstart, enddate=endend)
 
 if __name__ == '__main__':
     main()
