@@ -33,7 +33,7 @@
 
     <section>
         <h2>Introduction</h2>
-
+        Here, we contain the space for all the maps produced for the BICEP Coldspot analysis.
 
 
 
@@ -42,8 +42,15 @@
     </section>
 
     <section>
-        <h2>Examining the data</h2>
-
+        <h2>Maps Pager</h2>
+        <ul>
+        <li>Serial Number
+            <ul>
+                <li>6703: 2021 Novemeber Data, used for initial testing</li>
+                <li>6704: 2019 all data</li>
+            </ul>
+        </li>
+        </ul>
 
 
 
@@ -133,6 +140,12 @@
                         ]
                     },
                     function (params) {
+                        
+                        if(params.daughter == '_cs_test2021_'){
+                            params.sernum = '6703';
+                        } else if (params.daughter == '_cs_2019all'){
+                            params.sernum = '6704';
+                        }
                         filters = '_filtp3_weight3_gs_'
                         dirpath = '/liuto/b3/reduc_plotcomap_pager/' + params.sernum + '/'
                         filename = params.simsernum + params.simtype + params.daughter + filters + 'dp' + params.dp + '_jack' + params.jack + '_' + params.c + '_' + params.ap + '_fcs.png'
