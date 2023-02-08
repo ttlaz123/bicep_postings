@@ -1,0 +1,2160 @@
+0	"Perfect"	Open Input/other anomaly	RS Anomaly	Ic Anomaly	Could not screen. Needs re-mount / re-screen	PCB	LOC	Note	More notes	
+....................						20190828_B	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	FB coil open - unusable		
+0	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r00_c04	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r00_c05	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r00_c06			10			20190617_A	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	excess noise on RS10, but the v-Phi at Ic,max actually looks fine.		
+w31_r01_c02	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r01_c03	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r01_c04	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r01_c05	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r01_c06	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r01_c07	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r02_c02	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r02_c03	12					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r02_c04	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r02_c05	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r02_c06	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r02_c07	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r03_c02				7		20190617_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	funky, non-sinusoidal v-phi		
+w31_r03_c03	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r03_c04				00, 05		20190617_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	slightly out of range ic,min/ic,max. probably fine for use.		
+w31_r03_c05				8		20190617_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	funky, non-sinusoidal v-phi		
+w31_r03_c06	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r03_c07	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r04_c01				00, 05		20190617_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	noisy v-phi and ibias-mod; slightly high Ic,max		
+w31_r04_c02	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r04_c03				05, 08		20190617_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	RS5 high Ic, RS8 slightly low Icmax		
+w31_r04_c04	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r04_c05	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r04_c06	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r04_c07	x					20190617_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r04_c08		x			x	20190617_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r05_c01					x	20190617_D	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r05_c02					x	20190617_D	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r05_c03					x	20190617_C	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r05_c04	x					20190617_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r05_c05	x					20190617_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r05_c06				00,03		20190617_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	RS02,03,06 non-sinusoidal or anomalous V-phi at Icmax		
+w31_r05_c07	x					20190617_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r05_c08	x					20190617_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r06_c00						20190617_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	RS00,03 non-sinusoidal v-phi		
+w31_r06_c01		IN00,07				20190617_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	FB line is open, chip unusable		
+w31_r06_c02		IN02	RS03 Open			20190617_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r06_c03	x					20190617_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r06_c04					x	20190617_C	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r06_c05				RS04,06 low icmax		20190617_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r06_c06	x					20190617_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r06_c07				02,03,06		20190617_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	RS04 has non-sinusoidal v-phi		
+w31_r06_c08				8		20190617_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	RS08 has weird looking, supressed v-phi		
+w31_r06_c09	x					20190617_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r07_c00	x					20190617_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r07_c01				6		20190617_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	RS06 has non-sinusoidal v-phi		
+w31_r07_c02		IN03,04		RS03,04 low Icmax		20190617_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r07_c03					x	20190617_C	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r07_c04	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r07_c05	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r07_c06	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r07_c07	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r07_c08				0		20190617_A	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	problem with Icmin Icmax processing on rs00. Need to double check this.		
+w31_r07_c09	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c00	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c01	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c02	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c03	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c04	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c05	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c06	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c07	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c08	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r08_c09	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r09_c00	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r09_c01	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r09_c02	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r09_c03				0		20190617_A	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	ibis curve is a bit off, skewing the Ic,max value, probably fine though		
+w31_r09_c04	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r09_c05	x					20190617_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r09_c06	x					20190403_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r09_c07	x					20190415_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r09_c08	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r09_c09	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r10_c01			4			20190415_D	sent to BICEP 20190422	no modulation - switch doesn't turn ON		
+w31_r10_c02		x				20190415_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r10_c03	x					20190415_D	sent to BICEP 20190422			
+w31_r10_c04							DM Radio			
+w31_r10_c05	x					20190409_C	sent to BICEP 20190422			
+w31_r10_c06				3		20190415_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	slightly low Ic,max		
+w31_r10_c07				6		20190415_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	slightly low Ic,max		
+w31_r10_c08		x				20190415_D	DM Radio - dip probe			
+w31_r11_c00	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r11_c01	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r11_c02				2		20190415_D	sent to BICEP 20190422	high ic,min and ic,max - abnormal IbIs		
+w31_r11_c03	x					20190415_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r11_c04		x				20190415_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r11_c05	x					20190415_D	sent to BICEP 20190422			
+w31_r11_c06	x					20190415_D	sent to BICEP 20190422			
+w31_r11_c07	x					20190415_D	sent to BICEP 20190422			
+w31_r11_c08	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r11_c09	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r12_c00	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r12_c01	x					20190415_D	sent to BICEP 20190422			
+w31_r12_c02		x				20190415_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r12_c03				2		20190415_D	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	abnormal Ic - should recheck by hand		
+w31_r12_c04	x					20190415_D	sent to BICEP 20190422			
+w31_r12_c05	x					20190415_D	sent to BICEP 20190422			
+w31_r12_c06	x					20190415_D	sent to BICEP 20190422			
+w31_r12_c07	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r12_c08	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r12_c09	x					20190415_D	sent to BICEP 20190422			
+w31_r13_c00	x					20190415_D	sent to BICEP 20190422			
+w31_r13_c01	x					20190415_D	sent to BICEP 20190422			
+w31_r13_c02	x					20190415_D	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r13_c03			10			20190415_D	sent to BICEP 20190422	excessive noise on vPhi (might just be unlucky)		
+w31_r13_c04	x					20190409_C	sent to BICEP 20190422			
+w31_r13_c05	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r13_c06	x					20190409_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r13_c07	x					20190409_C	sent to BICEP 20190422			
+w31_r13_c08	x					20190409_C	sent to BICEP 20190422			
+w31_r13_c09	x					20190409_C	sent to BICEP 20190422			
+w31_r14_c00		x				20190409_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r14_c01	x					20190409_C	sent to BICEP 20190422			
+w31_r14_c02	x					20190409_C	sent to BICEP 20190422			
+w31_r14_c03	x					20190409_C	sent to BICEP 20190422			
+w31_r14_c04	x					20190409_C	sent to BICEP 20190422			
+w31_r14_c05	x					20190409_C	sent to BICEP 20190422			
+w31_r14_c06	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r14_c07		x				20190423_B	DM Radio - dip probe			
+w31_r14_c08	x					20190409_C	sent to BICEP 20190422			
+w31_r14_c09	x					20190409_C	sent to BICEP 20190422			
+w31_r15_c01		x				20190409_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r15_c02	x					20190409_C	sent to BICEP 20190422			
+w31_r15_c03		x				20190409_C	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r15_c04		x				20190409_C	DM Radio			
+w31_r15_c05	x					20190409_C	sent to BICEP 20190422			
+w31_r15_c06	x					20190409_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r15_c07	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r15_c08	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r16_c01					x	20190403_A	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r16_c02					x	20190403_A	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r16_c03	x					20190409_C	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r16_c04			6			20190409_C	sent to BICEP 20190422	non-sinusoidal vPhi		
+w31_r16_c05	x					20190409_C	sent to BICEP 20190422			
+w31_r16_c06	x					20190409_C	sent to BICEP 20190422			
+w31_r16_c07	x					20190403_A	sent to BICEP 20190422			
+w31_r16_c08	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r17_c02	x					20190403_A	sent to BICEP 20190422			
+w31_r17_c03					x	20190403_A	sent to BICEP 20190422			
+w31_r17_c04	x					20190403_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r17_c05					x	20190403_A	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r17_c06					x	20190403_A	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r17_c07		x				20190423_B	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r18_c02					x	20190403_A	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r18_c03				9		20190403_A	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	abnormal Ic - strange IbIs - should re-check by hand		
+w31_r18_c04			5			20190403_A	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	non-sinusoidal vPhi		
+w31_r18_c05	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r18_c06	x					20190403_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r18_c07					x	20190403_A	sent to BICEP 20190422			
+w31_r19_c02					x	20190403_A	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r19_c03	x					20190423_B	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r19_c04	x					20190403_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r19_c05	x					20190403_A	B08 gel-pak "BICEP w31 PERFECT CHIPS" Shipped to BICEP 20191015			
+w31_r19_c06					x	20190403_A	sent to BICEP 20190422			
+w31_r19_c07					x	20190403_A	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r20_c03					x	20190403_A	sent to BICEP 20190422			
+w31_r20_c04			1			20190403_A	B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"	slightly supressed v-phi		
+w31_r20_c05	x					20190403_A	sent to BICEP 20190422			
+w31_r20_c06					x	20190403_A	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w31_r21_c04							B08 gel-pak "BICEP w31 IMPERFECT ARCHIVE"			
+w31_r21_c05	x					20190403_A	sent to BICEP 20190422			
+w37_r00_c03	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r00_c04	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r00_c05	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r00_c05.0	x					20190913_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r00_c06	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r01_c02	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r01_c03	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r01_c04	x					20190828_A	B08 gel-pak "BICEP w37 perfect"	RS10 slightly low Icmax		
+w37_r01_c05	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r01_c06	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r01_c07	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r02_c02	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r02_c03					x	20190912_C	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w37_r02_c04	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r02_c05	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r02_c06	x					20190828_A	B08 gel-pak "BICEP w37 perfect"	V-Phi on RS06 is slightly atypical		
+w37_r02_c07				7		20190912_D	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	low Ic,max		
+w37_r03_c02	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r03_c03	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r03_c04	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r03_c05	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r03_c06	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r03_c07	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r04_c01	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r04_c02	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r04_c03	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r04_c04					x	20190912_C	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w37_r04_c05	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r04_c06	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r04_c07	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r04_c08		IN04,05				20190828_A	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"			
+w37_r05_c01	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r05_c02	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r05_c03	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r05_c04	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r05_c05			7			20190912_C	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	non-sinusoidal v-phi		
+w37_r05_c06	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r05_c07	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r05_c08		IN09				20190828_A	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"			
+w37_r06_c00	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r06_c01	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r06_c02				0		20190912_C	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	RS00 - slightly high Ics. Probably useable		
+w37_r06_c03	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r06_c04				RS04, low Icmax		20190828_A	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"			
+w37_r06_c05	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r06_c06	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r06_c07	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r06_c08	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r06_c09	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r07_c00	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r07_c01	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r07_c02	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r07_c03	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r07_c04				RS04		20190828_B	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	RS04 Ic,max is low, but v-phi looks fine		
+w37_r07_c05				4		20190828_A	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	RS04 non-sinusoidal v-phi		
+w37_r08_c00	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r08_c01	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r08_c02	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r08_c03					x	20190912_C	B08 gel-pak "BICEP NEED RE-SCREEN"			
+w37_r08_c04	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r08_c05	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r09_c00	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r09_c01	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r09_c02	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r09_c04	x					20190828_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r09_c05	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r10_c01	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r10_c02	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r10_c03	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r10_c04	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r11_c00	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r11_c01	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r11_c02	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r11_c03	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r11_c04	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r11_c05	x					20190828_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r12_c00	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r12_c01	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r12_c02	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r12_c03	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r12_c04	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r12_c05				6		20190912_D	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	low Ic,max		
+w37_r13_c00	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r13_c01				0		20190912_C	B08 gel-pak "BICEP w37 perfect"	RS00 - slightly high Ics. Probably useable		
+w37_r13_c02	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r13_c03	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r13_c04	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r13_c05	x					20190912_D	B08 gel-pak "BICEP w37 perfect"			
+w37_r14_c00	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r14_c01	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r14_c02	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r14_c03	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r14_c04			0			20190912_C	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	Ugly v-phi on RS00. May just be telegraph noise.		
+w37_r14_c05	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r15_c01	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r15_c02	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r15_c03	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r15_c04	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r15_c05	x					20190912_C	B08 gel-pak "BICEP w37 perfect"			
+w37_r15_c06	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r15_c07	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r15_c08			2			20190913_B	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	non-sinusoidal v-phi		
+w37_r16_c01	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r16_c02	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r16_c03	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r16_c04			10			20190912_A	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	RS10 - slightly supressed modulation		
+w37_r16_c05			7			20190912_A	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	RS07 - non-sinusoidal v-phi		
+w37_r16_c06	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r16_c07	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r16_c08	x					20190913_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r17_c02				all		20190913_B	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	Screening was unsucessful on this chip because the chip took more I_bias to bias the SQUID than was applied by the screening software. Maybe an on chip resistor issue?		
+w37_r17_c03	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r17_c04	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r17_c05	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r17_c06	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r17_c07	x					20190913_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r18_c02						20190913_B	B08 gel-pak "BICEP w37 perfect"	Ic_max and modulation on all rows is a bit low		
+w37_r18_c03	x					20190913_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r18_c04	x					20190913_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r18_c05	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r18_c06	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r18_c07	x					20190913_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r19_c02						20190913_B	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	open FB line		
+w37_r19_c03	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r19_c04	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r19_c05			7			20190912_A	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	RS07 - non-sinusoidal v-phi		
+w37_r19_c06	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r19_c07	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r20_c03	x					20190913_B	B08 gel-pak "BICEP w37 perfect"			
+w37_r20_c04			0			20190913_B	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	RS00 - supressed modulation depth		
+w37_r20_c06	x					20190912_A	B08 gel-pak "BICEP w37 perfect"			
+w37_r21_c04		IN06				20190913_B	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	open FB line		
+w37_r21_c05			0			20190913_B	B08 gel-pak "BICEP w37 IMPERFECT ARCHIVE"	RS00 - no modulation		
+w39_r08_c00				open FB		20191115_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r08_c01	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r08_c02	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r08_c03	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r08_c04	x					20191115_C	B08 gel-pak "BICEP mux15b W39"	X6		
+w39_r08_c05	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r08_c07	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r08_c08	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r09_c00			7			20191115_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r09_c02			5			20191115_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r09_c03			3			20191115_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r09_c04	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r09_c05	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r09_c06	x					20191115_C	B08 gel-pak "BICEP mux15b W39"	Y4		
+w39_r09_c07	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r09_c08	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r10_c01			7	6		20191115_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r10_c02	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r10_c03				1		20191115_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r10_c04	x					20191115_C	B08 gel-pak "BICEP mux15b W39"	Z1		
+w39_r10_c05	x					20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r10_c06				10		20191115_C	B08 gel-pak "BICEP W39 imperfect archive"	Input coupling low on RS10		
+w39_r10_c07	x					20191115_C	B08 gel-pak "BICEP mux15b W39"	Z2		
+w39_r10_c08				open Bias		20191115_C	B08 gel-pak "BICEP mux15b W39"			
+w39_r11_c00	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	Y5		
+w39_r11_c01				open FB		20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r11_c02			4	6		20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r11_c03				open FB		20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r11_c05		>=06				20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r11_c06		<=04				20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r11_c07	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	Slight kink in Ib-Mod curve causes Ic,max and mod both report as slightly low. 	Y7	
+w39_r11_c08	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	Slight kink in Ib-Mod curve causes Ic,max and mod both report as slightly low.		
+w39_r11_c09			8			20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r12_c00			9			20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r12_c01			01,02,03			20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r12_c02	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	Y0		
+w39_r12_c03				open FB		20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r12_c04	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	Y3		
+w39_r12_c05				2		20191115_B	B08 gel-pak "BICEP W39 imperfect archive"	non-sinusoidal v-phi		
+w39_r12_c06	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	Y4		
+w39_r12_c08	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	X4		
+w39_r12_c09	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	Z4		
+w39_r13_c01				x		20191115_D	B08 gel-pak "BICEP W39 imperfect archive"	supressed Ic,max and Mod		
+w39_r13_c02				open FB		20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r13_c04			4			20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r13_c05	x					20191115_B	B08 gel-pak "BICEP mux15b W39"			
+w39_r13_c06	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	Z1		
+w39_r13_c07			9			20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r13_c08		5		open Bias		20191115_B	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r13_c09	x					20191115_B	B08 gel-pak "BICEP mux15b W39"	slightly low Ic,max on RS10		
+w39_r14_c00			1			20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r14_c01			3			20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r14_c02			6	0		20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r14_c03				open FB		20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r14_c04	x					20191115_D	B08 gel-pak "BICEP mux15b W39"	slightly low Ic,max on RS00, slightly high on RS06		
+w39_r14_c06	x					20191115_D	B08 gel-pak "BICEP mux15b W39"	X1		
+w39_r14_c07						20191115_D	B08 gel-pak "BICEP W39 imperfect archive"	non-sinusoidal v-phi on RS01		
+w39_r14_c08				open FB		20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r14_c09			08,09,10	08,09,10		20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r15_c01	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	Y7		
+w39_r15_c02	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	X7		
+w39_r15_c03			3			20191115_A	B08 gel-pak "BICEP W39 imperfect archive"	non-sinusoidal v-phi on RS08, Low input coupling on RS06		
+w39_r15_c04				8		20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r15_c05			5			20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r15_c06						20191115_D	B08 gel-pak "BICEP W39 imperfect archive"	weird Ic's across all rows		
+w39_r15_c07	x					20191115_D	B08 gel-pak "BICEP mux15b W39"			
+w39_r15_c08				open FB		20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r16_c01			6	1		20191115_A	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r16_c02	x					20191115_D	B08 gel-pak "BICEP mux15b W39"			
+w39_r16_c03	x					20191115_A	B08 gel-pak "BICEP mux15b W39"			
+w39_r16_c05	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	X6		
+w39_r16_c06	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	Z6		
+w39_r16_c07	x					20191115_D	B08 gel-pak "BICEP mux15b W39"			
+w39_r16_c08	x					20191115_D	B08 gel-pak "BICEP mux15b W39"			
+w39_r17_c02	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	X4		
+w39_r17_c03	x					20191115_A	B08 gel-pak "BICEP mux15b W39"			
+w39_r17_c04			0			20191115_A	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r17_c05			7			20191115_A	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r17_c07	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	X5		
+w39_r18_c03			2			20191115_A	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r18_c04	x					20191115_A	B08 gel-pak "BICEP mux15b W39"			
+w39_r18_c05	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	Y3		
+w39_r18_c06	x					20191115_D	B08 gel-pak "BICEP mux15b W39"	Y6		
+w39_r18_c07	x					20191115_D	B08 gel-pak "BICEP mux15b W39"	Z6		
+w39_r19_c02			0			20191115_A	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r19_c03	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	Z2		
+w39_r19_c04	x					20191115_D	B08 gel-pak "BICEP mux15b W39"	X7		
+w39_r19_c05			10	6		20191115_D	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r19_c06	x					20191115_D	B08 gel-pak "BICEP mux15b W39"	Y7		
+w39_r19_c07			9			20191115_A	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r20_c03	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	Z0		
+w39_r20_c04	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	Y0		
+w39_r20_c05	x					20191115_A	B08 gel-pak "BICEP mux15b W39"			
+w39_r20_c06	x					20191115_A	B08 gel-pak "BICEP mux15b W39"	Y1		
+w39_r21_c04			02, 10			20191115_A	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r21_c05			0			20191115_A	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r03_c03			1			20200109_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r03_c06		04,05,06				20200109_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r03_c05	x					20200109_C	B08 gel-pak "BICEP W39 W41"	Low modulation on RS05		
+w39_r03_c07	x					20200109_C	B08 gel-pak "BICEP W39 W41"	low modulation on RS06,07		
+w39_r03_c04				open FB		20200109_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r02_c02		03,04				20200109_C	B08 gel-pak "BICEP W39 imperfect archive"			
+w39_r06_c03					x	20200109_B	Shipped March 19, 2021			
+w39_r06_c02					x	20200109_B	Shipped March 19, 2021			
+w39_r07_c09					x	20200109_B	Shipped March 19, 2021			
+w39_r05_c01					x	20200109_B	Shipped March 19, 2021			
+w39_r05_c02					x	20200109_B	Shipped March 19, 2021			
+w39_r05_c04					x	20200109_B	Shipped March 19, 2021			
+w39_r06_c05			10			20200109_B	Shipped March 19, 2027 -- Not actually shipped: in W39 Leftover			
+w39_r06_c06			8	5		20200109_B	Shipped March 19, 2028 -- Not actually shipped: in W39 Leftover			
+w39_r06_c04			0, 1			20200109_B	Shipped March 19, 2029 -- Not actually shipped: in W39 Leftover			
+w39_r06_c07			10			20200109_B	Shipped March 19, 2030 -- Not actually shipped: in W39 Leftover			
+w39_r06_c08			1	5		20200109_B	Shipped March 19, 2031 -- Not actually shipped: in W39 Leftover			
+w39_r06_c09						20200109_B	Shipped March 19, 2021	Open FB line		
+w39_r05_c06	x					20200109_B	Shipped March 19, 2021			
+w39_r05_c08	x					20200109_B	Shipped March 19, 2021			
+w39_r05_c05			8			20200109_B	Shipped March 19, 2021			
+w39_r04_c01					x	20200109_B	Shipped March 19, 2036 -- Not actually shipped: in W39 Leftover			
+w39_r05_c07					x	20200109_B	Shipped March 19, 2037 -- Not actually shipped: in W39 Leftover			
+w39_r04_c02					x	20200109_B	Shipped March 19, 2038 -- Not actually shipped: in W39 Leftover			
+w39_r04_c06	x					20200109_B	Shipped March 19, 2021			
+w39_r04_c03				0		20200109_B	Shipped March 19, 2021	Ic,max on RS0 is low, but possibly usable		
+w39_r04_c04			1, 8			20200109_B	Shipped March 19, 2041 -- Not actually shipped: in W39 Leftover			
+w39_r04_c08				4		20200109_B	Shipped March 19, 2021	Low Modulation depth on all channels		
+w39_r04_c07						20200109_B	Shipped March 19, 2021	Open FB line		
+w39_r03_c02						20200109_B	Shipped March 19, 2021	Low modulation depth on all channels		
+424							Shipped March 19, 2021			
+w41_r21_c05			0			20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r20_c05	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r20_c06			0, 1, 2,			20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r20_c03	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r20_c04	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r21_c04			0	1		20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r19_c02						20201009_D	Shipped March 19, 2021	Open Bias line		
+w41_r19_c03	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r18_c02	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r19_c06	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r19_c05	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r19_c04	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r18_c04	x					20201009_D	Shipped March 19, 2021			
+w41_r19_c07						20201009_D	Shipped March 19, 2021	Open FB line		
+w41_r18_c03	x					20201009_D	Shipped March 19, 2021			
+w41_r18_c05		x				20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r18_c06	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r18_c07			3			20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r17_c04	x					20201009_D	Shipped March 19, 2021			
+w41_r17_c02	x					20201009_D	Shipped March 19, 2021			
+w41_r17_c03	x					20201009_D	Shipped March 19, 2021			
+w41_r17_c07	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r17_c05	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+w41_r17_c06	x					20201009_D	Shipped March 19, 2021	low Ic,col		
+							Shipped March 19, 2021			
+w41_r16_c01	x					20210121_C	Shipped March 19, 2021			
+w41_r16_c02	x					20210121_C	Shipped March 19, 2021			
+w41_r16_c03	x					20210121_C	Shipped March 19, 2021			
+w41_r16_c06	x					20210121_C	Shipped March 19, 2021			
+w41_r16_c05	x					20210121_C	Shipped March 19, 2021			
+w41_r16_c04	x					20210121_C	Shipped March 19, 2021			
+w41_r16_c07	x					20210121_C	Shipped March 19, 2021			
+w41_r16_c08	x					20210121_C	Shipped March 19, 2021			
+w41_r15_c01	x					20210121_C	Shipped March 19, 2021			
+w41_r15_c02	x					20210121_C	Shipped March 19, 2021			
+w41_r15_c04	x					20210121_C	Shipped March 19, 2021			
+w41_r15_c03	x					20210121_C	Shipped March 19, 2021			
+w41_r15_c06		x				20210121_C	Shipped March 19, 2021			
+w41_r15_c07	x					20210121_C	Shipped March 19, 2021			
+w41_r15_c05	x					20210121_C	Shipped March 19, 2021			
+w41_r15_c08	x					20210121_C	Shipped March 19, 2021	X5		
+w41_r14_c00		x				20210121_C	Shipped March 19, 2021	Crossed Bias/FB		
+w41_r14_c01	x					20210121_C	Shipped March 19, 2021			
+w41_r14_c04	x					20210121_C	Shipped March 19, 2021	X6		
+w41_r14_c02	x					20210121_C	Shipped March 19, 2021	Y6		
+w41_r14_c03	x					20210121_C	Shipped March 19, 2021			
+w41_r14_c05		x				20210121_C	Shipped March 19, 2021			
+w41_r14_c07	x					20210121_C	Shipped March 19, 2021	Y7		
+w41_r14_c06		x				20210121_C	Shipped March 19, 2021	Crossed Bias/FB		
+										
+w41_r13_c04						20210525_D	BICP W41 1/2 (upper half)	Nicholas original run -- will not be shipped 		
+w41_r13_c01						20210525_D	BICP W41 1/2 (upper half)			
+w41_r13_c00						20210525_D	BICP W41 1/2 (upper half)			
+w41_r13_c08		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r13_c05		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r12_c07		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r12_c05		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r10_c01		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r14_c08		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r13_c02		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r14_c09		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r13_c09		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r13_c06		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r12_c08 		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r11_c00		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r12_c02		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r12_c04		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r13_c03		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r12_c01						20210525_D	BICP W41 1/2 (upper half)			
+w41_r12_c00						20210525_D	BICP W41 1/2 (upper half)			
+w41_r13_c07						20210525_D	BICP W41 1/2 (upper half)			
+w41_r12_c09		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r12_c06		x				20210525_D	BICP W41 1/2 (upper half)			
+w41_r11_c09		x				20210525_D	BICP W41 1/2 (upper half)			
+										
+										
+w41_r09_c08					x	20210624_D	W41 NEED RESCREENING			
+w41_r09_c07					x	20210624_D	W41 NEED RESCREENING			
+w41_r08_c05					x	20210624_D	W41 NEED RESCREENING			
+w41_r10_c08					x	20210624_D	W41 NEED RESCREENING			
+w41_r11_c07					x	20210624_D	W41 NEED RESCREENING			
+w41_r11_c05					x	20210624_D	W41 NEED RESCREENING			
+w41_r11_c01					x	20210624_D	W41 NEED RESCREENING			
+w41_r08_c02					x	20210624_D	W41 NEED RESCREENING			
+w41_r08_c03					x	20210624_D	W41 NEED RESCREENING			
+w41_r09_c06					x	20210624_D	W41 NEED RESCREENING			
+w41_r10_c07					x	20210624_D	W41 NEED RESCREENING			
+w41_r09_c05					x	20210624_D	W41 NEED RESCREENING			
+w41_r08_c04					x	20210624_D	W41 NEED RESCREENING			
+w41_r09_c09					x	20210624_D	W41 NEED RESCREENING			
+w41_r09_c01					x	20210624_D	W41 NEED RESCREENING			
+w41_r10_c06		x			x	20210624_D	W41 NEED RESCREENING			
+w41_r11_c08	x	x				20210624_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r09_c04	x	x				20210624_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r08_c01	x					20210624_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r10_c05	x					20210624_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r08_c00	x					20210624_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r08_c06	x					20210624_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r09_c02	x					20210624_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r11_c06	x					20210624_D	W41 DONE		SHIPPED ON 09/24/2021	
+										
+w41_r07_c01	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r07_c04	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r07_c03        				x		20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r08_c08	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r08_c08	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r00_c05	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r00_c04	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r07_c00	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r07_c02	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r02_c04				x		20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r00_c06				x		20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r01_c04	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r01_c02	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r01_c06	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r01_c07	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r01_c05	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r01_c03 				x		20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r02_c07	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r02_c05 	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r02_c02	x					20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r02_c03						20210701_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r08_c07		x			x	20210701_D	W41 INPUT OL			
+w41_r00_c03		x			x	20210701_D	W41 INPUT OL			
+w41_r02_c06		x			x	20210701_D	W41 INPUT OL			
+										
+w41_r05_c02	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r05_c05	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r04_c01				x		20210728_D	W41 BAD			
+w41_r06_c04	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r06_c06	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r07_c06	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r07_c09	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r06_c02	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r05_c03					x	20210728_D	W41 NEED RESCREENING	RS issue -- need rescreening		
+w41_r05_c07					x	20210728_D	W41 NEED RESCREENING	RS issue -- need rescreening		
+w41_r05_c06					x	20210728_D	W41 NEED RESCREENING	RS issue -- need rescreening		
+w41_r06_c05					x	20210728_D	W41 NEED RESCREENING	RS issue -- need rescreening		
+w41_r06_c07					x	20210728_D	W41 NEED RESCREENING	RS issue -- need rescreening		
+w41_r07_c07					x	20210728_D	W41 NEED RESCREENING	RS issue -- need rescreening		
+w41_r06_c00					x	20210728_D	W41 NEED RESCREENING	RS issue -- need rescreening		
+w41_r04_c02					x	20210728_D	W41 NEED RESCREENING	RS issue -- need rescreening		
+w41_r05_c04	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r05_c08	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r06_c03					x	20210728_D	W41 NEED RESCREENING			
+w41_r05_c01	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r07_c05	x						W41 DONE		SHIPPED ON 09/24/2021	
+w41_r07_c08	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r06_c01	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+w41_r04_c03	x					20210728_D	W41 DONE		SHIPPED ON 09/24/2021	
+143										
+w42_r00_c05	x		10			20210730_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r00_c03	x		16			20210730_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r01_c04				x		20210730_D	W42 BAD		SHIPPED ON 09/24/2021	
+w42_r02_c07	x		10			20210730_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r02_c05	x		16			20210730_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r03_c02	x					20210730_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r03_c06	x		10			20210730_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r03_c04	x		16			20210730_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r00_c06	x					20210730_D	20210802_D RSCRND	were retested on 20210802_D		
+w42_r01_c06	x		10			20210730_D	20210802_D RSCRND	were retested on 20210802_D		
+w42_r01_c03	x		16			20210730_D	20210802_D RSCRND	were retested on 20210802_D		
+w42_r02_c06	x					20210730_D	20210802_D RSCRND	were retested on 20210802_D		
+w42_r02_c03	x		10			20210730_D	20210802_D RSCRND	were retested on 20210802_D		
+w42_r04_c07	x		16			20210730_D	20210802_D RSCRND	were retested on 20210802_D		
+w42_r02_c02	x					20210730_D	20210802_D RSCRND	were retested on 20210802_D		
+w42_r04_c08	x	x	10			20210730_D	20210802_D RSCRND	were retested on 20210802_D		
+w42_r00_c04		x	16		x	20210730_D	W42 NEED RESCREEN	were retested on 20210803_D -- RS 5 issue		
+w42_r01_c07	x	x				20210730_D	W42 DONE	were retested on 20210803_D	SHIPPED ON 09/24/2021	
+w42_r01_c05	x		10			20210730_D	W42 DONE	were retested on 20210803_D	SHIPPED ON 09/24/2021	
+w42_r01_c02			16		x	20210730_D	W42 NEED RESCREEN	were retested on 20210803_D -- RS 5 issue		
+w42_r02_c04	x					20210730_D	W42 DONE	were retested on 20210803_D	SHIPPED ON 09/24/2021	
+w42_r03_c03	x		10			20210730_D	LOCATION UNKNOWN	were retested on 20210803_D		
+w42_r03_c07			16		x	20210730_D	W42 NEED RESCREEN	were retested on 20210803_D -- RS 5 issue		
+w42_r03_c05	x					20210730_D	W42 DONE	were retested on 20210803_D	SHIPPED ON 09/24/2021	
+24										
+w42_r07_c00			7			20210804_D	W42 NEED RESCREEN	Probably problematic RS connection		
+w42_r07_c01			3			20210804_D	W42 NEED RESCREEN	Probably problematic RS connection		
+w42_r07_c02				x		20210804_D	W42 NEED RESCREEN			
+w42_r07_c05	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r07_c06	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r07_c06	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r07_c09					x	20210804_D	W42 NEED RESCREEN			
+w42_r06_c00					x	20210804_D	W42 NEED RESCREEN			
+w42_r07_c09					x	20210804_D	W42 NEED RESCREEN			
+w42_r06_c01	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r06_c02	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r06_c06				x		20210804_D	W42 BAD			
+w42_r06_c07					x	20210804_D	W42 NEED RESCREEN			
+w42_r06_c08					x	20210804_D	W42 NEED RESCREEN			
+w42_r06_c09					x	20210804_D	W42 NEED RESCREEN			
+w42_r05_c02	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r05_c01	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r05_c06	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r05_c07	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r04_c01	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r04_c02	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r04_c03	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r04_c05	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r04_c06	x					20210804_D	W42 DONE		SHIPPED ON 09/24/2021	
+										
+w42_r10_c04	x					20210805_D	W42 DONE			
+w42_r10_c05	x					20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r10_c06	x					20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r10_c07				x		20210805_D	W42 DONE	Iccol 14.5	SHIPPED ON 09/24/2021	
+w42_r10_c08				x		20210805_D	W42 DONE	Iccol 14.5	SHIPPED ON 09/24/2021	
+w42_r09_c00				x		20210805_D	W42 DONE	Iccol 14.5	SHIPPED ON 09/24/2021	
+w42_r09_c01						20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r09_c02						20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r09_c04						20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r09_c05				x		20210805_D	W42 NEED RESCREEN	Iccol 11.2		
+w42_r09_c06				x		20210805_D	W42 NEED RESCREEN	Iccol 11.2		
+w42_r09_c07				x		20210805_D	W42 NEED RESCREEN	Iccol 11.2		
+w42_r09_c08	x					20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r09_c09	x					20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r08_c00	x					20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r08_c01	x					20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r08_c02	x					20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r08_c04	x					20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r08_c05	x	x				20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r08_c07	x	x				20210805_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r07_c03		x				20210805_D	W42 BAD	Chip is cut poorly and will be rejected		
+w42_r08_c08				x		20210805_D	W42 DONE	Iccol 14.2	SHIPPED ON 09/24/2021	
+w42_r08_c09				x		20210805_D	W42 DONE	Iccol 14.2	SHIPPED ON 09/24/2021	
+w42_r08_c06				x		20210805_D	W42 DONE	Iccol 14.2	SHIPPED ON 09/24/2021	
+										
+w42_r10_c02	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r10_c01	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r11_c09	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r11_c08	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r11_c06	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r11_c07	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c08	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c09	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r11_c00	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r11_c01	x	x				20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r11_c02	x	x				20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r11_c04	x	x				20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c02	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c03	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c04	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c05	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c07	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c06	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r13_c06	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r13_c07	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r13_c08	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r13_c09	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c00	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r12_c01	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+										
+w42_r16_c08				x		20210816_B	W42 NEED RESCREEN			
+w42_r15_c01				x		20210816_B	W42 NEED RESCREEN			
+w42_r15_c02				x		20210816_B	W42 NEED RESCREEN			
+w42_r15_c04					RT FB1 measurement OL	20210816_B	W42 NEED RESCREEN			
+w42_r15_c03					RT FB1 measurement OL	20210816_B	W42 NEED RESCREEN			
+w42_r15_c05					RT FB1 measurement OL	20210816_B	W42 NEED RESCREEN			
+w42_r15_c06				x		20210816_B	W42 NEED RESCREEN			
+w42_r15_c08				x		20210816_B	W42 NEED RESCREEN			
+w42_r14_c01				x	DS issue	20210816_B	W42 NEED RESCREEN			
+w42_r14_c01				x		20210816_B	W42 NEED RESCREEN			
+w42_r14_c02				x		20210816_B	W42 NEED RESCREEN			
+w42_r14_c03				x		20210816_B	W42 NEED RESCREEN			
+w42_r14_c04				x		20210816_B	W42 NEED RESCREEN			
+w42_r14_c05				x		20210816_B	W42 NEED RESCREEN			
+w42_r14_c06				x		20210816_B	W42 NEED RESCREEN			
+w42_r14_c08					very noisey	20210816_B	W42 NEED RESCREEN	VERY NOISEY		
+w42_r14_c07					very noisey	20210816_B	W42 NEED RESCREEN			
+w42_r14_c09					very noisey	20210816_B	W42 NEED RESCREEN			
+w42_r13_c00	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r13_c01	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r13_c02					DS issue	20210816_B	W42 NEED RESCREEN			
+w42_r13_c03	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r13_c04	x					20210816_B	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r13_c05					DS issue	20210816_B	W42 NEED RESCREEN			
+										
+w42_r19_c03	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r19_c04	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r19_c05	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r19_c06	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r19_c07			10			20210820_D	GIVE TO CADY			
+w42_r18_c02	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r18_c03	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r18_c04	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r18_c05	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r18_c06	x					20210820_D	W42 DONE	Iccol 15.1	SHIPPED ON 09/24/2021	
+w42_r18_c07	x					20210820_D	W42 DONE	Iccol 15.1	SHIPPED ON 09/24/2021	
+w42_r17_c02	x					20210820_D	W42 DONE	Iccol 15.1	SHIPPED ON 09/24/2021	
+w42_r17_c03	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r17_c04	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r17_c05	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r17_c06	x					20210820_D	W42 DONE	Iccol 15.2	SHIPPED ON 09/24/2021	
+w42_r17_c07	x					20210820_D	W42 DONE	Iccol 15.2	SHIPPED ON 09/24/2021	
+w42_r16_c01	x					20210820_D	W42 DONE	Iccol 15.2	SHIPPED ON 09/24/2021	
+w42_r16_c02	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r16_c03	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r16_c04	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r16_c05	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r16_c07	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r16_c06	x					20210820_D	W42 DONE		SHIPPED ON 09/24/2021	
+										
+w42_r05_c08					Bad	20210823_D	W42 BAD	Carl had placed at bottom of BICP W42 2/2 -- probably due to some inherent flaw 		
+w42_r21_c04					x	20210823_D	W42 NEED RESCREEN			
+w42_r21_c05					x	20210823_D	W42 NEED RESCREEN			
+w42_r20_c03	x					20210823_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r20_c04			0,1			20210823_D	W42 NEED RESCREEN			
+w42_r20_c05	x					20210823_D	W42 DONE		SHIPPED ON 09/24/2021	
+w42_r20_c06					x	20210823_D	W42 NEED RESCREEN	Could not screen -- when checking Iccol was seeing full modulation and only phase was changing 		
+w42_r19_c02					x	20210823_D	W42 NEED RESCREEN			
+										
+w43_r01_c03		x		x		20210825_D	W43 NEED RESCREEN			
+w43_r02_c02		x		x		20210825_D	W43 NEED RESCREEN			
+w43_r01_c02		x		x		20210825_D	W43 NEED RESCREEN			
+w43_r01_c05	x					20210825_D	W43 DONE	Iccol 15.6	SHIPPED ON 09/24/2021	
+w43_r00_c04	x					20210825_D	W43 DONE	Iccol 15.6	SHIPPED ON 09/24/2021	
+w43_r00_c05			9			20210825_D	W43 NEED RESCREEN	Iccol 15.6		
+w43_r02_c03	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r00_c06	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r01_c04			9			20210825_D	W43 NEED RESCREEN			
+w43_r01_c07	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r01_c06	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r02_c07			9			20210825_D	W43 NEED RESCREEN			
+w43_r02_c06	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r02_c05	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r02_c04			9			20210825_D	W43 NEED RESCREEN			
+w43_r03_c07	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r03_c05	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r03_c04			9			20210825_D	W43 NEED RESCREEN			
+w43_r03_c03	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r03_c02	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r04_c08			9			20210825_D	W43 NEED RESCREEN			
+w43_r04_c07	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r04_c06	x					20210825_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r04_c05						20210825_D	W43 NEED RESCREEN			
+										
+w43_r04_c01				x		20210826_B	W43 NEED RESCREEN	Iccol not turning on		
+w43_r04_c02				x		20210826_B	W43 NEED RESCREEN	Iccol not turning on		
+w43_r04_c04				x		20210826_B	W43 NEED RESCREEN	Iccol not turning on		
+w43_r04_c03				x		20210826_B	W43 NEED RESCREEN	Iccol: modulation appears immediately		
+w43_r05_c01				x		20210826_B	W43 NEED RESCREEN	Iccol: modulation appears immediately		
+w43_r05_c02				x		20210826_B	W43 NEED RESCREEN	Iccol: modulation appears immediately		
+w43_r05_c03						20210826_B	W43 NEED RESCREEN	Low Iccol (10.3 uA) and Icmin (0.2 uA)		
+w43_r05_c04						20210826_B	W43 NEED RESCREEN	Low Iccol (10.3 uA) and Icmin (0.2 uA)		
+w43_r05_c05						20210826_B	W43 NEED RESCREEN	Low Iccol (10.3 uA) and Icmin (0.2 uA)		
+w43_r05_c06						20210826_B	W43 NEED RESCREEN	Multiple chips turn on when testing for Iccol, bad Ics		
+w43_r05_c07						20210826_B	W43 NEED RESCREEN	Multiple chips turn on when testing for Iccol, bad Ics		
+w43_r05_c08						20210826_B	W43 NEED RESCREEN	Multiple chips turn on when testing for Iccol, bad Ics		
+w43_r06_c00						20210826_B	W43 NEED RESCREEN	When trying to obtain Iccol gives full modulation and only changes phase		
+w43_r06_c02			x			20210826_B	W43 NEED RESCREEN	When trying to obtain Iccol gives full modulation and only changes phase		
+w43_r06_c01						20210826_B	W43 NEED RESCREEN	When trying to obtain Iccol gives full modulation and only changes phase		
+w43_r06_c08						20210826_B	W43 NEED RESCREEN	ICcol 10.4 and low Iccmin		
+w43_r06_c07						20210826_B	W43 NEED RESCREEN	ICcol 10.4 and low Iccmin		
+w43_r06_c06						20210826_B	W43 NEED RESCREEN	ICcol 10.4 and low Iccmin		
+w43_r06_c05						20210826_B	W43 NEED RESCREEN	Iccol not turning on		
+w43_r06_c04						20210826_B	W43 NEED RESCREEN	Iccol not turning on		
+w43_r06_c09						20210826_B	W43 NEED RESCREEN	Iccol not turning on		
+w43_r07_c09						20210826_B	W43 NEED RESCREEN	Low Iccol (10.3 uA) and Icmin (0.2 uA) -- noisey squids		
+w43_r07_c08						20210826_B	W43 NEED RESCREEN	Low Iccol (10.3 uA) and Icmin (0.2 uA) -- noisey squids		
+w43_r07_c07						20210826_B	W43 NEED RESCREEN	Low Iccol (10.3 uA) and Icmin (0.2 uA) -- noisey squids		
+										
+w43_r07_c06				x		20210827_D	W43 NEED RESCREEN	Iccol not turning on		
+w43_r07_c04				x		20210827_D	W43 NEED RESCREEN	Iccol not turning on		
+w43_r07_c03				x		20210827_D	W43 NEED RESCREEN	Iccol not turning on		
+w43_r07_c02		X		x		20210827_D	W43 BAD	When trying to obtain Iccol gives full modulation and only changes phase		
+w43_r07_c01				x		20210827_D	W43 NEED RESCREEN	When trying to obtain Iccol gives full modulation and only changes phase		
+w43_r07_c00				x		20210827_D	W43 NEED RESCREEN	When trying to obtain Iccol gives full modulation and only changes phase		
+w43_r08_c09	x					20210827_D	W43 DONE	Iccol of 11.6	SHIPPED ON 09/24/2021	
+w43_r08_c07	x					20210827_D	W43 DONE	Iccol of 11.6	SHIPPED ON 09/24/2021	
+w43_r08_c06	x					20210827_D	W43 DONE	Iccol of 11.6	SHIPPED ON 09/24/2021	
+w43_r08_c05	x					20210827_D	W43 DONE	Iccol of 10.8	SHIPPED ON 09/24/2021	
+w43_r08_c04	x					20210827_D	W43 DONE	Iccol of 10.8	SHIPPED ON 09/24/2021	
+w43_r08_c03	x					20210827_D	W43 DONE	Iccol of 10.8	SHIPPED ON 09/24/2021	
+w43_r08_c02						20210827_D	W43 NEED RESCREEN	>20 Iccol but many chips turn on rapidly + noisey		
+w43_r08_c01						20210827_D	W43 NEED RESCREEN	>20 Iccol but many chips turn on rapidly + noisey		
+w43_r09_c09						20210827_D	W43 NEED RESCREEN	>20 Iccol but many chips turn on rapidly + noisey		
+w43_r09_c08			x			20210827_D	W43 BAD	large variation in Icmin, Icmax		
+w43_r09_c06	x					20210827_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r09_c04	x					20210827_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r09_c05	x					20210827_D	W43 DONE			
+w43_r09_c02	x					20210827_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r09_c03	x					20210827_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r09_c01	x					20210827_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r09_c00	x					20210827_D	W43 DONE		SHIPPED ON 09/24/2021	
+w43_r10_c08	x					20210827_D	W43 DONE		SHIPPED ON 09/24/2021	
+										
+w44_r00_c06				x		20210902_D	W44 NEED RESCREEN	Iccol not turning on		
+w44_r00_c05				x		20210902_D	W44 NEED RESCREEN			
+w44_r00_c04				x		20210902_D	W44 NEED RESCREEN			
+w44_r00_c03	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r01_c07	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r01_c06	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r01_c04	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r01_c03	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r01_c02	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r02_c07	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r02_c06	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r02_c05	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r02_c03	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r02_c02	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r03_c07	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r03_c06	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r03_c05	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r03_c04	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r03_c03	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r03_c02	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r04_c08	x					20210902_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r04_c07				x		20210902_D	W44 NEED RESCREEN	Iccol not turning on		
+w44_r04_c05				x		20210902_D	W44 NEED RESCREEN			
+w44_r04_c04				x		20210902_D	W44 NEED RESCREEN			
+										
+w44_r04_c03					x	20210907_D	W44 NEED RESCREEN	FB1 is low. Iccol always on		
+w44_r04_c02					x	20210907_D	W44 NEED RESCREEN	FB1 is low. Iccol always on		
+w44_r04_c01					x	20210907_D	W44 NEED RESCREEN	FB1 is low. Iccol always on		
+w44_r05_c08					x	20210907_D	W44 NEED RESCREEN	Iccol very low, 4.5 uA		
+w44_r05_c07					x	20210907_D	W44 NEED RESCREEN	Iccol very low, 4.5 uA		
+w44_r05_c06					x	20210907_D	W44 NEED RESCREEN	Iccol very low, 4.5 uA		
+w44_r05_c05					x	20210907_D	W44 NEED RESCREEN	Iccol low (and oscillation begins on ramp function??)		
+w44_r05_c04					x	20210907_D	W44 NEED RESCREEN	Iccol low (and oscillation begins on ramp function??)		
+w44_r05_c01					x	20210907_D	W44 NEED RESCREEN	Iccol low (and oscillation begins on ramp function??)		
+w44_r05_c03		x			x	20210907_D	W44 NEED RESCREEN	ICcol not turning on (since FB1=OL)		
+w44_r06_c09		x			x	20210907_D	W44 NEED RESCREEN			
+w44_r06_c08		x			x	20210907_D	W44 NEED RESCREEN			
+w44_r06_c07	x					20210907_D	W44 DONE	Iccol is slightly low: 15.5	SHIPPED ON 09/24/2021	
+w44_r06_c06	x					20210907_D	W44 DONE	Iccol is slightly low: 15.5	SHIPPED ON 09/24/2021	
+w44_r06_c05			4,5			20210907_D	W44 NEED RESCREEN	Iccol is slightly low: 15.5		
+w44_r06_c04	x	x				20210907_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r06_c03	x	x				20210907_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r06_c02		x	4,5			20210907_D	W44 NEED RESCREEN			
+w44_r06_c01	x	x				20210907_D	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r06_c00		x		x		20210907_D	W44 BAD			
+w44_r07_c09		x	4,5			20210907_D	W44 NEED RESCREEN			
+w44_r07_c08					x	20210907_D	W44 NEED RESCREEN	Iccol turns on too early		
+w44_r07_c07					x	20210907_D	W44 NEED RESCREEN	Iccol turns on too early		
+w44_r07_c06					x	20210907_D	W44 NEED RESCREEN	Iccol turns on too early		
+										
+w44_r07_c05					x	20210909_B	W44 NEED RESCREEN	Iccol always on and many interference patterns +low inp		
+w44_r07_c03					x	20210909_B	W44 NEED RESCREEN	Iccol always on and many interference patterns +low inp		
+w44_r07_c02					x	20210909_B	W44 NEED RESCREEN	Iccol always on and many interference patterns +low inp		
+w44_r07_c01					x	20210909_B	W44 NEED RESCREEN	Iccol always on and many interference patterns		
+w44_r07_c00					x	20210909_B	W44 NEED RESCREEN	Iccol always on and many interference patterns		
+w44_r08_c09					x	20210909_B	W44 NEED RESCREEN	Iccol always on and many interference patterns		
+w44_r08_c07					x	20210909_B	W44 NEED RESCREEN	Low Iccol - rescreen individually		
+w44_r08_c05					x	20210909_B	W44 NEED RESCREEN	Low Iccol - rescreen individually		
+w44_r08_c06					x	20210909_B	W44 NEED RESCREEN	Low Iccol - rescreen individually		
+w44_r08_c04	x					20210909_B	W44 DONE	Iccol at 12.5	SHIPPED ON 09/24/2021	
+w44_r08_c03	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r08_c02	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r08_c01					x	20210909_B	W44 NEED RESCREEN	Iccol always on and many interference patterns		
+w44_r08_c00					x	20210909_B	W44 NEED RESCREEN	Iccol always on and many interference patterns		
+w44_r09_c09						20210909_B	W44 NEED RESCREEN	Iccol always on and many interference patterns		
+w44_r09_c08			4			20210909_B	GIVE TO CADY			
+w44_r09_c07	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r09_c05	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r09_c04	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r09_c02	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r09_c03	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r09_c00	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r10_c08	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r10_c07	x					20210909_B	W44 DONE		SHIPPED ON 09/24/2021	
+										
+w44_r10_c06					x	20210915_B	W44 NEED RESCREEN	Iccol not turning on		
+w44_r10_c05					x	20210915_B	W44 NEED RESCREEN	Iccol not turning on		
+w44_r10_c04					x	20210915_B	W44 NEED RESCREEN	Iccol not turning on		
+w44_r10_c03	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r10_c02		x				20210915_B	W44 BAD			
+w44_r10_c01	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r11_c09	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r11_c08	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r11_c07	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r11_c06	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r11_c05	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r11_c04	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r11_c02	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r11_c01	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r11_c00	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r12_c09	x					20210915_B	W44 DONE	Iccol at 11.3	SHIPPED ON 09/24/2021	
+w44_r12_c08	x					20210915_B	W44 DONE	Iccol at 11.3	SHIPPED ON 09/24/2021	
+w44_r12_c06	x					20210915_B	W44 DONE	Iccol at 11.3	SHIPPED ON 09/24/2021	
+w44_r12_c05	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r12_c04	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r12_c03	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r12_c02	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r12_c01	x					20210915_B	W44 DONE		SHIPPED ON 09/24/2021	
+w44_r12_c00	x					20210915_B	W44 DONE			
+										
+w42_r10_c03							W42 BAD	Chips were cut in wrong places. Are automatically rejected. Will be used by Jason for training purposes		
+w42_r09_c03							W42 BAD	Chips were cut in wrong places. Are automatically rejected. Will be used by Jason for training purposes		
+w42_r11_c03							W42 BAD	Chips were cut in wrong places. Are automatically rejected. Will be used by Jason for training purposes		
+w42_r08_c03							W42 BAD	Chips were cut in wrong places. Are automatically rejected. Will be used by Jason for training purposes		
+										
+w44_r13_c08					x	20210916_D	W44 NEED RESCREEN	Iccol not measuring		
+w44_r13_c07					x	20210916_D	W44 NEED RESCREEN	Iccol not measuring		
+w44_r13_c06					x	20210916_D	W44 NEED RESCREEN	Iccol not measuring		
+w44_r13_c05	x					20210916_D	W44 PASSED		SHIPPED ON 2022-07-15	
+w44_r13_c04	x					20210916_D	W44 PASSED		SHIPPED ON 2022-07-15	
+w44_r13_c03	x					20210916_D	W44 PASSED		SHIPPED ON 2022-07-15	
+w44_r13_c02					x	20210916_D	W44 NEED RESCREEN	Iccol measured at 2.0 and had multiple interference peaks		
+w44_r13_c01					x	20210916_D	W44 NEED RESCREEN	Iccol measured at 2.0 and had multiple interference peaks		
+w44_r13_c00					x	20210916_D	W44 NEED RESCREEN	Iccol measured at 2.0 and had multiple interference peaks		
+w44_r14_c09		x		x		20210916_D	W44 PASSED		SHIPPED ON 2022-07-15	
+w44_r14_c08	x	x				20210916_D	W44 PASSED		SHIPPED ON 2022-07-15	
+w44_r14_c07		x				20210916_D	W44 BAD	Cracked chip		
+w44_r14_c06	x					20210916_D	W44 PASSED	Iccol is low at 12.5	SHIPPED ON 2022-07-15	
+w44_r14_c05	x					20210916_D	W44 PASSED	Iccol is low at 12.5	SHIPPED ON 2022-07-15	
+w44_r14_c04	x					20210916_D	W44 PASSED	Iccol is low at 12.5	SHIPPED ON 2022-07-15	
+w44_r14_c03	x					20210916_D	W44 PASSED	Iccol is low at 13.6	SHIPPED ON 2022-07-15	
+w44_r14_c02	x					20210916_D	W44 PASSED	Iccol is low at 13.6	SHIPPED ON 2022-07-15	
+w44_r14_c01	x					20210916_D	W44 PASSED	Iccol is low at 13.6	SHIPPED ON 2022-07-15	
+w44_r15_c08		x			x	20210916_D	W44 NEED RESCREEN	Iccol has oscillatory behavior. Trapped flux? will rescreen		
+w44_r15_c07		x			x	20210916_D	W44 NEED RESCREEN	Iccol has oscillatory behavior. Trapped flux? will rescreen		
+w44_r15_c06		x			x	20210916_D	W44 NEED RESCREEN	Iccol has oscillatory behavior. Trapped flux? will rescreen		
+w44_r15_c05					x	20210916_D	W44 NEED RESCREEN	Iccol at 2.8		
+w44_r15_c04					x	20210916_D	W44 NEED RESCREEN	Iccol at 2.8		
+w44_r15_c03					x	20210916_D	W44 NEED RESCREEN	Iccol at 2.8		
+										
+w44_r18_c07						20211013_B	W44 Needs Rescreening	SQUIDs turn on very quickly. Program cannot measure Iccol		
+w44_r17_c02						20211013_B	W44 Needs Rescreening			
+w44_r17_c04						20211013_B	W44 Needs Rescreening			
+w44_r17_c05						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r17_c06						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r17_c07						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r16_c01						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r18_c06						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r16_c08						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r16_c07						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r16_c06						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r16_c04						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r15_c01						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r16_c03						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r19_c02						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r19_c03						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r19_c04						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r19_c05						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r19_c06						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r18_c02						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)	232	
+w44_r18_c04						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r18_c05						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r16_c02						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r17_c03						20211013_B	W44 Needs Rescreening	Iccol gives a square function. No mod appears when raising SSA Bias on SAFB on eTower. Only DC offset appears (and rapidy rises to ~2 V)		
+w44_r21_c04					x	20211020_B	W44 Needs Rescreening			
+w44_r21_c05					x	20211020_B	W44 BAD	Cracked feedback pad on chip		
+w44_r20_c03					x	20211020_B	W44 Needs Rescreening			
+w44_r20_c04	x					20211020_B	W44 PASSED		SHIPPED ON 2022-07-15	
+w44_r20_c05			2			20211020_B	W44 Needs Rescreening			
+w44_r20_c06	x					20211020_B	W44 PASSED		SHIPPED ON 2022-07-15	
+520	267									
+w45_r02_c03					x	20211026_B	W45 NEED RESCREEN			
+w45_r04_c07					x	20211026_B	W45 NEED RESCREEN			
+w45_r04_c06					x	20211026_B	W45 NEED RESCREEN			
+w45_r03_c04					x	20211026_B	W45 NEED RESCREEN			
+w45_r03_c05					x	20211026_B	W45 BAD	Cracked feedback pad on chip		
+w45_r00_c06					x	20211026_B	W45 NEED RESCREEN			
+w45_r00_c05	x					20211026_B	W45 DONE			
+w45_r03_c06	x					20211026_B	W45 DONE			
+w45_r00_c04			0,10			20211026_B	W45 NEED RESCREEN	row select 32 likely has a bad wirebond on it		
+w45_r02_c02	x					20211026_B	W45 DONE			
+w45_r01_c07	x					20211026_B	W45 DONE			
+w45_r02_c05			10			20211026_B	W45 NEED RESCREEN	row select 32 likely has a bad wirebond on it		
+w45_r04_c05	x					20211026_B	W45 DONE			
+w45_r01_c06	x					20211026_B	W45 DONE			
+w45_r04_c04			10			20211026_B	W45 NEED RESCREEN	row select 32 likely has a bad wirebond on it		
+w45_r02_c06	x					20211026_B	W45 DONE			
+w45_r01_c05			9			20211026_B	W45 NEED RESCREEN	Noisy values of Ic		
+w45_r04_c03			10			20211026_B	W45 NEED RESCREEN	Noisy values of Ic, row select 32 likely has a bad wirebond on it		
+w45_r02_c07	x					20211026_B	W45 DONE			
+w45_r04_c02	x					20211026_B	W45 DONE			
+w45_r01_c02			3, 9, 10			20211026_B	W45 NEED RESCREEN	row select 32 likely has a bad wirebond on it		
+w45_r01_c03	x					20211026_B	W45 DONE			
+w45_r01_c04	x					20211026_B	W45 DONE			
+w45_r00_c03			10			20211026_B	W45 NEED RESCREEN	row select 32 likely has a bad wirebond on it		
+										
+w45_r07_c00					x	20211028_D	W45 NEED RESCREEN	anomalous FB+input		
+w45_r07_c01					x	20211028_D	W45 NEED RESCREEN	anomalous FB+input		
+w45_r08_c08					x	20211028_D	W45 NEED RESCREEN	anomalous FB+input		
+w45_r06_c09		x				20211028_D	W45 NEED RESCREEN	very noisy, FB abnormal		
+w45_r06_c08		x				20211028_D	W45 NEED RESCREEN	very noisy, FB abnormal		
+w45_r06_c07		x				20211028_D	W45 NEED RESCREEN	very noisy, FB abnormal		
+w45_r06_c05						20211028_D	W45 NEED RESCREEN	Iccol is low at 9.9		
+w45_r06_c04						20211028_D	W45 NEED RESCREEN	Iccol is low at 9.9		
+w45_r06_c03			10			20211028_D	W45 NEED RESCREEN	Iccol is low at 9.9		
+w45_r06_c02				x		20211028_D	W45 NEED RESCREEN	Iccol is low at 10.5		
+w45_r06_c01				x		20211028_D	W45 NEED RESCREEN	Iccol is low at 10.5		
+w45_r07_c09				x		20211028_D	W45 NEED RESCREEN	Iccol is low at 10.5		
+w45_r04_c01	x					20211028_D	W45 DONE	Ic,col low at 14.8		
+w45_r05_c08			2,3			20211028_D	W45 NEED RESCREEN	Ic,col low at 14.8		
+w45_r05_c07	x					20211028_D	W45 DONE	Ic,col low at 14.8		
+w45_r05_c06				x		20211028_D	W45 NEED RESCREEN	Ic,col low at 9.5; also, unusual shape during screening for Ic,col		
+w45_r05_c05				x		20211028_D	W45 NEED RESCREEN	Ic,col low at 9.5; also, unusual shape during screening for Ic,col		
+w45_r05_c04				x		20211028_D	W45 NEED RESCREEN	Ic,col low at 9.5; also, unusual shape during screening for Ic,col		
+w45_r05_c03	x	x				20211028_D	W45 DONE	Iccol is low at 13.4		
+w45_r05_c02	x	x				20211028_D	W45 DONE	Iccol is low at 13.4		
+w45_r05_c01	x	x				20211028_D	W45 DONE	Iccol is low at 13.4		
+w45_r03_c03		x		x		20211028_D	W45 NEED RESCREEN	Ic,col  very low at 2.57 uA		
+w45_r03_c02		x		x		20211028_D	W45 NEED RESCREEN	Ic,col very low at 2.57 uA		
+w45_r04_c08		x		x		20211028_D	W45 NEED RESCREEN	Ic,col very low at 2.57 uA		
+										
+										
+w45_r07_c03					x	20211110_B	W45 NEED RESCREEN	Error with automated code - likely due to Iccol ~8		
+w45_r07_c04					x	20211110_B	W45 NEED RESCREEN	Error with automated code - likely due to Iccol ~8		
+w45_r07_c05					x	20211110_B	W45 NEED RESCREEN	Error with automated code - likely due to Iccol ~8		
+w45_r07_c06	x					20211110_B	W45 DONE			
+w45_r07_c07	x					20211110_B	W45 DONE			
+w45_r07_c08			6			20211110_B	W45 NEED RESCREEN	Same row select anomaly for all chips along row 7		
+w45_r09_c07			9,10 			20211110_B	W45 NEED RESCREEN	likely chip issue		
+w45_r09_c08	x					20211110_B	W45 DONE			
+w45_r09_c09			6			20211110_B	W45 NEED RESCREEN	Same row select anomaly for all chips along row 7		
+w45_r08_c00	x					20211110_B	W45 DONE			
+w45_r08_c01	x					20211110_B	W45 DONE			
+w45_r08_c02			6			20211110_B	W45 NEED RESCREEN	Same row select anomaly for all chips along row 7		
+w45_r08_c03	x					20211110_B	W45 DONE			
+w45_r08_c04	x					20211110_B	W45 DONE			
+w45_r08_c07			6			20211110_B	W45 NEED RESCREEN	Same row select anomaly for all chips along row 7		
+w45_r10_c05				x		20211110_B	W45 NEED RESCREEN	Ic col low at ~10		
+w45_r10_c06				x		20211110_B	W45 NEED RESCREEN	Ic col low at ~10		
+w45_r10_c07			6			20211110_B	W45 NEED RESCREEN	Same row select anomaly for all chips along row 7		
+w45_r09_c01		x		x		20211110_B	W45 NEED RESCREEN	overload on input		
+w45_r09_c02		x		x		20211110_B	W45 NEED RESCREEN	overload on input		
+w45_r09_c03		x	6	x		20211110_B	W45 NEED RESCREEN	Same row select anomaly for all chips along row 7; overload on input		
+w45_r09_c04	x					20211110_B	W45 DONE			
+w45_r09_c05	x					20211110_B	W45 DONE			
+w45_r09_c06			6			20211110_B	W45 NEED RESCREEN	Same row select anomaly for all chips along row 7		
+										
+w45_r10_c04					x	20211118_D	W45 NEED RESCREEN	Ic,col ~8 but no bump in vphi		
+w45_r10_c03					x	20211118_D	W45 NEED RESCREEN	Ic,col ~8 but no bump in vphi		
+w45_r10_c02					x	20211118_D	W45 NEED RESCREEN	Ic,col ~8 but no bump in vphi		
+w45_r10_c01	x					20211118_D	W45 DONE	Iccol low at 11.9		
+w45_r11_c09	x					20211118_D	W45 DONE	Iccol low at 11.9		
+w45_r11_c08	x					20211118_D	W45 DONE	Iccol low at 11.9		
+w45_r11_c07				x		20211118_D	W45 NEED RESCREEN	Ic,col ~ 17 may not be accurate, vphi slopes very gradually		
+w45_r11_c06				x		20211118_D	W45 NEED RESCREEN	Ic,col ~ 17 may not be accurate, vphi slopes very gradually		
+w45_r11_c05				x		20211118_D	W45 NEED RESCREEN	Ic,col ~ 17 may not be accurate, vphi slopes very gradually		
+w45_r11_c04				x		20211118_D	W45 NEED RESCREEN	Ic,col ~ 16 may not be accurate, vphi slopes very gradually		
+w45_r11_c02				x		20211118_D	W45 NEED RESCREEN	Ic,col ~ 16 may not be accurate, vphi slopes very gradually		
+w45_r11_c01				x		20211118_D	W45 NEED RESCREEN	Ic,col ~ 16 may not be accurate, vphi slopes very gradually		
+w45_r11_c00					x	20211118_D	W45 NEED RESCREEN	Very strange profile - flat connected to exp		
+w45_r12_c09					x	20211118_D	W45 NEED RESCREEN	Very strange profile - flat connected to exp		
+w45_r12_c08					x	20211118_D	W45 NEED RESCREEN	Very strange profile - flat connected to exp		
+w45_r12_c07			5			20211118_D	W45 NEED RESCREEN			
+w45_r12_c05	x					20211118_D	W45 DONE			
+w45_r12_c04	x					20211118_D	W45 DONE			
+w45_r12_c03	x					20211118_D	W45 DONE	Iccol low at 11.256		
+w45_r12_c02	x					20211118_D	W45 DONE	Iccol low at 11.256		
+w45_r12_c00	x					20211118_D	W45 DONE	Iccol low at 11.256		
+w45_r13_c09				x		20211118_D	W45 NEED RESCREEN	Ic,col low at 2.76		
+w45_r13_c08			6	x		20211118_D	W45 NEED RESCREEN	Ic,col low at 2.76		
+w45_r13_c07				x		20211118_D	W45 NEED RESCREEN	Ic,col low at 2.76		
+										
+w45_r16_c05					x	20211206_B	W45 NEED RESCREEN			
+w45_r16_c04					x	20211206_B	W45 NEED RESCREEN			
+w45_r16_c03					x	20211206_B	W45 NEED RESCREEN			
+w45_r16_c02	x					20211206_B	W45 DONE			
+w45_r16_c01	x					20211206_B	W45 DONE			
+w45_r17_c07	x					20211206_B	W45 DONE			
+w45_r17_c06					x	20211206_B	W45 NEED RESCREEN			
+w45_r17_c05					x	20211206_B	W45 NEED RESCREEN			
+w45_r17_c04					x	20211206_B	W45 NEED RESCREEN			
+w45_r17_c03	x					20211206_B	W45 DONE			
+w45_r18_c06	x					20211206_B	W45 DONE			
+w45_r18_c05			2			20211206_B	W45 NEED RESCREEN			
+w45_r18_c04	x					20211206_B	W45 DONE			
+w45_r18_c03	x					20211206_B	W45 DONE			
+w45_r18_c02	x					20211206_B	W45 DONE			
+w45_r19_c07					x	20211206_B	W45 NEED RESCREEN	FB pads overloaded, still screenable, but will reject anyways		
+w45_r19_c06					x	20211206_B	W45 NEED RESCREEN	FB pads overloaded, still screenable, but will reject anyways		
+w45_r19_c05					x	20211206_B	W45 NEED RESCREEN	FB pads overloaded, still screenable, but will reject anyways		
+w45_r19_c04				x		20211206_B	W45 NEED RESCREEN	Ic,col low at ~9		
+w45_r19_c03				x		20211206_B	W45 NEED RESCREEN	Ic,col low at ~9		
+w45_r19_c02			0	x		20211206_B	W45 NEED RESCREEN	Ic,col low at ~9		
+w45_r20_c06				x		20211206_B	W45 NEED RESCREEN	Ic,col low at ~2		
+w45_r20_c05				x		20211206_B	W45 NEED RESCREEN	Ic,col low at ~2		
+w45_r20_c03				x		20211206_B	W45 NEED RESCREEN	Ic,col low at ~2		
+										
+w45_r13_c03					x	20211202_D	W45 NEED RESCREEN			
+w45_r13_c02					x	20211202_D	W45 NEED RESCREEN			
+w45_r13_c01					x	20211202_D	W45 NEED RESCREEN			
+w45_r13_c00					x	20211202_D	W45 NEED RESCREEN	Very noisy, curves seem unstable		
+w45_r14_c09					x	20211202_D	W45 NEED RESCREEN	Very noisy, curves seem unstable		
+w45_r14_c07					x	20211202_D	W45 NEED RESCREEN	Very noisy, curves seem unstable		
+w45_r14_c06	x					20211202_D	W45 DONE			
+w45_r14_c05	x					20211202_D	W45 DONE			
+w45_r14_c04			0,1			20211202_D	W45 NEED RESCREEN			
+w45_r14_c02					x	20211202_D	W45 NEED RESCREEN	No formation of periodic dips with increase in current; screwed up data taking, FB1 on  input 2 not 3		
+w45_r14_c01					x	20211202_D	W45 NEED RESCREEN	No formation of periodic dips with increase in current; screwed up data taking, FB1 on  input 2 not 3		
+w45_r14_c00					x	20211202_D	W45 NEED RESCREEN	No formation of periodic dips with increase in current; screwed up data taking, FB1 on  input 2 not 3		
+w45_r12_c06	x					20211202_D	W45 DONE	Ic,col a bit low at 11.26		
+w45_r09_c00			6			20211202_D	W45 NEED RESCREEN	Ic,col a bit low at 11.26		
+w45_r15_c07	x					20211202_D	W45 DONE	Ic,col a bit low at 11.26		
+w45_r15_c06					x	20211202_D	W45 NEED RESCREEN	strange curves; one sine per ramp, 		
+w45_r15_c05					x	20211202_D	W45 NEED RESCREEN	strange curves; one sine per ramp,		
+w45_r15_c04					x	20211202_D	W45 NEED RESCREEN	strange curves; one sine per ramp,		
+w45_r15_c03	x	x				20211202_D	W45 DONE			
+w45_r15_c02	x	x				20211202_D	W45 DONE			
+w45_r15_c01	x	x				20211202_D	W45 DONE			
+w45_r16_c08	x					20211202_D	W45 DONE			
+w45_r16_c07	x					20211202_D	W45 DONE			
+w45_r16_c06	x					20211202_D	W45 DONE			
+										
+										
+										
+										
+w45_r21_c05					x	20220323_D	W45 NEED RESCREEN			
+w45_r21_c04					x	20220323_D	W45 NEED RESCREEN			
+w45_r15_c08					x	20220323_D	W45 NEED RESCREEN			
+w45_r07_c09	x					20220323_D	W45 DONE	Ic,col a bit low at 10.2 uA		
+w45_r04_c04			6			20220323_D	W45 NEED RESCREEN	Ic,col a bit low at 10.2 uA		
+w45_r04_c03	x					20220323_D	W45 DONE	Ic,col a bit low at 10.2 uA		
+w45_r00_c03	x					20220323_D	W45 DONE	Ic,col a bit low at 11.1 uA		
+w45_r06_c01			6			20220323_D	W45 NEED RESCREEN	Ic,col a bit low at 11.1 uA		
+w45_r00_c04			3			20220323_D	W45 NEED RESCREEN	shape has extra bump; Ic,col a bit low at 11.1 uA		
+w45_r06_c02	x					20220323_D	W45 DONE			
+w45_r02_c05			6			20220323_D	W45 NEED RESCREEN			
+w45_r09_c06	x					20220323_D	W45 DONE			
+w45_r09_c03	x					20220323_D	W45 DONE	Ic,col a bit low at 11.3 uA		
+w45_r08_c02			6			20220323_D	W45 NEED RESCREEN	Ic,col a bit low at 11.3 uA; possible origin of row select issue		
+w45_r09_c09	x					20220323_D	W45 DONE	Ic,col a bit low at 11.3 uA		
+w45_r07_c08	x					20220323_D	W45 DONE			
+w45_r10_c07			6			20220323_D	W45 BAD	possible origin of row select issue		
+w45_r08_c07	x					20220323_D	W45 DONE			
+w45_r11_c04	x					20220323_D	W45 DONE			
+w45_r11_c05			6			20220323_D	W45 NEED RESCREEN			
+w45_r11_c06	x					20220323_D	W45 DONE			
+w45_r11_c07		x				20220323_D	W45 NEED RESCREEN	Input check returned open		
+w45_r11_c01		x	6			20220323_D	W45 NEED RESCREEN	Input check returned open		
+w45_r11_c02		x				20220323_D	W45 BAD	Input check returned open; one input bond pad unbondable		
+										
+										
+w45_r11_c01					x	20220403_D				
+w45_r11_c07					x	20220403_D				
+w45_r11_c05					x	20220403_D				
+w45_r02_c05	x					20220403_D	W45 DONE			
+w45_r06_c01			0-6			20220403_D				
+w45_r04_c04			6-10			20220403_D				
+w45_r15_c08					x	20220403_D				
+w45_r21_c04					x	20220403_D				
+w45_r21_c05					x	20220403_D				
+w45_r08_c02	x					20220403_D	W45 DONE			
+w45_r04_c08			8			20220403_D	W45 Bad	Strange curve - especially noisy		
+w45_r03_c02	x					20220403_D	W45 DONE			
+w45_r03_c03				x		20220403_D	W45 Bad	Especially noisy, FB reading strange (see wiki)		
+w45_r06_c04				x		20220403_D		Especially noisy, FB reading strange		
+w45_r06_c05				x		20220403_D		Especially noisy, FB reading strange		
+w45_r06_c07	x					20220403_D	W45 DONE	Ic, col a bit low at around 10.1		
+w45_r06_c08	x					20220403_D	W45 DONE	Ic, col a bit low at around 10.1		
+w45_r06_c09	x					20220403_D	W45 DONE	Ic, col a bit low at around 10.1		
+w45_r08_c08					x	20220403_D				
+w45_r07_c01					x	20220403_D				
+w45_r07_c00					x	20220403_D				
+w45_r10_c02	x					20220403_D	W45 DONE			
+w45_r10_c03	x					20220403_D	W45 DONE			
+w45_r10_c04	x					20220403_D	W45 DONE			
+										
+										
+w45_r20_c03					x	20220406_D				
+w45_r19_c02					x	20220406_D				
+w45_r19_c05					x	20220406_D				
+w45_r17_c04				x		20220406_D				
+w45_r14_c02				x		20220406_D				
+w45_r08_c08				x		20220406_D				
+w45_r21_c05					x	20220406_D				
+w45_r11_c01					x	20220406_D				
+w45_r20_c05					x	20220406_D				
+w45_r19_c03			0,8			20220406_D				
+w45_r19_c06	x					20220406_D	W45 DONE			
+w45_r17_c05			0-6			20220406_D				
+w45_r14_c01					x	20220406_D				
+w45_r07_c01					x	20220406_D				
+w45_r21_c04					x	20220406_D				
+w45_r11_c07			0			20220406_D				
+w45_r20_c06	x					20220406_D	W45 DONE			
+w45_r19_c04			0,1			20220406_D				
+w45_r19_c07					x	20220406_D				
+w45_r17_c06					x	20220406_D				
+w45_r14_c00					x	20220406_D				
+w45_r07_c00					x	20220406_D	W45 (1/2)			
+w45_r15_c08					x	20220406_D				
+w45_r11_c05					x	20220406_D				
+										
+w47_r11_c06		x		x	x	20220530_B		It seems rows 0 and 1 are dead 		
+w47_r10_c05		x		x	x	20220530_B		It seems rows 0 and 1 are dead		
+w47_r04_c04		x		x	x	20220530_B		It seems rows 0 and 1 are dead		
+w47_r21_c04				x	x	20220530_B		It seems rows 0 and 1 are dead		
+w47_r14_c03				x	x	20220530_B		It seems rows 0 and 1 are dead		
+w47_r13_c02				x	x	20220530_B		It seems rows 0 and 1 are dead		
+w47_r09_c01	x					20220530_B				
+w47_r11_c01	x					20220530_B				
+w47_r12_c06	x					20220530_B				
+w47_r11_c05			4			20220530_B			cross referencing says probably fine	
+w47_r05_c04	x					20220530_B				
+w47_r00_c03	x					20220530_B				
+w47_r15_c03			4			20220530_B			cross referencing says probably fine	
+w47_r14_c02	x					20220530_B				
+w47_r04_c01	x					20220530_B				
+w47_r11_c02					x	20220530_B		Program would crash without doing anything		
+w47_r15_c06					x	20220530_B		Program would crash without doing anything		
+w47_r12_c05					x	20220530_B		Program would crash without doing anything		
+w47_r06_c04			4			20220530_B			cross referencing says probably fine	
+w47_r01_c03	x					20220530_B				
+w47_r16_c03	x					20220530_B				
+w47_r15_c02			4			20220530_B			cross referencing says probably fine	
+w47_r06_c00	x					20220530_B				
+w47_r10_c02	x					20220530_B				
+										
+w47_r08_c06				x	x	20220531_A2		It seems rows 0 and 1 are dead 		
+w47_r07_c05				x	x	20220531_A2		It seems rows 0 and 1 are dead		
+w47_r01_c04				x	x	20220531_A2		It seems rows 0 and 1 are dead		
+w47_r17_c04				x	x	20220531_A2		It seems rows 0 and 1 are dead		
+w47_r11_c03				x	x	20220531_A2		It seems rows 0 and 1 are dead		
+w47_r06_c02				x	x	20220531_A2		It seems rows 0 and 1 are dead		
+w47_r15_c01		x				20220531_A2				
+w47_r00_c05		x	21			20220531_A2				
+w47_r09_c06		x				20220531_A2				
+w47_r08_c05	x					20220531_A2				
+w47_r02_c04			21			20220531_A2				
+w47_r18_c04	x					20220531_A2				
+w47_r12_c03	x	x				20220531_A2			input and feedback lower resistance than usual	
+w47_r07_c02	x	x				20220531_A2		Row 21 ic min a bit low	input and feedback lower resistance than usual	
+w47_r14_c01	x	x				20220531_A2			input and feedback lower resistance than usual	
+w47_r13_c06	x					20220531_A2				
+w47_r10_c06	x					20220531_A2				
+w47_r09_c05	x					20220531_A2				
+w47_r03_c04	x					20220531_A2				
+w47_r19_c04	x					20220531_A2				
+w47_r13_c03	x					20220531_A2				
+w47_r08_c02		x	4			20220531_A2		input and feedback seems shorted		
+w47_r13_c01		x	15			20220531_A2		input and feedback seems shorted		
+w47_r09_c02		x	30, 32			20220531_A2		input and feedback seems shorted		
+										
+w47_r12_c00		x		x	x	20220531_C2				
+w47_r06_c01		x		x	x	20220531_C2				
+w47_r02_c02		x		x	x	20220531_C2				
+w47_r07_c03			1, 9, and 10			20220531_C2				
+w47_r13_c04			all 			20220531_C2				
+w47_c19_r05			all			20220531_C2				
+w47_r03_c05			3	x		20220531_C2		ic,col too low		
+w47_r04_c06				x		20220531_C2		ic,col too low		
+w47_r11_c00			31	x		20220531_C2		ic,col too low		
+w47_r05_c01		x			x	20220531_C2				
+w47_r01_c02		x			x	20220531_C2				
+w47_r06_c03		x			x	20220531_C2				
+w47_r12_c04	x					20220531_C2				
+w47_r18_c05	x					20220531_C2				
+w47_r20_c06			31			20220531_C2				
+w47_r03_c06	x	x				20220531_C2				
+w47_r09_c00		x	16, 20			20220531_C2				
+w47_r19_c02		x	31			20220531_C2				
+w47_r20_c03				x	x	20220531_C2				
+w47_r05_c03				x	x	20220531_C2				
+w47_r11_c04				x	x	20220531_C2				
+w47_r17_c05	x					20220531_C2		rs4 icmin a little low, iccol low		
+w47_r19_c06	x					20220531_C2		rs14 ic min a little low, iccol low		
+w47_r02_c06			31			20220531_C2				
+										
+w47_r12_c02		x			x	20220531_B2				
+w47_r16_c01		x			x	20220531_B2				
+w47_r05_c02		x			x	20220531_B2				
+w47_r10_c03	x					20220531_B2				
+w47_r16_c04			11, 16, 20, 21			20220531_B2				
+w47_r00_c04	x					20220531_B2				
+w47_r06_c05	x					20220531_B2				
+w47_r07_c06			11, 16, 20, 21			20220531_B2				
+w47_r14_c00	x					20220531_B2				
+w47_r08_c01					x	20220531_B2				
+w47_r04_c02					x	20220531_B2				
+w47_r09_c03					x	20220531_B2		likely bad		
+w47_r15_c04					x	20220531_B2				
+w47_r21_c05					x	20220531_B2				
+w47_r05_c05					x	20220531_B2				
+w47_r06_c06		x			x	20220531_B2				
+w47_r13_c00		x			x	20220531_B2				
+w47_r07_c01		x			x	20220531_B2				
+w47_r03_c02	x					20220531_B2				
+w47_r08_c03			11, 16, 20, 21			20220531_B2				
+w47_r14_c04	x					20220531_B2				
+w47_r20_c05	x					20220531_B2				
+w47_r04_c05			11, 16, 20, 21			20220531_B2				
+w47_r05_c06	x					20220531_B2				
+										
+w45_r15_c05					x	20220706_B2	W45 Rescreen			
+w45_r15_c06					x	20220706_B2	W45 Rescreen			
+w45_r15_c04					x	20220706_B2	W45 Rescreen			
+w44_r10_c06	x					20220706_B2	SHIPPED ON 2022-07-15			
+w44_r10_c05			11			20220706_B2	W45 Bad	funky waveforms		
+w44_r10_c04	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r02_c03			2			20220706_B2	W45 Bad	waveform funky, double peaks		
+w45_r07_c03	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r16_c05	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r04_c07	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r07_c04	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r16_c04	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r04_c06	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r07_c05	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r16_c03	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r13_c03	x					20220706_B2	SHIPPED ON 2022-07-15			
+w44_r15_c5	x					20220706_B2	SHIPPED ON 2022-07-15			
+w44_r13_c08	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r13_c02				x		20220706_B2	W45 Rescreen	probably still good		
+w44_r15_c04				x		20220706_B2	W45 Bad	this chip most likely bad		
+w44_r13_c07				x		20220706_B2	W44 Rescreen	probably still good		
+w45_r13_c06	x					20220706_B2	SHIPPED ON 2022-07-15			
+w44_r15_c3	x					20220706_B2	SHIPPED ON 2022-07-15			
+w45_r13_c01	x					20220706_B2	SHIPPED ON 2022-07-15			
+										
+w47_r00_c06		x			x	20220705_D2	W47 rescreen			
+w47_r19_c07		x			x	20220705_D2	W47 rescreen			
+w47_r01_c06		x			x	20220705_D2	W47 rescreen			
+w47_r16_c06	x					20220705_D2	SHIPPED ON 2022-07-15			
+w47_r17_c06			20			20220705_D2	W47 rescreen	probably good		
+w47_r18_c06			25,29,31			20220705_D2	W47 rescreen	chip probably bad		
+w47_r13_c05	x					20220705_D2	SHIPPED ON 2022-07-15			
+w47_r15_c05			17, 20			20220705_D2	W47 rescreen	probably bad		
+w47_r16_c05			25,29			20220705_D2	W47 rescreen	probably good		
+w47_r10_c04	x					20220705_D2	SHIPPED ON 2022-07-15			
+w47_r09_c04			20			20220705_D2	W47 rescreen	probably good		
+w47_r08_c04			25,29			20220705_D2	W47 rescreen	probably good		
+w47_r04_c03	x					20220705_D2	SHIPPED ON 2022-07-15			
+w47_r03_c03			20			20220705_D2	W47 rescreen	probably good		
+w47_r02_c03			25,29			20220705_D2	W47 rescreen	probably good		
+w47_r19_c03				x		20220705_D2	W47 rescreen	ic super low for some reason, row selects still good		
+w47_r18_c03			20	x		20220705_D2	W47 rescreen	ic super low for some reason, row selects still good		
+w47_r17_c03			25,29	x		20220705_D2	W47 rescreen	ic super low for some reason, row selects still good		
+w47_r07_c00				x		20220705_D2	W47 rescreen	ic super low for some reason, row selects still good		
+w47_r08_c00			20	x		20220705_D2	W47 rescreen	ic super low for some reason, row selects still good		
+w47_r12_c01			25,29	x		20220705_D2	W47 rescreen	ic super low for some reason, row selects still good		
+w47_r16_c02		x		x		20220705_D2	W47 rescreen	ic too low, row selects still good		
+w47_r18_c02		x	20	x		20220705_D2	W47 rescreen	ic too low, row selects still good		
+w47_r17_c02		x	25,29	x		20220705_D2	W47 rescreen	ic too low, row selects still good		
+										
+w47_r09_c00					x	20220706_E2	W47 rescreen			
+w47_r16_c04					x	20220706_E2	W47 rescreen			
+w47_r08_c03					x	20220706_E2	W47 rescreen			
+w47_r02_c06		DS		x	x	20220706_E2	W45 Bad	ic, col too low		
+w47_r07_c06				x	x	20220706_E2	W47 rescreen	not screened		
+w47_r04_c05				x	x	20220706_E2	W47 rescreen	not screened		
+w47_r11_c00		DS		x		20220706_E2	W45 Bad	ic, col too low	likely bad chip	
+w47_r20_c06	x	17, 21		x		20220706_E2	SHIPPED ON 2022-07-15	ic, col too low	cross referencing says probably fine	
+w47_r19_c02	x	24, 30		x		20220706_E2	SHIPPED ON 2022-07-15	ic, col too low	cross referencing says probably fine	
+w47_r15_c02		DS		x		20220706_E2	W47 rescreen	ic, col too low		
+w47_r00_c05				x		20220706_E2	W45 Bad	not screened		
+w47_r02_c04				x		20220706_E2	W47 rescreen	not screened		
+w47_r11_c05	x	DS		x		20220706_E2	SHIPPED ON 2022-07-15	ic col barely too low	cross referencing says probably fine	
+w47_r15_c03	x	21		x		20220706_E2	SHIPPED ON 2022-07-15	ic col barely too low	cross referencing says probably fine	
+w47_r06_c04	x	24, 30		x		20220706_E2	SHIPPED ON 2022-07-15	ic col barely too low	cross referencing says probably fine	
+w47_r21_c04					x	20220706_E2	W45 Bad	ic,col too low, immediately modulates	either this or r13c2	
+w47_r11_c02					x	20220706_E2	W45 Bad	ic,col too low, immediately modulates	either this or r12c5	
+w47_r17_c04					x	20220706_E2	W45 Bad	ic,col too low, immediately modulates	either this or r6c2	
+w47_r14_c03	x					20220706_E2	SHIPPED ON 2022-07-15			
+w47_r15_c06		21				20220706_E2	W47 rescreen		need rescreen	
+w47_r11_c03		24, 30				20220706_E2	W47 rescreen		need rescreen	
+w47_r13_c02					x	20220706_E2	W45 Bad	ic,col too low, immediately modulates	either this or r21c4	
+w47_r12_c05					x	20220706_E2	W45 Bad	ic,col too low, immediately modulates	either this or r11c2	
+w47_r06_c02					x	20220706_E2	W45 Bad	ic,col too low, immediately modulates	either this or r17c4	
+										
+w45_r01_c05					x	20220710_B	W45 Rescreen			
+w45_r10_c05					x	20220710_B	W45 Rescreen			
+w45_r11_c00					x	20220710_B	W45 Rescreen			
+w45_r13_c09	x		4			20220710_B	SHIPPED ON 2022-07-15	cross referencing says probably fine		
+w45_r10_c06	x					20220710_B	SHIPPED ON 2022-07-15			
+w45_r12_c09	x					20220710_B	SHIPPED ON 2022-07-15			
+w45_r13_c08			rows 4,5,6	x		20220710_B	W45 Rescreen			
+w45_r09_c01	x		12	x		20220710_B	SHIPPED ON 2022-07-15	cross referencing says probably fine		
+w45_r12_c08				x		20220710_B	W45 Rescreen			
+w45_r13_c07	x	x	4,5			20220710_B	SHIPPED ON 2022-07-15	cross referencing says probably fine		
+w45_r09_c02		bad input on 5				20220710_B	W45 bad			
+w45_r13_c00	x	x				20220710_B	SHIPPED ON 2022-07-15			
+w47_r20_c03					x	20220710_B	W47 Rescreen			
+w47_r07_c03					x	20220710_B	W47 Rescreen	ic was fine before		
+w45_r14_c09					x	20220710_B	W45 Rescreen			
+w47_r05_c03			4,5			20220710_B	W47 Rescreen			
+w47_r13_c04	x					20220710_B	SHIPPED ON 2022-07-15			
+w45_r14_c07	x					20220710_B	SHIPPED ON 2022-07-15			
+w47_r11_c04					x	20220710_B	W47 Rescreen	probably bad		
+w47_c19_r05					x	20220710_B	W47 Rescreen			
+w47_r03_c05					x	20220710_B	W47 Rescreen			
+w45_r18_c05			2,4			20220710_B	W45 bad	bad chip		
+w45_r14_c04	x					20220710_B	SHIPPED ON 2022-07-15			
+w47_r04_c06	x					20220710_B	SHIPPED ON 2022-07-15			
+										
+w45_r03_c04					x	20220707_C2	W45 Rescreen			
+w45_r00_c06					x	20220707_C2	W45 Rescreen			
+w45_r05_c06					x	20220707_C2	W45 Rescreen			
+w44_r15_c08	x					20220707_C2	SHIPPED ON 2022-07-15			
+w44_r13_c02			16			20220707_C2	W45 Bad	funky waveforms		
+w45_r05_c05	x		30			20220707_C2	SHIPPED ON 2022-07-15	cross referencing says probably fine		
+w44_r15_c07				x		20220707_C2	W45 Bad	row selects all fine, likely bad chip		
+w44_r13_c01				x		20220707_C2	W45 Bad	row selects all fine, likely bad chip		
+w45_r05_c04	x			x		20220707_C2	SHIPPED ON 2022-07-15	row selects all fine, cross referencing says probably fine		
+w44_r15_c06	x					20220707_C2	SHIPPED ON 2022-07-15			
+w44_r13_c00	x					20220707_C2	SHIPPED ON 2022-07-15			
+w45_r06_c03	x					20220707_C2	SHIPPED ON 2022-07-15			
+w44_r06_c05					x	20220707_C2	W44 Rescreen	feedback doesn't work		
+w44_r06_c02					x	20220707_C2	W45 Bad	feedback doesn't work	bad chip	
+w44_r14_c09	x				x	20220707_C2	SHIPPED ON 2022-07-15	feedback doesn't work	cross referencing says already passed	
+w44_r04_c07			4			20220707_C2	W45 Bad			
+w44_r07_c08	x					20220707_C2	SHIPPED ON 2022-07-15			
+w44_r08_c01	x					20220707_C2	SHIPPED ON 2022-07-15			
+w44_r04_c05				x		20220707_C2	W45 Bad	sine waves immediately turn on, most likely bad chip	this or r7c6 is bad	
+w44_r07_c07				x		20220707_C2	W45 Bad	sine waves immediately turn on, probably good	this or r4c4 is bad	
+w44_r08_c00				x		20220707_C2	W44 Rescreen	sine waves immediately turn on		
+w44_r04_c04				x		20220707_C2	W45 Bad	ic col low, row selects all fine, probably good	this ir r4c5 is bad	
+w44_r07_c06				x		20220707_C2	W45 Bad	ic col low, row selects all fine, probably bad chip	this or r7c7 is bad	
+w44_r09_c09				x		20220707_C2	W44 Rescreen	ic col low, row selects all fine, probably fine		
+										
+w44_r06_c08					x	20220708_D	W44 Rescreen			
+w44_r07_c05					x	20220708_D	W44 Rescreen			
+w44_r05_c08					x	20220708_D	W44 Rescreen			
+w44_r00_c06			5			20220708_D	W45 Bad	short across feedback and row select		
+w44_r07_c03	x					20220708_D	SHIPPED ON 2022-07-15			
+w44_r05_c07	x					20220708_D	SHIPPED ON 2022-07-15			
+w44_r00_c05				x		20220708_D	W44 Rescreen	iccol always on		
+w44_r07_c02				x		20220708_D	W45 Bad	open across feedback?		
+w44_r05_c06				x		20220708_D	W44 Rescreen	iccol always on		
+w44_r00_c04			5	x		20220708_D	W44 Rescreen	probably a good chip?		
+w44_r07_c01				x		20220708_D	W44 Rescreen	probably a good chip		
+w44_r05_c05				x		20220708_D	W45 Bad	source of ic col issues		
+w44_r04_c03					x	20220708_D	W44 Rescreen			
+w44_r07_c00					x	20220708_D	W44 Rescreen			
+w44_r05_c04					x	20220708_D	W44 Rescreen			
+w44_r04_c02					x	20220708_D	W44 Rescreen			
+w44_r08_c09					x	20220708_D	W45 Bad	short across feedback and row select		
+w44_r05_c01					x	20220708_D	W44 Rescreen			
+w44_r04_c01	x					20220708_D	SHIPPED ON 2022-07-15			
+w44_r08_c07	x					20220708_D	SHIPPED ON 2022-07-15			
+w44_r05_c03	x					20220708_D	SHIPPED ON 2022-07-15			
+w44_r08_c06				x		20220708_D	W44 Rescreen	row selects fine		
+w44_r08_c05				x		20220708_D	W44 Rescreen	row selects fine		
+w44_r06_c09						20220708_D	W45 Bad	feedback resistance super high		
+										
+w47_r07_c01					x	20220705_A2	W47 Rescreen			
+w47_r06_c03					x	20220705_A2	W47 Rescreen			
+w47_r13_c00					x	20220705_A2	W47 Rescreen			
+w47_r10_c05	x					20220705_A2	SHIPPED ON 2022-07-15	DS and 10 slightly high		
+w47_r16_c01			20, 21			20220705_A2	W47 Rescreen			
+w47_r08_c01			31			20220705_A2	W45 Bad			
+w47_r04_c04	x					20220705_A2	SHIPPED ON 2022-07-15	DS and 10 slightly high		
+w47_r02_c02			20, 21			20220705_A2	W47 Rescreen			
+w47_r04_c02	x					20220705_A2	SHIPPED ON 2022-07-15			
+w47_r08_c06				x	x	20220705_A2	W47 Rescreen	flatlines	not screened at all yet	
+w47_r05_c02				x	x	20220705_A2	W47 Rescreen	flatlines	not screened at all yet	
+w47_r09_c03				x	x	20220705_A2	W45 Bad	flatlines	likely bad	
+w47_r07_c05				x	x	20220705_A2	W47 Rescreen	flatlines	not screened at all yet	
+w47_r11_c06				x	x	20220705_A2	W47 Rescreen	flatlines	not screened at all yet	
+w47_r15_c04				x	x	20220705_A2	W45 Bad	flatlines	likely bad	
+w47_r01_c04				x	x	20220705_A2	W47 Rescreen	flatlines	not screened at all yet	
+w47_r12_c02				x	x	20220705_A2	W47 Rescreen	flatlines	not screened at all yet	
+w47_r21_c05				x	x	20220705_A2	W45 Bad	flatlines	likely bad	
+w47_r12_c00	x					20220705_A2	SHIPPED ON 2022-07-15	DS and 10 slightly high		
+w47_r15_c01	x		21			20220705_A2	SHIPPED ON 2022-07-15	cross references says okay		
+w47_r05_c05	x					20220705_A2	SHIPPED ON 2022-07-15			
+w47_r06_c01				x	x	20220705_A2	W47 Rescreen	ic col immediately turns on		
+w47_r09_c06				x	x	20220705_A2	W47 Rescreen	ic col immediately turns on		
+w47_r06_c06				x	x	20220705_A2	W45 Bad	ic col immediately turns on	likely bad	
+										
+w43_r01_c03	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r05_c03	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r06_c08			24			20220725_B2	W43 Bad	double peak	bad	
+w43_r02_c02	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r05_c04	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r06_c07	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r01_c02		x				20220725_B2	W43 Bad	open input	bad	
+w43_r05_c05	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r06_c06	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r01_c04	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r00_c05	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r02_c07	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r02_c04					x	20220725_B2	W47-various		rescreen	
+w43_r04_c08					x	20220725_B2	W47-various		rescreen	
+w43_r04_c05					x	20220725_B2	W47-various		rescreen	
+w43_r07_c07					x	20220725_B2	W47-various		rescreen	
+w43_r04_c01					x	20220725_B2	W47-various		rescreen	
+w43_r03_c04					x	20220725_B2	W47-various		rescreen	
+w43_r04_c04	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r05_c06	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r04_c02	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r05_c07	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r07_c09	x					20220725_B2	SHIPPED ON 2022-08-02			
+w43_r07_c08	x					20220725_B2	SHIPPED ON 2022-08-02			
+										
+w43_r10_c06	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r10_c05			15, 16			20220725_I2	W43 Bad	double waves	bad	
+w43_r10_c03	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r10_c02	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r11_c09			13			20220725_I2	W43 Bad	a little noisy	bad	
+w43_r11_c08	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r11_c07	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r11_c06	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r11_c05	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r11_c04	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r11_c03	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r11_c02	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r11_c01					x	20220725_I2	W47-various		rescreen	
+w43_r11_c00					x	20220725_I2	W47-various		rescreen	
+w43_r12_c08					x	20220725_I2	W47-various		rescreen	
+w43_r12_c07					x	20220725_I2	W47-various		rescreen	
+w43_r12_c06					x	20220725_I2	W47-various		rescreen	
+w43_r12_c04					x	20220725_I2	W47-various		rescreen	
+w43_r12_c05	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r12_c03	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r12_c01	x					20220725_I2	SHIPPED ON 2022-08-02			
+w43_r12_c00	x		5			20220725_I2	SHIPPED ON 2022-08-02	row 5 slightly smaller modulation, but mostly fine		
+w43_r13_c09			13			20220725_I2	W43 Bad		bad	
+w43_r13_c08	x					20220725_I2	SHIPPED ON 2022-08-02			
+										
+w43_r15_c04			3	x		20220725_J2	W43 Bad	ic col low, row 3 double peaks	bad chip	
+w43_r15_c03				x		20220725_J2	W47-various	ic col low	rescreen	
+w43_r16_c02			25	x		20220725_J2	W47-various	ic col low	rescreen	
+w43_r16_c01			5			20220725_J2	W43 Bad	double peaks	bad chip	
+w43_r17_c07	x					20220725_J2	SHIPPED ON 2022-08-02			
+w43_r20_c04			25			20220725_J2	W47-various	row 25 connector is faulty	probably good	
+w43_r18_c03	x					20220725_J2	SHIPPED ON 2022-08-02			
+w43_r18_c04	x					20220725_J2	SHIPPED ON 2022-08-02			
+w43_r18_c05			25			20220725_J2	W47-various		probably good	
+w43_r20_c06	x					20220725_J2	SHIPPED ON 2022-08-02			
+w43_r20_c05	x					20220725_J2	SHIPPED ON 2022-08-02			
+w43_r15_c02			25			20220725_J2	W47-various		probably good	
+w43_r18_c02					x	20220725_J2	W47-various	row 4 probably has blown amplifier or something	rescreen	
+w43_r17_c06					x	20220725_J2	W47-various		rescreen	
+w43_r15_c01					x	20220725_J2	W47-various		rescreen	
+w43_r19_c07					x	20220725_J2	W47-various	row5 probably has blown amplifier or something	rescreen	
+w43_r19_c06					x	20220725_J2	W47-various		rescreen	
+w43_r17_c05					x	20220725_J2	W47-various		rescreen	
+w43_r16_c08	x					20220725_J2	SHIPPED ON 2022-08-02			
+w43_r17_c04	x					20220725_J2	SHIPPED ON 2022-08-02			
+w43_r19_c05			25			20220725_J2	W47-various		probably good	
+w43_r17_c03	x					20220725_J2	SHIPPED ON 2022-08-02			
+w43_r16_c05			20			20220725_J2	W43 Bad	double peaks	bad chip	
+w43_r16_c06			25,27			20220725_J2	W43 Bad	rs 27 doublw peaks	bad chip	
+										
+w42_r00_c06						20220725_A2	W47-various	not getting iccol reading	probably good	
+w42_r01_c06						20220725_A2	W42 Rescreen	not getting iccol reading	probably bad	
+w42_r01_c03						20220725_A2	W47-various	not getting iccol reading	probably good	
+w42_r02_c06						20220725_A2	W47-various	row 1 probably has blown amplifier or something	already good	
+w42_r02_c03						20220725_A2	W42 Rescreen		rescreen	
+w42_r02_c02						20220725_A2	W47-various		probably good	
+w42_r04_c08	x					20220725_A2	SHIPPED ON 2022-08-02			
+w42_r04_c07			16, 21			20220725_A2	W47-various		rescreen	
+w42_r03_c07	x					20220725_A2	SHIPPED ON 2022-08-02			
+w42_r03_c02					x	20220725_A2	W47-various	not getting iccol reading	already good	
+w42_r03_c03					x	20220725_A2	W47-various	not getting iccol reading	probably good	
+w42_r15_c08					x	20220725_A2	W42 Rescreen	not getting iccol reading	rescreen	
+w42_r01_c02					x	20220725_A2	W47-various	row 4 probably has blown amplifier or something	probably good	
+w42_r00_c04		x			x	20220725_A2	W42 Rescreen		rescreen	
+w42_r15_c03					x	20220725_A2	W47-various		rescreen	
+w42_r06_c07					x	20220725_A2	W47-various	row 5 probably has blown amplifier or something	rescreen	
+w42_r09_c05					x	20220725_A2	W42 Rescreen		rescreen	
+w42_r15_c05					x	20220725_A2	W47-various		rescreen	
+w42_r06_c08	x					20220725_A2	SHIPPED ON 2022-08-02			
+w42_r15_c02			16, 21			20220725_A2	W42 Rescreen		rescreen	
+w42_r09_c06			25			20220725_A2	W43 Bad	double peaks	bad chip	
+w42_r06_c09				x	x	20220725_A2	W42 Rescreen	not getting iccol reading	rescreen	
+w42_r09_c07				x	x	20220725_A2	W42 Rescreen	not getting iccol reading	rescreen	
+w42_r15_c06				x	x	20220725_A2	W42 Rescreen	not getting iccol reading	rescreen	
+										
+w42_r14_c05						20220725_C2	W42 Rescreen	iccol turn on too quickly		might need more helium
+w44_r13_c07			18			20220725_C2	W44 Bad	iccol turn on too quickly	bad chip	
+w43_r07_c04						20220725_C2	W43 Rescreen	iccol turn on too quickly		
+w42_r07_c02				x		20220725_C2	W42 Rescreen	iccol turn on too quickly		
+w43_r06_c00				x		20220725_C2	W43 Rescreen	iccol turn on too quickly	probably bad	
+w42_r14_c08				x		20220725_C2	W42 Rescreen	iccol turn on too quickly		
+w42_r16_c08				x		20220725_C2	W42 Rescreen	small modulation		
+w42_r07_c00				x		20220725_C2	W42 Rescreen	small modulation		
+w42_r15_c07				x		20220725_C2	W42 Rescreen	small modulation		
+w43_r06_c09				x		20220725_C2	W43 Bad	small modulation	bad chip	
+w43_r07_c03				x		20220725_C2	W43 Rescreen	small modulation		
+w42_r14_c01				x		20220725_C2	W42 Rescreen	small modulation		
+w42_r06_c00					x	20220725_C2	W42 Rescreen	row 4 probably has blown amplifier or something	likely bad chip	
+w42_r07_c01					x	20220725_C2	W42 Rescreen			
+w42_r15_c04					x	20220725_C2	W42 Rescreen			
+w42_r13_c05					x	20220725_C2	W42 Rescreen	row 5 probably has blown amplifier or something		
+w44_r05_c04					x	20220725_C2	W44 Rescreen			
+w42_r21_c04				X5	x	20220725_C2	W42 Rescreen			
+w43_r05_c02				x	x	20220725_C2	W43 Bad	iccol turned on immediately	bad chip	
+w42_r07_c08				x	x	20220725_C2	W42 Rescreen	iccol turned on immediately		
+w43_r06_c02				x	x	20220725_C2	W43 Bad	iccol turned on immediately	bad chip	
+w43_r04_c03				x	x	20220725_C2	W43 Rescreen	not getting iccol reading		
+w42_r20_c04				x	x	20220725_C2	W42 Rescreen	not getting iccol reading		
+w43_r07_c06				x	x	20220725_C2	W43 Rescreen	not getting iccol reading	probably bad	
+										
+w43_r08_c02					x	20220725_D2	W43 Bad	not getting iccol reading	bad	might need more helium, multimeter reading at 100 ohms
+w43_r05_c01					x	20220725_D2	W43 Rescreen	not getting iccol reading		
+w44_r04_c03					x	20220725_D2	W44 Rescreen	not getting iccol reading		
+w42_r14_c06					x	20220725_D2	W42 Rescreen	not getting iccol reading		
+w42_r21_c05					x	20220725_D2	W42 Rescreen	not getting iccol reading		
+w43_r09_c09					x	20220725_D2	W43 Rescreen	not getting iccol reading		
+w43_r06_c05					x	20220725_D2	W43 Rescreen	not getting iccol reading		
+w42_r15_c01					x	20220725_D2	W42 Rescreen	not getting iccol reading		
+w42_r14_c09					x	20220725_D2	W42 Bad	not getting iccol reading	bad	
+w42_r14_c02					x	20220725_D2	W42 Rescreen	not getting iccol reading		
+w42_r14_c03					x	20220725_D2	W42 Rescreen	not getting iccol reading		
+w43_r06_c04					x	20220725_D2	W43 Bad	not getting iccol reading	bad	
+w44_r07_c00					x	20220725_D2	W44 Rescreen	not getting iccol reading		
+w43_r06_c01					x	20220725_D2	W43 Rescreen	not getting iccol reading		
+w42_r20_c06					x	20220725_D2	W42 Rescreen	not getting iccol reading		
+w42_r14_c07					x	20220725_D2	W42 Rescreen	not getting iccol reading		
+w43_r05_c08					x	20220725_D2	W43 Rescreen	not getting iccol reading		
+w42_r07_c09					x	20220725_D2	W42 Rescreen	not getting iccol reading		
+w43_r08_c01					x	20220725_D2	W43 Rescreen	not getting iccol reading		
+w42_r19_c02					x	20220725_D2	W42 Bad	not getting iccol reading	bad	
+w43_r07_c01					x	20220725_D2	W43 Rescreen	not getting iccol reading		
+w42_r13_c02					x	20220725_D2	W42 Bad	not getting iccol reading	bad	
+w43_r07_c00					x	20220725_D2	W43 Rescreen	not getting iccol reading		
+w42_r14_c04					x	20220725_D2	W42 Rescreen	not getting iccol reading		
+										
+w43_r13_c07			2,3			20220725_H2	W47-various	probably good,	rescreen	
+w43_r13_c06			11			20220725_H2	W47-various	probably good,	rescreen	
+w43_r13_c05			31,32			20220725_H2	W47-various	probably good,	rescreen	
+w43_r13_c04	x					20220725_H2	SHIPPED ON 2022-08-02	ic col 12.3		
+w43_r14_c04	x					20220725_H2	SHIPPED ON 2022-08-02	ic col 12.3		
+w43_r13_c03	x					20220725_H2	SHIPPED ON 2022-08-02	ic col 12.3		
+w43_r14_c03	x					20220725_H2	SHIPPED ON 2022-08-02			
+w43_r13_c02	x					20220725_H2	SHIPPED ON 2022-08-02			
+w43_r13_c01	x					20220725_H2	SHIPPED ON 2022-08-02			
+w43_r13_c00				x		20220725_H2	W47-various	iccol immediately on, shorted to output	rescreen	
+w43_r14_c06				x		20220725_H2	W47-various	iccol immediately on	rescreen	
+w43_r14_c09				x		20220725_H2	W43 Bad	iccol immediately on, likely bad	bad	
+w43_r14_c08					x	20220725_H2	W47-various		rescreen	
+w43_r14_c07					x	20220725_H2	W47-various		rescreen	
+w43_r14_c02					x	20220725_H2	W47-various		rescreen	
+w43_r14_c01					x	20220725_H2	W47-various		rescreen	
+w43_r14_c00					x	20220725_H2	W43 Bad	likely bad	bad	
+w43_r15_c08					x	20220725_H2	W47-various		rescreen	
+w43_r15_c07	x					20220725_H2	SHIPPED ON 2022-08-02			
+w43_r15_c06			17			20220725_H2	W43 Bad	probably still usable?	bad	
+w43_r15_c05	x					20220725_H2	SHIPPED ON 2022-08-02			
+w43_r21_c04			2,3			20220725_H2	W43 Bad	shorted between rs2 and 3	bad	
+w43_r20_c03	x					20220725_H2	SHIPPED ON 2022-08-02			
+w43_r21_c05					x	20220725_H2	W43 Bad	fb open	bad	
+										
+w44_r18_c07			4,8			20220725_F2	W44 Bad		bad	
+w44_r17_c05	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r16_c01			30			20220725_F2	W44 Bad	still usable	bad	
+w44_r16_c07	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r18_c06	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_c18_c04	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r15_c01	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r16_c06			12,19			20220725_F2	W44 Bad		bad	
+w44_r16_c04	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r19_c03	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r16_c03	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r16_c08	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r19_c06					x	20220725_F2	W47-various		rescreen	
+w44_r17_c03					x	20220725_F2	W47-various		rescreen	
+w44_r19_c05					x	20220725_F2	W47-various		rescreen	
+w44_r18_c05					x	20220725_F2	W47-various		rescreen	
+w44_r17_c07					x	20220725_F2	W47-various		rescreen	
+w44_r19_c04					x	20220725_F2	W47-various		rescreen	
+w44_r17_c02				x		20220725_F2	W44 Rescreen	really low modulation	rescreen, prob bad	
+w44_r16_c02				x		20220725_F2	W44 Rescreen	really low modulation	rescreen, prob bad	
+w44_r19_c02				x		20220725_F2	W44 Rescreen	really low modulation	rescreen, prob bad	
+w44_r17_c06	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r17_c04	x					20220725_F2	SHIPPED ON 2022-08-02			
+w44_r18_c02			29			20220725_F2	W43 Bad			
+										
+w43_r19_c03	x					20220725_E2	SHIPPED ON 2022-08-02			
+w43_r16_c04	x					20220725_E2	SHIPPED ON 2022-08-02			
+w43_r17_c02	x					20220725_E2	SHIPPED ON 2022-08-02			
+w43_r18_c07	x					20220725_E2	SHIPPED ON 2022-08-02			
+w43_r16_c03			13			20220725_E2	W43 Bad	slight double peak	prob bad	
+w43_r19_c02			26			20220725_E2	W43 Bad	flatline	bad	
+w44_r21_c04				x	x	20220725_E2	W44 Bad	ic col immediately turns on	bad	
+w44_r00_c05				x	x	20220725_E2	W47-various		rescreen	
+w44_r07_c01				x	x	20220725_E2	W44 Rescreen		probably bad	
+w44_r05_c06	x					20220725_E2	SHIPPED ON 2022-08-02			
+w44_r08_c06			12			20220725_E2	W44 Bad	triple peak	bad	
+w44_r20_c03	x					20220725_E2	SHIPPED ON 2022-08-02			
+w45_r04_c04					x	20220725_E2	W45 Rescreen		probably bad	
+w44_r08_c05					x	20220725_E2	W47-various		rescreen	
+w45_r06_c01					x	20220725_E2	W45 Bad		bad	
+w45_r06_c04					x	20220725_E2	W45 Bad		bad	
+w44_r04_c02					x	20220725_E2	W44 Bad		bad	
+w44_r05_c01					x	20220725_E2	W47-various		rescreen	
+w44_r05_c08	x					20220725_E2	SHIPPED ON 2022-08-02			
+w45_r06_c05			15			20220725_E2	W45 Bad	double peak	bad	
+w44_r07_c05	x					20220725_E2	SHIPPED ON 2022-08-02			
+w44_r06_c08					x	20220725_E2	W44 Rescreen		rescreen	
+w44_r20_c05					x	20220725_E2	W44 Rescreen		prob bad	
+w44_r00_c04					x	20220725_E2	W44 Rescreen		rescreen	
+										
+w43_r14_c08	x					20220808_D2	SHIPPED ON 2022-08-16			
+w44_r19_c06	x					20220808_D2	SHIPPED ON 2022-08-16			
+w42_r15_c03					bypassed	20220808_D2	W42 Bad		bad	
+w43_r14_c07	x					20220808_D2	SHIPPED ON 2022-08-16			
+w44_r17_c03			18			20220808_D2	W44 Bad		bad	
+w42_r06_c07	x					20220808_D2	SHIPPED ON 2022-08-16			
+w43_r14_c02				x	bypassed	20220808_D2	W43 Bad		bad	
+w44_r19_c05			16	x		20220808_D2	W44 Bad		bad	
+w42_r15_c05	x			x		20220808_D2	SHIPPED ON 2022-08-16			
+w43_r14_c01			4			20220808_D2	W41-45 Rescreen		bad wirebond, can rescreen	
+w44_r18_c05	x					20220808_D2	SHIPPED ON 2022-08-16			
+w44_r08_c05	x					20220808_D2	SHIPPED ON 2022-08-16			
+w43_r15_c08				x	bypassed 	20220808_D2	W43 Bad		bad	
+w44_r17_c07			12,13	x		20220808_D2	W44 Bad			
+w44_r05_c01				x	bypassed	20220808_D2	W44 Bad		bad	
+w44_r00_c05					bypassed	20220808_D2	W44 Bad		bad	
+w44_r19_c04	x					20220808_D2	SHIPPED ON 2022-08-16			
+w42_r04_c07	x					20220808_D2	SHIPPED ON 2022-08-16			
+										
+w41_r03_c03			4			20220808_B	W41-45 Rescreen		bad wirebond, can rescreen	
+w41_r03_c04	x					20220808_B	SHIPPED ON 2022-08-16			
+w41_r18_c07			25			20220808_B	W41 Bad		bad	
+w41_r18_c05		x	4			20220808_B	W41-45 Rescreen		bad wirebond, can rescreen	
+w41_r19_c07					bypassed	20220808_B	W41 Bad		bad	
+w41_r19_c02					bypassed	20220808_B	W41 Bad		bad	
+w41_r15_c06		x	4			20220808_B	W41-45 Rescreen		bad wirebond, can rescreen	
+w41_r14_c00					bypassed	20220808_B	W41 Bad		bad	
+w41_r14_c05		x				20220808_B	W41-45 Rescreen			
+w41_r14_c06					bypassed	20220808_B	W41 Bad		bad	
+w41_r21_c05					bypassed	20220808_B	W41 Bad		bad	
+w41_r20_c06	x					20220808_B	SHIPPED ON 2022-08-16			
+w41_r21_c04					bypassed	20220808_B	W41 Bad		bad	
+w41_r09_c08	x					20220808_B	SHIPPED ON 2022-08-16			
+w41_r09_c07	x					20220808_B	SHIPPED ON 2022-08-16			
+w41_r08_c05			4,7			20220808_B	W41 Bad		bad	
+w41_r10_c08			15			20220808_B	W41 Bad		bad	
+w41_r11_c07	x					20220808_B	SHIPPED ON 2022-08-16			
+										
+w43_r02_c04					x	20220808_B2	W41-45 Rescreen	ssa not working	can rescreen	
+w43_r11_c01					x	20220808_B2	W41-45 Rescreen	ssa not working	can rescreen	
+w43_r15_c03					x	20220808_B2	W41-45 Rescreen	ssa not working	can rescreen	
+w43_r04_c08	x					20220808_B2	SHIPPED ON 2022-08-16			
+w43_r11_c00	x					20220808_B2	SHIPPED ON 2022-08-16			
+w43_r16_c02			24			20220808_B2	W43 Bad			
+w43_r04_c05	x					20220808_B2	SHIPPED ON 2022-08-16			
+w43_r12_c08	x					20220808_B2	SHIPPED ON 2022-08-16			
+w43_r20_c04	x					20220808_B2	SHIPPED ON 2022-08-16			
+w43_r07_c07	x					20220808_B2	SHIPPED ON 2022-08-16			
+w43_r12_c07			21			20220808_B2	W43 Bad			
+w43_r18_c05	x					20220808_B2	SHIPPED ON 2022-08-16			
+w43_r04_c01	x					20220808_B2	SHIPPED ON 2022-08-16	reversed  modulation and noisy		
+w43_r12_c04			19			20220808_B2	W43 Bad			
+w43_r15_c02	x					20220808_B2	SHIPPED ON 2022-08-16			
+w43_r03_c04	x					20220808_B2	SHIPPED ON 2022-08-16			
+w43_r12_c06	x		12			20220808_B2	SHIPPED ON 2022-08-16	mostly fine		
+w43_r15_c01			26, 28, 29			20220808_B2	W43 Bad			
+										
+w43_r17_c06	x					20220808_C2	SHIPPED ON 2022-08-16			
+w42_r00_c06	x					20220808_C2	SHIPPED ON 2022-08-16			
+w42_r01_c02	x					20220808_C2	SHIPPED ON 2022-08-16			
+w43_r18_c02	x			x		20220808_C2	SHIPPED ON 2022-08-16			
+w42_r01_c03	x			x		20220808_C2	SHIPPED ON 2022-08-16	rs 21 slightly noisy, mostly okay, cross reference says okay		
+w43_r13_c07			25	x		20220808_C2	W43 Bad			
+w43_r19_c07			9	x		20220808_C2	W43 Bad	strong double peaks		
+w42_r02_c06	x		17	x		20220808_C2	SHIPPED ON 2022-08-16	double peaks, cross reference says okay		
+w43_r13_c06	x			x		20220808_C2	SHIPPED ON 2022-08-16	slight double peak on 28, cross reference says okay		
+w43_r19_c06	x					20220808_C2	SHIPPED ON 2022-08-16	mostly fine, slight double peak on 5		
+w42_r02_c02	x					20220808_C2	SHIPPED ON 2022-08-16	mostly fine, slight double peak on 16		
+w43_r13_c05			22			20220808_C2	W43 Bad	ok ish		
+w43_r17_c05			2,3	x		20220808_C2	W43 Bad			
+w42_r03_c02	x			x		20220808_C2	SHIPPED ON 2022-08-16	cross reference says okay		
+w43_r13_c00	x			x		20220808_C2	SHIPPED ON 2022-08-16			
+w43_r19_c05	x					20220808_C2	SHIPPED ON 2022-08-16			
+w42_r03_c03	x		17			20220808_C2	SHIPPED ON 2022-08-16	double peaks, cross reference says okay		
+w43_r14_c06	x					20220808_C2	SHIPPED ON 2022-08-16	mostly fine, slight double peak on 28		
+										
+w41_r11_c05	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r11_c01	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r08_c02	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r06_c03	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r09_c06	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r10_c07			30			20220808_D	W41 Bad	double peaks and noisy		
+w41_r09_c05			7			20220808_D	W41 Bad	double peaks and noisy		
+w41_r08_c04	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r09_c09	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r09_c01			9			20220808_D	W41-45 Rescreen	bad wirebonds, redo		
+w41_r10_c06			20			20220808_D	W41-45 Rescreen	bad wirebonds, redo		
+w41_r05_c03	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r05_c07	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r05_c06	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r06_c05	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r06_c07	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r07_c07	x					20220808_D	SHIPPED ON 2022-08-16			
+w41_r06_c00	x					20220808_D	SHIPPED ON 2022-08-16			
+										
+w41_r12_c05	x					20220808_A	SHIPPED ON 2022-08-16			
+w41_r11_c00	x					20220808_A	SHIPPED ON 2022-08-16			
+w41_r12_c06					bypassed	20220808_A	W41 Bad			
+w41_r10_c01	x					20220808_A	SHIPPED ON 2022-08-16			
+w41_r12_c02		x	20			20220808_A	W41 Bad	small double peaks		
+w41_r11_c09			24			20220808_A	W41 Bad	strong double peaks		
+w41_r09_c00					bypassed	20220808_A	W41 Bad			
+w41_r06_c09					bypassed	20220808_A	W41 Bad			
+w41_r06_c08			30			20220808_A	W41 Bad			
+w41_r04_c08	x					20220808_A	SHIPPED ON 2022-08-16			
+w41_r04_c05	x					20220808_A	SHIPPED ON 2022-08-16			
+w41_r03_c02	x					20220808_A	SHIPPED ON 2022-08-16			
+w41_r03_c07					bypassed	20220808_A	W41 Bad			
+w41_r03_c06					bypassed	20220808_A	W41 Bad			
+w41_r03_c05	x					20220808_A	SHIPPED ON 2022-08-16			
+w41_r04_c07					bypassed	20220808_A	W41 Bad			
+w41_r04_c06					bypassed	20220808_A	W41 Bad			
+w41_r04_c04	x					20220808_A	SHIPPED ON 2022-08-16			
+										
+w42_r01_c06	x					20220808_E2	SHIPPED ON 2022-08-16	slight double peak on 4, but mostly fine		
+w42_r02_c03	x					20220808_E2	SHIPPED ON 2022-08-16			
+w42_r15_c08			32			20220808_E2	W42 Bad	dead row		
+w42_r09_c05	x					20220808_E2	SHIPPED ON 2022-08-16			
+w42_r15_c02	x					20220808_E2	SHIPPED ON 2022-08-16			
+w42_r14_c01	x					20220808_E2	SHIPPED ON 2022-08-16			
+w42_r09_c07			4			20220808_E2	W42 Bad	double peaks		
+w44_r04_c03			15			20220808_E2	W44 Bad	dead row		
+w43_r06_c00					bypassed	20220808_E2	W43 Bad			
+w43_r07_c03	x		9			20220808_E2	SHIPPED ON 2022-08-16	slight double peaks, mostly ok		
+w43_r04_c03	x					20220808_E2	SHIPPED ON 2022-08-16			
+w44_r07_c01			32			20220808_E2	W44 Bad	many waveforms		
+w44_r20_c05	x					20220808_E2	SHIPPED ON 2022-08-16			
+w42_r21_c04					bypassed	20220808_E2	W42 Bad			
+w45_r19_c03	x					20220808_E2	SHIPPED ON 2022-08-16	slight double peaks, mostlyu fine		
+w44_r07_c00					bypassed	20220808_E2	W44 Bad			
+w45_r12_c07			16, 21			20220808_E2	W45 Bad	16 high ic max, 21 slight double pleak	might be okay to use?	
+w45_r01_c02			24			20220808_E2	W45 Bad			
+										
+w45_r15_c05	x			x		20220808_F2	SHIPPED ON 2022-08-16	probably good?		
+w47_r06_c03			18	x		20220808_F2	W47 Bad			
+w47_r01_c06	x			x		20220808_F2	SHIPPED ON 2022-08-16	probably good?		
+w45_r15_c06			7			20220808_F2	W45 Bad			
+w47_r16_c05	x					20220808_F2	SHIPPED ON 2022-08-16			
+w47_r16_c01	x					20220808_F2	SHIPPED ON 2022-08-16			
+w45_r15_c04					x	20220808_F2	W45 Bad	very large waves		
+w47_r09_c04					bypass	20220808_F2	W47 Bad			
+w47_r13_c00					bypass	20220808_F2	W47 Bad			
+w45_r13_c02	x					20220808_F2	SHIPPED ON 2022-08-16			
+w47_r08_c04	x					20220808_F2	SHIPPED ON 2022-08-16			
+w47_r19_c03	x					20220808_F2	SHIPPED ON 2022-08-16			
+w47_r00_c06			DS	x		20220808_F2	W47 Bad			
+w47_r03_c03	x			x		20220808_F2	SHIPPED ON 2022-08-16	cross referencing says good		
+w47_r18_c03			31, 32	x		20220808_F2	W47 Bad	double peaks		
+w47_r18_c02			2,4,5,9			20220808_F2	W47 Bad	double peaks		
+w47_r02_c03	x					20220808_F2	SHIPPED ON 2022-08-16			
+w47_r17_c03	x					20220808_F2	SHIPPED ON 2022-08-16			
+										
+w47_r20_c03				x	bypass	20220808_G2	W47 Bad			
+w47_r02_c02			12, 17	x		20220808_G2	W47 Bad			
+w44_r08_c00				x	bypass	20220808_G2	W44 Bad			
+w47_r08_c06			2001,8,11	x		20220808_G2	W47 Bad	many peaks		
+w47_r07_c01				x	bypass	20220808_G2	W47 Bad			
+w44_r09_c09			25,26,27,30	x		20220808_G2	W44 Bad	many peaks		
+w47_c19_r05			1	x		20220808_G2	W47 Bad			
+w47_r01_c02			12	x		20220808_G2	W47 Bad	redo		
+w44_r06_c08			25	x		20220808_G2	W41-45 Rescreen	redo		
+w47_r03_c05				x		20220808_G2	W47 Bad			
+w44_r06_c05			12	x		20220808_G2	W43 Bad			
+w43_r07_c00				x	bypass	20220808_G2	W43 Bad			
+w42_r16_c08	x					20220808_G2	SHIPPED ON 2022-08-16			
+w43_r07_c01					bypass	20220808_G2	W43 Bad			
+w42_r14_c04			25			20220808_G2	W41-45 Rescreen	redo		
+w42_r07_c00	x					20220808_G2	SHIPPED ON 2022-08-16			
+w42_r15_c07			12			20220808_G2	W41-45 Rescreen	redo		
+w42_r07_c01			25			20220808_G2	W41-45 Rescreen	redo		
+										
+w41_r13_c04	x					20220808_H2	SHIPPED ON 2022-08-16			
+w41_r14_c08			11			20220808_H2	W41 Bad			
+w41_r12_c04			25			20220808_H2	W41-45 Rescreen	redo		
+w41_r13_c01		x				20220808_H2	W41-45 Rescreen			
+w41_r13_c02	x					20220808_H2	SHIPPED ON 2022-08-16			
+w41_r13_c03			25			20220808_H2	W41-45 Rescreen	redo		
+w41_r13_c00	x					20220808_H2	SHIPPED ON 2022-08-16			
+w41_r14_c09					bypassed	20220808_H2	W41 Bad			
+w41_r12_c01			22,25,27			20220808_H2	W41 Bad			
+w41_r13_c08			7			20220808_H2	W41 Bad			
+w41_r13_c09					bypassed	20220808_H2	W41 Bad			
+w41_r12_c00			25			20220808_H2	W41-45 Rescreen	redo		
+w41_r13_c05		x				20220808_H2	W41-45 Rescreen			
+w41_r13_c06	x					20220808_H2	SHIPPED ON 2022-08-16			
+w41_r13_c07		x	25			20220808_H2	W41-45 Rescreen	redo		
+w41_r12_c08		x			bypassed	20220808_H2	W41 Bad			
+w41_r12_c07		x				20220808_H2	W41-45 Rescreen			
+w41_r12_c09		x	25			20220808_H2	W41-45 Rescreen	redo		
+										
+w47_r07_c00					bypassed	20220808_I2	W47 Bad			
+w47_r17_c02	x					20220808_I2	SHIPPED ON 2022-08-16			
+w47_r15_c02					bypassed	20220808_I2	W47 Bad			
+w47_r08_c00				x		20220808_I2	W47 Bad			
+w47_r16_c04			11, 12	x		20220808_I2	W47 Bad			
+w47_r02_c04			22,23,29	x		20220808_I2	W47 Bad			
+w47_r12_c01			DS	x		20220808_I2	W47 Bad			
+w47_r08_c03				x		20220808_I2	W47 Bad			
+w47_r11_c03				x		20220808_I2	W47 Bad			
+w47_r16_c02		x				20220808_I2	W47 Bad			
+w47_r07_c06	x					20220808_I2	SHIPPED ON 2022-08-16			
+w47_r15_c05			29			20220808_I2	W47 Bad			
+w47_r19_c07	x					20220808_I2	SHIPPED ON 2022-08-16			
+w47_r04_c05	x					20220808_I2	SHIPPED ON 2022-08-16			
+w47_r05_c02					bypassed	20220808_I2	W47 Bad			
+w45_r11_c00			5			20220808_I2	W45 Bad	double peaks		
+w45_r12_c08	x					20220808_I2	SHIPPED ON 2022-08-16			
+w47_r07_c03					bypassed	20220808_I2	W45 Bad			
+										
+w48_r09_c01	x					20220822_B2	202209_shipment_box2	ic col little noisy		
+w48_r11_c06	x					20220822_B2	202209_shipment_box2	ic col little noisy		
+w48_r18_c05	x					20220822_B2	202209_shipment_box2	ic col little noisy		
+w48_r01_c02	x					20220822_B2	202209_shipment_box1			
+w48_r05_c01	x					20220822_B2	202209_shipment_box1			
+w48_r17_c03	x					20220822_B2	202209_shipment_box1			
+w48_r09_c02	x					20220822_B2	202209_shipment_box1			
+w48_r07_c00	x					20220822_B2	202209_shipment_box1			
+w48_r10_c02	x					20220822_B2	202209_shipment_box1			
+w48_r06_c00			DS,1,2,10	x		20220822_B2	X3	bad		
+w48_r08_c00			17	x		20220822_B2	Y3	bad		
+w48_r04_c03				x		20220822_B2	W43(8) need rescreen	probably good, need rescreen		
+w48_r15_c01	x					20220822_B2	202209_shipment_box2	slightly lower modulation, slightly noisy		
+w48_r09_c03	x					20220822_B2	202209_shipment_box2	slightly lower modulation, slightly noisy		
+w48_r07_c01	x					20220822_B2	202209_shipment_box2	slightly lower modulation, slightly noisy		
+w48_r11_c02	x					20220822_B2	202209_shipment_box2	rs 11 slightly noisy		
+w48_r05_c05	x					20220822_B2	202209_shipment_box1			
+w48_r20_c03	x					20220822_B2	202209_shipment_box1			
+										
+w48_r13_c00	x					20220822_A	202209_shipment_box1			
+w48_r00_c03	x					20220822_A	202209_shipment_box1			
+w48_r09_c06	x					20220822_A	202209_shipment_box1			
+w48_r06_c04	x					20220822_A	202209_shipment_box1			
+w48_r07_c02	x					20220822_A	202209_shipment_box1			
+w48_r03_c05	x					20220822_A	202209_shipment_box1			
+w48_r02_c03				x		20220822_A	W43(8) need rescreen	all rs look good, iccol 7.5		
+w48_r07_c04				x		20220822_A	W43(8) need rescreen	all rs look good, iccol 7.5		
+w48_r16_c05				x		20220822_A	W43(8) need rescreen	all rs look good, iccol 7.5		
+w48_r15_c03	x					20220822_A	202209_shipment_box1			
+w48_r17_c02	x					20220822_A	202209_shipment_box1			
+w48_r01_c03	x					20220822_A	202209_shipment_box2	rs 28 slightly lower modulation, sine wave looks okay		
+w48_r19_c02			DS, 3		bypassed	20220822_A	X6	DS shorted to Out		
+w48_r05_c02	x					20220822_A	202209_shipment_box1			
+w48_r14_c03	x					20220822_A	202209_shipment_box1			
+w48_r11_c00	x					20220822_A	202209_shipment_box2	iccol ~10		
+w48_r13_c03	x					20220822_A	202209_shipment_box2	iccol ~10		
+w48_r05_c04	x					20220822_A	202209_shipment_box2	iccol ~10		
+										
+w48_r04_c05	x					20220822_D	202209_shipment_box1			
+w48_r04_c01	x					20220822_D	202209_shipment_box1			
+w48_r05_c06	x					20220822_D	202209_shipment_box1			
+w48_r19_c07	x					20220822_D	202209_shipment_box1			
+w48_r09_c00			13			20220822_D	Y1			
+w48_r00_c06	x					20220822_D	202209_shipment_box1			
+w48_r16_c07				x		20220822_D	W43(8) need rescreen	ic col 6.5		
+w48_r03_c06				x		20220822_D	W43(8) need rescreen	ic col 6.5		
+w48_r08_c02				x		20220822_D	W43(8) need rescreen	ic col 6.5		
+w48_r02_c06	x					20220822_D	202209_shipment_box2	ic col 9		
+w48_r16_c03	x					20220822_D	202209_shipment_box2	ic col 9		
+w48_r18_c07	x					20220822_D	202209_shipment_box2	ic col 9		
+w48_r01_c06				x		20220822_D	W43(8) need rescreen	very strange waveforms with peaks, very small modulations		
+w48_r10_c06				x		20220822_D	W43(8) need rescreen	very strange waveforms with peaks, very small modulations		
+w48_r06_c06				x		20220822_D	W43(8) need rescreen	very strange waveforms with peaks, very small modulations		
+w48_r10_c04				x		20220822_D	W43(8) need rescreen	very strange waveforms with peaks, very small modulations		
+w48_r03_c03				x		20220822_D	W43(8) need rescreen	very strange waveforms with peaks, very small modulations		
+w48_r17_c05				x		20220822_D	W43(8) need rescreen	very strange waveforms with peaks, very small modulations		
+										
+w48_r02_c02	x					20220822_D2	202209_shipment_box1			
+w48_r16_c04	x					20220822_D2	202209_shipment_box1			
+w48_r21_c05	x					20220822_D2	202209_shipment_box1			
+w48_r14_c01					bypassed	20220822_D2	X1			
+w48_r08_c05	x					20220822_D2	202209_shipment_box1			
+w48_r20_c05	x					20220822_D2	202209_shipment_box1			
+w48_r14_c06	x					20220822_D2	202209_shipment_box1			
+w48_r07_c05	x					20220822_D2	202209_shipment_box1			
+w48_r12_c01	x					20220822_D2	202209_shipment_box1			
+w48_r20_c04	x					20220822_D2	202209_shipment_box1			
+w48_r03_c02	x					20220822_D2	202209_shipment_box1			
+w48_r10_c01	x					20220822_D2	202209_shipment_box1			
+w48_r15_c06	x					20220822_D2	202209_shipment_box2	ic col ~9		
+w48_r13_c01	x					20220822_D2	202209_shipment_box2	ic col ~9		
+w48_r11_c03	x					20220822_D2	202209_shipment_box2	ic col ~9		
+w48_r10_c03					x	20220822_D2	W43(8) need rescreen	squid array not working		
+w48_r15_c02					x	20220822_D2	W43(8) need rescreen	squid array not working		
+w48_r14_c02					x	20220822_D2	W43(8) need rescreen	squid array not working		
+										
+w48_r17_c06			9			20220822_E2	W43(8) need rescreen	poor conection		
+w48_r10_c04	x					20220822_E2	202209_shipment_box1			
+w48_r00_c04	x					20220822_E2	202209_shipment_box2	visibly damaged rs2+9		
+w48_r09_c05	x					20220822_E2	202209_shipment_box1	fixed ic col by bypassing z1		
+w48_r10_c05	x					20220822_E2	202209_shipment_box1	fixed ic col by bypassing z1		
+w48_r18_c06				x		20220822_E2	Z1	low iccol		
+w48_r02_c04	x					20220822_E2	202209_shipment_box1			
+w48_r16_c06	x					20220822_E2	202209_shipment_box1			
+w48_r13_c05	x					20220822_E2	202209_shipment_box1			
+w48_r03_c04				x		20220822_E2	W43(8) need rescreen	low iccol		
+w48_r19_c06				x		20220822_E2	W43(8) need rescreen	low iccol		
+w48_r11_c05				x		20220822_E2	W43(8) need rescreen	visibly damaged RS1+2		
+w41_r15_c06					bypassed	20220822_E2	X6			
+w41_r09_c01	x					20220822_E2	202209_shipment_box1			
+w41_r10_c06	x					20220822_E2	202209_shipment_box1			
+w42_r07_c01					x	20220822_E2	W43(8) need rescreen	poor conection		
+w45_r05_c08					x	20220822_E2	W43(8) need rescreen	poor conection		
+w41_r03_c03					x	20220822_E2	W43(8) need rescreen	poor conection		
+								fixed squid array		
+w48_r14_c05				x		20220822_B	W43(8) need rescreen	iccol ~5		
+w48_r08_c06					bypassed	20220822_B	Y0			
+w48_r12_c00				x		20220822_B	W43(8) need rescreen	iccol ~5		
+w48_r17_c07	x					20220822_B	202209_shipment_box1			
+w48_r18_c02	x					20220822_B	202209_shipment_box2	19 loose		
+w48_r16_c02	x					20220822_B	202209_shipment_box1			
+w48_r07_c06	x					20220822_B	202209_shipment_box1			
+w48_r06_c02			11		bypassed	20220822_B	Y2			
+w48_r04_c02					bypassed	20220822_B	Z2			
+w48_r14_c00			6			20220822_B	X3	iccol 10.5		
+w48_r15_c05	x					20220822_B	202209_shipment_box2	iccol 10.5		
+w48_r12_c03	x					20220822_B	202209_shipment_box2	iccol 10.5		
+w48_r00_c05			5			20220822_B	X6	iccol 9.5		
+w48_r04_c06	x					20220822_B	202209_shipment_box2	iccol 9.5		
+w48_r04_c04	x					20220822_B	202209_shipment_box2	iccol 9.5		
+w48_r15_c07	x					20220822_B	202209_shipment_box1			
+w48_r20_c06			19, 21		bypassed	20220822_B	Y7			
+w48_r21_c04			28, 29, 32			20220822_B	Z7			
+										
+w48_r14_c04	x					20220822_C2	202209_shipment_box1			
+w48_r06_c05	x					20220822_C2	202209_shipment_box1			
+w48_r13_c02	x					20220822_C2	202209_shipment_box1			
+w48_r07_c03	x					20220822_C2	202209_shipment_box1			
+w48_r19_c05	x					20220822_C2	202209_shipment_box1			
+w48_r05_c03	x					20220822_C2	202209_shipment_box1			
+w48_r13_c04	x					20220822_C2	202209_shipment_box1			
+w48_r06_c01	x					20220822_C2	202209_shipment_box1			
+w48_r18_c03	x					20220822_C2	202209_shipment_box1			
+w48_r12_c02	x					20220822_C2	202209_shipment_box1			
+w48_r11_c04					bypassed	20220822_C2	Y3	output bypassed		
+w48_r06_c03	x					20220822_C2	202209_shipment_box1			
+w48_r12_c04	x					20220822_C2	202209_shipment_box1			
+w48_r15_c04			13, 15,			20220822_C2	Y6			
+w48_r12_c06	x					20220822_C2	202209_shipment_box1			
+w48_r19_c03	x					20220822_C2	202209_shipment_box1			
+w48_r16_c01	x					20220822_C2	202209_shipment_box1			
+w48_r08_c01	x					20220822_C2	202209_shipment_box1			
+										
+w42_r13_c05	x					20220822_F2	202209_shipment_box1			
+w41_r12_c04	x		21			20220822_F2	202209_shipment_box2	cross reference		
+w41_r12_c07			28,32			20220822_F2	Z0			
+w41_r13_c05			8		bypassed	20220822_F2	X1			
+w41_r12_c09					bypassed	20220822_F2	Y1			
+w41_r13_c07			all of them			20220822_F2	Z1	a huge number of peaks		
+w41_r18_c05					bypassed	20220822_F2	X2			
+w41_r14_c05					bypassed	20220822_F2	Y2			
+w41_r12_c00			28			20220822_F2	Z2			
+w43_r02_c04	x					20220822_F2	202209_shipment_box1			
+w43_r11_c01	x		21			20220822_F2	202209_shipment_box2	cross reference		
+w43_r15_c03	x					20220822_F2	202209_shipment_box1			
+w42_r14_c04	x					20220822_F2	202209_shipment_box2	iccol ~ 8	fine	
+w43_r14_c01			17,21			20220822_F2	Y6	iccol ~ 8	culprit	
+w42_r15_c07	x					20220822_F2	202209_shipment_box2	iccol ~ 8	fine	
+w41_r13_c03	x					20220822_F2	202209_shipment_box2	iccol ~ 5	cross reference	
+w44_r06_c08						20220822_F2	Y7	iccol ~ 5	culprit	
+w41_r13_c01					bypassed	20220822_F2	Z7	iccol ~ 5		
+										
+w48_r03_c03					bypassed	20221125_F2	X0			
+w41_r03_c03					x	20221125_F2	Y0			
+w48_r16_c07					x	20221125_F2	Z0			
+w48_r10_c04				x		20221125_F2	X1			
+w45_r05_c08				x		20221125_F2	Y1			
+w48_r03_c06				x		20221125_F2	Z1			
+w48_r06_c06				x		20221125_F2	X2			
+w42_r07_c01				x		20221125_F2	Y2			
+w48_r00_c02				x		20221125_F2	Z2			
+w48_r12_c00				x		20221125_F2	X3			
+w48_r11_c05				x		20221125_F2	Y3			
+w48_r15_c02				x		20221125_F2	Z3			
+w48_r14_c05					x	20221125_F2	X6			
+w48_r17_c06					x	20221125_F2	Y6			
+w48_r10_c03					x	20221125_F2	Z6			
+w48_r17_c05	x					20221125_F2	X7			
+w48_r03_c04	x					20221125_F2	Y7			
+w48_r14_c02			23			20221125_F2	Z7			
+										
+w39_r04_c08					x	20221125_B	X0			
+w39_r04_c03					x	20221125_B	Y0			
+w39_r07_c04					x	20221125_B	Z0			
+w39_r04_c04			1,2,7,8			20221125_B	X1			
+w39_r00_c06			14			20221125_B	Y1			
+w39_r04_c02			23,26,27			20221125_B	Z1			
+w39_r06_c07			DS,2			20221125_B	X2			
+w39_r05_c07			21			20221125_B	Y2			
+w39_r04_c06					x	20221125_B	Z2			
+w39_r01_c04			DS, 8, 10			20221125_B	X3			
+w39_r06_c08			12			20221125_B	Y3			
+w39_r06_c06			30			20221125_B	Z3			
+w48_r16_c05					bypass	20221125_B	X6			
+w39_r06_c05					x	20221125_B	Y6			
+w48_r07_c04					x	20221125_B	Z6			
+w39_r03_c02					bypass	20221125_B	X7			
+w48_r04_c03					bypass	20221125_B	Y7			
+w48_r02_c03					bypass	20221125_B	Z7			
+										
+w31_r17_c05					bypass	20221125_H2	X0			
+w31_r20_c06					x	20221125_H2	Y0			
+w45_r03_c04					x	20221125_H2	Z0			
+w37_r07_c03	x					20221125_H2	X1			
+w31_r05_c01					bypass	20221125_H2	Y1			
+w45_r21_c04					bypass	20221125_H2	Z1			
+w31_r19_c02					bypass 	20221125_H2	X2			
+w31_r05_c02					bypass	20221125_H2	Y2			
+w44_r16_c02				x		20221125_H2	Z2			
+w31_r04_c06	?	DS				20221125_H2	X3			
+w31_r05_c03					bypass	20221125_H2	Y3			
+w31_r17_c06	?	24				20221125_H2	Z3			
+w31_r16_c01					bypass	20221125_H2	X6			
+w31_r19_c07					bypass 	20221125_H2	Y6			
+w45_r19_c04					bypass	20221125_H2	Z6			
+w31_r16_c02	x					20221125_H2	X7			
+w31_r18_c02	x					20221125_H2	Y7			
+w43_r06_c05	x					20221125_H2	Z7			
+										
+w47_r15_c05					bypass	20221125_B2	X0			
+w45_r13_c08					x	20221125_B2	Y0			
+w42_r20_c04					x	20221125_B2	Z0			
+w45_r14_c00					bypass	20221125_B2	X1			
+w47_r01_r04				x		20221125_B2	Y1			
+-					bypass	20221125_B2	Z1			
+w45_r08_c08						20221125_B2	X2			
+w43_r07_c06					bypass	20221125_B2	Y2			
+-						20221125_B2	Z2			
+w43_r05_c01					bypass	20221125_B2	X3			
+w42_r21_c05					bypass	20221125_B2	Y3			
+-					bypass	20221125_B2	Z3			
+w42_r15_c01						20221125_B2	X6			
+w43_r07_c04						20221125_B2	Y6			
+-					bypass	20221125_B2	Z6			
+w45_r17_c04						20221125_B2	X7			
+w45_r11_c07						20221125_B2	Y7			
+-					bypass	20221125_B2	Z7			
+										
+w43_r09_c09					bypass	20221125_C2	X0			
+w45_r15_c08					bypass	20221125_C2	Y0			
+w39_r06_c02					bypass	20221125_C2	Z0			
+w39_r07_c09			DS			20221125_C2	X1			
+w45_r09_c07					bypass	20221125_C2	Y1			
+w39_r06_c03			24, 25			20221125_C2	Z1			
+w39_r05_c04				x		20221125_C2	X2	ic col low		
+w45_r14_c09					bypass	20221125_C2	Y2			
+w37_r08_c03			31	x		20221125_C2	Z2			
+w44_r04_c00			DS, 2, 9			20221125_C2	X3			
+w37_r02_c03					bypass	20221125_C2	Y3			
+w37_r04_c04	x					20221125_C2	Z3			
+w42_r07_c08						20221125_C2	X6			
+w45_r17_c05						20221125_C2	Y6			
+w39_r02_c05					bypass	20221125_C2	Z6			
+w45_r09_c00					bypass	20221125_C2	X7			
+w45_r01_c07	x					20221125_C2	Y7			
+w39_r05_c01						20221125_C2	Z7			
