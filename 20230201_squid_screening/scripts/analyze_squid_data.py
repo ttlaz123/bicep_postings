@@ -120,6 +120,7 @@ def plot_barplot(bars_dict, xlabels, title='Bar Plot', savename='sample'):
             edgecolor = 'black', capsize=7, label=lab)
     
     plt.xticks([r + barWidth for r in range(len(bars_dict[lab]))], xlabels)
+    plt.xticks(rotation=15)
     plt.ylabel('Count')
     plt.title(title)
     plt.legend()
@@ -128,12 +129,140 @@ def plot_barplot(bars_dict, xlabels, title='Bar Plot', savename='sample'):
     #plt.show()
     plt.close()
 
+def get_batches(tlist):
+    return tlist[:-1]
+
+def find_batch(tlist, pcb):
+    for i in range(len(tlist)):
+        if (pcb < tlist[i]):
+            return tlist[i-1]
+    return tlist[i] 
 def plot_passrate_by_screenbatch(chip_dict: dict, pcb_dict:dict, tlist:list, savename:str,
                        startdate:str = '00000000', enddate:str = '99999999'):
-    count = {}
-    passed = {}
+    batches = get_batches(tlist)
+    count = {key: 0 for key in batches}
+    passed = {key: 0 for key in batches}
+    bypassed = {key: 0 for key in batches}
+    unknown = {key: 0 for key in batches}
+    for pcb in pcb_dict:
+        if(not within_dates([pcb_dict[pcb]['date']], startdate, enddate)):
+            continue 
+        batch = find_batch(tlist, pcb)
+        count[batch] += len(pcb_dict[pcb][CHIP_NAME])
+        passed[batch] += pcb_dict[pcb][PASSED]
+        bypassed[batch] += pcb_dict[pcb]['bypass']
+        for c in pcb_dict[pcb][CHIP_NAME]:
+            dates = chip_dict[c][PCB_NAME]
+            unknown[batch] += int(max(dates) > pcb)
+    bars_count = []
+    bars_passed = []
+    bars_bypassed = []
+    bars_unknown = []
+    bars_fail = []
+    xlabels = []
+    for batch in batches:
+        
+        bars_count.append(count[batch])
+        bars_passed.append(passed[batch])
+        try:
+            percent =passed[batch] /count[batch]
+            pstr = str(int(percent*100)) 
+        except ZeroDivisionError:
+            pstr = 'NaN' 
+        xlabels.append(batch + ': ' + pstr + '%')
+        bars_bypassed.append(bypassed[batch])
+        bars_unknown.append(unknown[batch])
+        bars_fail.append(bars_count[-1]-bars_passed[-1]-bars_bypassed[-1]-bars_unknown[-1])
+
+    title_suffix =  'by Screen Batch from ' + startdate + ' to ' + enddate
+    title = 'Screening Reulsts ' + title_suffix
+    bars_dict = {
+        'All': bars_count,
+        'Passed': bars_passed,
+        #'Bypassed': bars_bypassed,
+        #'Unknown': bars_unknown,
+        #'Fail': bars_fail
+    }
+    plot_barplot(bars_dict, xlabels, title, savename)
 
 
+def plot_failrate_by_screenbatch(chip_dict: dict, pcb_dict:dict, tlist:list, savename:str,
+                       startdate:str = '00000000', enddate:str = '99999999'):
+    batches = get_batches(tlist)
+    count = {key: 0 for key in batches}
+    passed = {key: 0 for key in batches}
+    bypassed = {key: 0 for key in batches}
+    unknown = {key: 0 for key in batches}
+    for pcb in pcb_dict:
+        if(not within_dates([pcb_dict[pcb]['date']], startdate, enddate)):
+            continue 
+        batch = find_batch(tlist, pcb)
+        count[batch] += len(pcb_dict[pcb][CHIP_NAME])
+        passed[batch] += pcb_dict[pcb][PASSED]
+        bypassed[batch] += pcb_dict[pcb]['bypass']
+        for c in pcb_dict[pcb][CHIP_NAME]:
+            dates = chip_dict[c][PCB_NAME]
+            unknown[batch] += int(max(dates) > pcb)
+    bars_count = []
+    bars_passed = []
+    bars_bypassed = []
+    bars_unknown = []
+    bars_fail = []
+    xlabels = []
+    for batch in batches:
+        xlabels.append(batch )
+        bars_count.append(count[batch])
+        bars_passed.append(passed[batch])
+        bars_bypassed.append(bypassed[batch])
+        bars_unknown.append(unknown[batch])
+        bars_fail.append(bars_count[-1]-bars_passed[-1]-bars_bypassed[-1]-bars_unknown[-1])
+
+    title_suffix =  'by Screen Batch from ' + startdate + ' to ' + enddate
+    title = 'Screening Reulsts ' + title_suffix
+    bars_dict = {
+        'All': bars_count,
+        'Passed': bars_passed,
+        'Bypassed': bars_bypassed,
+        'Unknown': bars_unknown,
+        'Fail': bars_fail
+    }
+    plot_barplot(bars_dict, xlabels, title, savename)
+
+def plot_rescreen_by_screenbatch(chip_dict: dict, pcb_dict:dict, tlist:list, savename:str,
+                       startdate:str = '00000000', enddate:str = '99999999'):
+    batches = get_batches(tlist)
+    max_screens = 5
+    
+    
+    batch_data = {}
+    for pcb in pcb_dict:
+        if(not within_dates([pcb_dict[pcb]['date']], startdate, enddate)):
+            continue 
+        batch = find_batch(tlist, pcb)
+        for chip in pcb_dict[pcb][CHIP_NAME]:
+            rescreen_num = 1
+            for pcb in chip_dict[chip][PCB_NAME]:
+                if(pcb < batch):
+                    rescreen_num += 1
+            if(not batch in batch_data):
+                batch_data[batch] = {key:0 for key in range(1, max_screens+1)}
+            batch_data[batch][rescreen_num] += 1
+    
+    bars= {}
+    xlabels = []
+    keylist = list(batch_data.keys())
+    keylist.sort()
+    for batch in keylist:
+        for nrescreen in range(1,max_screens+1):
+            if(not nrescreen in bars):
+                bars[nrescreen] = []
+            n = batch_data[batch][nrescreen]
+            bars[nrescreen].append(n)
+
+        xlabels.append(batch)
+    title_suffix =  'by batches from ' + startdate + ' to ' + enddate
+    title = 'Rescreen number  ' + title_suffix
+    plot_barplot(bars, xlabels, title, savename)
 
 def plot_passrate_by_wafer(chip_dict: dict, pcb_dict:dict, savename:str,
                        startdate:str = '00000000', enddate:str = '99999999'):
@@ -434,11 +563,12 @@ def timestamps():
 def main():
     c,p = read_squid_data('../cold_screening.tsv')
     tlist = timestamps()
-    #savedir = 'rescreen/'
-    savedir = 'passrates/'
+    savedir = 'rescreen/'
+    #savedir = 'passrates/'
     #savedir = 'failrates/'
     #filestem = 'bywafer_'
-    filestem = 'bynscreen_'
+    #filestem = 'bynscreen_'
+    filestem = 'bybatch_'
     for end in range(len(tlist)):
         print('Plotting for end time: ' + tlist[end])
         for start in range(end):
@@ -448,7 +578,9 @@ def main():
             #plot_passrate_by_wafer(c,p, filename, startdate = tlist[start], enddate = tlist[end])
             #plot_rescreen_by_wafer(c,p, filename, startdate = tlist[start], enddate = tlist[end])
             #plot_failrate_by_rescreen(c,p, filename, startdate = tlist[start], enddate = tlist[end])
-            plot_passrate_by_rescreen(c,p, filename, startdate = tlist[start], enddate = tlist[end])
+            #plot_passrate_by_rescreen(c,p, filename, startdate = tlist[start], enddate = tlist[end])
+            #plot_passrate_by_screenbatch(c,p, tlist, filename, startdate = tlist[start], enddate = tlist[end])
+            plot_rescreen_by_screenbatch(c,p, tlist, filename, startdate = tlist[start], enddate = tlist[end])
 
     
 
