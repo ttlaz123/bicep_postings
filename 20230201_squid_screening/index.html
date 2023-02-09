@@ -988,20 +988,66 @@
             <script type="text/javascript">
                 pager.link("#coldstats",
                     {
-                        'Statistics |coldstats': [
-                            'Pass rate by wafer|passrate_by_wafer',
-                            'Number of rescreens by wafer|rescreen_by_wafer',
-                            'Sample|sample',
-                        ]
+                        'Statistics |stats': [
+                            'Pass rate|passrates',
+                            'Screen number|rescreen',
+                            'Pass, Bypass, and Unknown|failrates',
+                        ],
+                        'Data Split |split':[
+                            'By Wafer Number|wafer',
+                            'By Number of Screens|nscreen',
+                            'By Screening Batch|batch'
+                        ],
+                        'Start Date |start':[
+                            '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
+                            'First batch (2019)|00000000',  
+                            'Wafer 39 (2019 Nov)|20191101',
+                            'Wafer 41 (2020 Oct)|20201001',
+                            'Nicholas Start (2021 May)|20210520',
+                            'Wafer 44 (2021 Sept)|20210901',
+                            'Wafer 45 (2021 Nov)|20211023',
+                            'Kuo Lab Start (2022 April)|20220401',
+                            'Wafer 47 (2022 May)|20220525',
+                            'Rescreen batch 1 (2022 early July)|20220701',
+                            'Rescreen batch 2 (2022 late July)|20220720',
+                            'Rescreen batch 3 (2022 early August)|20220801',
+                            'Wafer 48 (2022 late August)|20220820',
+                            'Rescreen batch 4 (2022 Nov)|20221101',
+                            'End of time|99999999',
+
+                        ],
+                        'End Date |end':[
+                        '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
+                            'First batch (2019)|00000000',  
+                            'Wafer 39 (2019 Nov)|20191101',
+                            'Wafer 41 (2020 Oct)|20201001',
+                            'Nicholas Start (2021 May)|20210520',
+                            'Wafer 44 (2021 Sept)|20210901',
+                            'Wafer 45 (2021 Nov)|20211023',
+                            'Kuo Lab Start (2022 April)|20220401',
+                            'Wafer 47 (2022 May)|20220525',
+                            'Rescreen batch 1 (2022 early July)|20220701',
+                            'Rescreen batch 2 (2022 late July)|20220720',
+                            'Rescreen batch 3 (2022 early August)|20220801',
+                            'Wafer 48 (2022 late August)|20220820',
+                            'Rescreen batch 4 (2022 Nov)|20221101',
+                            'End of time|99999999',
+                        ],
+                        
+
                     },
                     function (params) {
-                        dirpath = 'scripts'
-                        filename = dirpath + '/' + params.coldstats + '.png'
+                        dirpath = 'scripts/' + params.stats
+                        date = params.start +'_'+params.end
+                        filename = dirpath + '/by' + params.split + '_'+date + '.png'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'coldstats': 'passrate_by_wafer',
+                        'stats':'passrates',
+                        'split':'wafer',
+                        'start': '00000000',
+                        'end': '99999999',
                     }
                 );
 
