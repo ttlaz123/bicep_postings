@@ -1,0 +1,83 @@
+<div class="header">
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a href="intro_info.html">intro_info</a>
+        <a href="gluing.html">gluing</a>
+        <a class="active" href="wirebond.html">Wirebond</a>
+        <a href="roomtemp.html">roomtemp</a>
+        <a href="cryotest.html">cryotest</a>
+    </div>
+</div>
+
+<body>
+    <h4>Wirebonding: 2 - 12 hr per board</h4>
+    <script type="text/javascript" src="scripts/pager.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+    <ul>
+        <li>Mount the PCB onto the wirebonding block</li>
+        <li>Wirebond the row selects, making sure to start at the copper PCB pads and end on the NbTi pads of the
+            Squids.
+            There are a total of 11 row selects per chip, with an input and output, for a total of 22 wirebonds per
+            chip.
+            A full board has a max of 24 chips, for a maximum of 528 bonds.
+        </li>
+        <li>Wirebond the inputs in a stitch pattern on the Squid chip, ensuring the input coils are all connected in
+            series.
+            Ensure that the bonds are in the middle of the pad so that the bond surface does not touch two different
+            pads.
+            Keeping the bonds short and triangular shaped will also decrease the probability of cross-shorts.
+            Then, wirebond the first and last input on the chip to the PCB.
+            There are a total of 11 inputs, requiring 10 wirebonds to connect them in series.
+            Adding the two wirebonds for connecting the inputs to the PCB, this is a total of 12 wirebonds per chip.
+            This is a total of 288 max bonds per board.
+        </li>
+        <li>Wirebond the feedback and output pads. These bonds on the sides of the chips are mostly straightforward
+            except for the bonds
+            on the outside of row X. These bonds are in a pentagonal shape with crossing wires, increasing the
+            chance of contact shorts.
+            Great care must be taken to ensure ideal bond lengths. There are a total of 8 bonds per chip, for a
+            maximum of 192 bonds per board.
+        </li>
+        <li>
+            Once all the wirebonds are complete, either store the board in a nitrogen cabinet or move directly to
+            room temperature screening.
+            A single board has a maximum of 1008 bonds, from 42 bonds per chip.
+        </li>
+    </ul>
+    <figure>
+        <img alt="Chip Wirebonding" id="wirebond" src="#" width="750" height="750" />
+        <figcaption>
+            Pictures of Chip Wirebonding
+        </figcaption>
+        <script type="text/javascript">
+            pager.link("#wirebond",
+                {
+                    'Wirebonding Steps|wirestep': [
+                        'Board Mounting|wirebond_setup',
+                        'Overall Bonding Diagram|overall_diagram',
+                        'Photo of Chip|single_chip',
+                        'Chip Drawing|whole_chip',
+                        'With Circuit Diagram|circuit',
+                        'Row Selects|row_selects',
+                        'Inputs|inputs',
+                        'Feedback and Output|feedback',
+
+
+                    ]
+                },
+                function (params) {
+                    dirpath = 'figs/wirebond'
+                    filename = dirpath + '/' + params.wirestep + '.jpg'
+                    return filename
+                });
+            pager.setparams(
+                {
+                    'wirestep': 'single_chip',
+                }
+            );
+
+        </script>
+
+    </figure>
+</body>

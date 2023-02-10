@@ -1,4 +1,74 @@
+<script type="text/javascript" src="scripts/pager.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="scripts/pager.css">
+<div class="header">
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a href="intro_info.html">intro_info</a>
+        <a class="active" href="gluing.html">gluing</a>
+        <a href="wirebond.html">Wirebond</a>
+        <a href="roomtemp.html">roomtemp</a>
+        <a href="cryotest.html">cryotest</a>
+    </div>
+</div>
+
 <body>
     <h1>Materials</h1>
     <h1>Procedure</h1>
+    <h4>Gluing: 30 - 60 min per board</h4>
+    <ul>
+        <li>Clean the PCB bond pads with the white eraser, pink eraser, and isopropyl alcohol in the respective
+            order. The bond pads should be shiny by the end of the cleaning</li>
+        <li>Set up 3 aluminum trays, 1 for isopropyl alcohol (IPA), and 2 for acetone. Squirt the liquids into their
+            respective tins up to a depth of approximately 5 mm, enough to submerge the Squid chips.</li>
+        <li>Using a vacuum try handling system, carefully remove a chip from its gel pack with tweezers.</li>
+        <li>While holding the chip with tweezers, gently shake the chip in the acetone tray for 10 seconds or until
+            the photoresist has been completely removed.
+            Repeat the chip shaking in the other acetone tray, then in the IPA tray. If the chip already has its
+            photoresist removed, the first aceton tray is optional.</li>
+        <li>Holding the chip on the Kimwipe, blow dry nitrogen from a Compressed Nitrogen Gun until chip is dry.
+        </li>
+        <li>Using a small wooden rod, lightly dab the bottle of rubber cement to cover the tip of the rod. </li>
+        <li>Apply the glue from the wooden rod onto a Squid chip slot on the PCB, then place the Squid chip on top
+            of the glue, ensuring correct orientation.
+            Use two wooden rods to press the Squids onto the board, making sure to only touch the corners of the
+            chip. </li>
+        <li>Repeat the process until the board is full of Squid chips. Use a microscope to verify the IDs of the
+            chips,
+            and record them in a table while double checking for the correct orientation.</li>
+    </ul>
+    <figure>
+        <img alt="Chip Gluing" id="glue" src="#" width="750" height="750" />
+        <figcaption>
+            Pictures of Chip Gluing
+        </figcaption>
+        <script type="text/javascript">
+            pager.link("#glue",
+                {
+                    'Gluing Step|gluestep': [
+                        'Clean the Screening PCB|clean_board',
+                        'Prepare Chip Cleaning Setup|prep_chipcleaner',
+                        'Remove Chip from Gel Pack|remove_chip',
+                        'Clean the Squid Chip|clean_chip',
+                        'Dry the Squid Chip|dry_chip',
+                        'Acquire Rubber Cement|acquire_glue',
+                        'Glue Chip to the PCB|glue_chip',
+                        'Repeat Until Board is Full|full_board',
+                    ]
+                },
+                function (params) {
+                    dirpath = 'figs/gluing'
+                    filename = dirpath + '/' + params.gluestep + '.jpg'
+                    return filename
+                });
+            pager.setparams(
+                {
+                    'gluestep': 'remove_chip',
+
+                }
+            );
+
+        </script>
+
+    </figure>
 </body>

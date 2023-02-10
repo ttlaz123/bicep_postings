@@ -1,0 +1,156 @@
+<script type="text/javascript" src="scripts/pager.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<link rel="stylesheet" type="text/css" href="scripts/pager.css">
+<div class="header">
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a class="active" href="intro_info.html">intro_info</a>
+        <a href="gluing.html">gluing</a>
+        <a href="wirebond.html">Wirebond</a>
+        <a href="roomtemp.html">roomtemp</a>
+        <a href="cryotest.html">cryotest</a>
+    </div>
+</div>
+<h3>The SQuID Chip, Screening PCB, and Screening Tower</h3>
+<p>
+    The MUX 15b SQuID Chip is quite small and fragile, measuring 6.6 mm by 3.0 mm by 0.18 mm. While handling,
+    great care
+    must be taken
+    to only handle the sides of the chip, as touching the top can damage the sensitive electronics. The squids
+    are
+    delivered
+    by NIST in gel packs, which serve as their ideal storage system due to the electrical insulation and
+    physical
+    stability.
+</p>
+<p>
+    The chip serves as an amplifier at its superconducting temperatures below 10K, but it is typically
+    tested and used at temperatures below 4K. As a time domain multiplexor, the squid chip reads in 11 inputs (IN)
+    that are
+    all output on a single output line (OUT). The row selects (RS) are applied to select a single input at a
+    time
+    for a specific amount of time. By correlating the signal to the corresponding row select, it is possible to
+    read
+    out 11 different inputs with a single squid chip.
+</p>
+<p>
+    The feedback line (FB) serves to maximize the sensitivity of the input, but during screening, the FB
+    acts as the varying input to verify the ideal bias current that should run through OUT.
+</p>
+
+<figure>
+    <img alt="Chip" id="chip" src="#" width="750" height="750" />
+    <figcaption>
+        Pictures of the squid chip.
+    </figcaption>
+    <script type="text/javascript">
+        pager.link("#chip",
+            {
+                'Squid Chip|parts': [
+                    'Schematic|schematic',
+                    'Gel Pack|gelpak',
+                    'Circuit Diagram|circuit'
+                ]
+            },
+            function (params) {
+                dirpath = 'figs/chip'
+                filename = dirpath + '/' + params.parts + '.jpg'
+                return filename
+            });
+        pager.setparams(
+            {
+                'parts': 'schematic',
+
+            }
+        );
+
+    </script>
+
+</figure>
+<p>
+    The Dr Eleven screening PCB has 24 slots for squid chips and 10 connectors, each of which has 8
+    signal/ground pairs.
+    The row selects make up the majority of the connectors, with 5 connectors responsible for the 33 row
+    selects. With 3 rows labeled X, Y, and Z, each row select activates the response of up to 8 squid chips.
+</p>
+<p>
+    The INPUT, FB1, and MUXOUT are connected to the sides of the chip slot area, while
+    SAOUT and SAFB are connected to the pin area where the Squid Series Array box is attached during screening.
+    These connectors all have 8 signal/ground pairs for the 8 channels labeled 0 through 7.
+</p>
+<figure>
+    <img alt="PCB Board" id="pcbs" src="#" width="750" height="750" />
+    <figcaption>
+        Pictures of the screening PCB and related traces. Blue are traces above the board, and red are
+        traces underneath the board.
+    </figcaption>
+    <script type="text/javascript">
+        pager.link("#pcbs",
+            {
+                'Screening PCB Part|pcbs': [
+                    'Screening PCB|pcb',
+                    'Chip Slots|chip_slot',
+                    'Squid Array Feedback and Output|ssa',
+                    'Squid Series Array Box|ssabox',
+                    'Row X connectors|rowx',
+                    'Row Y connectors|rowy',
+                    'Row Z connectors|rowz',
+                    'Feedback connectors|fb',
+                    'Muxout connectors|out',
+                    'Input connectors|input'
+                ]
+            },
+            function (params) {
+                dirpath = 'figs/pcb'
+                filename = dirpath + '/' + params.pcbs + '.jpg'
+                return filename
+            });
+        pager.setparams(
+            {
+                'pcbs': 'pcb',
+
+            }
+        );
+
+    </script>
+
+</figure>
+<p>
+    The screening tower is a device provided by NIST for the express purpose of interfacing with the
+    screening PCB. The top of the tower houses the electronics and the connector sockets for
+    interfacing with external electronics like oscilliscopes and current supplies. The 5 rows of HDMI
+    cables connect to the Row Selects. For the bottom row, only one connection is used. The
+    SMB connectors come in groups of 8 for the 8 channels on the PCB. All the names
+    are the same except SQ2BIAS connects to MUXOUT. The connectors
+    on the bottom of the tower connect to the Samtech connectors on the screening PCB.
+</p>
+<figure>
+    <img alt="Tower" id="tower" src="#" width="750" height="750" />
+    <figcaption>
+        Pictures of the screening PCB
+    </figcaption>
+    <script type="text/javascript">
+        pager.link("#tower",
+            {
+                'Tower Part|tower': [
+                    'Whole Tower|whole',
+                    'Top Part|top',
+                    'Bottom Part|bottom',
+                ]
+            },
+            function (params) {
+                dirpath = 'figs/tower'
+                filename = dirpath + '/' + params.tower + '.jpg'
+                return filename
+            });
+        pager.setparams(
+            {
+                'tower': 'whole',
+
+            }
+        );
+
+    </script>
+
+</figure>

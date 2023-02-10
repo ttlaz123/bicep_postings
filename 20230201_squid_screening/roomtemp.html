@@ -1,0 +1,295 @@
+<script type="text/javascript" src="scripts/pager.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="scripts/pager.css">
+<div class="header">
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a href="intro_info.html">intro_info</a>
+        <a href="gluing.html">gluing</a>
+        <a href="wirebond.html">Wirebond</a>
+        <a class="active" href="roomtemp.html">roomtemp</a>
+        <a href="cryotest.html">cryotest</a>
+    </div>
+</div>
+<h4>Identifying Faulty Chips</h4>
+<ul>
+    <li>Connect the screening PCB to the screening tower.</li>
+    <li>Record the resistance of the Input, Row Selects, and Feedback lines using a multimeter and the breakout
+        box.</li>
+    <li>With the PCB still attached, probe the pairs of pins with just a multimeter to record the resistance of
+        the Out lines.</li>
+    <li>Detach the PCB from the tower, and record the resistance of the Out lines.</li>
+    <li>Using the multimeter, probe the connectors directly to determine the resistance of Input, Row Select,
+        and Feedback lines. Note that the Row Select numbers are 1 off from the numbers marked on the PCB.</li>
+    <li>Identify any resistance reading that is more than 10% off from the other readings of the same type,
+        or when a difference in resistance is caused by connecting the PCB to the tower.</li>
+</ul>
+<p>The purpose of recording two sets of resistances is to see if any abnormal resistance readings are a result
+    of
+    cross-shorts. When the PCB is connected to the tower, every connector is connected to a common ground. Thus,
+    any
+    cross-short would allow a current to flow through an additional path to the common ground, causing a change
+    in
+    resistance. The most common identified errors are cross-shorts, opens, and single point abnormal
+    resistances.
+    We will explore how to identify the exact chip in each of these cases.</p>
+<figure>
+    <img alt="Probing room temperature" id="probe" src="#" width="750" height="750" />
+    <figcaption>
+        Pictures of abnormalities
+    </figcaption>
+    <script type="text/javascript">
+        pager.link("#probe",
+            {
+                'Connection to probe|probe': [
+                    'Row Select|rs',
+                    'Feedback|fb',
+                    'Out|out',
+                    'Input|input',
+                ],
+                'Probe Type|conn': [
+                    'While Connected to Tower|c',
+                    'While Disconnected to Tower|d',
+                    'Connection being probed|p'
+
+                ],
+            },
+            function (params) {
+                dirpath = 'figs/probe'
+                filename = dirpath + '/' + params.probe + params.conn + '.jpg'
+                return filename
+            });
+        pager.setparams(
+            {
+                'probe': 'rs',
+                'conn': 'p',
+            }
+        );
+
+    </script>
+
+</figure>
+<b>Cross-short:</b>
+<ul>
+    <li>
+        The cross-short means that within a specific chip, electrical lines are shorted where they shouldn't be.
+        This leads to a smaller resistance reading for any measurement involving the short.
+    </li>
+    <li>
+        For example, if a chip has the RS 4 shorted to the Feedback line, then while the tower is connected
+        to the PCB, this will result in a smaller resistance reading for both the feedback in that channel
+        and for the entire row select. When the tower is not connected, the resistances will read normally,
+        because the cross-short will not allow current to flow through the disconnected ground.
+    </li>
+    <li>
+        To verify the chip that is causing the lowered resistance readings, while the PCB is disconnected
+        from the tower, measure the resistance between the RS 4 connector and the feedback row that
+        contains the chip. If this resistance is not open, that indicates a cross-short.
+    </li>
+    <li> When the cross-short occurs between a row select and a channel reading like FB, OUT, or INPUT, then
+        it is easy to find the faulty chip by finding the row and column where a short exists.
+    </li>
+    <li>When the cross-short occurs between two row readings or two column readings, then identification
+        becomes trickier. The most certain method is to debond and bypass a chip, then remeasure the
+        resistances. If the resistance readings become normal, then that was the faulty chip. Otherwise,
+        rebond and debond a different chip until the problem chip is found. There are other tricks for
+        identifying the problem chip more quickly like calculating the position through expected
+        resistance readings, but those methods require more intuition and experience and have a
+        higher chance of damaging the chip.
+    </li>
+</ul>
+<b>Opens:</b>
+<ul>
+    <li>Opens are identified by measuring an unexpected open across the disconnected PCB. An open on a row
+        select
+        could be any one of 8 chips in the row, while an open across a column has only 3 potential suspects.
+    </li>
+    <li>
+        Opens can always be caused by a faulty wirebond. Before performing additional wirebonds to short across
+        suspected opens, it may save time to perform pull tests on the wirebonds in the problem row/column.
+    </li>
+    <li>When there's an open across the Feedback or Out, start shorting across chips starting from row Z. By
+        wirebonding
+        the two Feedback/Out pads on row Y, the chip on row Z becomes bypassed. Measure the resistance. Repeat
+        until
+        the multimeter no longer reads open, and the last bypassed chip is the cause of the open. Bonding on the
+        PCB pads
+        decreases the possibility of damage on the chips themselves.
+
+    </li>
+    <li>
+        If there's an open across the Input, choose a chip in the column, then perform a long wirebond from one
+        end of the
+        input to the other. Measure to check if the Input row is still open. Repeat until the open Input chip is
+        identified.
+    </li>
+    <li>If there's an open across a RS, choose a chip in the row, then wirebond the two adjacent RS pads to
+        short the RS
+        of that chip. Measure the RS to check for the open. Repeat until the open RS chip is identified.
+    </li>
+</ul>
+
+<b>Singular abnormal readings</b>
+<ul>
+    <li>
+        Very occassionally, a single resistance reading will be significantly higher or lower than expected, but
+        without affecting the resistance readings of any other lines.
+    </li>
+    <li>
+        In this case, the procedure is similar to that of identifying faulty chip causing an open: short across
+        each chip in the row/column and observe the change in resistance. For row selects, shorting across
+        a single chip should decrease the resistance reading by about 1.0kOhm +- 0.1 kOhm. The full list of
+        expected resistance per chip will be in the next section.
+    </li>
+    <li>
+        If the change in resistance is much higher or lower than expected, that indicates that the chip contains
+        a singular abnormal reading, and needs to be bypassed.
+    </li>
+</ul>
+Once the problem chips are identified, the temporary shorting bonds are removed, and the problem chip is
+bypassed.
+<figure>
+    <img alt="Shorting Bonds" id="abnormal" src="#" width="750" height="750" />
+    <figcaption>
+        Pictures of Chip Wirebonding
+    </figcaption>
+    <script type="text/javascript">
+        pager.link("#abnormal",
+            {
+                'Cause of abnormal resistance|abn': [
+                    'Cross-short between RS and Feedback|crossshort1',
+                    'Cross-short between Out and Feedback|crossshort2',
+                    'Cross-short between RS and RS|crossshort3',
+                    'Open across Feedback|open1'
+                ],
+                'What to look at|cc': [
+                    'Problem Chip|chip',
+                    'Check connectors to verify|connectors',
+                ],
+            },
+            function (params) {
+                dirpath = 'figs/abnormals'
+                filename = dirpath + '/' + params.abn + '_' + params.cc + '.jpg'
+                return filename
+            });
+        pager.setparams(
+            {
+                'abn': 'crossshort1',
+                'cc': 'chip',
+            }
+        );
+
+    </script>
+
+</figure>
+<h4>Bypassing Chips</h4>
+
+<ul>
+    <li>To bypass a squid chip, we remove the wirebonds attached the chip and replace them with shorting bonds
+        on the PCB bond pads. The squid chip may be removed to ease the shorting process.
+    </li>
+    <li>
+        The row selects are the easiest to short across. The RS+ bond and the RS- bond are next to each other,
+        so to make the shorting bond, simply bond the two adjacent RS pads on the PCB.
+    </li>
+    <li>
+        The input shorting bond requires bonding across the entire chip. The Out and Feedback lines
+        have similar shorting bonds, except two bonds are required because the signal and ground
+        both come from the left side.
+    </li>
+    <li>
+        When the chip to bypass is in column Z, it provides an easier shorting bond. Here, it is only necessary
+        to bond the adjacent Out and Feedback pads to the left of the Z chip. If both Y and Z need to be
+        bypassed,
+        then it is only necessary to bond the adjacent pads to the left of the Y chip, as shown in the figure
+        below.
+        If all three chips are to be bypassed, then none of the shorting bonds are required besides the
+        RS shorting bonds, as that column will not be screened during cold screening anyway.
+    </li>
+</ul>
+The Figure below has diagrams for the different types of shorting bonds. Every type of shorting bond bypasses
+a single chip except for the shorting bond on the Feedback and Out diagram. When that type of shorting bond is
+placed, every chip to the right is bypassed. In the diagram, both chip Y and Z are bypassed with just two
+wirebonds. The diagram shows Chip X, the left side of Chip Y, and the right side of Chip Z for column 0 only.
+<figure>
+    <img alt="Shorting Bonds" id="shorts" src="#" width="750" height="750" />
+    <figcaption>
+        Pictures of Chip Wirebonding
+    </figcaption>
+    <script type="text/javascript">
+        pager.link("#shorts",
+            {
+                'Shorting Bond Type|short': [
+                    'Row Select|rs',
+                    'Feedback|fb',
+                    'Out|out',
+                    'Input|input',
+                    'Feedback (red) and Out (blue)|fbout',
+                ]
+            },
+            function (params) {
+                dirpath = 'figs/bypass'
+                filename = dirpath + '/' + params.short + '_shorts.jpg'
+                return filename
+            });
+        pager.setparams(
+            {
+                'short': 'rs',
+            }
+        );
+
+    </script>
+
+</figure>
+
+After the bypassing is complete, an additional resistance check should be performed to verify there are no more
+abnormalities. Due to the bypassing, some of the resistance readings will be lower. The table below specifies
+the approximate expected resistance for each non-bypassed chip. Note that the specific numbers will vary by chip
+wafer, with a deviation up to 10-20%.
+
+<center>
+    <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
+        <tbody>
+            <tr>
+                <td><b>Resistance Reading</b></td>
+                <td rowspan="1"><b>Constant Resistance from Tower (Ohms)</b></td>
+                <td rowspan="1"><b>Resistance per Chip (Ohms)</b></td>
+                <td rowspan="1"><b>Expected Resistance with all Chips present (Ohms)</b></td>
+                <td rowspan="1"><b>Expected Resistance with 2 Chips missing (Ohms)</td>
+            </tr>
+            <tr>
+                <td>Row Select (max 8 chips)</td>
+                <td>2 k</td>
+
+                <td>1.1 k</td>
+                <td>10.8 k</td>
+                <td>8.6 k</td>
+            </tr>
+            <tr>
+                <td>Input (max 3 chips)</td>
+                <td>5 k </td>
+
+                <td>0.5 M</td>
+                <td>1.5 M</td>
+                <td>0.5 M</td>
+            </tr>
+            <tr>
+                <td>Output (max 3 chips)</td>
+                <td>0
+                </td>
+
+                <td>7 k</td>
+                <td>21 k</td>
+                <td>7 k</td>
+            </tr>
+            <tr>
+                <td>Feedback (max 3 chips)</td>
+                <td>5 k</td>
+
+                <td>15 k</td>
+                <td>50 k</td>
+                <td>20 k</td>
+            </tr>
+        </tbody>
+    </table>
+</center>

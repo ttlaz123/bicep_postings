@@ -14,6 +14,7 @@
     </script>
 </head>
 
+
 <body>
     <!-- Add my custom pa>er script -->
     <script type="text/javascript" src="scripts/pager.js"></script>
@@ -25,9 +26,18 @@
         <time datetime="2023-02-01" class="published updated">
             2023 Feb 01
         </time> —
-        Tom Liu
+        Tom Liu, Cheng Zhang
     </header>
-
+    <div class="header">
+        <div class="header-right">
+            <a class="active" href="index.html">Home</a>
+            <a href="intro_info.html">intro_info</a>
+            <a href="gluing.html">gluing</a>
+            <a href="wirebond.html">Wirebond</a>
+            <a href="roomtemp.html">roomtemp</a>
+            <a href="cryotest.html">cryotest</a>
+        </div>
+    </div>
     <hr>
 
 
@@ -50,33 +60,18 @@
             Below, we summarize the procedure and statistics of the squid screening since it was taken up by the Kuo
             lab.
         </p>
-        <h3>The SQuID Chip, Screening PCB, and Screening Tower</h3>
-        <p>
-            The MUX 15b SQuID Chip is quite small and fragile, measuring 6.6 mm by 3.0 mm by 0.18 mm. While handling,
-            great care
-            must be taken
-            to only handle the sides of the chip, as touching the top can damage the sensitive electronics. The squids
-            are
-            delivered
-            by NIST in gel packs, which serve as their ideal storage system due to the electrical insulation and
-            physical
-            stability.
-        </p>
-        <p>
-            The chip serves as an amplifier at its superconducting temperatures below 10K, but it is typically
-            tested and used at temperatures below 4K. As a time domain multiplexor, the squid reads in 11 inputs (IN)
-            that are
-            all output on a single output line (OUT). The row selects (RS) are applied to select a single input at a
-            time
-            for a specific amount of time. By correlating the signal to the corresponding row select, it is possible to
-            read
-            out 11 different inputs with a single squid chip.
-        </p>
-        <p>
-            The feedback line (FB) serves to bias the input to maximize the sensitivity, but during screening, the FB
-            acts as the varying input to verify the ideal bias current that should run through OUT.
-        </p>
-
+        <h3>Terminology</h3>
+        <ul>
+            <li>SQuID: </li>
+            <li>Squid chip: </li>
+            <li>Screening PCB: </li>
+            <li>Screening Tower: </li>
+            <li>Input: </li>
+            <li>Output: </li>
+            <li>Feedback: </li>
+            <li>Row Select: </li>
+        </ul>
+        <a href="intro_info.html">More detailed info with images</a>
         <figure>
             <img alt="Chip" id="chip" src="#" width="750" height="750" />
             <figcaption>
@@ -106,93 +101,6 @@
             </script>
 
         </figure>
-        <p>
-            The Dr Eleven screening PCB has 24 slots for squid chips and 10 connectors, each of which has 8
-            signal/ground pairs.
-            The row selects make up the majority of the connectors, with 5 connectors responsible for the 33 row
-            selects. With 3 rows labeled X, Y, and Z, each row select activates the response of up to 8 squid chips.
-        </p>
-        <p>
-            The INPUT, FB1, and MUXOUT are connected to the sides of the chip slot area, while
-            SAOUT and SAFB are connected to the pin area where the Squid Series Array box is attached during screening.
-            These connectors all have 8 signal/ground pairs for the 8 channels labeled 0 through 7.
-        </p>
-        <figure>
-            <img alt="PCB Board" id="pcbs" src="#" width="750" height="750" />
-            <figcaption>
-                Pictures of the screening PCB and related traces. Blue are traces above the board, and red are
-                traces underneath the board.
-            </figcaption>
-            <script type="text/javascript">
-                pager.link("#pcbs",
-                    {
-                        'Screening PCB Part|pcbs': [
-                            'Screening PCB|pcb',
-                            'Chip Slots|chip_slot',
-                            'Squid Array Feedback and Output|ssa',
-                            'Squid Series Array Box|ssabox',
-                            'Row X connectors|rowx',
-                            'Row Y connectors|rowy',
-                            'Row Z connectors|rowz',
-                            'Feedback connectors|fb',
-                            'Muxout connectors|out',
-                            'Input connectors|input'
-                        ]
-                    },
-                    function (params) {
-                        dirpath = 'figs/pcb'
-                        filename = dirpath + '/' + params.pcbs + '.jpg'
-                        return filename
-                    });
-                pager.setparams(
-                    {
-                        'pcbs': 'pcb',
-
-                    }
-                );
-
-            </script>
-
-        </figure>
-        <p>
-            The screening tower is a device provided by NIST for the express purpose of interfacing with the
-            screening PCB. The top of the tower houses the electronics and the connector sockets for
-            interfacing with external electronics like oscilliscopes and current supplies. The 5 rows of HDMI
-            cables connect to the Row Selects. For the bottom row, only one connection is used. The
-            SMB connectors come in groups of 8 for the 8 channels on the PCB. All the names
-            are the same except SQ2BIAS connects to MUXOUT. The connectors
-            on the bottom of the tower connect to the Samtech connectors on the screening PCB.
-        </p>
-        <figure>
-            <img alt="Tower" id="tower" src="#" width="750" height="750" />
-            <figcaption>
-                Pictures of the screening PCB
-            </figcaption>
-            <script type="text/javascript">
-                pager.link("#tower",
-                    {
-                        'Tower Part|tower': [
-                            'Whole Tower|whole',
-                            'Top Part|top',
-                            'Bottom Part|bottom',
-                        ]
-                    },
-                    function (params) {
-                        dirpath = 'figs/tower'
-                        filename = dirpath + '/' + params.tower + '.jpg'
-                        return filename
-                    });
-                pager.setparams(
-                    {
-                        'tower': 'whole',
-
-                    }
-                );
-
-            </script>
-
-        </figure>
-
     </section>
 
     <section>
@@ -206,381 +114,90 @@
         <ul>
             <li>Always grab the chips with tweezers by the edges of the chip; try to avoid touching the flat top of the
                 chip whenever possible</li>
-            <li>Wear electrostatic discharge (ESD) protection whenever possible</li>
+            <li>Wear electrostatic discharge (ESD) protection whenever possible: wristbands, ESD mats</li>
         </ul>
+
         <h4>Gluing: 30 - 60 min per board</h4>
-        Below is a summary of the procedure for gluing chips onto a PCB. For a more detailed Standard Operating
-        Procedure, see here:
-        <a href="gluing.html">Gluing Procedure</a>
-
-        <ul>
-            <li>Clean the PCB bond pads with the white eraser, pink eraser, and isopropyl alcohol in the respective
-                order. The bond pads should be shiny by the end of the cleaning</li>
-            <li>Set up 3 aluminum trays, 1 for isopropyl alcohol (IPA), and 2 for acetone. Squirt the liquids into their
-                respective tins up to a depth of approximately 5 mm, enough to submerge the Squid chips.</li>
-            <li>Using a vacuum try handling system, carefully remove a chip from its gel pack with tweezers.</li>
-            <li>While holding the chip with tweezers, gently shake the chip in the acetone tray for 10 seconds or until
-                the photoresist has been completely removed.
-                Repeat the chip shaking in the other acetone tray, then in the IPA tray. If the chip already has its
-                photoresist removed, the first aceton tray is optional.</li>
-            <li>Holding the chip on the Kimwipe, blow dry nitrogen from a Compressed Nitrogen Gun until chip is dry.
-            </li>
-            <li>Using a small wooden rod, lightly dab the bottle of rubber cement to cover the tip of the rod. </li>
-            <li>Apply the glue from the wooden rod onto a Squid chip slot on the PCB, then place the Squid chip on top
-                of the glue, ensuring correct orientation.
-                Use two wooden rods to press the Squids onto the board, making sure to only touch the corners of the
-                chip. </li>
-            <li>Repeat the process until the board is full of Squid chips. Use a microscope to verify the IDs of the
-                chips,
-                and record them in a table while double checking for the correct orientation.</li>
-        </ul>
-        <figure>
-            <img alt="Chip Gluing" id="glue" src="#" width="750" height="750" />
-            <figcaption>
-                Pictures of Chip Gluing
-            </figcaption>
-            <script type="text/javascript">
-                pager.link("#glue",
-                    {
-                        'Gluing Step|gluestep': [
-                            'Clean the Screening PCB|clean_board',
-                            'Prepare Chip Cleaning Setup|prep_chipcleaner',
-                            'Remove Chip from Gel Pack|remove_chip',
-                            'Clean the Squid Chip|clean_chip',
-                            'Dry the Squid Chip|dry_chip',
-                            'Acquire Rubber Cement|acquire_glue',
-                            'Glue Chip to the PCB|glue_chip',
-                            'Repeat Until Board is Full|full_board',
-                        ]
-                    },
-                    function (params) {
-                        dirpath = 'figs/gluing'
-                        filename = dirpath + '/' + params.gluestep + '.jpg'
-                        return filename
-                    });
-                pager.setparams(
-                    {
-                        'gluestep': 'remove_chip',
-
-                    }
-                );
-
-            </script>
-
-        </figure>
+        For a more detailed procedure, see here:
+        <a href="gluing.html">Gluing Procedure</a>.
+        <p>First clean the screening PCB, clean the chips, then using rubber cement, glue the squid chips onto the PCB.
+            Cleaning takes 5-10 minutes, while each chip takes 1-2 minutes to glue, for a total of 30-60 minutes per
+            PCB.
+        </p>
         <h4>Wirebonding: 2 - 4 hr per board</h4>
-        Below is a summary of how to wirebond each group of pads. For a more detailed explanation, see here:
+        Below is a summary of wirebonding. For a more detailed procedure, see here:
         <a href="wirebond.html">Wirebonding Procedure</a>
-        <ul>
-            <li>Mount the PCB onto the wirebonding block</li>
-            <li>Wirebond the row selects, making sure to start at the copper PCB pads and end on the NbTi pads of the
-                Squids.
-                There are a total of 11 row selects per chip, with an input and output, for a total of 22 wirebonds per
-                chip.
-                A full board has a max of 24 chips, for a maximum of 528 bonds.
-            </li>
-            <li>Wirebond the inputs in a stitch pattern on the Squid chip, ensuring the input coils are all connected in
-                series.
-                Ensure that the bonds are in the middle of the pad so that the bond surface does not touch two different
-                pads.
-                Keeping the bonds short and triangular shaped will also decrease the probability of cross-shorts.
-                Then, wirebond the first and last input on the chip to the PCB.
-                There are a total of 11 inputs, requiring 10 wirebonds to connect them in series.
-                Adding the two wirebonds for connecting the inputs to the PCB, this is a total of 12 wirebonds per chip.
-                This is a total of 288 max bonds per board.
-            </li>
-            <li>Wirebond the feedback and output pads. These bonds on the sides of the chips are mostly straightforward
-                except for the bonds
-                on the outside of row X. These bonds are in a pentagonal shape with crossing wires, increasing the
-                chance of contact shorts.
-                Great care must be taken to ensure ideal bond lengths. There are a total of 8 bonds per chip, for a
-                maximum of 192 bonds per board.
-            </li>
-            <li>
-                Once all the wirebonds are complete, either store the board in a nitrogen cabinet or move directly to
-                room temperature screening.
-                A single board has a maximum of 1008 bonds, from 42 bonds per chip.
-            </li>
-        </ul>
+        <p>
+            For each row of 8 chips, the wirebonding connects all the row selects in series.
+            For each column of 3 chips,
+            the wirebonding connects the Feedbacks, Inputs, and Outputs in series. Each chip requires 42 wirebonds for
+            its
+            52 pads. Each chip takes between 5-30 minutes to wirebond, depending on wirebonder setting, wire
+            cooperation,
+            and general experience.
+            This accounts for a total of 2-12 hours per board, but an experienced wirebonder can usually finish a board
+            within 4 hours.
+        </p>
         <figure>
-            <img alt="Chip Wirebonding" id="wirebond" src="#" width="750" height="750" />
+            <img alt="Wirebonding" id="wirebond" src="#" width="1250" height="750" />
             <figcaption>
-                Pictures of Chip Wirebonding
+                In the comparison of the circuit diagram to the realistic schematic, the red and green pads/lines
+                correspond to each other.
             </figcaption>
             <script type="text/javascript">
                 pager.link("#wirebond",
                     {
-                        'Wirebonding Steps|wirestep': [
-                            'Board Mounting|wirebond_setup',
-                            'Overall Bonding Diagram|overall_diagram',
-                            'Photo of Chip|single_chip',
-                            'Chip Drawing|whole_chip',
-                            'With Circuit Diagram|circuit',
-                            'Row Selects|row_selects',
-                            'Inputs|inputs',
-                            'Feedback and Output|feedback',
-                            
-                            
-                        ]
+                        'Wirebonding Diagram|dia': [
+                            'Side by side of circuit diagram and realistic schematic|compare',
+                            'Wirebonding Diagram|overall_diagram',
+                            'Diagram with all drawing styles|all3',
+
+                        ],
                     },
                     function (params) {
                         dirpath = 'figs/wirebond'
-                        filename = dirpath + '/' + params.wirestep + '.jpg'
+                        filename = dirpath + '/' + params.dia + '.jpg'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'wirestep': 'single_chip',
+                        'dia': 'compare',
                     }
                 );
 
             </script>
 
         </figure>
+
         <h3>Room Temperature Screening: 20 - 120 min per board</h3>
-        This step is crucial for increasing the yield of the overall screening process. Without checking for opens and
-        cross-shorts at room temperature,
-        these issues can cause an entire row or column of chips to fail cold screening. Here, we identify the chips that
-        read abnormal resistances,
-        then wirebond over the chip to bypass the chip entirely.
-        <h4>Identifying Faulty Chips</h4>
-        Below is a summary of the procedure for identifying faulty chips. For a detailed account, see here: <a
-            href="roomtemp.html">Room Temperature Screening Procedure</a>
-        <ul>
-            <li>Connect the screening PCB to the screening tower.</li>
-            <li>Record the resistance of the Input, Row Selects, and Feedback lines using a multimeter and the breakout
-                box.</li>
-            <li>With the PCB still attached, probe the pairs of pins with just a multimeter to record the resistance of
-                the Out lines.</li>
-            <li>Detach the PCB from the tower, and record the resistance of the Out lines.</li>
-            <li>Using the multimeter, probe the connectors directly to determine the resistance of Input, Row Select,
-                and Feedback lines. Note that the Row Select numbers are 1 off from the numbers marked on the PCB.</li>
-            <li>Identify any resistance reading that is more than 10% off from the other readings of the same type,
-                or when a difference in resistance is caused by connecting the PCB to the tower.</li>
-        </ul>
-        <p>The purpose of recording two sets of resistances is to see if any abnormal resistance readings are a result
-            of
-            cross-shorts. When the PCB is connected to the tower, every connector is connected to a common ground. Thus,
-            any
-            cross-short would allow a current to flow through an additional path to the common ground, causing a change
-            in
-            resistance. The most common identified errors are cross-shorts, opens, and single point abnormal
-            resistances.
-            We will explore how to identify the exact chip in each of these cases.</p>
-        <figure>
-            <img alt="Probing room temperature" id="probe" src="#" width="750" height="750" />
-            <figcaption>
-                Pictures of abnormalities
-            </figcaption>
-            <script type="text/javascript">
-                pager.link("#probe",
-                    {
-                        'Connection to probe|probe': [
-                            'Row Select|rs',
-                            'Feedback|fb',
-                            'Out|out',
-                            'Input|input',
-                        ],
-                        'Probe Type|conn':[    
-                            'While Connected to Tower|c',  
-                            'While Disconnected to Tower|d',
-                            'Connection being probed|p'
-                            
-                        ],
-                    },
-                    function (params) {
-                        dirpath = 'figs/probe'
-                        filename = dirpath + '/' + params.probe + params.conn + '.jpg'
-                        return filename
-                    });
-                pager.setparams(
-                    {
-                        'probe': 'rs',
-                        'conn':'p',
-                    }
-                );
+        <p>
+            This step is crucial for increasing the yield of the overall screening process. Without checking for opens
+            and
+            cross-shorts at room temperature,
+            these issues can cause an entire row or column of chips to fail cold screening. Here, we identify the chips
+            that
+            read abnormal resistances,
+            then wirebond over the chip to bypass the chip entirely.
+        </p>
+        <p>
+            Below is a summary of the procedure for identifying faulty chips. For a detailed account, see here: <a
+                href="roomtemp.html">Room Temperature Screening Procedure</a>
 
-            </script>
-
-        </figure>
-        <b>Cross-short:</b>
-        <ul>
-            <li>
-                The cross-short means that within a specific chip, electrical lines are shorted where they shouldn't be.
-                This leads to a smaller resistance reading for any measurement involving the short.
-            </li>
-            <li>
-                For example, if a chip has the RS 4 shorted to the Feedback line, then while the tower is connected
-                to the PCB, this will result in a smaller resistance reading for both the feedback in that channel
-                and for the entire row select. When the tower is not connected, the resistances will read normally,
-                because the cross-short will not allow current to flow through the disconnected ground.
-            </li>
-            <li>
-                To verify the chip that is causing the lowered resistance readings, while the PCB is disconnected
-                from the tower, measure the resistance between the RS 4 connector and the feedback row that
-                contains the chip. If this resistance is not open, that indicates a cross-short.
-            </li>
-            <li> When the cross-short occurs between a row select and a channel reading like FB, OUT, or INPUT, then
-                it is easy to find the faulty chip by finding the row and column where a short exists.
-            </li>
-            <li>When the cross-short occurs between two row readings or two column readings, then identification
-                becomes trickier. The most certain method is to debond and bypass a chip, then remeasure the
-                resistances. If the resistance readings become normal, then that was the faulty chip. Otherwise,
-                rebond and debond a different chip until the problem chip is found. There are other tricks for
-                identifying the problem chip more quickly like calculating the position through expected
-                resistance readings, but those methods require more intuition and experience and have a
-                higher chance of damaging the chip.
-            </li>
-        </ul>
-        <b>Opens:</b>
-        <ul>
-            <li>Opens are identified by measuring an unexpected open across the disconnected PCB. An open on a row
-                select
-                could be any one of 8 chips in the row, while an open across a column has only 3 potential suspects.
-            </li>
-            <li>
-                Opens can always be caused by a faulty wirebond. Before performing additional wirebonds to short across
-                suspected opens, it may save time to perform pull tests on the wirebonds in the problem row/column.
-            </li>
-            <li>When there's an open across the Feedback or Out, start shorting across chips starting from row Z. By
-                wirebonding
-                the two Feedback/Out pads on row Y, the chip on row Z becomes bypassed. Measure the resistance. Repeat
-                until
-                the multimeter no longer reads open, and the last bypassed chip is the cause of the open. Bonding on the
-                PCB pads
-                decreases the possibility of damage on the chips themselves.
-
-            </li>
-            <li>
-                If there's an open across the Input, choose a chip in the column, then perform a long wirebond from one
-                end of the
-                input to the other. Measure to check if the Input row is still open. Repeat until the open Input chip is
-                identified.
-            </li>
-            <li>If there's an open across a RS, choose a chip in the row, then wirebond the two adjacent RS pads to
-                short the RS
-                of that chip. Measure the RS to check for the open. Repeat until the open RS chip is identified.
-            </li>
-        </ul>
-
-        <b>Singular abnormal readings</b>
-        <ul>
-            <li>
-                Very occassionally, a single resistance reading will be significantly higher or lower than expected, but
-                without affecting the resistance readings of any other lines.
-            </li>
-            <li>
-                In this case, the procedure is similar to that of identifying faulty chip causing an open: short across
-                each chip in the row/column and observe the change in resistance. For row selects, shorting across
-                a single chip should decrease the resistance reading by about 1.0kOhm +- 0.1 kOhm. The full list of
-                expected resistance per chip will be in the next section.
-            </li>
-            <li>
-                If the change in resistance is much higher or lower than expected, that indicates that the chip contains
-                a singular abnormal reading, and needs to be bypassed.
-            </li>
-        </ul>
-        Once the problem chips are identified, the temporary shorting bonds are removed, and the problem chip is
-        bypassed.
-        <figure>
-            <img alt="Shorting Bonds" id="abnormal" src="#" width="750" height="750" />
-            <figcaption>
-                Pictures of Chip Wirebonding
-            </figcaption>
-            <script type="text/javascript">
-                pager.link("#abnormal",
-                    {
-                        'Cause of abnormal resistance|abn': [
-                            'Cross-short between RS and Feedback|crossshort1',
-                            'Cross-short between Out and Feedback|crossshort2',
-                            'Cross-short between RS and RS|crossshort3',
-                            'Open across Feedback|open1'
-                        ],
-                        'What to look at|cc': [
-                            'Problem Chip|chip',
-                            'Check connectors to verify|connectors',
-                        ],
-                    },
-                    function (params) {
-                        dirpath = 'figs/abnormals'
-                        filename = dirpath + '/' + params.abn + '_' + params.cc + '.jpg'
-                        return filename
-                    });
-                pager.setparams(
-                    {
-                        'abn': 'crossshort1',
-                        'cc': 'chip',
-                    }
-                );
-
-            </script>
-
-        </figure>
-        <h4>Bypassing Chips</h4>
-
-        <ul>
-            <li>To bypass a squid chip, we remove the wirebonds attached the chip and replace them with shorting bonds
-                on the PCB bond pads. The squid chip may be removed to ease the shorting process.
-            </li>
-            <li>
-                The row selects are the easiest to short across. The RS+ bond and the RS- bond are next to each other,
-                so to make the shorting bond, simply bond the two adjacent RS pads on the PCB.
-            </li>
-            <li>
-                The input shorting bond requires bonding across the entire chip. The Out and Feedback lines
-                have similar shorting bonds, except two bonds are required because the signal and ground
-                both come from the left side.
-            </li>
-            <li>
-                When the chip to bypass is in column Z, it provides an easier shorting bond. Here, it is only necessary
-                to bond the adjacent Out and Feedback pads to the left of the Z chip. If both Y and Z need to be
-                bypassed,
-                then it is only necessary to bond the adjacent pads to the left of the Y chip, as shown in the figure
-                below.
-                If all three chips are to be bypassed, then none of the shorting bonds are required besides the
-                RS shorting bonds, as that column will not be screened during cold screening anyway.
-            </li>
-        </ul>
-        The Figure below has diagrams for the different types of shorting bonds. Every type of shorting bond bypasses
-        a single chip except for the shorting bond on the Feedback and Out diagram. When that type of shorting bond is
-        placed, every chip to the right is bypassed. In the diagram, both chip Y and Z are bypassed with just two
-        wirebonds. The diagram shows Chip X, the left side of Chip Y, and the right side of Chip Z for column 0 only.
-        <figure>
-            <img alt="Shorting Bonds" id="shorts" src="#" width="750" height="750" />
-            <figcaption>
-                Pictures of Chip Wirebonding
-            </figcaption>
-            <script type="text/javascript">
-                pager.link("#shorts",
-                    {
-                        'Shorting Bond Type|short': [
-                            'Row Select|rs',
-                            'Feedback|fb',
-                            'Out|out',
-                            'Input|input',
-                            'Feedback (red) and Out (blue)|fbout',
-                        ]
-                    },
-                    function (params) {
-                        dirpath = 'figs/bypass'
-                        filename = dirpath + '/' + params.short + '_shorts.jpg'
-                        return filename
-                    });
-                pager.setparams(
-                    {
-                        'short': 'rs',
-                    }
-                );
-
-            </script>
-
-        </figure>
-
-        After the bypassing is complete, an additional resistance check should be performed to verify there are no more
-        abnormalities. Due to the bypassing, some of the resistance readings will be lower. The table below specifies
-        the approximate expected resistance for each non-bypassed chip. Note that the specific numbers will vary by chip
-        wafer, with a deviation up to 10-20%.
-
+        </p>
+        <p>
+            We use a multimeter to directly measure the
+            resistance of the squid chips at room temperature.
+            Because the squids are connected in series,
+            the expected readout of the Row Select, Input, Feedback, and Output are some multiple of the
+            resistances of each individual chip. The resistance measurement is also different depending on
+            whether or not the screening tower is connected because of a series resistance.
+        </p>
+        <p>
+            The table below shows the expected readings, and the
+            pager has an example of recorded resistances. If the actual readings do not match the
+            expected, then some chips will fail the room temperature screening, which is
+            performed in the <a href="roomtemp.html">Room Temperature Screening Procedure</a>.
+        </p>
         <center>
             <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
                 <tbody>
@@ -627,336 +244,93 @@
                 </tbody>
             </table>
         </center>
-
-        <h3>Cryogenic Testing: 3 - 4 hours per board</h3>
-        After a screening board has been prepared with chips free of abnormal resistance readings, it is now ready for
-        cryogenic screening. The purpose of this stage
-        is to ensure each chip can serve its purpose in the detector module as a proper superconducting amplifier. Due
-        to the fragile nature of the chips, they may not function
-        perfectly despite normal room temperature resistances.
-
-        <h4>Managing Helium: 2-3 hours per dewar</h4>
-        To ensure the squid chips are superconducting, they must be dipped into liquid helium, which has a boiling point
-        of 4K. Because helium has such a low boiling point, it is necessary to keep it in a well insulated dewawr;
-        however,
-        the opening must be large enough to fit the screening PCB and the screening tower. Helium in their storage
-        dewars
-        must be transfered into the specially designed Blue Dewar for screening to procede. For a detailed account on
-        how
-        to transfer helium, see here: <a href="transfer.html">Helium Transfer</a>. A single 100L dewar of helium
-        can screen between 5 - 15 boards depending on how quickly the screening is performed.
-
-        <h4>Connecting to the Software: 30 min per board</h4>
-        Once the blue helium dewar is sufficiently filled, the cryogenic screening can proceed. Below is a
-        summary for dipping and connecting the screening PCB to the screening software. A detailed procedure
-        is here:
-        <a href="software.html"> Connecting to Software </a>.
-        <ul>
-            <li>Attach the Squid Series Array box to the Screening PCB, screw the PCB to the bottom of the
-                screening tower, secure the Samtech connectors, and put on the magnetic shield cylinder.
-            </li>
-            <li>
-                With the venting valve open, remove the cap on the blue helium dewar and stick the magnetic shield end
-                of the tower into the dewar.
-                Be sure to tightly screw the flange onto the blue dewar.
-            </li>
-            <lI>
-                Slowly lower the tower into the blue dewar by alternating the loosening of the white plastic collar.
-                Be sure to go slowly enough for the helium to evaporate at a slow rate. Tighten both colors and close
-                the venting valve once the tower has reached the bottom.
-            </lI>
-            <li>
-                Connect up the electronics. The relevant connections of the screening tower are nine HDMI sockets,
-                32 SMB sockets, a fiber optic socket, and 3 power plugs. Turn on the electronics to their proper
-                setting.
-                A full list of the electronics and their settings are included in the detailed procedure.
-            </li>
-            <li>
-                Open the automated squid screening software, fill in the date of the screening, and enter the
-                name of the PCB.
-            </li>
-        </ul>
         <figure>
-            <img alt="Electronics" id="electronics" src="#" width="750" height="750" />
+            <img alt="Expected resistances" id="resist" src="#" width="750" height="1000" />
             <figcaption>
-                Pictures of Screening Electronics
+                <p>
+                    In the comparison of the circuit diagram to the realistic schematic, the red and green pads/lines
+                    correspond to each other. Columns 4 and 5 are empty (e), so there is nothing recorded there, and
+                    the row selects are about 2.2 kOhms lower than if the PCB were fully populated.
+                    Row select 17 was initially open, but now reads the expected resistance after correction. Also
+                    notice
+                    that when the PCB is disconnected from the screening tower, the FB reading is about 5kOhms lower.
+                    This is because there is a 5 kOhms series resistance from the PCB to the tower.
+                </p>
+                <p>
+                    In the probing diagrams, the blue represents traces above the PCB, while the red represents
+                    traces below the PCB. Row select probing measures the resistance of 8 chips in series, while
+                    the other probing measures the resistance of 3 chips in series.
+                </p>
+
             </figcaption>
             <script type="text/javascript">
-                pager.link("#electronics",
+                pager.link("#resist",
                     {
-                        'Electronics|electronics': [
-                            'Power Supply|power',
-                            'Voltage Bias|bias',
-                            'Connection to tower|connect',
-                            'Overall setup|setup',
-                            'All connections|signals',
-                        ]
+                        'Room temperature probing|resist': [
+                            'Expected Room Temperature Resistances|resistance_table',
+                            'Example of recorded Chip IDs|chipid',
+                            'Circuit Diagram of Input, Output, Feedback, and Row select|circuit',
+                            'Probing Row Selects|rsp',
+                            'Probing Output|outp',
+                            'Probing Input|inputp',
+                            'Probing Feedback|fbp',
+                        ],
                     },
                     function (params) {
-                        dirpath = 'figs/electronics'
-                        filename = dirpath + '/' + params.electronics + '.jpg'
+                        dirpath = 'figs/probe'
+                        filename = dirpath + '/' + params.resist + '.jpg'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'electronics': 'setup',
+                        'resist': 'resistance_table',
                     }
                 );
 
             </script>
 
         </figure>
-        <h4>Running the cold screening software: 2-3 hours per board</h4>
+        <h3>Cryogenic Testing: 3 - 4 hours per board</h3>
+        For a detailed procedure, see:
+        <a href="cryotest.html">Cryogenic Screening Procedure</a>
         <p>
-            The automated screening software checks for 4 quantities: critical current of the column \(I_{C,col}\),
-            modulation, current with maximum modulation \(I_{C,max}\), and current with minimum modulation
-            \(I_{C,min}\).
+            We plunge the screening tower with a populated screening PCB into helium to test the performance
+            of the squid chips at 4K, which is within its superconducting range. After connecting the
+            tower to the screening electronics and running the screening software, we identify the
+            \(I_{C,col}\) for each column of chips and the \(I_{C,min}\), \(I_{C,max}\), and modulation of each row
+            select. An example of expected readings is shown below.
         </p>
-        <ul>
-            <li>
-                Modulation is specific to each Row select, and it indicates how much an input signal on that row can be
-                amplified. The larger the modulation, the easier it is to see a small signal.
-            </li>
-            <li>For each row select,
-                there is a particular device current, \(I_{C,max}\), at which the modulation is at its largest.
-            </li>
-            <li>
-                \(I_{C,col}\) is screened across an entire column of 3 chips, and it indicates the maximum device
-                current
-                that
-                can be applied before current starts flowing through the Input squids, at which point the row is turned
-                on.
-                Time domain multiplexing requires specific rows to turn on only when current is applied to the specific
-                row
-                select, thus it is desirable for
-                \(I_{C,col}\) to be significantly higher than any \(I_{C,max}\) in the chips on the column. If
-                \(I_{C,col}\)
-                were lower than the \(I_{C,max}\) in any row, then it is no longer possible to achieve maximum
-                modulation
-                for the squid chip without certainty which row the signal is arriving from.
-            </li>
-            <li>
-                \(I_{C,min}\) specifies the minimum current at which a specific row sees some modulation. To ensure that
-                a particular row only turns on when chosen by the Row Select, it is desireable for \(I_{C,min}\) to
-                be significantly above 0, but a small fraction of \(I_{C,max}\) (typically around a fifth to a tenth)
-                so there is room to adjust the bias current.
-            </li>
-        </ul>
-        Below is a summary of the cold screening. For a detailed procedure, see here: <a href="software.html"> Running
-            the Software </a>
-        <ul>
-            <li>Ensure the electronics are properly connected, choose a column/channel to screen, and click "Start
-                Screening". </li>
-
-            <li>The program will prompt to make sure the SMB connectors are connected to the correct channels: the SAFB
-                connector should be connected to the same column number as the channel number being screened,
-                but MUXOUT, SAOUT, and FB1 are all connected backward. </li>
-            <li>The program will first scan for the modulation of the Squid Series Array. On the Oscilloscope,
-                a sine wave should be visible with a modulation that varies over time. Here, the SAFB is providing
-                an 8 KHz ramp function as an input current, and the Squid Series Array's response are the
-                expected sine waves. During the scan, the bias current varies, which changes the modulation
-                response of the sine waves. The purpose of the scan is the determine the series resistance of the
-                SSA, which is used in later calculations.
-            </li>
-            <li>
-                The program will now determine the \(I_{C,col}\) of the channel. With all the row selects turned off,
-                and the feedback kept at the 8 KHz ramp function, the bias current is slowly increased until
-                some modulation is observed. The device current at which the modulation just begins is calculated
-                to be \(I_{C,col}\). Recalculate the value if it does not match the observed value on the oscilliscope
-            </li>
-            <li>
-                Next, the program will individually scan each row select. The same varying bias current and feedback
-                are applied as for determining \(I_{C,col}\), but an individual row select will be turned on.
-                The program will calculate the device current at which modulation just appears, \(I_{C,min}\),
-                and the device current
-                at which the modulation is at its maximum, \(I_{C,max}\). These values will be recorded in a
-                plot shown by the software. The modulation will also be recorded on a separate graph.
-                After all the row selects are screened, the program will stop.
-                If there are bypassed chips in the row, it saves time to manually skip over the row selects.
-            </li>
-            <li>Repeat the above until all channels are screened.</li>
-            <li> When finished, disconnect the electronics and open the vent valve.
-                Remove the tower from the helium dewar slowly, using the white plastic collar to prevent
-                the tower from slipping. Unscrew the flange and replace it with the dewar cap.
-                Leave the tower on a table to warm up for 20-30 min before running the next board.
-                It is very important for all the ice to melt for the next connection to be firm. If
-                any water or ice is still on the connectors, it will disrupt the connection of the next board
-                as it is lowered into helium, preventing some row selects from being screened.
-            </li>
-
-        </ul>
         <figure>
-            <img alt="Screening" id="screening" src="#" width="750" height="750" />
+            <img alt="Expected Cryogenic Results" id="cryo" src="#" width="750" height="1000" />
             <figcaption>
-                Pictures of Screening Electronics
+                <p>
+                    When measuring Ic col, the curve should start out flat and slowly curve up. The Ic col
+                    is the influction point: where the modulation just starts to increase. The Ic min is
+                    measured similarly to the Ic col, except a row select is turned on, so the modulation
+                    begins much earlier. The Ic max is measured as the maximum modulation for a specific
+                    row select. The Ic col should be significantly higher than the Ic max.
+                </p>
+
             </figcaption>
             <script type="text/javascript">
-                pager.link("#screening",
+                pager.link("#cryo",
                     {
-                        'Screening Step|screening': [
-                            'Ic min and max for Row Selects|rs',
-                            'Modulation Curve for each Row Select|curve',
-                            'Max Modulation for Row Selects|modulation',
-                            'Ic col curve|iccol',
-                        ]
+                        'Room temperature probing|cryo': [
+                            'Expected modulation curve for measuring Ic col|iccol',
+                            'Expected modulation curve for individual row select|curve',
+                            'Expected Modulation|modulation',
+                            'Expected Ic min and max|rs',
+
+                        ],
                     },
                     function (params) {
                         dirpath = 'figs/screening'
-                        filename = dirpath + '/' + params.screening + '.jpg'
+                        filename = dirpath + '/' + params.cryo + '.jpg'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'screening': 'rs',
-                    }
-                );
-
-            </script>
-
-        </figure>
-        <h4>Possible failure modes</h4>
-        As the cold screening takes place, it is important to record whether each chip has passed or failed.
-        A chip that passes screening requires the following criteria:
-        <ul>
-            <li>Each of its 11 row selects have approximately the same \(I_{C,max}\), \(I_{C,min}\), and modulation.
-                Typical values are between 8-10 microamps for \(I_{C,max}\), 1-2 microamps for \(I_{C,min}\), and
-                20-30 V for modulation. These values should be within approximately 10% of each other; otherwise,
-                it suggests the squid's waveform is not a perfect sine wave.
-            </li>
-            <li>
-                The \(I_{C,col}\) of the channel which contains the chip is above every \(I_{C,max}\). To determine
-                whether the \(I_{C,col}\) is high enough, it is necessary to observe the plot produced during
-                screening. If the plot appears to modulate slowly, it likely suggests that the chips have passed.
-                However, if the modulation appears too quickly with a sudden peak, it suggests that one of the
-                chips in the channel is faulty.
-            </li>
-        </ul>
-        Below, we outline some of the common failure modes during cold screening.
-        <ul>
-            <li>During the SSA scan, no modulation is observed.
-                <ul>
-                    <li>First, check to make sure all the cables are properly connected to the correct channels.
-                        The fiber optic cable also frequently comes loose.</li>
-                    <li>
-                        It has been observed that decreasing the current on the current sources and
-                        turning it back on allows the modulation to reappear. It is currently
-                        unknown why this fixes the issue.
-                    </li>
-                    <li>
-                        Probe the connection between the tower sockets and the Samtech connectors. If either
-                        the SAFB connection or SAOUT connection is open, that suggests the cable is torn.
-                        Visually inspect the cabling for breaks. Be sure to keep the probe current below 1mA
-                        to avoid blowing the amplifier. If there are breaks, the only current solution
-                        is to solder over the break with copper wire. Unfortunately, this fix is only
-                        temporary as the solder will not likely hold for very long.
-                    </li>
-                    <li>
-                        It is possible that the squids in the SSA box are faulty. To test this, swap the SSA
-                        chips within the squid box after taking the tower out of the dewar, and retest the
-                        same channels. If modulation returns, the fault is in the SSA chips.
-                    </li>
-                    <li>
-                        It is possible that the Low Noise Amplifier (LNA) in the tower for the channel has been blown,
-                        in which the only
-                        recourse is to replace the LNA.
-                    </li>
-                    <li>
-                        This symptom also occurs when the squids are no longer superconducting. Thump the dewar
-                        to check that there is enough helium.
-                    </li>
-                </ul>
-            </li>
-            <li>
-                During the scan for \(I_{C,col}\), there is no modulation.
-                <ul>
-                    <li>
-                        This situation is similar to no modulation during the SSA scan, but the potential problem areas
-                        are now the SQ1Bias and FB1 connections. Check that these cables are connected to the
-                        correct channels and check for opens.
-                    </li>
-                    <li>
-                        There is a small chance that the \(I_{C,col}\) is simply too large, so it is out of range of
-                        the scan. To verify this, simply start scanning the Row Selects. If modulation is observed,
-                        then there is no issue.
-                    </li>
-                    <li> If the channel is not screenable, the chips need to be rescreened.</li>
-                </ul>
-            </li>
-            <li>
-                During the scan for \(I_{C,col}\), the modulation appears too quickly.
-                <ul>
-                    <li>
-                        If the modulation appears early but then decreases again, this suggests that there is cross-talk
-                        on one of the chips. All three chips on the channel will need to be rescreened to pin down
-                        which chip is the culprit.
-                    </li>
-                    <li>
-                        If the modulation appear immediately or does not follow a sine wave pattern, this suggests a
-                        cross-short that was not caught during room temperature screening.
-                        If the row selects can still scan, it is useful to do so for future reference even though
-                        the chips cannot pass this screening. Typically, however, this usually renders the entire
-                        channel unscreenable. Regardless, the chips need to be rescreened
-                    </li>
-
-                </ul>
-            </li>
-            <li>
-                While scanning the row selects, there are abnormal values for modulation or the critical currents.
-                <ul>
-                    <li>The most sure-fire way to determine the problem is to observe the waveform on the oscilloscope.
-                        The expected pattern is for a sine wave to appear, reach some maximum modulation, then slowly
-                        shrink.
-                    </li>
-                    <li>
-                        Common abnormal waveforms include a wave with multiple peaks, a wave that does not complete
-                        full modulation, a noisy waveform, or no modulation at all.
-                    </li>
-                    <li>If there is no modulation at all, or if the modulation is very low, that suggests that
-                        the row select was not turned on. In this case, the \(I_{C,min}\) sometimes
-                        matches the \(I_{C,col}\). If this same issue occurs in the RS of every channel, that suggests
-                        there is an open: either a wirebond came off or the connector was not fastened properly.
-                        This can be easily verified with the multimeter and breakout box. In this case, the chips
-                        need to be rescreened.
-                    </li>
-                    <li>If there is a double peak, this usually means there is some damage to the squids in that row.
-                        If the modulation and \(I_{C,max}\) aren't too different from the other rows, and if the
-                        waveform at the max modulation is still a single peak sine wave, then the chip may still
-                        be acceptable. Otherwise, the chip has failed screening.
-                    </li>
-
-                </ul>
-            </li>
-        </ul>
-        During this scan, mark each chip as either passed, failed, or unknown (and need to be rescreened). Specifying
-        the
-        exact failure mode will help in determining the best rescreen pattern. Currently, all the results are
-        recorded in the spreadsheet <a
-            href="https://docs.google.com/spreadsheets/d/1P4ldsPritsVjOpLrGDMMjEQIUl2pGGT145hiWrTprlA/edit#gid=0">here</a>.
-
-        <figure>
-            <img alt="Failure Modes" id="fail" src="#" width="750" height="750" />
-            <figcaption>
-                Pictures of Failure mode examples
-            </figcaption>
-            <script type="text/javascript">
-                pager.link("#fail",
-                    {
-                        'Failure Mode|fail': [
-                            'No modulation appears during SSA scan|ssa',
-                            'No modulation appears during Ic cols can|iccol',
-                            'Ic col scan modulates too quickly|iccol_fast',
-                            'Ic col scan modulates multiple times|iccol_multi',
-                            'Double Peak during RS scan|rs_multi',
-                        ]
-                    },
-                    function (params) {
-                        dirpath = 'figs/fail'
-                        filename = dirpath + '/' + params.fail + '.jpg'
-                        return filename
-                    });
-                pager.setparams(
-                    {
-                        'fail': 'ssa',
+                        'cryo': 'rs',
                     }
                 );
 
@@ -999,14 +373,14 @@
                             'Screen number|rescreen',
                             'Pass, Bypass, and Unknown|failrates',
                         ],
-                        'Data Split |split':[
+                        'Data Split |split': [
                             'By Wafer Number|wafer',
                             'By Number of Screens|nscreen',
                             'By Screening Batch|batch'
                         ],
-                        'Start Date |start':[
-                        '~~~~~~~~~~~~~~~~~~~~~~~~',
-                            'First batch (2019)|00000000',  
+                        'Start Date |start': [
+                            '~~~~~~~~~~~~~~~~~~~~~~~~',
+                            'First batch (2019)|00000000',
                             'Wafer 39 (2019 Nov)|20191101',
                             'Wafer 41 (2020 Oct)|20201001',
                             'Nicholas Start (2021 May)|20210520',
@@ -1022,9 +396,9 @@
                             'End of time|99999999',
 
                         ],
-                        'End Date |end':[
-                        '~~~~~~~~~~~~~~~~~~~~~~~~',
-                            'First batch (2019)|00000000',  
+                        'End Date |end': [
+                            '~~~~~~~~~~~~~~~~~~~~~~~~',
+                            'First batch (2019)|00000000',
                             'Wafer 39 (2019 Nov)|20191101',
                             'Wafer 41 (2020 Oct)|20201001',
                             'Nicholas Start (2021 May)|20210520',
@@ -1039,19 +413,19 @@
                             'Rescreen batch 4 (2022 Nov)|20221101',
                             'End of time|99999999',
                         ],
-                        
+
 
                     },
                     function (params) {
                         dirpath = 'scripts/' + params.stats
-                        date = params.start +'_'+params.end
-                        filename = dirpath + '/by' + params.split + '_'+date + '.png'
+                        date = params.start + '_' + params.end
+                        filename = dirpath + '/by' + params.split + '_' + date + '.png'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'stats':'passrates',
-                        'split':'wafer',
+                        'stats': 'passrates',
+                        'split': 'wafer',
                         'start': '00000000',
                         'end': '99999999',
                     }
