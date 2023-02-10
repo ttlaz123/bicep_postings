@@ -313,10 +313,14 @@
                         'Wirebonding Steps|wirestep': [
                             'Board Mounting|wirebond_setup',
                             'Overall Bonding Diagram|overall_diagram',
-                            'Single chip|single_chip',
+                            'Photo of Chip|single_chip',
+                            'Chip Drawing|whole_chip',
+                            'With Circuit Diagram|circuit',
                             'Row Selects|row_selects',
                             'Inputs|inputs',
                             'Feedback and Output|feedback',
+                            
+                            
                         ]
                     },
                     function (params) {
@@ -371,26 +375,28 @@
             <script type="text/javascript">
                 pager.link("#probe",
                     {
-                        'Shorting Bond Type|probe': [
+                        'Connection to probe|probe': [
                             'Row Select|rs',
-                            'Feedback|feedback',
+                            'Feedback|fb',
                             'Out|out',
                             'Input|input',
-                            'Direct Row Select|rsd',
-                            'Direct Feedback|fbd',
-                            'Direct Input|inputd',
-                            'Record Info in a Table|resistance_table',
-                            'Include Chip IDs|chipid'
-                        ]
+                        ],
+                        'Probe Type|conn':[    
+                            'While Connected to Tower|c',  
+                            'While Disconnected to Tower|d',
+                            'Connection being probed|p'
+                            
+                        ],
                     },
                     function (params) {
                         dirpath = 'figs/probe'
-                        filename = dirpath + '/' + params.probe + '.jpg'
+                        filename = dirpath + '/' + params.probe + params.conn + '.jpg'
                         return filename
                     });
                 pager.setparams(
                     {
                         'probe': 'rs',
+                        'conn':'p',
                     }
                 );
 
