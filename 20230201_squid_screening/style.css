@@ -202,10 +202,10 @@ figure {
      * doesn't necessarily span that far. */
     width: -webkit-calc(100vw - 2 * 32px);
     width: -moz-calc(100vw - 2 * 32px);
-    width: calc(100vw - 2 * 32px);
+    width: calc(90vw - 2 * 32px);
     margin-left: -webkit-calc(-50vw + 400px + 32px);
     margin-left: -moz-calc(-50vw + 400px + 32px);
-    margin-left: calc(-50vw + 500px + 32px);
+    margin-left: calc(-45vw + 500px + 32px);
 
     /* Make some nice looking box shadows in as many browsers as we
         can */
