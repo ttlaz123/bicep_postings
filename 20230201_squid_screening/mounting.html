@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BICEP Array Squid Screening -- T. Liu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Load up MathJax for math notation -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: { equationNumbers: { autoNumber: "AMS" } }
+        });
+    </script>
+    <script type="text/javascript" src="../mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/javascript" src="scripts/pager.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+</head>
+ <!-- Add my custom pa>er script -->
+ <script type="text/javascript" src="scripts/pager.js"></script>
+ <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+
+ <header>
+     <h1>BICEP Array SQuID Screening Report</h1>
+
+     <time datetime="2023-02-01" class="published updated">
+         2023 Feb 01
+     </time> —
+     Tom Liu, Cheng Zhang
+ </header>
+
+<div class="header">
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a href="intro_info.html">Basic Info</a>
+        <a class="active" href="mounting.html">Chip Mounting</a>
+        <a href="roomtemp.html">Warm Screening</a>
+        <a href="cryotest.html">Cryogenic Testing</a>
+        <a href="stats.html">Statistics</a>
+        <a href="casestudy.html">Case Studies</a>
+        <a href="glossary.html">Glossary</a>
+    </div>
+</div>
+<hr>
+
+<body>
+    <h1>Materials</h1>
+    <h1>Procedure</h1>
+    <h4>Gluing: 30 - 60 min per board</h4>
+    <ul>
+        <li>Clean the PCB bond pads with the white eraser, pink eraser, and isopropyl alcohol in the respective
+            order. The bond pads should be shiny by the end of the cleaning</li>
+        <li>Set up 3 aluminum trays, 1 for isopropyl alcohol (IPA), and 2 for acetone. Squirt the liquids into their
+            respective tins up to a depth of approximately 5 mm, enough to submerge the Squid chips.</li>
+        <li>Using a vacuum try handling system, carefully remove a chip from its gel pack with tweezers.</li>
+        <li>While holding the chip with tweezers, gently shake the chip in the acetone tray for 10 seconds or until
+            the photoresist has been completely removed.
+            Repeat the chip shaking in the other acetone tray, then in the IPA tray. If the chip already has its
+            photoresist removed, the first aceton tray is optional.</li>
+        <li>Holding the chip on the Kimwipe, blow dry nitrogen from a Compressed Nitrogen Gun until chip is dry.
+        </li>
+        <li>Using a small wooden rod, lightly dab the bottle of rubber cement to cover the tip of the rod. </li>
+        <li>Apply the glue from the wooden rod onto a Squid chip slot on the PCB, then place the Squid chip on top
+            of the glue, ensuring correct orientation.
+            Use two wooden rods to press the Squids onto the board, making sure to only touch the corners of the
+            chip. </li>
+        <li>Repeat the process until the board is full of Squid chips. Use a microscope to verify the IDs of the
+            chips,
+            and record them in a table while double checking for the correct orientation.</li>
+    </ul>
+    <figure>
+        <img alt="Chip Gluing" id="glue" src="#" width="750" height="750" />
+        <figcaption>
+            Pictures of Chip Gluing
+        </figcaption>
+        <script type="text/javascript">
+            pager.link("#glue",
+                {
+                    'Gluing Step|gluestep': [
+                        'Clean the Screening PCB|clean_board',
+                        'Prepare Chip Cleaning Setup|prep_chipcleaner',
+                        'Remove Chip from Gel Pack|remove_chip',
+                        'Clean the Squid Chip|clean_chip',
+                        'Dry the Squid Chip|dry_chip',
+                        'Acquire Rubber Cement|acquire_glue',
+                        'Glue Chip to the PCB|glue_chip',
+                        'Repeat Until Board is Full|full_board',
+                    ]
+                },
+                function (params) {
+                    dirpath = 'figs/gluing'
+                    filename = dirpath + '/' + params.gluestep + '.jpg'
+                    return filename
+                });
+            pager.setparams(
+                {
+                    'gluestep': 'remove_chip',
+
+                }
+            );
+
+        </script>
+
+    </figure>
+
+    <h4>Wirebonding: 2 - 12 hr per board</h4>
+    <script type="text/javascript" src="scripts/pager.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+    <ul>
+        <li>Mount the PCB onto the wirebonding block</li>
+        <li>Wirebond the row selects, making sure to start at the copper PCB pads and end on the NbTi pads of the
+            Squids.
+            There are a total of 11 row selects per chip, with an input and output, for a total of 22 wirebonds per
+            chip.
+            A full board has a max of 24 chips, for a maximum of 528 bonds.
+        </li>
+        <li>Wirebond the inputs in a stitch pattern on the Squid chip, ensuring the input coils are all connected in
+            series.
+            Ensure that the bonds are in the middle of the pad so that the bond surface does not touch two different
+            pads.
+            Keeping the bonds short and triangular shaped will also decrease the probability of cross-shorts.
+            Then, wirebond the first and last input on the chip to the PCB.
+            There are a total of 11 inputs, requiring 10 wirebonds to connect them in series.
+            Adding the two wirebonds for connecting the inputs to the PCB, this is a total of 12 wirebonds per chip.
+            This is a total of 288 max bonds per board.
+        </li>
+        <li>Wirebond the feedback and output pads. These bonds on the sides of the chips are mostly straightforward
+            except for the bonds
+            on the outside of row X. These bonds are in a pentagonal shape with crossing wires, increasing the
+            chance of contact shorts.
+            Great care must be taken to ensure ideal bond lengths. There are a total of 8 bonds per chip, for a
+            maximum of 192 bonds per board.
+        </li>
+        <li>
+            Once all the wirebonds are complete, either store the board in a nitrogen cabinet or move directly to
+            room temperature screening.
+            A single board has a maximum of 1008 bonds, from 42 bonds per chip.
+        </li>
+    </ul>
+    <figure>
+        <img alt="Chip Wirebonding" id="wirebond" src="#" width="750" height="750" />
+        <figcaption>
+            Pictures of Chip Wirebonding
+        </figcaption>
+        <script type="text/javascript">
+            pager.link("#wirebond",
+                {
+                    'Wirebonding Steps|wirestep': [
+                        'Board Mounting|wirebond_setup',
+                        'Overall Bonding Diagram|overall_diagram',
+                        'Photo of Chip|single_chip',
+                        'Chip Drawing|whole_chip',
+                        'With Circuit Diagram|circuit',
+                        'Row Selects|row_selects',
+                        'Inputs|inputs',
+                        'Feedback and Output|feedback',
+
+
+                    ]
+                },
+                function (params) {
+                    dirpath = 'figs/wirebond'
+                    filename = dirpath + '/' + params.wirestep + '.jpg'
+                    return filename
+                });
+            pager.setparams(
+                {
+                    'wirestep': 'single_chip',
+                }
+            );
+
+        </script>
+
+    </figure>
+</body>

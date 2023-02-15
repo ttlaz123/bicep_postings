@@ -12,33 +12,39 @@
     </script>
     <script type="text/javascript" src="../mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
-</head>
-
-
-<body>
-    <!-- Add my custom pa>er script -->
     <script type="text/javascript" src="scripts/pager.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
     <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+</head>
+ <!-- Add my custom pa>er script -->
+ <script type="text/javascript" src="scripts/pager.js"></script>
+ <link rel="stylesheet" type="text/css" href="scripts/pager.css">
 
-    <header>
-        <h1>BICEP Array SQuID Screening Report</h1>
+ <header>
+     <h1>BICEP Array SQuID Screening Report</h1>
 
-        <time datetime="2023-02-01" class="published updated">
-            2023 Feb 01
-        </time> —
-        Tom Liu, Cheng Zhang
-    </header>
-    <div class="header">
-        <div class="header-right">
-            <a class="active" href="index.html">Home</a>
-            <a href="intro_info.html">intro_info</a>
-            <a href="gluing.html">gluing</a>
-            <a href="wirebond.html">Wirebond</a>
-            <a href="roomtemp.html">roomtemp</a>
-            <a href="cryotest.html">cryotest</a>
-        </div>
+     <time datetime="2023-02-01" class="published updated">
+         2023 Feb 01
+     </time> —
+     Tom Liu, Cheng Zhang
+ </header>
+
+<div class="header">
+    <div class="header-right">
+        <a class="active" href="index.html">Home</a>
+        <a href="intro_info.html">Basic Info</a>
+        <a href="mounting.html">Chip Mounting</a>
+        <a href="roomtemp.html">Warm Screening</a>
+        <a href="cryotest.html">Cryogenic Testing</a>
+        <a href="stats.html">Statistics</a>
+        <a href="casestudy.html">Case Studies</a>
+        <a href="glossary.html">Glossary</a>
     </div>
-    <hr>
+</div>
+<hr>
+<body>
+   
 
 
     <section>
@@ -60,30 +66,58 @@
             Below, we summarize the procedure and statistics of the squid screening since it was taken up by the Kuo
             lab.
         </p>
-        <h3>Terminology</h3>
+        <h3>Common Terminology</h3>
+        For a more comprehensive glossary, see <a href="glossary.html">here</a>. 
         <ul>
-            <li>SQuID: </li>
-            <li>Squid chip: </li>
-            <li>Screening PCB: </li>
-            <li>Screening Tower: </li>
-            <li>Input: </li>
-            <li>Output: </li>
-            <li>Feedback: </li>
-            <li>Row Select: </li>
+            <li><b>SQuID</b>: Superconducting Quantum Interference Device measures small magnetic fields. 
+                Wikipedia article: <a href="articles/squid_wiki.pdf">SQuID</a></li>
+            <li><b>Squid chip</b>: The Mux 15b SQuID chip produced by NIST acts as an amplifier for the detector modules. 
+                Measuring 3.0 mm by 6.6 mm, these small chips require an initial round of screening before they can be installed. 
+                In the chip, there are RS squids, which receive flux from the row selects, and SQ1 squids, which receive 
+                flux from Input and Feedback. </li>
+            <li><b>Screening PCB</b>: The DrEleven PCB holds up to 24 chips with 3 columns marked X, Y, Z and 8 rows from 0 through 7.
+                The Squid chip must first be wirebonded to the screening PCB before any screening can take place. </li>
+            <li><b>Dip Probe</b>: Also called the <b>Screening Tower</b>, it houses all the electronics for both 
+                sending the Squid chip inputs and receiving outputs from the chips. The Screening PCB must first be 
+                connected to the dip probe before in order to be dipped into liquid helium for cryogenic screening.
+            </li>
+            <li><b>Input (IN)</b>: The input coils receive signal from the detectors during operation and produce flux through the SQ1 squids. 
+                However, during the screening process,
+                they are simply checked for connectivity and cross-shorts. The 22 input pads (which connects to the 11 input coils),
+                are on the bottom side of the squid chip. 
+            </li>
+            <li><b>Row Select (RS)</b>: The row selects pass flux through ths RS squids, which turn on and off, or "select", a specific input 
+                to be read out. The 22 row select pads are
+                on the top side of the squid chip.
+            </li>
+            <li><b>Output (OUT1/2, SQ1OUT)</b>: The output line is connected to the SQ1BIAS line. Current is passed in, and the output of the 
+                current is read as the response of the squid chip. During normal operation, the output is set to a particular 
+                value, but during screening, the output sweeps through multiple current values to check its response.
+                The pads are on the top half of the sides of the chip. 
+            </li>
+            <li><b>Feedback (FB1/2, SQ1FB)</b>: The feedback line passes in a current that produces flux through the squids. This flux 
+                affects to response of the SQ1 squid. During normal operation, the FB follows the 
+                input to ensure maximum senstivity, but during Squid Screening, the FB sweeps through 
+                different currents to visualize the characteristic squid sine wave.
+
+            </li>
+            
         </ul>
-        <a href="intro_info.html">More detailed info with images</a>
+        <a href="intro_info.html">More info about the Squid Chip, Screening PCB, and Dip Probe</a>
+
+        The pager below has both the schematics and physical pictures of the chips.
         <figure>
             <img alt="Chip" id="chip" src="#" width="500" height="500" />
             <figcaption>
-                Pictures of the squid chip.
+                Schematic: a drawing of the squid chip to scale. 
             </figcaption>
             <script type="text/javascript">
                 pager.link("#chip",
                     {
                         'Squid Chip|parts': [
                             'Schematic|schematic',
+                            'Circuit Diagram|circuit',
                             'Gel Pack|gelpak',
-                            'Circuit Diagram|circuit'
                         ]
                     },
                     function (params) {

@@ -1,16 +1,48 @@
-<script type="text/javascript" src="scripts/pager.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="scripts/pager.css">
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BICEP Array Squid Screening -- T. Liu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Load up MathJax for math notation -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: { equationNumbers: { autoNumber: "AMS" } }
+        });
+    </script>
+    <script type="text/javascript" src="../mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/javascript" src="scripts/pager.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+</head>
+ <!-- Add my custom pa>er script -->
+ <script type="text/javascript" src="scripts/pager.js"></script>
+ <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+
+ <header>
+     <h1>BICEP Array SQuID Screening Report</h1>
+
+     <time datetime="2023-02-01" class="published updated">
+         2023 Feb 01
+     </time> —
+     Tom Liu, Cheng Zhang
+ </header>
+
 <div class="header">
     <div class="header-right">
         <a href="index.html">Home</a>
-        <a href="intro_info.html">intro_info</a>
-        <a href="gluing.html">gluing</a>
-        <a href="wirebond.html">Wirebond</a>
-        <a class="active" href="roomtemp.html">roomtemp</a>
-        <a href="cryotest.html">cryotest</a>
+        <a href="intro_info.html">Basic Info</a>
+        <a href="mounting.html">Chip Mounting</a>
+        <a class="active" href="roomtemp.html">Warm Screening</a>
+        <a href="cryotest.html">Cryogenic Testing</a>
+        <a href="stats.html">Statistics</a>
+        <a href="casestudy.html">Case Studies</a>
+        <a href="glossary.html">Glossary</a>
     </div>
 </div>
+<hr>
 <h4>Identifying Faulty Chips</h4>
 <ul>
     <li>Connect the screening PCB to the screening tower.</li>
