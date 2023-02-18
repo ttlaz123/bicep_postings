@@ -103,13 +103,15 @@
             </li>
             
         </ul>
-        <a href="intro_info.html">More info about the Squid Chip, Screening PCB, and Dip Probe</a>
+        <a href="intro_info.html">More info about the Squid Chip, Screening PCB, and Dip Probe</a>.
 
         The pager below has both the schematics and physical pictures of the chips.
         <figure>
             <img alt="Chip" id="chip" src="#" width="500" height="500" />
             <figcaption>
-                Schematic: a drawing of the squid chip to scale. 
+                Schematic: a drawing of the squid chip to scale. Circuit Diagram: a diagram with the relevant circuitry for understanding 
+                the function of the Squid chip. Gel Pack: a photo of the screening pcb and the gel pack that contains 
+                a batch of squid chips.
             </figcaption>
             <script type="text/javascript">
                 pager.link("#chip",
@@ -138,29 +140,22 @@
     </section>
 
     <section>
-        <h2>Procedure</h2>
+        <h2>Procedure: 6 - 11 hours per board </h2>
 
         <h3>Squid Chip Preparation and Mounting: 2.5 - 5 hours per board</h3>
         At this stage, the goal is the mount the desired number of Squid chips onto the screening board. The screening
         PCB contains 24 slots for Squid chips,
-        but not all 24 slots need to be used. The chips need to be glued, wirebonded, and have their positions recorded.
-        <h4>General notes</h4>
-        <ul>
-            <li>Always grab the chips with tweezers by the edges of the chip; try to avoid touching the flat top of the
-                chip whenever possible</li>
-            <li>Wear electrostatic discharge (ESD) protection whenever possible: wristbands, ESD mats</li>
-        </ul>
+        but not all 24 slots need to be used. The chips need to be glued, wirebonded, and have their positions recorded. 
+        Below is a summary of the important steps.
+        For a detailed procedure, see here: <a href="mounting.html">Mounting Squid Chips to the Screening PCB</a>
+        
 
         <h4>Gluing: 30 - 60 min per board</h4>
-        For a more detailed procedure, see here:
-        <a href="gluing.html">Gluing Procedure</a>.
         <p>First clean the screening PCB, clean the chips, then using rubber cement, glue the squid chips onto the PCB.
             Cleaning takes 5-10 minutes, while each chip takes 1-2 minutes to glue, for a total of 30-60 minutes per
             PCB.
         </p>
         <h4>Wirebonding: 2 - 4 hr per board</h4>
-        Below is a summary of wirebonding. For a more detailed procedure, see here:
-        <a href="wirebond.html">Wirebonding Procedure</a>
         <p>
             For each row of 8 chips, the wirebonding connects all the row selects in series.
             For each column of 3 chips,
@@ -173,29 +168,28 @@
             within 4 hours.
         </p>
         <figure>
-            <img alt="Wirebonding" id="wirebond" src="#" width="1000" height="500" />
+            <img alt="Mounting the Chips" id="mount" src="#" width="1000" height="500" />
             <figcaption>
                 In the comparison of the circuit diagram to the realistic schematic, the red and green pads/lines
                 correspond to each other.
             </figcaption>
             <script type="text/javascript">
-                pager.link("#wirebond",
+                pager.link("#mount",
                     {
-                        'Wirebonding Diagram|dia': [
-                            'Side by side of circuit diagram and realistic schematic|compare',
-                            'Wirebonding Diagram|overall_diagram',
-                            'Diagram with all drawing styles|all3',
+                        'Mounting Stage|mount': [
+                            'Gluing the chips onto the PCB|glue_chip',
+                            'Wirebonding on Circuit diagram and realistic schematic|compare',
 
                         ],
                     },
                     function (params) {
-                        dirpath = 'figs/wirebond'
-                        filename = dirpath + '/' + params.dia + '.jpg'
+                        dirpath = 'figs/mount'
+                        filename = dirpath + '/' + params.mount + '.jpg'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'dia': 'compare',
+                        'mount': 'compare',
                     }
                 );
 
@@ -205,15 +199,20 @@
 
         <h3>Room Temperature Screening: 20 - 120 min per board</h3>
         <p>
-            This step is crucial for increasing the yield of the overall screening process. Without checking for opens
+            This step was added to the procedure in 2022 August, after it was noticed that there was a significant correlation between 
+            abnormal room temperature resistance readings and failed chip screenings.
+            After implementing the room temperature screening, it was discovered that this step is 
+            crucial for increasing the yield of the overall screening process. Without checking for opens
             and
             cross-shorts at room temperature,
-            these issues can cause an entire row or column of chips to fail cold screening. Here, we identify the chips
-            that
-            read abnormal resistances,
-            then wirebond over the chip to bypass the chip entirely.
+            these issues can cause an entire row or column of chips to fail cold screening. 
+            
+           
         </p>
         <p>
+            In the warm screening stage, we identify the chips that
+            read abnormal resistances,
+            then wirebond over the chip to bypass the chip entirely.
             Below is a summary of the procedure for identifying faulty chips. For a detailed account, see here: <a
                 href="roomtemp.html">Room Temperature Screening Procedure</a>
 
@@ -229,55 +228,62 @@
         <p>
             The table below shows the expected readings, and the
             pager has an example of recorded resistances. If the actual readings do not match the
-            expected, then some chips will fail the room temperature screening, which is
-            performed in the <a href="roomtemp.html">Room Temperature Screening Procedure</a>.
+            expected, then that means some chips either have cross-shorts, opens, or abnormal resistance readings. 
+            
         </p>
         <center>
             <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
                 <tbody>
                     <tr>
                         <td><b>Resistance Reading</b></td>
+                        <td><b>Max number of chips in row or column</b></td>
                         <td rowspan="1"><b>Constant Resistance from Tower (Ohms)</b></td>
                         <td rowspan="1"><b>Resistance per Chip (Ohms)</b></td>
                         <td rowspan="1"><b>Expected Resistance with all Chips present (Ohms)</b></td>
-                        <td rowspan="1"><b>Expected Resistance with 2 Chips missing (Ohms)</td>
-                    </tr>
+                         </tr>
                     <tr>
-                        <td>Row Select (max 8 chips)</td>
+                        <td>Row Select</td>
+                        <td>8</td>
                         <td>2 k</td>
 
                         <td>1.1 k</td>
                         <td>10.8 k</td>
-                        <td>8.6 k</td>
+                       
                     </tr>
                     <tr>
-                        <td>Input (max 3 chips)</td>
+                        <td>Input </td>
+                        <td>3</td>
                         <td>5 k </td>
 
                         <td>0.5 M</td>
                         <td>1.5 M</td>
-                        <td>0.5 M</td>
+                       
                     </tr>
                     <tr>
-                        <td>Output (max 3 chips)</td>
+                        <td>Output</td>
+                        <td>3</td>
                         <td>0
                         </td>
 
                         <td>7 k</td>
                         <td>21 k</td>
-                        <td>7 k</td>
+                       
                     </tr>
                     <tr>
-                        <td>Feedback (max 3 chips)</td>
+                        <td>Feedback </td>
+                        <td>3</td>
                         <td>5 k</td>
 
                         <td>15 k</td>
                         <td>50 k</td>
-                        <td>20 k</td>
+                      
                     </tr>
                 </tbody>
             </table>
         </center>
+        By probing different combination of connectors, or shorting certain chips one by one, we can 
+            identify the individual chip that is causing the abnormal resistance readings. Once the 
+            chip is identified, we wirebond over the chip with shorting bonds to bypass the chip.
         <figure>
             <img alt="Expected resistances" id="resist" src="#" width="400" height="750" />
             <figcaption>
@@ -295,6 +301,10 @@
                     traces below the PCB. Row select probing measures the resistance of 8 chips in series, while
                     the other probing measures the resistance of 3 chips in series.
                 </p>
+                <p>
+                    On the bottom column of the PCB, the chip on the left and the chip in the middle 
+                    are bypassed. It is evident by the long wirebond that arcs over the entire chip.
+                </p>
 
             </figcaption>
             <script type="text/javascript">
@@ -302,12 +312,11 @@
                     {
                         'Room temperature probing|resist': [
                             'Expected Room Temperature Resistances|resistance_table',
-                            'Example of recorded Chip IDs|chipid',
-                            'Circuit Diagram of Input, Output, Feedback, and Row select|circuit',
                             'Probing Row Selects|rsp',
                             'Probing Output|outp',
                             'Probing Input|inputp',
                             'Probing Feedback|fbp',
+                            'Some Bypassed Chips|bypass'
                         ],
                     },
                     function (params) {
@@ -325,8 +334,31 @@
 
         </figure>
         <h3>Cryogenic Testing: 3 - 4 hours per board</h3>
-        For a detailed procedure, see:
-        <a href="cryotest.html">Cryogenic Screening Procedure</a>
+        Below is a summary of cryogenic testing. For a detailed procedure, see:
+        <a href="cryotest.html">Cryogenic Screening Procedure</a>.
+        <p>
+
+        Most issues with a squid chip can be identified by an abnormal reading for one of these four values:
+    </p>
+        <ul>
+            <li><b>\(I_{C,col}\)</b>: this demonstrates how robust the RS switches are across an entire chip. If the \(I_{C,col}\) is too low, 
+                        that generally means the RS squids are turning on when they should not be, allowing some unintended  
+                        inputs to be read out.
+            </li>
+            <li><b>Modulation</b>: at each bias current running through SQ1OUT, we sweep through the Feedback current 
+                with a ramp function at 8 KHz. Each value of feedback current produces a particular OUT response,
+                with the overall response shape being a sine wave. The amplitude of this sine wave is the modulation 
+                at that particular bias current.
+            </li>
+            <li> <b>\(I_{C,min}\)</b>: this value is specific to each row select and indicates the minimum device current at which 
+                a row sees some modulation. The values should be relatively constant across an entire squid chip 
+                to allow for easier squid tuning.
+            </li>
+            <li><b>\(I_{C,max}\)</b>: this value is specific to each row select and indicates the device current at which 
+                the modulation for the row is at its maximum. This is the current that the squid should be biased at during 
+            squid tuning to maximize the amplification of the signal.</li>
+            
+        </ul>
         <p>
             We plunge the screening tower with a populated screening PCB into helium to test the performance
             of the squid chips at 4K, which is within its superconducting range. After connecting the
@@ -354,6 +386,7 @@
                             'Expected modulation curve for individual row select|curve',
                             'Expected Modulation|modulation',
                             'Expected Ic min and max|rs',
+                            'OUT response (yellow) as a function of Feedback (purple)|feedback'
 
                         ],
                     },
@@ -371,134 +404,193 @@
             </script>
 
         </figure>
+        <p>
+        If any of these 4 values do not read as expected, it suggests that there are issues with the SQuIDs in the 
+        squid chip. For example, if a RS squid allows in less than its nominal current, it can lower the \(I_{C,col}\).
+        If an Input squid's flux quanta is slightly different from its neighboring squids, then it can cause 
+        destructive interference and lower the modulation of the row select. 
+    </p>
+    <p>
+        Some of these issues are specific to an 
+        individual chip, in which case that chip is marked as defective. However, some issues like a lowered \(I_{C,col}\)
+        or an open row select can impact the reading on an entire column or row. In these cases, it is 
+        not possible to determine which chip is the faulty one through one screening alone, and the chip is marked Unknown. In many cases, this 
+        means even though 2 out of 3 chips are good chips, the one bad chip makes all 3 fail the screening. In the worst 
+        case, one bad chip can cause 8 chips to fail the screening. 
+    </p>
+    <p>A more comprehensive list of failure modes are discussed in the <a href="cryotest.html">Cryogenic Screening Procedure</a>, 
+        while the statistics for these failures are discussed below.</p>
+
+
         <h3>Packaging and Delivery</h3>
         Once the screening results are obtained, each chip is sorted into passed, failed (includes both chips that
         were bypassed during room temperature screening and failed cold screening), or need to be rescreened.
-        <h4>Dismounting Chips</h4>
+        <p>
         A tweezer is used to pull off the wirebonds. Two wooden sticks are used to twist the squid chips from the
         side, which twists off the rubber cement used to glue the chip. The chip is then placed into a gel pack
         labeled passed, failed, or rescreen. Repeat until all the chips are sorted.
-        <h4>Final Verfication and Delivery</h4>
+    </p>
+    <p>
         Each chip in the passed gelpack is observed under a microscope to verify its ID, which is used to
         cross-reference the screening data. Once verification is complete, the gel pack is packaged and shipped.
-        For a detailed account on how to package a gel pack of squid chips, see here: <a href="package.html">Squid
-            Packaging</a>.
-
+    </p>
+<p>
         The cold Screening data is compiled into a zip file with the code on Kent Irwin's computer. It provides
         the Ic min, max and modulation for each of the passed chips, as well as information about Ic,col.
+    </p>
     </section>
 
     <section>
         <h2>Statistics</h2>
+        <p>
+        The pass, fail, and unknown rates of the squid chips are analyzed from 2019 to 2022. Before 2019, the screening process 
+        was still manual, meaning the bias current was manually adjusted, and the 4 impotant quantities were
+        manually calculated. Carl Dawson was the first to develop and conduct the automated screening procedure in 2019 April.
+        From 2019 April to 2021 February, Carl screened approximately 420 chips, passing around 310. 
+    </p>
+        <p>In 2021 May, Nicholas Rapidas screened his first batch of squid chips, and he was enventually joined by 
+            Jason Corbin. They screened approximately 700 chips (620 unique) between 2021 May and 2022 April, passing around 300.
+        </p>
+        <p>
+            The Kuo lab started their squid screening training in 2022 May, and from May to August, we screened 
+            approximately 820 chips, although many of the chips were rescreened, for a total of 600 unique chips. Out 
+            of these, approximately 340 passed. 
+
+        </p>
+        <p>
+            We plot the statistics below. For a more detailed set of statistics, see <a href="stats.html">Statistics</a>
+        </p>
         <h3>Room Temperature</h3>
+        <p>
+        Room temperature screening did not begin until 2022 August, so it is difficult to provide detailed statistics. A total of 
+        82 chips have been bypassed since 2022 August, when room temperature screening became a part of the procedure.
+        However, from 2021 May to 2022 July, the unknown rates of the screening results have ranged from 30% to as high 
+        as 60%. After warm screening, the unknown rate dropped to less than 20%.
+    </p><p>
+        Note that unknown is calculated after the fact by checking for whether the chip was rescreened. If the chip was appears in a 
+        later screening batch, it is marked unknown for the current batch. Thus, wafers 31 and 37 unknown rates are lower because 
+        they have not been rescreened.
+    </p>
 
         <h3>Cryogenic Testing</h3>
 
         <figure>
-            <img alt="Failure Statistics" id="coldstats" src="#" width="1250" height="750" />
+            <img alt="Squid Screening Statistics" id="coldstats" src="#" width="1250" height="750" />
             <figcaption>
-                Pictures of Failure mode examples
+                Plots of statistics
             </figcaption>
             <script type="text/javascript">
                 pager.link("#coldstats",
                     {
-                        'Statistics |stats': [
+                        'Statistics |stats1': [
                             'Pass rate|passrates',
-                            'Screen number|rescreen',
                             'Pass, Bypass, and Unknown|failrates',
                         ],
-                        'Data Split |split': [
+                        'Data Split |split1': [
                             'By Wafer Number|wafer',
-                            'By Number of Screens|nscreen',
                             'By Screening Batch|batch'
                         ],
-                        'Start Date |start': [
-                            '~~~~~~~~~~~~~~~~~~~~~~~~',
-                            'First batch (2019)|00000000',
-                            'Wafer 39 (2019 Nov)|20191101',
-                            'Wafer 41 (2020 Oct)|20201001',
-                            'Nicholas Start (2021 May)|20210520',
-                            'Wafer 44 (2021 Sept)|20210901',
-                            'Wafer 45 (2021 Nov)|20211023',
-                            'Kuo Lab Start (2022 April)|20220401',
-                            'Wafer 47 (2022 May)|20220525',
-                            'Rescreen batch 1 (2022 early July)|20220701',
-                            'Rescreen batch 2 (2022 late July)|20220720',
-                            'Rescreen batch 3 (2022 early August)|20220801',
-                            'Wafer 48 (2022 late August)|20220820',
-                            'Rescreen batch 4 (2022 Nov)|20221101',
-                            'End of time|99999999',
-
-                        ],
-                        'End Date |end': [
-                            '~~~~~~~~~~~~~~~~~~~~~~~~',
-                            'First batch (2019)|00000000',
-                            'Wafer 39 (2019 Nov)|20191101',
-                            'Wafer 41 (2020 Oct)|20201001',
-                            'Nicholas Start (2021 May)|20210520',
-                            'Wafer 44 (2021 Sept)|20210901',
-                            'Wafer 45 (2021 Nov)|20211023',
-                            'Kuo Lab Start (2022 April)|20220401',
-                            'Wafer 47 (2022 May)|20220525',
-                            'Rescreen batch 1 (2022 early July)|20220701',
-                            'Rescreen batch 2 (2022 late July)|20220720',
-                            'Rescreen batch 3 (2022 early August)|20220801',
-                            'Wafer 48 (2022 late August)|20220820',
-                            'Rescreen batch 4 (2022 Nov)|20221101',
-                            'End of time|99999999',
-                        ],
-
-
+    
+    
                     },
                     function (params) {
-                        dirpath = 'scripts/' + params.stats
+                        dirpath = 'scripts/' + params.stats1
+                        if(params.end <= params.start){
+                            return 'scripts/error.png'
+                        }
                         date = params.start + '_' + params.end
-                        filename = dirpath + '/by' + params.split + '_' + date + '.png'
+                        filename = dirpath + '/by' + params.split1 + '_' + date + '.png'
                         return filename
                     });
                 pager.setparams(
                     {
-                        'stats': 'passrates',
-                        'split': 'wafer',
+                        'stats1': 'passrates',
+                        'split1': 'wafer',
                         'start': '00000000',
                         'end': '99999999',
                     }
                 );
-
+    
             </script>
-
-        </figure>
+            </figure>
         <h3>New Chips vs Rescreens</h3>
-        Number passed after nth screen:
-        1: 742
-        2:155
-        3:49
-        4:3
-        5:0
-
-        N screens:
-        1: 957
-        2: 336
-        3: 119
-        4: 15
-        5: 3
-
-        >= N screens:
-        1: 1430
-        2: 473
-        3: 137
-        4: 18
-        5: 3
-
-        number of rescreens after nth screen
-        by wafer
-        by screening batch
-        by screening person
-
-        bypassed rate, by rescreen num
-
+        <figure>
+            <img alt="Squid Screening Statistics" id="rescreen" src="#" width="1250" height="750" />
+            <figcaption>
+                Plots of statistics
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#rescreen",
+                    {
+                        'Statistics |stats2': [
+                            'Pass rate|passrates',
+                            'Pass, Bypass, and Unknown|failrates',
+                        ],
+                        'Data Split |split2': [
+                        'By Number of Screens|nscreen',
+                    ],
+    
+    
+                    },
+                    function (params) {
+                        dirpath = 'scripts/' + params.stats2
+                        if(params.end <= params.start){
+                            return 'scripts/error.png'
+                        }
+                        date = params.start + '_' + params.end
+                        filename = dirpath + '/by' + params.split2 + '_' + date + '.png'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'stats2': 'passrates',
+                        'split2': 'nscreen',
+                        'start': '00000000',
+                        'end': '99999999',
+                    }
+                );
+    
+            </script>
+            </figure>
         <h3>Total Screening per Chip</h3>
-
+        <figure>
+            <img alt="Squid Screening Statistics" id="nscreen" src="#" width="1250" height="750" />
+            <figcaption>
+                Plots of statistics
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#nscreen",
+                    {
+                        'Statistics |stats3': [
+                        'Screen number|rescreen',
+                        ],
+                        'Data Split |split3': [
+                        'By Wafer Number|wafer',
+                        'By Screening Batch|batch'
+                    ],
+    
+    
+                    },
+                    function (params) {
+                        dirpath = 'scripts/' + params.stats3
+                        if(params.end <= params.start){
+                            return 'scripts/error.png'
+                        }
+                        date = params.start + '_' + params.end
+                        filename = dirpath + '/by' + params.split3 + '_' + date + '.png'
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'stats3': 'rescreen',
+                        'split3': 'wafer',
+                        'start': '00000000',
+                        'end': '99999999',
+                    }
+                );
+    
+            </script>
+            </figure>
     </section>
 
     <section>
