@@ -158,7 +158,7 @@
     <section>
         <h2>Procedure: 6 - 11 hours per board </h2>
 
-        <h3>Squid Chip Preparation and Mounting: 2.5 - 5 hours per board</h3>
+        <h3>II.A Squid Chip Preparation and Mounting: 2.5 - 5 hours per board</h3>
         At this stage, the goal is the mount the desired number of Squid chips onto the screening board. The screening
         PCB contains 24 slots for Squid chips,
         but not all 24 slots need to be used. The chips need to be glued, wirebonded, and have their positions recorded.
@@ -213,7 +213,7 @@
 
         </figure>
 
-        <h3>Room Temperature Screening: 20 - 120 min per board</h3>
+        <h3>II.B Room Temperature Screening: 20 - 120 min per board</h3>
         <p>
             This step was added to the procedure in 2022 August, after it was noticed that there was a significant
             correlation between
@@ -350,7 +350,7 @@
             </script>
 
         </figure>
-        <h3>Cryogenic Testing: 3 - 4 hours per board</h3>
+        <h3>II.C Cryogenic Testing: 3 - 4 hours per board</h3>
         Below is a summary of cryogenic testing. For a detailed procedure, see:
         <a href="cryotest.html">Cryogenic Screening Procedure</a>.
         <p>
@@ -448,7 +448,7 @@
             while the statistics for these failures are discussed below.</p>
 
 
-        <h3>Packaging and Delivery</h3>
+        <h3>II.D Packaging and Delivery</h3>
         Once the screening results are obtained, each chip is sorted into passed, failed (includes both chips that
         were bypassed during room temperature screening and failed cold screening), or need to be rescreened.
         <p>
@@ -489,7 +489,7 @@
         <p>
             We plot the statistics below. For a more detailed set of statistics, see <a href="stats.html">Statistics</a>
         </p>
-        <h3>Room Temperature Statistics</h3>
+        <h3>Room Temperature Statistics Summary</h3>
         <p>
             Room temperature screening did not begin until 2022 August, so it is difficult to provide detailed
             statistics. A total of
@@ -507,9 +507,17 @@
             they have not been rescreened.
         </p>
 
-        <h3>Cryogenic Testing</h3>
+        <h3>Pass Rates, Fail Rates, and Unknown Rates</h3>
+        We plot the pass rate, bypass rate, and failure rate for the screenings since 2019 April. To summaraize:
+        <ul>
+            <li><b>Pass</b>: The chip produced the expected cryogenic response</li>
+            <li><b>Bypass</b>: The chip was deemed faulty during warm screening</li>
+            <li><b>Fail</b>: The chip was isolated to be the case of a faulty result during cold screening </li>
+            <li><b>Unknown</b>: The chip did not pass, but it was not isolated to be the chip at fault. Calculated by
+                counting any chip that has a future screening date.</li>
+        </ul>
         <p>
-            We plot the pass rate, bypass rate, and failure rate for the screenings since 2019 April. The wafer number
+            The wafer number
             refers to the wafers delivered by NIST. These wafers have difference in manufacturing quality, notably
             wafers 39 and wafers 47 were noted to have poor yield. When plotting by wafer number, the sum of all the
             wafers
@@ -517,6 +525,7 @@
             not
             pass was assumed to have failed by the end of our screening sessions, there are no unknown chips.
         </p>
+
         <p>
             The screening batches are roughly divided up into periods of time that screening efforts were being made.
             For example, for the screening batch 20220801, that means approximately 200 chips were screened between

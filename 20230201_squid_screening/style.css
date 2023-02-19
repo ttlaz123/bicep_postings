@@ -62,6 +62,9 @@ header {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Linux Biolinum', 'Calibri', sans-serif;
 }
+h1, h2, h3{
+    margin-left:-20px;
+}
 
 hr {
     border: 0;
