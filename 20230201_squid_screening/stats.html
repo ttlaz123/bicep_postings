@@ -14,21 +14,21 @@
     </script>
     <script type="text/javascript" src="scripts/pager.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+
     <link rel="stylesheet" type="text/css" href="scripts/pager.css">
 </head>
- <!-- Add my custom pa>er script -->
- <script type="text/javascript" src="scripts/pager.js"></script>
- <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+<!-- Add my custom pa>er script -->
+<script type="text/javascript" src="scripts/pager.js"></script>
+<link rel="stylesheet" type="text/css" href="scripts/pager.css">
 
- <header>
-     <h1>BICEP Array SQuID Screening Report</h1>
+<header>
+    <h1>BICEP Array SQuID Screening Report</h1>
 
-     <time datetime="2023-02-01" class="published updated">
-         2023 Feb 01
-     </time> —
-     Tom Liu, Cheng Zhang
- </header>
+    <time datetime="2023-02-01" class="published updated">
+        2023 Feb 01
+    </time> —
+    Tom Liu, Cheng Zhang
+</header>
 
 <div class="header">
     <div class="header-right">
@@ -43,6 +43,8 @@
     </div>
 </div>
 <hr>
+<h1>THIS PAGE IS UNDER CONSTRUCTION</h1>
+
 <body>
     <figure>
         <img alt="Squid Screening Statistics" id="coldstats" src="#" width="1250" height="750" />
@@ -64,7 +66,7 @@
                     ],
                     'Start Date |start': [
                         '~~~~~~~~~~~~~~~~~~~~~~~~',
-                        'First batch (2019)|00000000',
+                        'First batch (2019)|20190401',
                         'Wafer 39 (2019 Nov)|20191101',
                         'Wafer 41 (2020 Oct)|20201001',
                         'Nicholas Start (2021 May)|20210520',
@@ -77,12 +79,12 @@
                         'Rescreen batch 3 (2022 early August)|20220801',
                         'Wafer 48 (2022 late August)|20220820',
                         'Rescreen batch 4 (2022 Nov)|20221101',
-                        'End of time|99999999',
+                        'End of time|20221131',
 
                     ],
                     'End Date |end': [
                         '~~~~~~~~~~~~~~~~~~~~~~~~',
-                        'First batch (2019)|00000000',
+                        'First batch (2019)|20190401',
                         'Wafer 39 (2019 Nov)|20191101',
                         'Wafer 41 (2020 Oct)|20201001',
                         'Nicholas Start (2021 May)|20210520',
@@ -95,14 +97,14 @@
                         'Rescreen batch 3 (2022 early August)|20220801',
                         'Wafer 48 (2022 late August)|20220820',
                         'Rescreen batch 4 (2022 Nov)|20221101',
-                        'End of time|99999999',
+                        'End of time|20221131',
                     ],
 
 
                 },
                 function (params) {
                     dirpath = 'scripts/' + params.stats
-                    if(params.end <= params.start){
+                    if (params.end <= params.start) {
                         return 'scripts/error.png'
                     }
                     date = params.start + '_' + params.end
@@ -113,8 +115,8 @@
                 {
                     'stats': 'passrates',
                     'split': 'wafer',
-                    'start': '00000000',
-                    'end': '99999999',
+                    'start': '20190401',
+                    'end': '20221131',
                 }
             );
 

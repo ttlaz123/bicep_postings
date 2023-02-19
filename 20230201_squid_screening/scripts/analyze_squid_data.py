@@ -527,7 +527,7 @@ def plot_rescreen_by_wafer(chip_dict, pcb_dict, savename,
     plot_barplot(bars, xlabels, title, savename)
 
 def timestamps():
-    startstart = '00000000'
+    startstart = '20190401'
     w39 = '20191101'
     w41 = '20201001'
     nickstart = '20210520'
@@ -540,7 +540,7 @@ def timestamps():
     r3 = '20220801'
     w48 = '20220820'
     r4 = '20221101'
-    endend = '99999999'
+    endend = '20221131'
 
     tlist = [
         startstart,
@@ -560,27 +560,41 @@ def timestamps():
     ]
     return tlist
 
-def main():
-    c,p = read_squid_data('../cold_screening.tsv')
+def plot_data(c, p):
     tlist = timestamps()
-    savedir = 'rescreen/'
-    #savedir = 'passrates/'
-    #savedir = 'failrates/'
-    #filestem = 'bywafer_'
-    #filestem = 'bynscreen_'
-    filestem = 'bybatch_'
-    for end in range(len(tlist)):
+    savedir2 = 'rescreen/'
+    savedir1 = 'passrates/'
+    savedir3 = 'failrates/'
+    filestem1 = 'bywafer_'
+    filestem2 = 'bynscreen_'
+    filestem3 = 'bybatch_'
+
+    for end in range(len(tlist)-1, len(tlist)):
         print('Plotting for end time: ' + tlist[end])
         for start in range(end):
+            print('startime: ' + str(tlist[start]))
             file_suf = tlist[start] + '_' + tlist[end]
-            filename = savedir + filestem + file_suf + '.png'
-            #plot_failrate_by_wafer(c,p, filename, startdate = tlist[start], enddate = tlist[end])
-            #plot_passrate_by_wafer(c,p, filename, startdate = tlist[start], enddate = tlist[end])
-            #plot_rescreen_by_wafer(c,p, filename, startdate = tlist[start], enddate = tlist[end])
-            #plot_failrate_by_rescreen(c,p, filename, startdate = tlist[start], enddate = tlist[end])
-            #plot_passrate_by_rescreen(c,p, filename, startdate = tlist[start], enddate = tlist[end])
-            #plot_passrate_by_screenbatch(c,p, tlist, filename, startdate = tlist[start], enddate = tlist[end])
-            plot_rescreen_by_screenbatch(c,p, tlist, filename, startdate = tlist[start], enddate = tlist[end])
+            filename11 = savedir1 + filestem1 + file_suf + '.png'
+            filename12 = savedir1 + filestem2 + file_suf + '.png'
+            filename13 = savedir1 + filestem3 + file_suf + '.png'
+            filename21 = savedir2 + filestem1 + file_suf + '.png'
+            filename23 = savedir2 + filestem3 + file_suf + '.png'
+            filename31 = savedir3 + filestem1 + file_suf + '.png'
+            filename32 = savedir3 + filestem2 + file_suf + '.png'
+            filename33 = savedir3 + filestem3 + file_suf + '.png'
+            plot_failrate_by_wafer(c,p, filename31, startdate = tlist[start], enddate = tlist[end])
+            plot_passrate_by_wafer(c,p, filename11, startdate = tlist[start], enddate = tlist[end])
+            plot_rescreen_by_wafer(c,p, filename21, startdate = tlist[start], enddate = tlist[end])
+            plot_failrate_by_rescreen(c,p, filename32, startdate = tlist[start], enddate = tlist[end])
+            plot_passrate_by_rescreen(c,p, filename12, startdate = tlist[start], enddate = tlist[end])
+            plot_passrate_by_screenbatch(c,p, tlist, filename13, startdate = tlist[start], enddate = tlist[end])
+            plot_rescreen_by_screenbatch(c,p, tlist, filename23, startdate = tlist[start], enddate = tlist[end])
+            plot_failrate_by_screenbatch(c,p, tlist, filename33, startdate = tlist[start], enddate = tlist[end])
+
+def main():
+    c,p = read_squid_data('../cold_screening.tsv')
+    plot_data(c, p)
+
 
     
 

@@ -14,21 +14,21 @@
     </script>
     <script type="text/javascript" src="scripts/pager.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+
     <link rel="stylesheet" type="text/css" href="scripts/pager.css">
 </head>
- <!-- Add my custom pa>er script -->
- <script type="text/javascript" src="scripts/pager.js"></script>
- <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+<!-- Add my custom pa>er script -->
+<script type="text/javascript" src="scripts/pager.js"></script>
+<link rel="stylesheet" type="text/css" href="scripts/pager.css">
 
- <header>
-     <h1>BICEP Array SQuID Screening Report</h1>
+<header>
+    <h1>BICEP Array SQuID Screening Report</h1>
 
-     <time datetime="2023-02-01" class="published updated">
-         2023 Feb 01
-     </time> —
-     Tom Liu, Cheng Zhang
- </header>
+    <time datetime="2023-02-01" class="published updated">
+        2023 Feb 01
+    </time> —
+    Tom Liu, Cheng Zhang
+</header>
 
 <div class="header">
     <div class="header-right">
@@ -43,8 +43,9 @@
     </div>
 </div>
 <hr>
+
 <body>
-   
+
 
 
     <section>
@@ -67,41 +68,50 @@
             lab.
         </p>
         <h3>Common Terminology</h3>
-        For a more comprehensive glossary, see <a href="glossary.html">here</a>. 
+        For a more comprehensive glossary, see <a href="glossary.html">here</a>.
         <ul>
-            <li><b>SQuID</b>: Superconducting Quantum Interference Device measures small magnetic fields. 
+            <li><b>SQuID</b>: Superconducting Quantum Interference Device measures small magnetic fields.
                 Wikipedia article: <a href="articles/squid_wiki.pdf">SQuID</a></li>
-            <li><b>Squid chip</b>: The Mux 15b SQuID chip produced by NIST acts as an amplifier for the detector modules. 
-                Measuring 3.0 mm by 6.6 mm, these small chips require an initial round of screening before they can be installed. 
-                In the chip, there are RS squids, which receive flux from the row selects, and SQ1 squids, which receive 
+            <li><b>Squid chip</b>: The Mux 15b SQuID chip produced by NIST acts as an amplifier for the detector
+                modules.
+                Measuring 3.0 mm by 6.6 mm, these small chips require an initial round of screening before they can be
+                installed.
+                In the chip, there are RS squids, which receive flux from the row selects, and SQ1 squids, which receive
                 flux from Input and Feedback. </li>
-            <li><b>Screening PCB</b>: The DrEleven PCB holds up to 24 chips with 3 columns marked X, Y, Z and 8 rows from 0 through 7.
+            <li><b>Screening PCB</b>: The DrEleven PCB holds up to 24 chips with 3 columns marked X, Y, Z and 8 rows
+                from 0 through 7.
                 The Squid chip must first be wirebonded to the screening PCB before any screening can take place. </li>
-            <li><b>Dip Probe</b>: Also called the <b>Screening Tower</b>, it houses all the electronics for both 
-                sending the Squid chip inputs and receiving outputs from the chips. The Screening PCB must first be 
+            <li><b>Dip Probe</b>: Also called the <b>Screening Tower</b>, it houses all the electronics for both
+                sending the Squid chip inputs and receiving outputs from the chips. The Screening PCB must first be
                 connected to the dip probe before in order to be dipped into liquid helium for cryogenic screening.
             </li>
-            <li><b>Input (IN)</b>: The input coils receive signal from the detectors during operation and produce flux through the SQ1 squids. 
+            <li><b>Input (IN)</b>: The input coils receive signal from the detectors during operation and produce flux
+                through the SQ1 squids.
                 However, during the screening process,
-                they are simply checked for connectivity and cross-shorts. The 22 input pads (which connects to the 11 input coils),
-                are on the bottom side of the squid chip. 
+                they are simply checked for connectivity and cross-shorts. The 22 input pads (which connects to the 11
+                input coils),
+                are on the bottom side of the squid chip.
             </li>
-            <li><b>Row Select (RS)</b>: The row selects pass flux through ths RS squids, which turn on and off, or "select", a specific input 
+            <li><b>Row Select (RS)</b>: The row selects pass flux through ths RS squids, which turn on and off, or
+                "select", a specific input
                 to be read out. The 22 row select pads are
                 on the top side of the squid chip.
             </li>
-            <li><b>Output (OUT1/2, SQ1OUT)</b>: The output line is connected to the SQ1BIAS line. Current is passed in, and the output of the 
-                current is read as the response of the squid chip. During normal operation, the output is set to a particular 
+            <li><b>Output (OUT1/2, SQ1OUT)</b>: The output line is connected to the SQ1BIAS line. Current is passed in,
+                and the output of the
+                current is read as the response of the squid chip. During normal operation, the output is set to a
+                particular
                 value, but during screening, the output sweeps through multiple current values to check its response.
-                The pads are on the top half of the sides of the chip. 
+                The pads are on the top half of the sides of the chip.
             </li>
-            <li><b>Feedback (FB1/2, SQ1FB)</b>: The feedback line passes in a current that produces flux through the squids. This flux 
-                affects to response of the SQ1 squid. During normal operation, the FB follows the 
-                input to ensure maximum senstivity, but during Squid Screening, the FB sweeps through 
+            <li><b>Feedback (FB1/2, SQ1FB)</b>: The feedback line passes in a current that produces flux through the
+                squids. This flux
+                affects to response of the SQ1 squid. During normal operation, the FB follows the
+                input to ensure maximum senstivity, but during Squid Screening, the FB sweeps through
                 different currents to visualize the characteristic squid sine wave.
 
             </li>
-            
+
         </ul>
         <a href="intro_info.html">More info about the Squid Chip, Screening PCB, and Dip Probe</a>.
 
@@ -109,8 +119,9 @@
         <figure>
             <img alt="Chip" id="chip" src="#" width="500" height="500" />
             <figcaption>
-                Schematic: a drawing of the squid chip to scale. Circuit Diagram: a diagram with the relevant circuitry for understanding 
-                the function of the Squid chip. Gel Pack: a photo of the screening pcb and the gel pack that contains 
+                Schematic: a drawing of the squid chip to scale. Circuit Diagram: a diagram with the relevant circuitry
+                for understanding
+                the function of the Squid chip. Gel Pack: a photo of the screening pcb and the gel pack that contains
                 a batch of squid chips.
             </figcaption>
             <script type="text/javascript">
@@ -145,10 +156,10 @@
         <h3>Squid Chip Preparation and Mounting: 2.5 - 5 hours per board</h3>
         At this stage, the goal is the mount the desired number of Squid chips onto the screening board. The screening
         PCB contains 24 slots for Squid chips,
-        but not all 24 slots need to be used. The chips need to be glued, wirebonded, and have their positions recorded. 
+        but not all 24 slots need to be used. The chips need to be glued, wirebonded, and have their positions recorded.
         Below is a summary of the important steps.
         For a detailed procedure, see here: <a href="mounting.html">Mounting Squid Chips to the Screening PCB</a>
-        
+
 
         <h4>Gluing: 30 - 60 min per board</h4>
         <p>First clean the screening PCB, clean the chips, then using rubber cement, glue the squid chips onto the PCB.
@@ -199,15 +210,16 @@
 
         <h3>Room Temperature Screening: 20 - 120 min per board</h3>
         <p>
-            This step was added to the procedure in 2022 August, after it was noticed that there was a significant correlation between 
+            This step was added to the procedure in 2022 August, after it was noticed that there was a significant
+            correlation between
             abnormal room temperature resistance readings and failed chip screenings.
-            After implementing the room temperature screening, it was discovered that this step is 
+            After implementing the room temperature screening, it was discovered that this step is
             crucial for increasing the yield of the overall screening process. Without checking for opens
             and
             cross-shorts at room temperature,
-            these issues can cause an entire row or column of chips to fail cold screening. 
-            
-           
+            these issues can cause an entire row or column of chips to fail cold screening.
+
+
         </p>
         <p>
             In the warm screening stage, we identify the chips that
@@ -228,8 +240,8 @@
         <p>
             The table below shows the expected readings, and the
             pager has an example of recorded resistances. If the actual readings do not match the
-            expected, then that means some chips either have cross-shorts, opens, or abnormal resistance readings. 
-            
+            expected, then that means some chips either have cross-shorts, opens, or abnormal resistance readings.
+
         </p>
         <center>
             <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
@@ -240,7 +252,7 @@
                         <td rowspan="1"><b>Constant Resistance from Tower (Ohms)</b></td>
                         <td rowspan="1"><b>Resistance per Chip (Ohms)</b></td>
                         <td rowspan="1"><b>Expected Resistance with all Chips present (Ohms)</b></td>
-                         </tr>
+                    </tr>
                     <tr>
                         <td>Row Select</td>
                         <td>8</td>
@@ -248,7 +260,7 @@
 
                         <td>1.1 k</td>
                         <td>10.8 k</td>
-                       
+
                     </tr>
                     <tr>
                         <td>Input </td>
@@ -257,7 +269,7 @@
 
                         <td>0.5 M</td>
                         <td>1.5 M</td>
-                       
+
                     </tr>
                     <tr>
                         <td>Output</td>
@@ -267,7 +279,7 @@
 
                         <td>7 k</td>
                         <td>21 k</td>
-                       
+
                     </tr>
                     <tr>
                         <td>Feedback </td>
@@ -276,14 +288,14 @@
 
                         <td>15 k</td>
                         <td>50 k</td>
-                      
+
                     </tr>
                 </tbody>
             </table>
         </center>
-        By probing different combination of connectors, or shorting certain chips one by one, we can 
-            identify the individual chip that is causing the abnormal resistance readings. Once the 
-            chip is identified, we wirebond over the chip with shorting bonds to bypass the chip.
+        By probing different combination of connectors, or shorting certain chips one by one, we can
+        identify the individual chip that is causing the abnormal resistance readings. Once the
+        chip is identified, we wirebond over the chip with shorting bonds to bypass the chip.
         <figure>
             <img alt="Expected resistances" id="resist" src="#" width="400" height="750" />
             <figcaption>
@@ -302,7 +314,7 @@
                     the other probing measures the resistance of 3 chips in series.
                 </p>
                 <p>
-                    On the bottom column of the PCB, the chip on the left and the chip in the middle 
+                    On the bottom column of the PCB, the chip on the left and the chip in the middle
                     are bypassed. It is evident by the long wirebond that arcs over the entire chip.
                 </p>
 
@@ -338,26 +350,30 @@
         <a href="cryotest.html">Cryogenic Screening Procedure</a>.
         <p>
 
-        Most issues with a squid chip can be identified by an abnormal reading for one of these four values:
-    </p>
+            Most issues with a squid chip can be identified by an abnormal reading for one of these four values:
+        </p>
         <ul>
-            <li><b>\(I_{C,col}\)</b>: this demonstrates how robust the RS switches are across an entire chip. If the \(I_{C,col}\) is too low, 
-                        that generally means the RS squids are turning on when they should not be, allowing some unintended  
-                        inputs to be read out.
+            <li><b>\(I_{C,col}\)</b>: this demonstrates how robust the RS switches are across an entire chip. If the
+                \(I_{C,col}\) is too low,
+                that generally means the RS squids are turning on when they should not be, allowing some unintended
+                inputs to be read out.
             </li>
-            <li><b>Modulation</b>: at each bias current running through SQ1OUT, we sweep through the Feedback current 
+            <li><b>Modulation</b>: at each bias current running through SQ1OUT, we sweep through the Feedback current
                 with a ramp function at 8 KHz. Each value of feedback current produces a particular OUT response,
-                with the overall response shape being a sine wave. The amplitude of this sine wave is the modulation 
+                with the overall response shape being a sine wave. The amplitude of this sine wave is the modulation
                 at that particular bias current.
             </li>
-            <li> <b>\(I_{C,min}\)</b>: this value is specific to each row select and indicates the minimum device current at which 
-                a row sees some modulation. The values should be relatively constant across an entire squid chip 
+            <li> <b>\(I_{C,min}\)</b>: this value is specific to each row select and indicates the minimum device
+                current at which
+                a row sees some modulation. The values should be relatively constant across an entire squid chip
                 to allow for easier squid tuning.
             </li>
-            <li><b>\(I_{C,max}\)</b>: this value is specific to each row select and indicates the device current at which 
-                the modulation for the row is at its maximum. This is the current that the squid should be biased at during 
-            squid tuning to maximize the amplification of the signal.</li>
-            
+            <li><b>\(I_{C,max}\)</b>: this value is specific to each row select and indicates the device current at
+                which
+                the modulation for the row is at its maximum. This is the current that the squid should be biased at
+                during
+                squid tuning to maximize the amplification of the signal.</li>
+
         </ul>
         <p>
             We plunge the screening tower with a populated screening PCB into helium to test the performance
@@ -405,74 +421,108 @@
 
         </figure>
         <p>
-        If any of these 4 values do not read as expected, it suggests that there are issues with the SQuIDs in the 
-        squid chip. For example, if a RS squid allows in less than its nominal current, it can lower the \(I_{C,col}\).
-        If an Input squid's flux quanta is slightly different from its neighboring squids, then it can cause 
-        destructive interference and lower the modulation of the row select. 
-    </p>
-    <p>
-        Some of these issues are specific to an 
-        individual chip, in which case that chip is marked as defective. However, some issues like a lowered \(I_{C,col}\)
-        or an open row select can impact the reading on an entire column or row. In these cases, it is 
-        not possible to determine which chip is the faulty one through one screening alone, and the chip is marked Unknown. In many cases, this 
-        means even though 2 out of 3 chips are good chips, the one bad chip makes all 3 fail the screening. In the worst 
-        case, one bad chip can cause 8 chips to fail the screening. 
-    </p>
-    <p>A more comprehensive list of failure modes are discussed in the <a href="cryotest.html">Cryogenic Screening Procedure</a>, 
-        while the statistics for these failures are discussed below.</p>
+            If any of these 4 values do not read as expected, it suggests that there are issues with the SQuIDs in the
+            squid chip. For example, if a RS squid allows in less than its nominal current, it can lower the
+            \(I_{C,col}\).
+            If an Input squid's flux quanta is slightly different from its neighboring squids, then it can cause
+            destructive interference and lower the modulation of the row select.
+        </p>
+        <p>
+            Some of these issues are specific to an
+            individual chip, in which case that chip is marked as defective. However, some issues like a lowered
+            \(I_{C,col}\)
+            or an open row select can impact the reading on an entire column or row. In these cases, it is
+            not possible to determine which chip is the faulty one through one screening alone, and the chip is marked
+            Unknown. In many cases, this
+            means even though 2 out of 3 chips are good chips, the one bad chip makes all 3 fail the screening. In the
+            worst
+            case, one bad chip can cause 8 chips to fail the screening.
+        </p>
+        <p>A more comprehensive list of failure modes are discussed in the <a href="cryotest.html">Cryogenic Screening
+                Procedure</a>,
+            while the statistics for these failures are discussed below.</p>
 
 
         <h3>Packaging and Delivery</h3>
         Once the screening results are obtained, each chip is sorted into passed, failed (includes both chips that
         were bypassed during room temperature screening and failed cold screening), or need to be rescreened.
         <p>
-        A tweezer is used to pull off the wirebonds. Two wooden sticks are used to twist the squid chips from the
-        side, which twists off the rubber cement used to glue the chip. The chip is then placed into a gel pack
-        labeled passed, failed, or rescreen. Repeat until all the chips are sorted.
-    </p>
-    <p>
-        Each chip in the passed gelpack is observed under a microscope to verify its ID, which is used to
-        cross-reference the screening data. Once verification is complete, the gel pack is packaged and shipped.
-    </p>
-<p>
-        The cold Screening data is compiled into a zip file with the code on Kent Irwin's computer. It provides
-        the Ic min, max and modulation for each of the passed chips, as well as information about Ic,col.
-    </p>
+            A tweezer is used to pull off the wirebonds. Two wooden sticks are used to twist the squid chips from the
+            side, which twists off the rubber cement used to glue the chip. The chip is then placed into a gel pack
+            labeled passed, failed, or rescreen. Repeat until all the chips are sorted.
+        </p>
+        <p>
+            Each chip in the passed gelpack is observed under a microscope to verify its ID, which is used to
+            cross-reference the screening data. Once verification is complete, the gel pack is packaged and shipped.
+        </p>
+        <p>
+            The cold Screening data is compiled into a zip file with the code on Kent Irwin's computer. It provides
+            the Ic min, max and modulation for each of the passed chips, as well as information about Ic,col.
+        </p>
     </section>
 
     <section>
         <h2>Statistics</h2>
         <p>
-        The pass, fail, and unknown rates of the squid chips are analyzed from 2019 to 2022. Before 2019, the screening process 
-        was still manual, meaning the bias current was manually adjusted, and the 4 impotant quantities were
-        manually calculated. Carl Dawson was the first to develop and conduct the automated screening procedure in 2019 April.
-        From 2019 April to 2021 February, Carl screened approximately 420 chips, passing around 310. 
-    </p>
-        <p>In 2021 May, Nicholas Rapidas screened his first batch of squid chips, and he was enventually joined by 
-            Jason Corbin. They screened approximately 700 chips (620 unique) between 2021 May and 2022 April, passing around 300.
+            The pass, fail, and unknown rates of the squid chips are analyzed from 2019 to 2022. Before 2019, the
+            screening process
+            was still manual, meaning the bias current was manually adjusted, and the 4 impotant quantities were
+            manually calculated. Carl Dawson was the first to develop and conduct the automated screening procedure in
+            2019 April.
+            From 2019 April to 2021 February, Carl screened approximately 420 chips, passing around 310.
+        </p>
+        <p>In 2021 May, Nicholas Rapidas screened his first batch of squid chips, and he was enventually joined by
+            Jason Corbin. They screened approximately 700 chips (620 unique) between 2021 May and 2022 April, passing
+            around 300.
         </p>
         <p>
-            The Kuo lab started their squid screening training in 2022 May, and from May to August, we screened 
-            approximately 820 chips, although many of the chips were rescreened, for a total of 600 unique chips. Out 
-            of these, approximately 340 passed. 
+            The Kuo lab started their squid screening training in 2022 May, and from May to August, we screened
+            approximately 820 chips, although many of the chips were rescreened, for a total of 600 unique chips. Out
+            of these, approximately 340 passed.
 
         </p>
         <p>
             We plot the statistics below. For a more detailed set of statistics, see <a href="stats.html">Statistics</a>
         </p>
-        <h3>Room Temperature</h3>
+        <h3>Room Temperature Statistics</h3>
         <p>
-        Room temperature screening did not begin until 2022 August, so it is difficult to provide detailed statistics. A total of 
-        82 chips have been bypassed since 2022 August, when room temperature screening became a part of the procedure.
-        However, from 2021 May to 2022 July, the unknown rates of the screening results have ranged from 30% to as high 
-        as 60%. After warm screening, the unknown rate dropped to less than 20%.
-    </p><p>
-        Note that unknown is calculated after the fact by checking for whether the chip was rescreened. If the chip was appears in a 
-        later screening batch, it is marked unknown for the current batch. Thus, wafers 31 and 37 unknown rates are lower because 
-        they have not been rescreened.
-    </p>
+            Room temperature screening did not begin until 2022 August, so it is difficult to provide detailed
+            statistics. A total of
+            76 chips out of have been bypassed since 2022 August, when room temperature screening became a part of the
+            procedure.
+            However, from 2021 May to 2022 July, the unknown rates of the screening results have ranged from 30% to as
+            high
+            as 60%. After warm screening, the unknown rate dropped to less than 20%.
+        </p>
+        <p>
+            Note that unknown is calculated after the fact by checking for whether the chip was rescreened. If the chip
+            was appears in a
+            later screening batch, it is marked unknown for the current batch. Thus, wafers 31 and 37 unknown rates are
+            lower because
+            they have not been rescreened.
+        </p>
 
         <h3>Cryogenic Testing</h3>
+        <p>
+            We plot the pass rate, bypass rate, and failure rate for the screenings since 2019 April. The wafer number
+            refers to the wafers delivered by NIST. These wafers have difference in manufacturing quality, notably
+            wafers 39 and wafers 47 were noted to have poor yield. When plotting by wafer number, the sum of all the
+            wafers
+            is equal to the total number of unique chips as each chip is only counted once. Because every chip that did
+            not
+            pass was assumed to have failed by the end of our screening sessions, there are no unknown chips.
+        </p>
+        <p>
+            The screening batches are roughly divided up into periods of time that screening efforts were being made.
+            For example, for the screening batch 20220801, that means approximately 200 chips were screened between
+            20220801 and 20220820. The results are for that batch only: if a chip was later found to be good, it would
+            still be marked unknown if it did not pass in the current batch.
+            Because some chips are rescreened and counted multiple times , the sum of all the
+            total chips is more than the total unique chips.
+        </p>
+        <p>
+            The pass rate is plotted by itself for a numerical value of the pass rate.
+        </p>
 
         <figure>
             <img alt="Squid Screening Statistics" id="coldstats" src="#" width="1250" height="750" />
@@ -490,12 +540,12 @@
                             'By Wafer Number|wafer',
                             'By Screening Batch|batch'
                         ],
-    
-    
+
+
                     },
                     function (params) {
                         dirpath = 'scripts/' + params.stats1
-                        if(params.end <= params.start){
+                        if (params.end <= params.start) {
                             return 'scripts/error.png'
                         }
                         date = params.start + '_' + params.end
@@ -506,18 +556,24 @@
                     {
                         'stats1': 'passrates',
                         'split1': 'wafer',
-                        'start': '00000000',
-                        'end': '99999999',
+                        'start': '20190401',
+                        'end': '20221131',
                     }
                 );
-    
+
             </script>
-            </figure>
+        </figure>
         <h3>New Chips vs Rescreens</h3>
+        We plot the pass rate, fail rate, and unknown rate as a function of the number of times the chip is
+        screened. The total number of chips screened for screen number n is equal to the unknown chips for
+        screen number n-1. The pass rate decreases with an increasing number of times a chip is screened.
+        This is mostly because the overall true pass rate is close to 70%, and 50% of chips pass the first
+        screening. With 30-40% of chips being screened again, a much larger proportion of those chips would
+        be faulty.
         <figure>
             <img alt="Squid Screening Statistics" id="rescreen" src="#" width="1250" height="750" />
             <figcaption>
-                Plots of statistics
+                The pass rate, failrate, and unknown rate as a function of number of times the chip is screened.
             </figcaption>
             <script type="text/javascript">
                 pager.link("#rescreen",
@@ -527,14 +583,14 @@
                             'Pass, Bypass, and Unknown|failrates',
                         ],
                         'Data Split |split2': [
-                        'By Number of Screens|nscreen',
-                    ],
-    
-    
+                            'By Number of Screens|nscreen',
+                        ],
+
+
                     },
                     function (params) {
                         dirpath = 'scripts/' + params.stats2
-                        if(params.end <= params.start){
+                        if (params.end <= params.start) {
                             return 'scripts/error.png'
                         }
                         date = params.start + '_' + params.end
@@ -545,35 +601,51 @@
                     {
                         'stats2': 'passrates',
                         'split2': 'nscreen',
-                        'start': '00000000',
-                        'end': '99999999',
+                        'start': '20190401',
+                        'end': '20221131',
                     }
                 );
-    
+
             </script>
-            </figure>
+        </figure>
         <h3>Total Screening per Chip</h3>
+        <p>
+            We plot the number of times a chip is screened as a function of wafer number and batch number. The earlier
+            wafers,
+            31, 37, and 39 were not rescreened many times. The records suggested that these chips were generally of
+            higher quality
+            and thus had a higher pass rate. There were room temperature resistances that suggested cross-shorts, but
+            they
+            were few and far between. Thus, the error symptoms of a faulty chip was more easy to isolate.
+        </p>
+        <p>
+            Rescreening did not begin until 2022 April. Accordingly, the yield rate began to drop as chips were being
+            rescreened multiple times. The yield would increase with a new shipment of chips, like in 20220820, when
+            W48 was delivered. However, because W47 was not manufactured well, the yield was low despite only screening
+            new chips in 20220525.
+        </p>
         <figure>
             <img alt="Squid Screening Statistics" id="nscreen" src="#" width="1250" height="750" />
             <figcaption>
-                Plots of statistics
+                Number of times chips are screened as a function of wafer number.
+                The nth time the chip was screened for that particular screening batch.
             </figcaption>
             <script type="text/javascript">
                 pager.link("#nscreen",
                     {
                         'Statistics |stats3': [
-                        'Screen number|rescreen',
+                            'Screen number|rescreen',
                         ],
                         'Data Split |split3': [
-                        'By Wafer Number|wafer',
-                        'By Screening Batch|batch'
-                    ],
-    
-    
+                            'By Wafer Number|wafer',
+                            'By Screening Batch|batch'
+                        ],
+
+
                     },
                     function (params) {
                         dirpath = 'scripts/' + params.stats3
-                        if(params.end <= params.start){
+                        if (params.end <= params.start) {
                             return 'scripts/error.png'
                         }
                         date = params.start + '_' + params.end
@@ -584,23 +656,53 @@
                     {
                         'stats3': 'rescreen',
                         'split3': 'wafer',
-                        'start': '00000000',
-                        'end': '99999999',
+                        'start': '20190401',
+                        'end': '20221131',
                     }
                 );
-    
+
             </script>
-            </figure>
+        </figure>
     </section>
 
     <section>
-        <h2>Case Study</h2>
+        <h2>Case Study - UNDER CONSTRUCTION</h2>
+        We follow a chip from the screening history to its installation into the detector module. We would require a
+        more
+        comprehensive list of chips and how they've performed in the modules to provide an accurate assessment here.
 
     </section>
 
     <section>
         <h2>Conclusions</h2>
-
+        With an initial pass rate of 50% and a final passrate a little less than 70%, between 1100 and 1500
+        Squid chips are necessary to fill a focal plane of 12 detector modules, 64 chips each.
+        The current screening procedure requires 6-12 hours of amortized work per board. At peak efficiency, it
+        is possible to screen 200 chips over a 2 week period:
+        <ul>
+            <li>1 day gluing 10 boards</li>
+            <li>3 days wirebonding 10 boards</li>
+            <li>1 day performing room temperature screening</li>
+            <li>4 days filling helium twice and screening 10 boards</li>
+            <li>1 day packaging and shipping</li>
+        </ul>
+        <p>
+            However, this sort of throughput requires full time attention, and often staying late to fix up any errors
+            that may come up during the process. With the pass rate of less than 50%, it would require over 14 weeks,
+            or 3 and a half months, of full time work to populate a focal plane.
+            With a slowly deteriorating screening tower, it appears necessary to explore different options to maintain
+            throughput.</p>
+        <p>
+            The first suggestion would be to acquire a probe card which can automatically perform the room temperature
+            screening without wirebonding the chips. This would save time wirebonding faulty chips, and also increase
+            the throughput by making sure each slot on the PCB is filled by a chip with a chance of passing.
+        </p>
+        <p>
+            The second suggestion would be to combine the screening and hybridization process. By removing
+            chips with obvious cross-shorts and opens, it may be easier to identify the specific squid chip
+            for any faulty symptoms. However, this would require more understanding of the connection between
+            screening, hybridization, and the squid tuning process.
+        </p>
     </section>
 
 </body>
