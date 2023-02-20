@@ -14,7 +14,7 @@ LOCATION = 'LOC'
 NOTES = 'Note'
 NOTES2 = 'More notes'
 
-
+COLORS = ['dimgray', 'limegreen', 'darkorange', 'mediumpurple', 'crimson']
 def read_squid_data(filename: str ) -> Tuple[dict, dict]:
     '''
     takes in path to tsv file
@@ -104,7 +104,7 @@ def within_dates(dates, startdate, enddate):
             within_dates = True 
     return within_dates
 
-def plot_barplot(bars_dict, xlabels, title='Bar Plot', savename='sample'):
+def plot_barplot(bars_dict, xlabels, dic_labels, title='Bar Plot', savename='sample'):
     '''
     Input: plotting data, bars_dict is a dict of lists
     Ouput: barplots
@@ -112,11 +112,11 @@ def plot_barplot(bars_dict, xlabels, title='Bar Plot', savename='sample'):
     plt.figure(figsize=(16,6))
     barWidth = 0.9 / (len(bars_dict)+1)
     shift = 0
-    for lab in bars_dict:
+    for lab in dic_labels:
         r = np.arange(len(bars_dict[lab]))
         r = [x + barWidth * shift for x in r]
         shift += 1
-        plt.bar(r, bars_dict[lab], width = barWidth, 
+        plt.bar(r, bars_dict[lab], width = barWidth, color = COLORS[shift-1],
             edgecolor = 'black', capsize=7, label=lab)
     
     plt.xticks([r + barWidth for r in range(len(bars_dict[lab]))], xlabels)
@@ -183,7 +183,8 @@ def plot_passrate_by_screenbatch(chip_dict: dict, pcb_dict:dict, tlist:list, sav
         #'Unknown': bars_unknown,
         #'Fail': bars_fail
     }
-    plot_barplot(bars_dict, xlabels, title, savename)
+    dic_labels = ['All', 'Passed']
+    plot_barplot(bars_dict, xlabels, dic_labels, title, savename)
 
 
 def plot_failrate_by_screenbatch(chip_dict: dict, pcb_dict:dict, tlist:list, savename:str,
@@ -222,11 +223,12 @@ def plot_failrate_by_screenbatch(chip_dict: dict, pcb_dict:dict, tlist:list, sav
     bars_dict = {
         'All': bars_count,
         'Passed': bars_passed,
-        'Bypassed': bars_bypassed,
+        'Warm Fail': bars_bypassed,
         'Unknown': bars_unknown,
-        'Fail': bars_fail
+        'Cold Fail': bars_fail
     }
-    plot_barplot(bars_dict, xlabels, title, savename)
+    dic_labels = ['All', 'Passed', 'Warm Fail', 'Cold Fail', 'Unknown']
+    plot_barplot(bars_dict, xlabels, dic_labels, title, savename)
 
 def plot_rescreen_by_screenbatch(chip_dict: dict, pcb_dict:dict, tlist:list, savename:str,
                        startdate:str = '00000000', enddate:str = '99999999'):
@@ -262,7 +264,8 @@ def plot_rescreen_by_screenbatch(chip_dict: dict, pcb_dict:dict, tlist:list, sav
         xlabels.append(batch)
     title_suffix =  'by batches from ' + startdate + ' to ' + enddate
     title = 'Rescreen number  ' + title_suffix
-    plot_barplot(bars, xlabels, title, savename)
+    dic_labels = [1, 2, 3, 4, 5]
+    plot_barplot(bars, xlabels, dic_labels, title, savename)
 
 def plot_passrate_by_wafer(chip_dict: dict, pcb_dict:dict, savename:str,
                        startdate:str = '00000000', enddate:str = '99999999'):
@@ -308,7 +311,8 @@ def plot_passrate_by_wafer(chip_dict: dict, pcb_dict:dict, savename:str,
         'All': bars_count,
         'Passed': bars_passed,
     }
-    plot_barplot(bars_dict, xlabels, title, savename)
+    dic_labels = ['All', 'Passed']#, 'Bypassed', 'Fail', 'Unknown']
+    plot_barplot(bars_dict, xlabels, dic_labels, title, savename)
 
 
 def plot_failrate_by_wafer(chip_dict: dict, pcb_dict:dict, savename:str,
@@ -366,11 +370,12 @@ def plot_failrate_by_wafer(chip_dict: dict, pcb_dict:dict, savename:str,
     bars_dict = {
         'All': bars_count,
         'Passed': bars_passed,
-        'Bypassed': bars_bypassed,
+        'Warm Fail': bars_bypassed,
         'Unknown': bars_unknown,
-        'Fail': bars_fail
+        'Cold Fail': bars_fail
     }
-    plot_barplot(bars_dict, xlabels, title, savename)
+    dic_labels = ['All', 'Passed', 'Warm Fail', 'Cold Fail', 'Unknown']
+    plot_barplot(bars_dict, xlabels, dic_labels, title, savename)
 
 def plot_passrate_by_rescreen(chip_dict, pcb_dict, savename,
                        startdate:str = '00000000', enddate:str = '99999999'):
@@ -431,7 +436,8 @@ def plot_passrate_by_rescreen(chip_dict, pcb_dict, savename,
         #'Unknown': bars_unknown,
         #'Fail': bars_fail
     }
-    plot_barplot(bars_dict, xlabels, title, savename)
+    dic_labels = ['All', 'Passed']#, 'Bypassed', 'Fail', 'Unknown']
+    plot_barplot(bars_dict, xlabels, dic_labels, title, savename)
 def plot_failrate_by_rescreen(chip_dict, pcb_dict, savename,
                        startdate:str = '00000000', enddate:str = '99999999'):
     max_screen = 5
@@ -481,11 +487,12 @@ def plot_failrate_by_rescreen(chip_dict, pcb_dict, savename,
     bars_dict = {
         'All': bars_count,
         'Passed': bars_passed,
-        'Bypassed': bars_bypassed,
+        'Warm Fail': bars_bypassed,
         'Unknown': bars_unknown,
-        'Fail': bars_fail
+        'Cold Fail': bars_fail
     }
-    plot_barplot(bars_dict, xlabels, title, savename)
+    dic_labels = ['All', 'Passed', 'Warm Fail', 'Cold Fail', 'Unknown']
+    plot_barplot(bars_dict, xlabels, dic_labels, title, savename)
 
 
 def plot_rescreen_by_wafer(chip_dict, pcb_dict, savename,
@@ -524,7 +531,8 @@ def plot_rescreen_by_wafer(chip_dict, pcb_dict, savename,
         xlabels.append(wafer)
     title_suffix =  'by wafer from ' + startdate + ' to ' + enddate
     title = 'Rescreen number  ' + title_suffix
-    plot_barplot(bars, xlabels, title, savename)
+    dic_labels = [1,2,3,4,5]
+    plot_barplot(bars, xlabels, dic_labels, title, savename)
 
 def timestamps():
     startstart = '20190401'
@@ -569,7 +577,7 @@ def plot_data(c, p):
     filestem2 = 'bynscreen_'
     filestem3 = 'bybatch_'
 
-    for end in range(len(tlist)-1, len(tlist)):
+    for end in range(0, len(tlist)):
         print('Plotting for end time: ' + tlist[end])
         for start in range(end):
             print('startime: ' + str(tlist[start]))
