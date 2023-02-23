@@ -102,13 +102,27 @@
 </figure>
 <p>
     The Dr Eleven screening PCB has 24 slots for squid chips and 10 connectors, each of which has 8
-    signal/ground pairs.
-    The row selects make up the majority of the connectors, with 5 connectors responsible for the 33 row
-    selects. With 3 rows labeled X, Y, and Z, each row select activates the response of up to 8 squid chips.
+    signal/ground pairs. The chip slots are named with a letter and a number, where the letter refers to the 
+    row and the number from 0 to 7 refers to the column. It is slightly confusing that the columns 
+    are left to right and the rows are up and down, but this naming convention is to keep it consistent 
+    with the name Row Select, which runs up and down the PCB. 
+</p>
+
+<p>
+    To better understand the PCB architecture, see the pager below for the trace lines of each 
+    connector type. The Input connector's traces are fed into the left side of row X and the right 
+    side of row Y for each column. Thus, each of the 8 conductors on the input connector measures 
+    the signal from each column of chips in series. 
 </p>
 <p>
-    The INPUT, FB1, and MUXOUT are connected to the sides of the chip slot area, while
-    SAOUT and SAFB are connected to the pin area where the Squid Series Array box is attached during screening.
+    The row selects make up the majority of the connectors, with 5 connectors responsible for the 33 row
+    selects. With 3 rows labeled X, Y, and Z, each row select activates the response of up to 8 squid chips.
+    Because the row select connectors have 8 conductors, while each chip has 11 row selects, each row spans 
+    across multiple connectors.
+</p>
+<p>
+    The INPUT and FB1 are connected to the sides of the chip slot area, while MUXOUT,
+    SAOUT, and SAFB are connected to the pin area where the Squid Series Array box is attached during screening.
     These connectors all have 8 signal/ground pairs for the 8 channels labeled 0 through 7.
 </p>
 <figure>
@@ -149,6 +163,7 @@
 
 </figure>
 <p>
+    
     The screening tower is a device provided by NIST for the express purpose of interfacing with the
     screening PCB. The top of the tower houses the electronics and the connector sockets for
     interfacing with external electronics like oscilliscopes and current supplies. The 5 rows of HDMI
@@ -157,6 +172,7 @@
     are the same except SQ2BIAS connects to MUXOUT. The connectors
     on the bottom of the tower connect to the Samtech connectors on the screening PCB.
 </p>
+<p></p>
 <figure>
     <img alt="Tower" id="tower" src="#" width="750" height="750" />
     <figcaption>
