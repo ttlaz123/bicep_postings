@@ -43,8 +43,9 @@
     </div>
 </div>
 <hr>
-<h1>THIS PAGE IS UNDER CONSTRUCTION</h1>
-<h3>The SQuID Chip, Screening PCB, and Screening Tower</h3>
+<section>
+<h2>The SQuID Chip, Screening PCB, and Dip Probe</h2>
+<h3>The SQuID Chip</h3>
 <p>
     The MUX 15b SQuID Chip is quite small and fragile, measuring 6.6 mm by 3.0 mm by 0.18 mm. While handling,
     great care
@@ -70,7 +71,36 @@
     The feedback line (FB) serves to maximize the sensitivity of the input, but during screening, the FB
     acts as the varying input to verify the ideal bias current that should run through OUT.
 </p>
+In summary: 
+<ul>
+<li><b>Input (IN)</b>: The input coils receive signal from the detectors during operation and produce flux
+    through the SQ1 squids.
+    However, during the screening process,
+    they are simply checked for connectivity and cross-shorts. The 22 input pads (which connects to the 11
+    input coils),
+    are on the bottom side of the squid chip.
+</li>
+<li><b>Row Select (RS)</b>: The row selects pass flux through ths RS squids, which turn on and off, or
+    "select", a specific input
+    to be read out. The 22 row select pads are
+    on the top side of the squid chip.
+</li>
+<li><b>Output (OUT1/2, SQ1OUT)</b>: The output line is connected to the SQ1BIAS line. Current is passed in,
+    and the output of the
+    current is read as the response of the squid chip. During normal operation, the output is set to a
+    particular
+    value, but during screening, the output sweeps through multiple current values to check its response.
+    The pads are on the top half of the sides of the chip.
+</li>
+<li><b>Feedback (FB1/2, SQ1FB)</b>: The feedback line passes in a current that produces flux through the
+    squids. This flux
+    affects to response of the SQ1 squid. During normal operation, the FB follows the
+    input to ensure maximum senstivity, but during Squid Screening, the FB sweeps through
+    different currents to visualize the characteristic squid sine wave.
 
+</li>
+
+</ul>
 <figure>
     <img alt="Chip" id="chip" src="#" width="750" height="750" />
     <figcaption>
@@ -100,6 +130,7 @@
     </script>
 
 </figure>
+<h3>The Screening PCB</h3>
 <p>
     The Dr Eleven screening PCB has 24 slots for squid chips and 10 connectors, each of which has 8
     signal/ground pairs. The chip slots are named with a letter and a number, where the letter refers to the 
@@ -110,9 +141,7 @@
 
 <p>
     To better understand the PCB architecture, see the pager below for the trace lines of each 
-    connector type. The Input connector's traces are fed into the left side of row X and the right 
-    side of row Y for each column. Thus, each of the 8 conductors on the input connector measures 
-    the signal from each column of chips in series. 
+    connector type. 
 </p>
 <p>
     The row selects make up the majority of the connectors, with 5 connectors responsible for the 33 row
@@ -124,6 +153,24 @@
     The INPUT and FB1 are connected to the sides of the chip slot area, while MUXOUT,
     SAOUT, and SAFB are connected to the pin area where the Squid Series Array box is attached during screening.
     These connectors all have 8 signal/ground pairs for the 8 channels labeled 0 through 7.
+</p>
+<p>
+    The Input connector's traces are fed into the left side of row X and the right 
+    side of row Y for each column. Thus, each of the 8 conductors on the input connector measures 
+    the signal from each column of chips in series. 
+</p>
+<p>
+    The feedback connector's traces are both on the left side of row X, so the feedback line passes 
+    through each chip twice, meaning the +/- are on the same side of each chip. 
+</p>
+<p>
+    The MUXOUT connector's traces feed into the pair of pins on the top of the PCB. This pair of pins 
+    also feeds to the left side of Row X, and similarly to the feedback lines, the SQ1OUT lines pass 
+    through each chip twice, meaning the +/- are on the same side of each chip. 
+</p>
+<p>
+    During squid screening, the Squid Box is placed on the pins to further amplify the response 
+    from SQ1OUT to be read out by SAOUT. 
 </p>
 <figure>
     <img alt="PCB Board" id="pcbs" src="#" width="750" height="750" />
@@ -162,17 +209,32 @@
     </script>
 
 </figure>
+<h3>The Dip Probe</h3>
 <p>
     
     The screening tower is a device provided by NIST for the express purpose of interfacing with the
     screening PCB. The top of the tower houses the electronics and the connector sockets for
-    interfacing with external electronics like oscilliscopes and current supplies. The 5 rows of HDMI
-    cables connect to the Row Selects. For the bottom row, only one connection is used. The
+    interfacing with external electronics like oscilliscopes and current supplies. 
+    </p>
+    <p>There are 5 rows of HDMI cables, and each row corresponds to one Row Select Samtech Connector.
+        The labels on the tower match the label on the PCB, offset by one. The DS row select is 
+        on the last conductor of the right hand side HDMI cable, and it connects to the one Samtech 
+        connector reserved for the RSDS (row select dark squid).
+    </p>
+    <p>
+     The
     SMB connectors come in groups of 8 for the 8 channels on the PCB. All the names
-    are the same except SQ2BIAS connects to MUXOUT. The connectors
-    on the bottom of the tower connect to the Samtech connectors on the screening PCB.
+    are the same except SQ2BIAS connects to MUXOUT: the INPUT row on the top directly 
+    matches with the Input Samtech Connector, the FB1, SAOUT, and SAFB rows matches with 
+    the FB1, SAOUT, and SAFB samtech connectors respectively, and the SQ2BIAS row 
+    matches with the MUXOUT samtech connector. 
+
 </p>
-<p></p>
+
+<p>
+    During cold screening, the screening software directly attaches to the tower while it is dipped 
+    into liquid helium.
+</p>
 <figure>
     <img alt="Tower" id="tower" src="#" width="750" height="750" />
     <figcaption>
@@ -202,3 +264,4 @@
     </script>
 
 </figure>
+</section>
