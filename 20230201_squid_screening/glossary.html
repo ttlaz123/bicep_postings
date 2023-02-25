@@ -46,5 +46,108 @@
 <h1>THIS PAGE IS UNDER CONSTRUCTION</h1>
 
 <body>
+    <ul>
+        <li><b>SQuID</b>: Superconducting Quantum Interference Device measures small magnetic fields.
+            Wikipedia article: <a href="articles/squid_wiki.pdf">SQuID</a></li>
+        <li><b>Squid chip</b>: The Mux 15b SQuID chip produced by NIST acts as an amplifier for the detector
+            modules.
+            Measuring 3.0 mm by 6.6 mm, these small chips require an initial round of screening before they can be
+            installed.
+            In the chip, there are RS squids, which receive flux from the row selects, and SQ1 squids, which receive
+            flux from Input and Feedback. </li>
+        <li><b>Screening PCB</b>: The DrEleven PCB holds up to 24 chips with 3 columns marked X, Y, Z and 8 rows
+            from 0 through 7.
+            The Squid chip must first be wirebonded to the screening PCB before any screening can take place. </li>
+        <li><b>Dip Probe</b>: Also called the <b>Screening Tower</b>, it houses all the electronics for both
+            sending the Squid chip inputs and receiving outputs from the chips. The Screening PCB must first be
+            connected to the dip probe before in order to be dipped into liquid helium for cryogenic screening.
+        </li>
+        <li><b>Input (IN)</b>: The input coils receive signal from the detectors during operation and produce flux
+            through the SQ1 squids.
+            However, during the screening process,
+            they are simply checked for connectivity and cross-shorts. The 22 input pads (which connects to the 11
+            input coils),
+            are on the bottom side of the squid chip.
+        </li>
+        <li><b>Row Select (RS)</b>: The row selects pass flux through ths RS squids, which turn on and off, or
+            "select", a specific input
+            to be read out. The 22 row select pads are
+            on the top side of the squid chip.
+        </li>
+        <li><b>Output (OUT1/2, SQ1OUT)</b>: The output line is connected to the SQ1BIAS line. Current is passed in,
+            and the output of the
+            current is read as the response of the squid chip. During normal operation, the output is set to a
+            particular
+            value, but during screening, the output sweeps through multiple current values to check its response.
+            The pads are on the top half of the sides of the chip.
+        </li>
+        <li><b>Feedback (FB1/2, SQ1FB)</b>: The feedback line passes in a current that produces flux through the
+            squids. This flux
+            affects to response of the SQ1 squid. During normal operation, the FB follows the
+            input to ensure maximum senstivity, but during Squid Screening, the FB sweeps through
+            different currents to visualize the characteristic squid sine wave.
 
+        </li>
+        <li>
+            <b>HDMI</b>
+        </li>
+        <li>
+            <b>BNC</b>
+        </li>
+        <li>
+            <b>SMB</b>
+        </li>
+        <li>
+            <b>Modulation</b> is specific to each Row select, and it indicates how much an input signal on that row can be
+            amplified. The larger the modulation, the easier it is to see a small signal.
+        </li>
+        <li><b> \(I_{C,max}\):</b>For each row select,
+            there is a particular device current, \(I_{C,max}\), at which the modulation is at its largest.
+        </li>
+        <li>
+            <b> \(I_{C,col}\)</b> is screened across an entire column of 3 chips, and it indicates the maximum device
+            current
+            that
+            can be applied before current starts flowing through the Input squids, at which point the row is turned
+            on.
+            Time domain multiplexing requires specific rows to turn on only when current is applied to the specific
+            row
+            select, thus it is desirable for
+            \(I_{C,col}\) to be significantly higher than any \(I_{C,max}\) in the chips on the column. If
+            \(I_{C,col}\)
+            were lower than the \(I_{C,max}\) in any row, then it is no longer possible to achieve maximum
+            modulation
+            for the squid chip without certainty which row the signal is arriving from.
+        </li>
+        <li>
+            <b>  \(I_{C,min}\)</b> specifies the minimum current at which a specific row sees some modulation. To ensure that
+            a particular row only turns on when chosen by the Row Select, it is desireable for \(I_{C,min}\) to
+            be significantly above 0, but a small fraction of \(I_{C,max}\) (typically around a fifth to a tenth)
+            so there is room to adjust the bias current.
+        </li>
+        <li>
+            <b>Squid Box</b>
+        </li>
+        <li>
+            <b>Blue Helium Dewar</b>
+        </li>
+        <li>
+            <b>Screening Software</b>
+        </li>
+        <li>
+            <b>Wafer</b>
+        </li>
+        <li>
+            <b>Screening Batch</b>
+        </li>
+        <li>
+            <b>Rescreen</b>
+        </li>
+        <li>
+            <b></b>
+        </li>
+        <li>
+            <b></b>
+        </li>
+    </ul>
 </body>

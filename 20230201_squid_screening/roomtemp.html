@@ -43,19 +43,35 @@
     </div>
 </div>
 <hr>
-<h1>THIS PAGE IS UNDER CONSTRUCTION</h1>
-<h4>Identifying Faulty Chips</h4>
+<body>
+<h1>Screening for Faulty Squid Chips at Room Temperature</h1>
+<section>
+<h2>Identifying Faulty Chips</h2>
+<p>
+While the primary purpose of probing the resistance across the PCB is to identify faulty wirebonds, 
+strange resistance readings often suggest that there are issues with the chips themselves. By probing the 
+resistances of various connection at room temperature, we can identify faulty chips before 
+the cryogenic screening stage. This can increase throughput because in certain cases, an individual 
+chip can make all the chips in its row or column unscreenable.
+</p><p>
+    We have developed the following procedure for room temperature screening:
+</p>
 <ul>
-    <li>Connect the screening PCB to the screening tower.</li>
-    <li>Record the resistance of the Input, Row Selects, and Feedback lines using a multimeter and the breakout
-        box.</li>
+    <li>Connect the screening PCB to the screening tower through the Samtech connectors.</li>
+    <li>The Input and Feedback lines can be directly probed with the multimeter and its BNC to SMB connection adapter. 
+        </li>
+    <li>To measure the row select resistances, attach the breakout box with the HDMI cables to the screening tower, 
+        and use the BNC connector to probe the resistance of channels 1 through 8. This corresponds to the 8 
+        conductors on the screening PCB. After measuring each batch of 8 resistances, 
+        move the HDMI connectors up a row. Note that the Row Select numbers are 1 off from the numbers marked on the PCB.
     <li>With the PCB still attached, probe the pairs of pins with just a multimeter to record the resistance of
         the Out lines.</li>
-    <li>Detach the PCB from the tower, and record the resistance of the Out lines.</li>
+    <li>Detach the PCB from the tower, and record the resistance of the Out lines like the step above.</li>
     <li>Using the multimeter, probe the connectors directly to determine the resistance of Input, Row Select,
-        and Feedback lines. Note that the Row Select numbers are 1 off from the numbers marked on the PCB.</li>
-    <li>Identify any resistance reading that is more than 10% off from the other readings of the same type,
-        or when a difference in resistance is caused by connecting the PCB to the tower.</li>
+        and Feedback lines. </li>
+    <li>Record all resistances in a table, and identify any resistance reading that is more than 10% off from the other readings of the same type.</li>
+    <li>Disconnecting the tower will decrease the measured resistances by the tower resistance that's in series. 
+        Note the connections where a difference in resistance cannot be accounted for by the series resistance</li>
 </ul>
 <p>The purpose of recording two sets of resistances is to see if any abnormal resistance readings are a result
     of
@@ -69,7 +85,11 @@
 <figure>
     <img alt="Probing room temperature" id="probe" src="#" width="750" height="750" />
     <figcaption>
-        Pictures of abnormalities
+        <p>
+            In the probing diagrams, the blue represents traces above the PCB, while the red represents
+            traces below the PCB. Row select probing measures the resistance of 8 chips in series, while
+            the other probing measures the resistance of 3 chips in series.
+        </p>
     </figcaption>
     <script type="text/javascript">
         pager.link("#probe",
@@ -101,6 +121,40 @@
 
     </script>
 
+</figure>
+<figure>
+    <img alt="Recording Resistances in a table" id="table" src="#" width="750" height="750" />
+    <figcaption>
+        <p>
+            In the comparison of the circuit diagram to the realistic schematic, the red and green pads/lines
+            correspond to each other. Columns 4 and 5 are empty (e), so there is nothing recorded there, and
+            the row selects are about 2.2 kOhms lower than if the PCB were fully populated.
+            Row select 17 was initially open, but now reads the expected resistance after correction. Also
+            notice
+            that when the PCB is disconnected from the screening tower, the FB reading is about 5kOhms lower.
+            This is because there is a 5 kOhms series resistance from the PCB to the tower.
+        </p>
+    </figcaption>
+    <script type="text/javascript">
+        pager.link("#table",
+            {
+                'Recording Info|table': [
+                    'Chip ID|chipid',
+                    'Resistance Table|resistance_table'
+            ]
+            },
+            function (params) {
+                dirpath = 'figs/probe'
+                filename = dirpath + '/' + params.table + '.jpg'
+                return filename
+            });
+        pager.setparams(
+            {
+                'table': 'resistance_table',
+            }
+        );
+
+    </script>
 </figure>
 <b>Cross-short:</b>
 <ul>
@@ -215,7 +269,9 @@ bypassed.
     </script>
 
 </figure>
-<h4>Bypassing Chips</h4>
+</section>
+<section>
+<h2>Bypassing Chips</h2>
 
 <ul>
     <li>To bypass a squid chip, we remove the wirebonds attached the chip and replace them with shorting bonds
@@ -278,7 +334,7 @@ wirebonds. The diagram shows Chip X, the left side of Chip Y, and the right side
 After the bypassing is complete, an additional resistance check should be performed to verify there are no more
 abnormalities. Due to the bypassing, some of the resistance readings will be lower. The table below specifies
 the approximate expected resistance for each non-bypassed chip. Note that the specific numbers will vary by chip
-wafer, with a deviation up to 10-20%.
+wafer, with a deviation up to 10-20%. Repeat the procedure until all the measured resistances are as expected.
 
 <center>
     <table style="width:100%;margin-left:auto;margin-right:auto;" border="1,">
@@ -325,4 +381,11 @@ wafer, with a deviation up to 10-20%.
             </tr>
         </tbody>
     </table>
+
 </center>
+
+</section>
+<section>
+    After the room temperature screening is complete, we move onto the <a href="cryotest.html">cryogenic testing </a>.
+</section>
+</body>

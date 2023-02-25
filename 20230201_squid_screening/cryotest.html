@@ -43,8 +43,7 @@
     </div>
 </div>
 <hr>
-<h1>THIS PAGE IS UNDER CONSTRUCTION</h1>
-<h3>Cryogenic Testing: 3 - 4 hours per board</h3>
+<h1>Cryogenic Squid Chip Testing</h1>
 After a screening board has been prepared with chips free of abnormal resistance readings, it is now ready for
 cryogenic screening. The purpose of this stage
 is to ensure each chip can serve its purpose in the detector module as a proper superconducting amplifier. Due
@@ -59,14 +58,12 @@ the opening must be large enough to fit the screening PCB and the screening towe
 dewars
 must be transfered into the specially designed Blue Dewar for screening to procede. For a detailed account on
 how
-to transfer helium, see here: <a href="transfer.html">Helium Transfer</a>. A single 100L dewar of helium
+to transfer helium, see here: <a href="sops/helium_transfer.pdf">Helium Transfer</a>. A single 100L dewar of helium
 can screen between 5 - 15 boards depending on how quickly the screening is performed.
 
 <h4>Connecting to the Software: 30 min per board</h4>
 Once the blue helium dewar is sufficiently filled, the cryogenic screening can proceed. Below is a
-summary for dipping and connecting the screening PCB to the screening software. A detailed procedure
-is here:
-<a href="software.html"> Connecting to Software </a>.
+summary for dipping and connecting the screening PCB to the screening software. 
 <ul>
     <li>Attach the Squid Series Array box to the Screening PCB, screw the PCB to the bottom of the
         screening tower, secure the Samtech connectors, and put on the magnetic shield cylinder.
@@ -359,14 +356,14 @@ recorded in the spreadsheet <a
             {
                 'Failure Mode|fail': [
                     'No modulation appears during SSA scan|ssa',
-                    'No modulation appears during Ic cols can|iccol',
+                    'No modulation appears during Ic cols can|weird_iccol',
                     'Ic col scan modulates too quickly|iccol_fast',
                     'Ic col scan modulates multiple times|iccol_multi',
                     'Double Peak during RS scan|rs_multi',
                 ]
             },
             function (params) {
-                dirpath = 'figs/fail'
+                dirpath = 'figs/screening'
                 filename = dirpath + '/' + params.fail + '.jpg'
                 return filename
             });
