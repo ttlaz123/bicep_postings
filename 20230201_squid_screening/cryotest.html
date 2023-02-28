@@ -43,13 +43,15 @@
     </div>
 </div>
 <hr>
+<body>
 <h1>Cryogenic Squid Chip Testing</h1>
 After a screening board has been prepared with chips free of abnormal resistance readings, it is now ready for
 cryogenic screening. The purpose of this stage
 is to ensure each chip can serve its purpose in the detector module as a proper superconducting amplifier. Due
 to the fragile nature of the chips, they may not function
 perfectly despite normal room temperature resistances.
-
+<section>
+    <h2>Setting up the Screening System</h2>
 <h4>Managing Helium: 2-3 hours per dewar</h4>
 To ensure the squid chips are superconducting, they must be dipped into liquid helium, which has a boiling point
 of 4K. Because helium has such a low boiling point, it is necessary to keep it in a well insulated dewawr;
@@ -119,7 +121,9 @@ summary for dipping and connecting the screening PCB to the screening software.
     </script>
 
 </figure>
-<h4>Running the cold screening software: 2-3 hours per board</h4>
+<section>
+<h2>Running the cold screening software: 2-3 hours per board</h2>
+
 <p>
     The automated screening software checks for 4 quantities: critical current of the column \(I_{C,col}\),
     modulation, current with maximum modulation \(I_{C,max}\), and current with minimum modulation
@@ -155,6 +159,7 @@ summary for dipping and connecting the screening PCB to the screening software.
         so there is room to adjust the bias current.
     </li>
 </ul>
+</section>
 Below is a summary of the cold screening. For a detailed procedure, see here: <a href="sops/auto_screening.pdf"> Running
     the Software </a>
 <ul>
@@ -227,7 +232,9 @@ Below is a summary of the cold screening. For a detailed procedure, see here: <a
     </script>
 
 </figure>
-<h4>Possible failure modes</h4>
+</section>
+<section>
+<h2>Possible failure modes</h2>
 As the cold screening takes place, it is important to record whether each chip has passed or failed.
 A chip that passes screening requires the following criteria:
 <ul>
@@ -379,3 +386,5 @@ recorded in the spreadsheet <a
     </script>
 
 </figure>
+</section>
+</body>
