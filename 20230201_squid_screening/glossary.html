@@ -78,7 +78,7 @@
             and the output of the
             current is read as the response of the squid chip. During normal operation, the output is set to a
             particular
-            value, but during screening, the output sweeps through multiple current values to check its response.
+            value determined by Squid tuning, but during screening, the output sweeps through multiple current values to check its response.
             The pads are on the top half of the sides of the chip.
         </li>
         <li><b>Feedback (FB1/2, SQ1FB)</b>: The feedback line passes in a current that produces flux through the
@@ -88,14 +88,27 @@
             different currents to visualize the characteristic squid sine wave.
 
         </li>
-        <li>
-            <b>HDMI</b>
+       <li>
+            <b>Series Array Feedback (SAFB)</b>: The feedback line that passes through the Squid Box 
+            instead of the Squid chips. The feedback serves to to set the response of the SQuID array in the 
+            box to further amplify the signal from the chips. 
+       </li>
+       <li>
+        <b>Series Array Output (SAOUT)</b>: The bias current that passes through the Squid Box and reads out 
+        out the amplified signal from the Squid Chips. 
         </li>
         <li>
-            <b>BNC</b>
+            <b>Row Select Squids</b>: These are the squids that sit on the SQ1OUT line and read the flux given 
+            by the row selects. When no current is passing through the row select coils, the RS Squid is "off"
+            and allows current through up to a certain critical current. When current passes through the row select 
+            coils, flux is passed through the RS squid, which reduces the current allowed through and turns it "on", 
+            which forces current from SQ1OUT into the \(R_{series}\) resistor and the input squids.
         </li>
         <li>
-            <b>SMB</b>
+            <b>Input Squids</b>:
+            The input squids receive flux from both the feedback and input coils. By setting the feedback current to 
+            specific values, the input squid can be set to the appropriate response to maximize the amplification 
+            of any signal from the input coils.
         </li>
         <li>
             <b>Modulation</b> is specific to each Row select, and it indicates how much an input signal on that row can be
@@ -127,21 +140,52 @@
         </li>
         <li>
             <b>Squid Box</b>
+            The Squid Series Array box that further amplifies the signal from SQ1OUT. This box 
+            is attached to the pins of the PCB and requires its own bias current and feedback, which are 
+            called SAOUT and SAFB respectively.
         </li>
         <li>
             <b>Blue Helium Dewar</b>
+            Kent Irwin's lab has a designated blue dewar specifically designed to hold the dip probe. It 
+            has a volume of approximately 40L, so it can hold approximately 2 transfers of helium 
+            from a standard 100L helium storage dewar. 
         </li>
         <li>
             <b>Screening Software</b>
+            Designed by Carl Dawson in 2019, the automated screening system scans the critical currents and 
+            modulation of the Squid chips by directly controlling the row selects and bias currents while 
+            reading from the oscilloscope.
         </li>
         <li>
             <b>Wafer</b>
+            NIST produces squid chips in batches called Wafers. The first wafer of chips scanned was W31, while 
+            the last one received by Stanford in 2022 was W48. The wafer number is not sequential. As of 2023 February,
+            Stanford has received Wafers 31, 37, 39, 41, 42, 43, 44, 45, 47, 48 from NIST, each approximately 128 chips.
         </li>
         <li>
             <b>Screening Batch</b>
+            Each screening batch accounts for a rough 2 week period of gluing, wirebonding, and testing. Because 
+            a 100L dewar of helium slowly loses helium over time, we prepare 100-200 chips at a time so they can 
+            all be tested at once the moment a dewar of helium arrives. The maximum number of board dips that 
+            the Kuo lab has been able to achieve for a single 100L dewar of helium has been 13 
+            (eleven unique boards with 2 boards dipped twice).
         </li>
         <li>
             <b>Rescreen</b>
+            When a chip fails to pass screening, it is not always clear whether it was due to that particular chip 
+            or caused by a neighboring chip. For example, if there is cross talk between the SQ1BIAS and 
+            the feedback line, it would cause faulty readings for all three chips in the column, even if the 
+            actual issue were only on one of the three chips. In these cases, the chips need to be rescreened to 
+            isolate the problem chip. 
+        </li>
+        <li>
+            <b>HDMI</b>
+        </li>
+        <li>
+            <b>BNC</b>
+        </li>
+        <li>
+            <b>SMB</b>
         </li>
         <li>
             <b></b>

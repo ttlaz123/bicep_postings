@@ -155,7 +155,7 @@ summary for dipping and connecting the screening PCB to the screening software.
         so there is room to adjust the bias current.
     </li>
 </ul>
-Below is a summary of the cold screening. For a detailed procedure, see here: <a href="software.html"> Running
+Below is a summary of the cold screening. For a detailed procedure, see here: <a href="sops/auto_screening.pdf"> Running
     the Software </a>
 <ul>
     <li>Ensure the electronics are properly connected, choose a column/channel to screen, and click "Start
@@ -201,7 +201,7 @@ Below is a summary of the cold screening. For a detailed procedure, see here: <a
 <figure>
     <img alt="Screening" id="screening" src="#" width="750" height="750" />
     <figcaption>
-        Pictures of Screening Electronics
+        Expected Readings for Screening Software
     </figcaption>
     <script type="text/javascript">
         pager.link("#screening",
@@ -356,10 +356,13 @@ recorded in the spreadsheet <a
             {
                 'Failure Mode|fail': [
                     'No modulation appears during SSA scan|ssa',
-                    'No modulation appears during Ic cols can|weird_iccol',
-                    'Ic col scan modulates too quickly|iccol_fast',
-                    'Ic col scan modulates multiple times|iccol_multi',
-                    'Double Peak during RS scan|rs_multi',
+                    'No modulation appears during Ic cols can|iccol_nomod',
+                    'Ic col scan modulates too quickly|iccol_earlymod',
+                    'Ic col scan modulates multiple times|weird_iccol',
+                    'Ic Graph Bad RS connection|no_ic',
+                    'Mod Graph Bad RS connection|no_mod',
+                    'IC Graph Double Peak during RS scan|bad_ic',
+                    'Mod Graph Double Peak during RS scan|bad_mod',
                 ]
             },
             function (params) {
