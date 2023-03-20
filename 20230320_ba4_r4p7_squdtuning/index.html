@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BICEP Array 4 Run 4.7 Squid Tuning</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Load up MathJax for math notation -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: { equationNumbers: { autoNumber: "AMS" } }
+        });
+    </script>
+    <script type="text/javascript" src="../mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/javascript" src="scripts/pager.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+</head>
+<!-- Add my custom pa>er script -->
+<script type="text/javascript" src="scripts/pager.js"></script>
+<link rel="stylesheet" type="text/css" href="scripts/pager.css">
+
+<header>
+    <h1>BA4 Run 4.7 Squid Tuning</h1>
+
+    <time datetime="2023-03-20" class="published updated">
+        2023 Mar 20
+    </time> —
+    Yuka Nakato, Tom Liu, Cheng Zhang
+</header>
+
+<div class="header">
+    <div class="header-right">
+        <a href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/">Back To BA Analysis Logbook</a>
+    </div>
+</div>
+<hr>
+
+<body>
+
+
+
+    <section>
+        <h2>Introduction</h2>
+        
+        Operation logging:
+        <ol>
+            <li>Tune Squids</li>
+            <li>Turn off MCE</li>
+            <li>Remove Cernox Daughter Card</li>
+            <li>Turn off compressor until all temperatures were above 10K</li>
+            <li>Turn compressor back on</li>
+            <li>Turn MCE back on</li>
+            <li>Tune Squids</li>
+        </ol>
+        <figure>
+            <img alt="Squid Tuning Plots" id="tuning" src="#" width="1250" height="750" />
+            <figcaption>
+                Plots of Squid tuning from before and after warmup
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#tuning",
+                    {
+                        'Tuning Run|run': [
+                            'Before Warmup|1679351988',
+                            'After Warmup|1679092590',
+                        ],
+                        'SSA Number|num': [
+                            '0|0',
+                            '1|1'
+                        ],
+                        'Bias step|step': [
+                            'Summary|summary',
+                            '00|00',
+                            '01|01',
+                            '02|02',
+                            '03|03',
+                            '04|04',
+                            '05|05',
+                            '06|06',
+                            '07|07',
+                            '08|08',
+                            '09|09',
+                            '10|00',
+                            '11|11',
+                            '12|12',
+                            '13|13',
+                            '14|14',
+                            '15|15',
+                            '16|16',
+                            '17|17',
+                            '18|18',
+                            '19|19',
+                            '20|20',
+                            '21|21',
+                            '22|22',
+                            '23|23',
+                            '24|24',
+                            '25|25',
+                            '26|26',
+                            '27|27',
+                            '28|28',
+                            '29|29',
+                            '30|30',
+                            '31|31',
+                            '32|32',
+                            '33|33',
+                            '34|34',
+                            '35|35',
+                            '36|36',
+                            '37|37',
+                            '38|38',
+                            '39|39',
+                            '40|40',
+                            '41|41',
+                            '42|42',
+                            '43|43',
+                            '44|44',
+                            '45|45',
+                            '46|46',
+                            '47|47',
+                            '48|48',
+                            '49|49',
+                        ],
+
+
+                    },
+                    function (params) {
+                        dirpath = 'figs/' 
+                        filename = params.run + '_RCs_ssa_b' + params.step + '_' + params.num + '.png' 
+                        return filename
+                    });
+                pager.setparams(
+                    {
+                        'run': '1679351988',
+                        'num': '0',
+                        'step': 'summary',
+                    }
+                );
+
+            </script>
+        </figure>
+    </section>
+
+
+    <section>
+        <h2>Conclusions</h2>
+        <p>
+        </p>
+    </section>
+
+</body>
