@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BICEP Array 4 Run 4.8 Squid Tuning</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Load up MathJax for math notation -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: { equationNumbers: { autoNumber: "AMS" } }
+        });
+    </script>
+    <script type="text/javascript" src="../mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/javascript" src="scripts/pager.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" type="text/css" href="scripts/pager.css">
+</head>
+<!-- Add my custom pa>er script -->
+<script type="text/javascript" src="scripts/pager.js"></script>
+<link rel="stylesheet" type="text/css" href="scripts/pager.css">
+
+<header>
+    <h1>BA4 Run 4.7 Squid Tuning</h1>
+
+    <time datetime="2023-05-08" class="published updated">
+        2023 May 8
+    </time> 
+</header>
+
+<div class="header">
+    <div class="header-right">
+        <a href="http://bicep.rc.fas.harvard.edu/bicep_array/analysis_logbook/">Back To BA Analysis Logbook</a>
+    </div>
+</div>
+<hr>
+
+<body>
+
+
+
+    <section>
+        <h2>Introduction</h2>
+        
+        <figure>
+            <img alt="Squid Tuning Plots" id="tuning" src="#" width="1250" height="750" />
+            <figcaption>
+                Squid tuning plots
+            </figcaption>
+            <script type="text/javascript">
+                pager.link("#tuning",
+                    {
+                        'Tuning Run|run': [
+                            '4p8|1683583257',
+                        ],
+                        'SSA Number|num': [
+                            '0|0',
+                            '1|1',
+                            '2|2',
+                            '3|3'
+                        ],
+                        'Bias step|step': [
+                            'Summary|summary',
+                            '00|b00',
+                            '01|b01',
+                            '02|b02',
+                            '03|b03',
+                            '04|b04',
+                            '05|b05',
+                            '06|b06',
+                            '07|b07',
+                            '08|b08',
+                            '09|b09',
+                            '10|b10',
+                            '11|b11',
+                            '12|b12',
+                            '13|b13',
+                            '14|b14',
+                            '15|b15',
+                            '16|b16',
+                            '17|b17',
+                            '18|b18',
+                            '19|b19',
+                            '20|b20',
+                            '21|b21',
+                            '22|b22',
+                            '23|b23',
+                            '24|b24',
+                            '25|b25',
+                            '26|b26',
+                            '27|b27',
+                            '28|b28',
+                            '29|b29',
+                            '30|b30',
+                            '31|b31',
+                            '32|b32',
+                            '33|b33',
+                            '34|b34',
+                            '35|b35',
+                            '36|b36',
+                            '37|b37',
+                            '38|b38',
+                            '39|b39',
+                            '40|b40',
+                            '41|b41',
+                            '42|b42',
+                            '43|b43',
+                            '44|b44',
+                            '45|b45',
+                            '46|b46',
+                            '47|b47',
+                            '48|b48',
+                            '49|b49',
+                        ],
+
+
+                    },
+                    function (params) {
+                        dirpath = 'figs/' 
+                        filename = params.run + '_RCs_ssa_' + params.step + '_' + params.num + '.png' 
+                        return dirpath+'/'+filename
+                    });
+                pager.setparams(
+                    {
+                        'run': '1683583257',
+                        'num': '0',
+                        'step': 'summary',
+                    }
+                );
+
+            </script>
+        </figure>
+    </section>
+
+
+    <section>
+        <h2>Conclusions</h2>
+        <p>
+            Before warmup, the modulation on SSA1 was much smaller, in the 10-20 range. It can be seen that there are some 
+            double peaks around bias steps 17 - 30 in cols 8,11,12, and 13. After warming up, the double peaks went 
+            away, and the modulation returned to the expected 60-80. It's suspected that the abnormality was due to 
+            trapped flux.  
+        </p>
+    </section>
+
+</body>
